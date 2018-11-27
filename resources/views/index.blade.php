@@ -243,7 +243,7 @@
           <a href="#" class="mx-2">
             <i class="fab fa-facebook-f"></i>
           </a>
-          <a href="https://github.com/Maurii19/socialpets.github.io" class="mx-2">
+          <a href="https://github.com/davidzabalperez/SocialPets" class="mx-2">
             <i class="fab fa-github"></i>
           </a>
         </div>
