@@ -60,10 +60,10 @@
           </ul>
         <ul class="navbar-nav mr navbar">
            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#" data-toggle="modal" data-target="#myModal">Login <i class="fas fa-sign-in-alt"></i></a>
+              <a class="nav-link js-scroll-trigger" href="#" data-toggle="modal" data-target="#loginModal">Login <i class="fas fa-sign-in-alt"></i></a>
             </li>
            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#">Register <i class="fas fa-user-circle"></i></a>
+              <a class="nav-link js-scroll-trigger" href="#" data-toggle="modal" data-target="#registroModal">Register <i class="fas fa-user-circle"></i></a>
             </li>
         </ul>
         </div>
@@ -267,7 +267,9 @@
 
     <!-- Custom scripts for this template -->
     <script src="js/grayscale.min.js"></script>
-    <script src="/js/emailValidator.js"></script>  
+    <script src="/js/loginValidator.js"></script>
+    <script src="/js/registerValidator.js"></script>
+    <script src="/js/jquery.validate.js"></script>    
   <script>
 $('div.alert').delay(5000).slideUp(300);
 </script>
@@ -276,3 +278,4 @@ $('div.alert').delay(5000).slideUp(300);
 
 </html>
 @include('login')
+@include('register')

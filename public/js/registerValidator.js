@@ -1,3 +1,45 @@
+$(document).ready(function() {
+		$("#registerForm").validate({
+			rules : {
+				username : {
+					required : true
+				},
+
+				password : {
+					maxlength : 20,
+					minlength : 8,
+					required : true
+				},
+
+				repassword : {
+					maxlength : 20,
+					required : true,
+					equalTo : "#password"
+				}
+
+			}, //fin de las reglas, rules
+
+			messages : {
+				username : {
+					required : "Campo obligatorio"
+				},
+
+				password : {
+					maxlength : "Máximo 20 caracteres",
+					minlength : "Mínimo de 8 carácteres",
+					required : "Campo obligatorio"
+				},
+
+				repassword : {
+					maxlength : "Máximo 20 caracteres",
+					required : "Campo obligatorio",
+					equalTo : "Las contraseñas no coinciden"
+				}
+			}, //fin de los mensajes
+
+		}); //fin validate
+	}); //fin ready
+
 /*function ValidateEmail(email){
 	var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/;
 	if(email.value.match(mailformat)){
@@ -13,7 +55,7 @@
 	{{ URL::to('/login') }}
 }*/
 
-var inputEmail = document.getElementById("email");
+/*var inputEmail = document.getElementById("email");
 var boton = document.getElementById("boton");
 
 inputEmail.oninput = function(){
@@ -25,9 +67,9 @@ inputEmail.oninput = function(){
 		this.style.color = "red";
 		boton.disabled=true;
 	}
-}
+}*/
 
-var numeroTlf = document.getElementById("tlf");
+/*var numeroTlf = document.getElementById("tlf");
 numeroTlf.oninput = function(){
 	if(validarNumero(this.value)){
 		this.style.color = "green";
@@ -37,9 +79,9 @@ numeroTlf.oninput = function(){
 		this.style.color = "red";
 		boton.disabled=true;
 	}
-}
+}*/
 
-
+/*
 function validarEmail(email){
 	
 	if(
@@ -62,13 +104,13 @@ function validarEmail(email){
 		}
 	return false;
 
-}
-function validarNumero(numero){
+}*/
+/*function validarNumero(numero){
 	numero.trim();
 	if(numero.length == 9 && Number.isInteger(parseInt(numero)) && numero.indexOf(".") == -1 && numero > 0 && numero < 1000000000){
 		return true;
 	}else{
 		return false;
 	}
-}
+}*/
 	
