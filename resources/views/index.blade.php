@@ -75,7 +75,7 @@
       <div class="container d-flex h-100 align-items-center">
         <div class="mx-auto text-center">
           <h1 class="mx-auto my-0 text-uppercase">Social Pets</h1>
-          <h2 class="text-white-50 mx-auto mt-2 mb-5">Una red social  Open Source para mascotas.</h2>
+          <h2 class="text-white-50 mx-auto mt-2 mb-5">La mejor comunidad de perros</h2>
           <a href="#socialpets" class="btn btn-primary js-scroll-trigger">Más</a>
         </div>
       </div>
@@ -88,7 +88,9 @@
         <div class="row">
           <div class="col-lg-8 mx-auto">
             <h2 class="text-white mb-4">Social Pets</h2>
-            <p class="text-white-50">Es una red social, para que tus mascotas conozcan a otras y puedan ser amigos. Nuestro objetivo es abarcar a una gran cantidad de mascotas, pero al ser un proyecto, trataremos con perros principalmente. </p>
+            <p class="text-white-50">¿Alguna vez has salido a la calle a pasear a tu perro, y te has encontrado con otro perro con el se ha congeniado?</p>
+            <p class="text-white-50">
+            Seguro que te gustaría que volviesen a encontrarse, o que quedasen más a menudo. Gracias a esta aplicación podremos ponernos en contacto con su dueña/o para poder hacer que nuestros amigos tengan una mejor vida social.</p>
           </div>
         </div>
         <img src="img/bg-signup.png" class="img-fluid" width="750px" alt="">
@@ -106,12 +108,21 @@
           </div>
           <div class="col-xl-4 col-lg-5">
             <div class="featured-text text-center text-lg-left">
-              <h4>Match!</h4>
-              <p class="text-black-50 mb-0">Puedes elegir con quien quedar. Puedes visualizar las imagenes de las mascotas y del dueño</p>
+              <h4>Le gusta!</h4>
+              <p class="text-black-50 mb-0">Puedes elegir con quien quedar y visualizar las imagenes de las mascotas.</p>
+            </div>
+            <br>
+            <div class="featured-text text-center text-lg-left">
+              <h4>Tengo una notificación!</h4>
+              <p class="text-black-50 mb-0">Envia mensajes privados.</p>
+            </div>
+            <br>
+            <div class="featured-text text-center text-lg-left">
+              <h4>Noticas nuevas!</h4>
+              <p class="text-black-50 mb-0">Feed de noticias.</p>
             </div>
           </div>
         </div>
-
         <!-- Project One Row -->
         <div class="row justify-content-center no-gutters mb-5 mb-lg-0">
           <div class="col-lg-6">
@@ -121,8 +132,8 @@
             <div class="bg-black text-center h-100 project">
               <div class="d-flex h-100">
                 <div class="project-text w-100 my-auto text-center text-lg-left">
-                  <h4 class="text-white">Meet To!</h4>
-                  <p class="mb-0 text-white-50">Podras crear quedadas y se les alertara a los usuarios cercanos.</p>
+                  <h4 class="text-white">Quedada!</h4>
+                  <p class="mb-0 text-white-50">Podras crear quedadas y se les alertara a los usuarios.</p>
                   <hr class="d-none d-lg-block mb-0 ml-0">
                 </div>
               </div>
@@ -140,7 +151,7 @@
               <div class="d-flex h-100">
                 <div class="project-text w-100 my-auto text-center text-lg-right">
                   <h4 class="text-white">D.M</h4>
-                  <p class="mb-0 text-white-50">Podras enviar mensajes a los usuarios para conocer mejor al dueño y al perro.</p>
+                  <p class="mb-0 text-white-50">Podras enviar mensajes a los usuarios para conocer mejor al perro.</p>
                   <hr class="d-none d-lg-block mb-0 mr-0">
                 </div>
               </div>
