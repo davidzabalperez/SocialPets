@@ -83,13 +83,13 @@
     border-bottom: 0.25rem solid transparent;
   }
   #mainNav.navbar-shrink .nav-link:hover {
-    color: green;
+    color: #689b94;
   }
   #mainNav.navbar-shrink .nav-link:active {
-    color: green;
+    color: #689b94;
   }
   #mainNav.navbar-shrink .nav-link.active {
-    color: green;
+    color: #689b94;
     outline: none;
     border-bottom: 0.25rem solid #64a19d;
   }
