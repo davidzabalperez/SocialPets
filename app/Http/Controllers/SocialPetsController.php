@@ -24,7 +24,7 @@ class SocialPetsController extends Controller
   		$contact->save();
 
 
-  		return redirect('index')->with('success-message', 'Mail enviado con exito!');
+  		return redirect('/')->with('success-message', 'Mail enviado con exito!');
   		
 	}
   

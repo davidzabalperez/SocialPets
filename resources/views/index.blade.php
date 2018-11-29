@@ -212,7 +212,7 @@
                 <i class="fas fa-map-marked-alt text-primary mb-2"></i>
                 <h4 class="text-uppercase m-0">Dirección</h4>
                 <hr class="my-4">
-                <div class="small text-black-50" style="font-size: 12px;">Calle de Alejandría, 2, 20013 San Sebastián</div>
+                <div class="small text-black-50" style="font-size: 12px;"><a href="https://www.google.com/maps/place/Alejandria+Kalea,+2,+20013+Donostia,+Gipuzkoa/@43.3258922,-1.971046,17z/data=!3m1!4b1!4m5!3m4!1s0xd51a5420b502263:0x44c1e190064e49d8!8m2!3d43.3258922!4d-1.9688573" target="_blank" rel="noopener"> Calle de Alejandría, 2, 20013 San Sebastián</div>
               </div>
             </div>
           </div>
