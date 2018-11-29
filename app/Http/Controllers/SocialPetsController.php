@@ -32,6 +32,12 @@ class SocialPetsController extends Controller
     return view('userPanel');
 
   }
+  public function getAdminPanel(){
+    return view('adminPanel');
+  }
+  public function getNoticia(){
+    return view('noticia');
+  }
 
 
 

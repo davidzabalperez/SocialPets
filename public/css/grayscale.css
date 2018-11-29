@@ -334,3 +334,7 @@ footer {
   text-align: center;
   color: white !important;
 }
+.efecto:hover{
+  -webkit-transform: scale(1.5, 1.5);
+  transform: scale(1.5, 1.5);
+}
