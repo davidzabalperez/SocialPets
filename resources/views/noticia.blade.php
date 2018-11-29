@@ -12,19 +12,16 @@
             </div>
             <div class="modal-body">
                 <div class="email">
-                <form method="POST" action="{{ URL::to('/UserPanel') }}" name="formulario" id="loginForm">
+                <form method="POST" action="#" name="formulario" id="noticiaForm">
                   @csrf
                     <div class="form-group">
                         <div class="icons" id="email-icon"></div>
-                         <input type="text" id="email" class="form-control" name="username" placeholder="Email">
-                         
-                    </div>
+                         <textarea id="textoNoticia" class="form-control" name="textoNoticia" height="400" rows="6" cols="50">
+                             
+                         </textarea>
+                    </div>    
                     <div class="form-group">
-                        <div class="icons" id="password-icon"></div>
-                        <input type="password" class="form-control" name="password" placeholder="Password"> 
-                    </div>      
-                    <div class="form-group">
-                        <button type="submit" id="boton" class="btn btn-primary btn-lg btn-block login-btn" >Login</button>
+                        <button type="submit" id="boton" class="btn btn-primary btn-lg btn-block login-btn" >Publicar</button>
                     </div>
                 </form>
                 </div>
