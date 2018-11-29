@@ -2,7 +2,8 @@ $(document).ready(function() {
 		$("#registerForm").validate({
 			rules : {
 				username : {
-					required : true
+					required : true,
+					email: true
 				},
 
 				password : {
@@ -21,7 +22,8 @@ $(document).ready(function() {
 
 			messages : {
 				username : {
-					required : "Campo obligatorio"
+					required : "Campo obligatorio",
+					email: "Introduce un email válido"
 				},
 
 				password : {

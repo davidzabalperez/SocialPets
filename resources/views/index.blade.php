@@ -76,7 +76,7 @@
         <div class="mx-auto text-center">
           <h1 class="mx-auto my-0 text-uppercase">Social Pets</h1>
           <h2 class="text-white-50 mx-auto mt-2 mb-5">La mejor comunidad de perros</h2>
-          <a href="#socialpets" class="btn btn-primary js-scroll-trigger">Más</a>
+          <a class="btn btn-primary js-scroll-trigger" data-toggle="modal" data-target="#registroModal">¡Registrate!</a>
         </div>
       </div>
     </header>
@@ -134,7 +134,7 @@
                 <div class="project-text w-100 my-auto text-center text-lg-left">
                   <h4 class="text-white">Quedada!</h4>
                   <p class="mb-0 text-white-50">Podras crear quedadas y se les alertara a los usuarios.</p>
-                  <hr class="d-none d-lg-block mb-0 ml-0">
+                  <hr class="d-none d-lg-block mb-0 mr-0">
                 </div>
               </div>
             </div>
