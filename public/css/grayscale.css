@@ -334,7 +334,11 @@ footer {
   text-align: center;
   color: white !important;
 }
+.efecto{
+ background-color: #2ef3b0;
+}
 .efecto:hover{
   -webkit-transform: scale(1.5, 1.5);
   transform: scale(1.5, 1.5);
+  background-color: #06fda9;
 }
