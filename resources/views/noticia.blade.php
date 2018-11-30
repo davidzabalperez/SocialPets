@@ -15,7 +15,7 @@
                 <form method="POST" action="#" name="formulario" id="noticiaForm">
                   @csrf
                     <div class="form-group">
-                        <div class="icons" id="email-icon"></div>
+                        <div class="icons" id="noticia-icon"></div>
                          <textarea id="textoNoticia" class="form-control" name="textoNoticia" height="400" rows="6" cols="50">
                              
                          </textarea>
