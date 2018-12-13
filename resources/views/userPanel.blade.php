@@ -8,6 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="shortcut icon" href="/img/favicon (3).ico" />
+    <link rel="stylesheet" type="text/css" href="/css/feed.css">
 
     <title>Social Pets</title>
 
@@ -47,10 +48,7 @@
           </ul>
         <ul class="navbar-nav mr navbar">
            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#" data-toggle="modal" data-target="#myModal">Login <i class="fas fa-sign-in-alt"></i></a>
-            </li>
-           <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#">Register <i class="fas fa-user-circle"></i></a>
+              <a class="nav-link js-scroll-trigger" href="/">Logout <i class="fas fa-sign-in-alt"></i></a>
             </li>
         </ul>
         </div>
@@ -59,32 +57,44 @@
 
   <body id="page-top">
 
-
-       
-
-
 <section id="socialpets" class="about-section text-center">
 <br>
       <div class="container">
-        <br>
-        <div class="row">
-          <br>
-          <div class="col-lg-10 mx-auto">
-            <br>
-            <br><h3 class="text-white mb-4">Estas en el panel del usuario</h3>
-            <p class="text-white-50">Es una red social, para que tus mascotas conozcan a otras y puedan ser amigos. Nuestro objetivo es abarcar a una gran cantidad de mascotas, pero al ser un proyecto, trataremos con perros principalmente. </p>
-          </div>
+  <div class="row">
+    <div class="col-lg-3 col-sm-6">
+
+            <div class="card hovercard">
+                <div class="cardheader">
+
+                </div>
+                <div class="avatar">
+                    <img alt="" src="/img/perro-cuadrado.jpg">
+                </div>
+                <div class="info">
+                    <div class="title">
+                        <a target="_blank" href="https://scripteden.com/">Suri</a>
+                    </div>
+                    <div class="desc">6 años</div>
+                    <div class="desc">En su casa</div>
+                </div>
+                <div class="bottom">
+                    <a class="btn btn-primary btn-sm" rel="publisher"
+                       href="https://plus.google.com/shahnuralam">
+                        <i class="fa fa-facebook"></i>
+                    </a>
+                    <a class="btn btn-warning btn-sm" rel="publisher" href="https://plus.google.com/shahnuralam">
+                        <i class="fa fa-behance"></i>
+                    </a>
+                </div>
+            </div>
 
         </div>
-      </div>
+
+  </div>
+</div>
     </section>
- 
 
-   
-  
-
-    <!-- Footer -->
-  
+    <!-- Footer -->  
 
     <!-- Bootstrap core JavaScript -->
     <script src="jquery/jquery.min.js"></script>

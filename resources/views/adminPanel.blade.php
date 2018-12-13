@@ -46,10 +46,7 @@
           </ul>
         <ul class="navbar-nav mr navbar">
            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#" data-toggle="modal" data-target="#myModal">Login <i class="fas fa-sign-in-alt"></i></a>
-            </li>
-           <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#">Register <i class="fas fa-user-circle"></i></a>
+              <a class="nav-link js-scroll-trigger" href="/">Logout <i class="fas fa-sign-in-alt"></i></a>
             </li>
         </ul>
         </div>
