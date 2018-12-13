@@ -19,3 +19,7 @@ Route::get('/admin', 'SocialPetsController@getAdminIndex');
 Route::get('/user', 'SocialPetsController@getUserIndex');
 Route::get('/noticia', 'SocialPetsController@getNoticia');
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
