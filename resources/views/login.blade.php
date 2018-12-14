@@ -7,33 +7,57 @@
                 <div class="avatar">
                     <img src="/img/avatar.png" alt="Avatar">
                 </div>              
-                <h4 class="modal-title">Login</h4>   
+                <h4 class="modal-title">{{ __('Login') }}</h4>   
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
             </div>
             <div class="modal-body">
                 <div class="email">
-                <form method="POST" action="{{ URL::to('/UserPanel') }}" name="formulario" id="loginForm">
+                <form method="POST" action="{{ route('login') }}" name="formulario" id="loginForm">
                   @csrf
                     <div class="form-group">
-                        <div class="icons" id="email-icon"></div>
-                         <input type="text" id="email" class="form-control" name="username" placeholder="Email">
-                         
+                        <div class="icons" id="email-icon"><label for="email" class="col-sm-4 col-form-label text-md-right">{{ __('Email') }}</label></div>
+                        <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required autofocus>
+                        @if ($errors->has('email'))
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('email') }}</strong>
+                                    </span>
+                                @endif
                     </div>
                     <div class="form-group">
-                        <div class="icons" id="password-icon"></div>
-                        <input type="password" class="form-control" name="password" placeholder="Password"> 
-                    </div>      
+                        <div class="icons" id="password-icon">
+                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Contraseña') }}</label>
+                        </div>
+                        <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
+                        @if ($errors->has('password'))
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('password') }}</strong>
+                                    </span>
+                                @endif
+                        </div>
+                        <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
+
+                                    <label class="form-check-label" for="remember">
+                                        {{ __('Remember Me') }}
+                                    </label>
+                                </div>      
                     <div class="form-group">
-                        <button type="submit" id="boton" class="btn btn-primary btn-lg btn-block login-btn" >Login</button>
+
+                        <button type="submit" id="boton" class="btn btn-primary btn-lg btn-block login-btn" >{{ __('Login') }}</button>
+                        
                     </div>
                 </form>
                 </div>
             </div>
             <div class="modal-footer">
-                <a href="#">Forgot Password?</a>
+                                @if (Route::has('password.request'))
+                                    <a href="{{ route('password.request') }}">
+                                        {{ __('Forgot Your Password?') }}
+                                    </a>
+                                @endif
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>
 </div>
 <script src="/js/loginValidator.js"></script>
 <script src="/js/jquery.validate.js"></script>      
