@@ -82,7 +82,7 @@
 
     .icons{
         background-image: url("../sprite.png");
-        display: block;
+        display: inline-block;
         height: 33px;
         width: 36px;
         background-repeat: no-repeat;
