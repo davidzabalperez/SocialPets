@@ -13,16 +13,25 @@
     <script src="{{ asset('js/app.js') }}" defer></script>
 
     <!-- Fonts -->
+    <link rel="shortcut icon" href="/img/favicon (3).ico" />
+    <link rel="stylesheet" type="text/css" href="/css/feed.css">
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
+    <link href="fontawesome-free/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/grayscale.css" rel="stylesheet">
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
             <div class="container">
+                <a class="navbar-brand js-scroll-trigger" href="/"><img src="img/logo.png" alt="logo" width="120px;"></a>
                 <a class="navbar-brand" href="{{ url('/') }}">
                     {{ config('app.name', 'Laravel') }}
                 </a>
@@ -71,10 +80,48 @@
                 </div>
             </div>
         </nav>
+        <section id="socialpets" class="about-section text-center">
+<br>
+    <div class="container">
+  <div class="row">
+    <div class="col-lg-3 col-sm-6">
 
-        <main class="py-4">
-            @yield('content')
-        </main>
-    </div>
+            <div class="card hovercard">
+                <div class="cardheader">
+
+                </div>
+                <div class="avatar">
+                    <img alt="" src="/img/perro-cuadrado.jpg">
+                </div>
+                <div class="info">
+                    <div class="title">
+                        <a target="_blank" href="https://scripteden.com/">Suri</a>
+                    </div>
+                    <div class="desc">6 años</div>
+                    <div class="desc">En su casa</div>
+                </div>
+                <div class="bottom">
+                    <a class="btn btn-primary btn-sm" rel="publisher"
+                       href="https://plus.google.com/shahnuralam">
+                        <i class="fa fa-facebook"></i>
+                    </a>
+                    <a class="btn btn-warning btn-sm" rel="publisher" href="https://plus.google.com/shahnuralam">
+                        <i class="fa fa-behance"></i>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+  </div>
+</div>
+</section>
+<footer class="bg-black small text-center text-white-50">
+      <div class="container">
+         
+        Copyright &copy; Social Pets 2018
+      </div>
+</footer>
+        
 </body>
 </html>

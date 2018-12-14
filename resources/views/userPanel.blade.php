@@ -10,7 +10,7 @@
     <link rel="shortcut icon" href="/img/favicon (3).ico" />
     <link rel="stylesheet" type="text/css" href="/css/feed.css">
 
-    <title>Social Pets</title>
+    <title>Social Pets Home</title>
 
     <!-- Bootstrap core CSS -->
     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -59,7 +59,7 @@
 
 <section id="socialpets" class="about-section text-center">
 <br>
-      <div class="container">
+    <div class="container">
   <div class="row">
     <div class="col-lg-3 col-sm-6">
 
@@ -92,7 +92,7 @@
 
   </div>
 </div>
-    </section>
+</section>
 
     <!-- Footer -->  
 
@@ -106,10 +106,10 @@
     <!-- Custom scripts for this template -->
     <script src="js/grayscale.min.js"></script>
   </body>
-    <footer class="bg-black small text-center text-white-50">
+<footer class="bg-black small text-center text-white-50">
       <div class="container">
          
         Copyright &copy; Social Pets 2018
       </div>
-    </footer>
+</footer>
 </html>
