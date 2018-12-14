@@ -1,27 +1,30 @@
 $(document).ready(function() {
 		$("#registerForm").validate({
 			rules : {
-				username : {
+				name : {
+					required : true
+				},
+				email : {
 					required : true,
 					email: true
 				},
-
 				password : {
 					maxlength : 20,
 					minlength : 8,
 					required : true
 				},
-
 				repassword : {
 					maxlength : 20,
 					required : true,
 					equalTo : "#password"
 				}
-
 			}, //fin de las reglas, rules
 
 			messages : {
-				username : {
+				name : {
+					required : "Campo obligatorio"
+				},
+				email : {
 					required : "Campo obligatorio",
 					email: "Introduce un email válido"
 				},

@@ -13,8 +13,8 @@
 
 Route::get('/', 'SocialPetsController@getIndex');
 Route::post('/contact', 'SocialPetsController@store');
-Route::post('/UserPanel', 'SocialPetsController@getUserPanel');
-Route::get('/AdminPanel', 'SocialPetsController@getAdminPanel');
+//Route::get('/UserPanel', 'SocialPetsController@getUserPanel');
+//Route::get('/AdminPanel', 'SocialPetsController@getAdminPanel');
 Route::get('/admin', 'SocialPetsController@getAdminIndex');
 Route::get('/user', 'SocialPetsController@getUserIndex');
 Route::get('/noticia', 'SocialPetsController@getNoticia');
@@ -23,3 +23,10 @@ Route::get('/noticia', 'SocialPetsController@getNoticia');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/registro', function(){
+	return view('auth.register');
+});
+Route::get('/logear', function(){
+	return view('auth.login');
+});
