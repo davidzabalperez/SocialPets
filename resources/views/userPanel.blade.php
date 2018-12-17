@@ -26,43 +26,40 @@
   </head>
 
 
-<!-- NavBar -->
-    @include("layouts.navbar")
+    
   <body id="page-top">
-
+    <!-- NavBar -->
+    @include("layouts.navbar")
 <section id="socialpets" class="about-section text-center">
-<br>
-    <div class="container">
-  <div class="row">
-    <div class="col-lg-3 col-sm-6">
 
+  <div class="row">
+      @foreach($usuarios as $usuario)
+    <div class="col-lg-3 col-sm-6">
             <div class="card hovercard">
                 <div class="cardheader">
-
                 </div>
                 <div class="avatar">
                     <img alt="" src="/img/perro-cuadrado.jpg">
                 </div>
                 <div class="info">
                     <div class="title">
-                        <a target="_blank" href="https://scripteden.com/">Suri</a>
+                        <a target="_blank" href="">{{$usuario->name}}</a>
                     </div>
                     <div class="desc">6 años</div>
                     <div class="desc">En su casa</div>
                 </div>
                 <div class="bottom">
                     <a class="btn btn-primary btn-sm" rel="publisher"
-                       href="https://plus.google.com/shahnuralam">
-                        <i class="fa fa-facebook"></i>
+                       href="">
+                        <i class="fa fa-thumbs-up"></i>
                     </a>
-                    <a class="btn btn-warning btn-sm" rel="publisher" href="https://plus.google.com/shahnuralam">
-                        <i class="fa fa-behance"></i>
+                    <a class="btn btn-warning btn-sm" rel="publisher" href="">
+                        <i class="fa fa-thumbs-down"></i>
                     </a>
                 </div>
             </div>
-
         </div>
-
+    @endforeach
   </div>
 </div>
 </section>

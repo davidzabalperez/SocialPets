@@ -8,7 +8,7 @@
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 <link rel="stylesheet" type="text/css" href="css/grayscale.css" >
 
-<link rel="stylesheet" type="text/css" href="css/register-view.css" >
+<link rel="stylesheet" type="text/css" href="css/login-view.css" >
 <body>
     @include('layouts.navbarLoginRegister')
 <div class="container">
@@ -17,13 +17,12 @@
             <div id="output"></div>
             <div class="avatar"></div>
             <div class="form-box">
-                <form action="{{ route('register') }}" method="POST">
+                <form action="{{ route('login') }}" method="POST">
                     @csrf
-                    <input name="name" id="name" type="text" placeholder="Nombre">
                     <input name="email" id="email" type="text" placeholder="Email">
                     <input name="password" id="password" type="password" placeholder="Contraseña">
-                    <input name="password_confirmation" id="password-confirm" type="password" placeholder="Repite la contraseña">
-                    <button class="btn btn-info btn-block login" type="submit">Registrar</button>
+                    
+                    <button class="btn btn-info btn-block login" type="submit">Entrar</button>
                 </form>
             </div>
         </div>

@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\User;
 use App\SocialPets;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Redirect;
 
@@ -29,7 +30,11 @@ class SocialPetsController extends Controller
 	}
   
   public function getUserPanel(){
-    return view('userPanel');
+    $usuarios = User::all();
+
+    return view('userPanel')->with([
+      'usuarios'=>$usuarios
+    ]);
 
   }
   public function getAdminPanel(){
