@@ -24,9 +24,6 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/registro', function(){
-	return view('auth.register');
-});
-Route::get('/logear', function(){
-	return view('auth.login');
+Route::get('/algo', function(){
+	return view('register-view');
 });

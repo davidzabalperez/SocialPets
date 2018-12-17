@@ -58,14 +58,7 @@
               <a class="nav-link js-scroll-trigger" href="#contacto">Contacto</a>
             </li>
           </ul>
-        <ul class="navbar-nav mr navbar">
-           <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#" data-toggle="modal" data-target="#loginModal">Login <i class="fas fa-sign-in-alt"></i></a>
-            </li>
-           <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#" data-toggle="modal" data-target="#registroModal">Registro <i class="fas fa-user-circle"></i></a>
-            </li>
-        </ul>
+        @include('layouts.navbarLoginRegister')
         </div>
       </div>
     </nav>
