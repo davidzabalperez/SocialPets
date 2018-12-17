@@ -22,6 +22,8 @@ Route::get('/noticia', 'SocialPetsController@getNoticia');
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/registro', 'SocialPetsController@getRegister')->name('register-view');
+Route::get('/iniciar_sesion', 'SocialPetsController@getLogin')->name('login-view');
+
 
 
 Auth::routes();

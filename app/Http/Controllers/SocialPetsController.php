@@ -46,6 +46,9 @@ class SocialPetsController extends Controller
   public function getRegister(){
     return view('register-view');
   }
+  public function getLogin(){
+    return view('login-view');
+  }
 
 
     

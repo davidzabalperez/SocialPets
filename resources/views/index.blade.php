@@ -252,5 +252,5 @@ $('div.alert').delay(5000).slideUp(300);
   </body>
 
 </html>
-@include('login')
-@include('register')
+@include('loginModal')
+@include('registerModal')

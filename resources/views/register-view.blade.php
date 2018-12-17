@@ -8,7 +8,7 @@
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 <link rel="stylesheet" type="text/css" href="css/grayscale.css" >
 
-<link rel="stylesheet" type="text/css" href="css/register-view.css" >
+<link rel="stylesheet" type="text/css" href="css/RegisterLogin-view.css" >
 <body>
     @include('layouts.navbarLoginRegister')
 <div class="container">
