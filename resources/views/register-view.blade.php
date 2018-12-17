@@ -22,7 +22,7 @@
                     <input name="email" id="email" type="text" placeholder="Email">
                     <input name="password" id="password" type="password" placeholder="contraseña">
                     <input name="password_confirmation" id="password-confirm" type="password" placeholder="repite la contraseña">
-                    <button class="btn btn-info btn-block login" type="submit">Login</button>
+                    <button class="btn btn-info btn-block login" type="submit">Registrar</button>
                 </form>
             </div>
         </div>
