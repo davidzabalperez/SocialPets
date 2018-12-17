@@ -15,7 +15,7 @@
                 <form method="POST" action="{{ route('register') }}" name="registerForm" id="registerForm">
                   @csrf
                   <div class="form-group">
-                        <div class="icons" id="name-icon"></div>
+                        <i class="icons" id="name-icon"></i>
                          <input type="text" id="name" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ old('name') }}" placeholder="Nombre">
                          @if ($errors->has('name'))
                                     <span class="invalid-feedback" role="alert">
@@ -25,7 +25,7 @@
                          
                     </div>
                     <div class="form-group">
-                        <div class="icons" id="email-icon"></div>
+                        <i class="icons" id="email-icon"></i>
                          <input type="email" id="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" placeholder="Email">
                          @if ($errors->has('email'))
                                     <span class="invalid-feedback" role="alert">
@@ -35,7 +35,7 @@
                          
                     </div>
                     <div class="form-group">
-                        <div class="icons" id="password-icon"></div>
+                        <i class="icons" id="password-icon"></i>
                         <input type="password" id="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" placeholder="Contraseña">
                         @if ($errors->has('password'))
                                     <span class="invalid-feedback" role="alert">
@@ -44,7 +44,7 @@
                                 @endif 
                     </div> 
                     <div class="form-group">
-                        <div class="icons" id="password-icon"></div>
+                        <i class="icons" id="password-icon"></i>
                         <input type="password" id="password-confirm" class="form-control" name="password_confirmation" placeholder="Confirma la contraseña"> 
                     </div>       
                     <div class="form-group">
