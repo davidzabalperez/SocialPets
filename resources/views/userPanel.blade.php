@@ -27,34 +27,7 @@
 
 
 <!-- NavBar -->
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
-      <div class="container-fluid">
-        <a class="navbar-brand js-scroll-trigger" href="/"><img src="img/logo.png" alt="logo" width="120px;"></a>
-        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-          Menu
-          <i class="fas fa-bars"></i>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-          <ul class="navbar-nav mr-auto navbar">
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#socialpets">¿Qué es Social Pets?</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#caracteristicas">Caracteristicas</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#contacto">Contacto</a>
-            </li>
-          </ul>
-        <ul class="navbar-nav mr navbar">
-           <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="/">Logout <i class="fas fa-sign-in-alt"></i></a>
-            </li>
-        </ul>
-        </div>
-      </div>
-    </nav>
-
+    @include("layouts.navbar")
   <body id="page-top">
 
 <section id="socialpets" class="about-section text-center">
