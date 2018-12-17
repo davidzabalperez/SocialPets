@@ -1,7 +1,7 @@
 $(document).ready(function () {
   $('#loginForm').validate({ // initialize the plugin
     rules: {
-      username: {
+      email: {
         required: true,
         email: true
       },
@@ -10,7 +10,11 @@ $(document).ready(function () {
       }
 	},
     messages: {
-      username: "Introduce un email valido",
+      email: {
+      	required:"Introduce un email",
+      	email:"Introduce un email valido"
+
+      }
       password: "Introduce la contraseña"
     }
   });
