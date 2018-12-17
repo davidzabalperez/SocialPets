@@ -1,14 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registro</title>
+</head>
 <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-<link rel="stylesheet" type="text/css" href="css/register-view.css">
-<!------ Include the above in your HEAD tag ---------->
-<body>
-    <a class="navbar-brand js-scroll-trigger" href="/"><img src="img/logo.png" alt="logo" width="120px;"></a>
+<link rel="stylesheet" type="text/css" href="css/grayscale.css" >
 
+<link rel="stylesheet" type="text/css" href="css/register-view.css" >
+<body>
     @include('layouts.navbarLoginRegister')
 <div class="container">
-	<div class="login-container">
+
+    <div class="login-container">
             <div id="output"></div>
             <div class="avatar"></div>
             <div class="form-box">
@@ -24,3 +29,4 @@
         
 </div>
 </body>
+</html>

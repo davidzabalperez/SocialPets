@@ -29,7 +29,7 @@
   <body id="page-top">
 
 
-   @include('layouts.navbarLoginRegister')
+   @include('layouts.navbar')
 
     <!-- Header -->
     <header class="masthead">
