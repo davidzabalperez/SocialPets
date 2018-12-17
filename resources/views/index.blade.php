@@ -46,8 +46,9 @@
           Menu
           <i class="fas fa-bars"></i>
         </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-          <ul class="navbar-nav mr-auto navbar">
+        <div class="collapse navbar-collapse" id="navbarResponsive"> 
+        <ul class="navbar-nav mr-auto navbar">
+          @guest
             <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="#socialpets">¿Qué es Social Pets?</a>
             </li>
@@ -58,7 +59,39 @@
               <a class="nav-link js-scroll-trigger" href="#contacto">Contacto</a>
             </li>
           </ul>
+<<<<<<< HEAD
         @include('layouts.navbarLoginRegister')
+=======
+        <ul class="navbar-nav mr navbar">
+           <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#" data-toggle="modal" data-target="#loginModal">Login <i class="fas fa-sign-in-alt"></i></a>
+            </li>
+           <li class="nav-item">
+             @if (Route::has('register'))
+              <a class="nav-link js-scroll-trigger" href="#" data-toggle="modal" data-target="#registroModal">Registro <i class="fas fa-user-circle"></i></a>
+             @endif`
+            </li>
+            @else
+            <li class="nav-item dropdown">
+                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                    {{ Auth::user()->name }} <span class="caret"></span>
+                </a>
+
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="{{ route('logout') }}"
+                        onclick="event.preventDefault();
+                                      document.getElementById('logout-form').submit();">
+                        {{ __('Logout') }}
+                    </a>
+
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                        @csrf
+                    </form>
+                </div>
+            </li>
+            @endguest
+        </ul>
+>>>>>>> b4d3de23e69467158c666219b5972f62dfddfac1
         </div>
       </div>
     </nav>

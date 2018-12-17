@@ -50,14 +50,14 @@
                 </div>
             </div>
             <div class="modal-footer">
-                                @if (Route::has('password.request'))
-                                    <a href="{{ route('password.request') }}">
-                                        {{ __('Forgot Your Password?') }}
-                                    </a>
-                                @endif
-                    </div>
-                </div>
+                @if (Route::has('password.request'))
+                    <a href="{{ route('password.request') }}">
+                        {{ __('Forgot Your Password?') }}
+                    </a>
+                @endif
             </div>
+        </div>
+    </div>
 </div>
 <script src="/js/loginValidator.js"></script>
 <script src="/js/jquery.validate.js"></script>      
