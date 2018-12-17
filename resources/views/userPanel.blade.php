@@ -26,10 +26,10 @@
   </head>
 
 
-<!-- NavBar -->
-    @include("layouts.navbar")
+    
   <body id="page-top">
-
+    <!-- NavBar -->
+    @include("layouts.navbar")
 <section id="socialpets" class="about-section text-center">
 
   <div class="row">
