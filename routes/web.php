@@ -27,3 +27,6 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/algo', function(){
 	return view('register-view');
 });
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
