@@ -15,8 +15,8 @@
                 <form method="POST" action="{{ route('login') }}" name="formulario" id="loginForm">
                   @csrf
                     <div class="form-group">
-                        <div class="icons" id="email-icon"><label for="email" class="col-sm-4 col-form-label text-md-right">{{ __('Email') }}</label></div>
-                        <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required autofocus>
+                        <i class="icons" id="email-icon"></i>
+                        <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" placeholder="Email" required autofocus>
                         @if ($errors->has('email'))
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $errors->first('email') }}</strong>
@@ -24,10 +24,9 @@
                                 @endif
                     </div>
                     <div class="form-group">
-                        <div class="icons" id="password-icon">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Contraseña') }}</label>
-                        </div>
-                        <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
+                        <i class="icons" id="password-icon">
+                        </i>
+                        <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" placeholder="Contraseña" required>
                         @if ($errors->has('password'))
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $errors->first('password') }}</strong>

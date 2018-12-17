@@ -86,6 +86,7 @@
         height: 33px;
         width: 36px;
         background-repeat: no-repeat;
+        
     }
 
     #phone-icon{
@@ -93,11 +94,12 @@
 
     }
     #email-icon{
-        background-position: -843px -8px;
+        background-position: -844px -8px;
 
     }
     #password-icon{
-        background-position: -886px -84px;
+        background-position: -485px -82px;
+        margin-bottom: 5px;
 
     }
     #noticia-icon{
@@ -110,5 +112,5 @@
         background-position: -240px -161px;
     }
     #name-icon{
-        background-position: -119px -205px;
+        background-position: -123px -203px;
     }
