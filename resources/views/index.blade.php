@@ -37,7 +37,9 @@
         <div class="mx-auto text-center">
           <h1 class="mx-auto my-0 text-uppercase">Social Pets</h1>
           <h2 class="text-white-50 mx-auto mt-2 mb-5">La mejor comunidad de perros</h2>
+          @guest
           <a class="btn btn-primary js-scroll-trigger efecto" data-toggle="modal" data-target="#registroModal">¡Registrate!</a>
+          @endguest
         </div>
       </div>
     </header>
