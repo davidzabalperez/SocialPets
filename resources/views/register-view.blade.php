@@ -15,7 +15,8 @@
 
     <div class="login-container">
             <div id="output"></div>
-            <div class="avatar"></div>
+            <div class="avatar">
+            </div>
             <div class="form-box">
                 <form action="" method="">
                     <input name="name" id="name" type="text" placeholder="Nombre">
