@@ -342,3 +342,6 @@ footer {
   transform: scale(1.5, 1.5);
   background-color: #06fda9;
 }
+.card{
+  margin-left: 10%;
+}

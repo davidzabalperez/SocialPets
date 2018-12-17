@@ -51,10 +51,10 @@
                 <div class="bottom">
                     <a class="btn btn-primary btn-sm" rel="publisher"
                        href="">
-                        <i class="fa fa-facebook"></i>
+                        <i class="fa fa-thumbs-up"></i>
                     </a>
                     <a class="btn btn-warning btn-sm" rel="publisher" href="">
-                        <i class="fa fa-behance"></i>
+                        <i class="fa fa-thumbs-down"></i>
                     </a>
                 </div>
             </div>
