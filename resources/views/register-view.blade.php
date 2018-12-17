@@ -18,7 +18,7 @@
             <div class="avatar">
             </div>
             <div class="form-box">
-                <form action="" method="">
+                <form action="{{ route('register') }}" method="POST">
                     <input name="name" id="name" type="text" placeholder="Nombre">
                     <input name="email" id="email" type="text" placeholder="Email">
                     <input name="password" id="password" type="password" placeholder="contraseña">
