@@ -15,7 +15,7 @@ Route::get('/', 'SocialPetsController@getIndex');
 Route::post('/contact', 'SocialPetsController@store');
 Route::get('/UserPanel', 'SocialPetsController@getUserPanel');
 //Route::get('/AdminPanel', 'SocialPetsController@getAdminPanel');
-Route::get('/admin', 'SocialPetsController@getAdminIndex');
+Route::get('/admin', 'SocialPetsController@getAdminPanel');
 Route::get('/user', 'SocialPetsController@getUserIndex');
 Route::get('/noticia', 'SocialPetsController@getNoticia');
 
