@@ -14,8 +14,10 @@ $(document).ready(function () {
       	required:"Introduce un email",
       	email:"Introduce un email valido"
 
+      },
+      password: {
+      	required:"Introduce la contraseña"
       }
-      password: "Introduce la contraseña"
     }
   });
 
