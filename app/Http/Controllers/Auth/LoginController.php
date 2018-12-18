@@ -43,8 +43,5 @@ class LoginController extends Controller
         $user->password = Input::get('password');
 
         $user->save();
-
-        return Redirect::back()->withErrors(['msg', 'Opción mal']);
-        
     }
 }
