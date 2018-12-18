@@ -14,9 +14,9 @@ class AlterTableUser extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->integer('age');
-            $table->boolean('gender');
-            $table->string('race');
+            $table->integer('age')->nullable();
+            $table->boolean('gender')->nullable();
+            $table->string('race')->nullable();
         });
     }
 
