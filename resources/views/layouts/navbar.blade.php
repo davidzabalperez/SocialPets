@@ -8,7 +8,14 @@
             aria-hidden="true">&times;</button>
         {!! session()->get('success-message') !!} 
     </div>
-@endif
+          @endif
+          @if($errors->any())
+          <div class="alert alert-danger"><button type="button" 
+            class="close" 
+            data-dismiss="alert" 
+            aria-hidden="true">&times;</button>{{$errors->first()}}</div>
+          @endif
+ 
       <div class="container-fluid">
         <a class="navbar-brand js-scroll-trigger" href="#page-top"><img src="img/logo.png" alt="logo" width="120px;"></a>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">

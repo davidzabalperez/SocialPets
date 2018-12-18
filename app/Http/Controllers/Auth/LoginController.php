@@ -36,4 +36,15 @@ class LoginController extends Controller
     {
         $this->middleware('guest')->except('logout');
     }
+    public function store(Request $request) {
+        $user = new SocialPets;
+
+        $user->email = Input::get('email');
+        $user->password = Input::get('password');
+
+        $user->save();
+
+        return Redirect::back()->withErrors(['msg', 'Opción mal']);
+        
+    }
 }
