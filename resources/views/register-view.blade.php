@@ -44,8 +44,8 @@
                                         <strong>{{ $errors->first('password') }}</strong>
                                     </span>
                                 @endif 
-                    <button class="btn btn-info btn-block login" type="submit">Registrar</button><br>
-                    ¿Ya estás registrado? <a href="/iniciar_sesion">Inicia sesión</a>
+                    <button class="btn btn-info btn-block login" type="submit">Registrar</button>
+                    <p>¿Ya estás registrado? <a href="/iniciar_sesion">Inicia sesión</a></p>
                 </form>
             </div>
         </div>      
