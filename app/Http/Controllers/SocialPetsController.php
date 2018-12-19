@@ -53,6 +53,9 @@ class SocialPetsController extends Controller
   public function getProfile(){
     return view('profile');
   }
+  public function resetPassword(){
+    return view('resetPassword');
+  }
   public function changeProfile(Request $request){
     
     $user=User::find($equest->input('id'));
@@ -61,20 +64,5 @@ class SocialPetsController extends Controller
     return redirect('/home');
   }
 
-   public function mail(){
-
-    $user = User::find(1)->toArray();
-
-    Mail::send('emails.mailEvent', $user, function($message) use ($user) {
-
-        $message->to($user->email);
-
-        $message->subject('Mailgun Testing');
-
-    });
-
-    dd('Mail Send Successfully');
-
-  }
 
 }

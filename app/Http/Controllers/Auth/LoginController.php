@@ -44,4 +44,8 @@ class LoginController extends Controller
 
         $user->save();
     }
+    public function showLoginForm()
+    {
+        return view('login-view');
+    }
 }
