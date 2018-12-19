@@ -15,9 +15,11 @@
             data-dismiss="alert" 
             aria-hidden="true">&times;</button>{{$errors->first()}}</div>
           @endif
- 
+      
       <div class="container-fluid">
+      @guest
         <a class="navbar-brand js-scroll-trigger" href="#page-top"><img src="img/logo.png" alt="logo" width="120px;"></a>
+      @endguest
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           Menu
           <i class="fas fa-bars"></i>

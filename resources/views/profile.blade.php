@@ -48,7 +48,10 @@
                     <div class="desc">{{ Auth::user()->gender }}</div>
                     <div class="desc">{{ Auth::user()->race }}</div>
                 </div>
-                
+                <a class="btn btn-primary btn-sm" rel="publisher"
+                       href="">
+                        <i class="fa fa-thumbs-up"></i>
+                    </a>
             </div>
         </div>
      
