@@ -65,5 +65,5 @@
         </div>
     </div>
 </div>
-<script src="/js/registerValidator.js"></script>   
-<script src="/js/jquery.validate.js"></script>  
+<script src="/js/loginRegisterValidator.js"></script>   
+<script src="/js/jquery.validate.js"></script>   
