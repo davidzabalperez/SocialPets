@@ -49,7 +49,11 @@ class SocialPetsController extends Controller
   public function getLogin(){
     return view('login-view');
   }
+  public function getProfile(){
 
+    return view('profile');
+
+  }
 
     
 }

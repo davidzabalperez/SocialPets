@@ -23,7 +23,7 @@
                     <input name="name" id="name" type="text" placeholder="Nombre">
                     <input name="email" id="email" type="text" placeholder="Email">
                     <input name="password" id="password" type="password" placeholder="Contraseña">
-                    <input name="password_confirmation" id="password-confirm" type="password" placeholder="Repite la contraseña">
+                    <input name="password_confirmation" id="passwordConfirm" type="password" placeholder="Repite la contraseña">
                     <button class="btn btn-info btn-block login" type="submit">Registrar</button>
                 </form>
             </div>
@@ -31,4 +31,6 @@
         
 </div>
 </body>
+<script src="/js/jquery.validate.js"></script> 
+<script src="/js/registerValidator.js"></script>
 </html>
