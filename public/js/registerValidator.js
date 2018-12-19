@@ -13,7 +13,7 @@ $(document).ready(function() {
 					minlength : 8,
 					required : true
 				},
-				repassword : {
+				password-confirm : {
 					maxlength : 20,
 					required : true,
 					equalTo : "#password"
@@ -35,7 +35,7 @@ $(document).ready(function() {
 					required : "Campo obligatorio"
 				},
 
-				repassword : {
+				password-confirm : {
 					maxlength : "Máximo 20 caracteres",
 					required : "Campo obligatorio",
 					equalTo : "Las contraseñas no coinciden"
