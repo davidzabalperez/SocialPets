@@ -32,7 +32,7 @@ class SocialPetsController extends Controller
   public function getUserPanel(){
     $usuarios = User::all();
 
-    return view('userPanel')->with([
+    return view('profile')->with([
       'usuarios'=>$usuarios
     ]);
 
@@ -56,7 +56,7 @@ class SocialPetsController extends Controller
     $user=User::find($equest->input('id'));
     $user->name= $request->input('name');
     $user->save();
-    return redirect('/');
+    return redirect('/home');
   }
 
     

@@ -17,21 +17,11 @@
                     <div class="form-group">
                         <i class="icons" id="email-icon"></i>
                         <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" placeholder="Email" required autofocus>
-                        @if ($errors->has('email'))
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('email') }}</strong>
-                                    </span>
-                                @endif
                     </div>
                     <div class="form-group">
                         <i class="icons" id="password-icon">
                         </i>
                         <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" placeholder="Contraseña" required>
-                        @if ($errors->has('password'))
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('password') }}</strong>
-                                    </span>
-                                @endif
                         </div>
                         <div class="form-check">
                                     <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
@@ -58,5 +48,7 @@
         </div>
     </div>
 </div>
+
 <script src="/js/loginRegisterValidator.js"></script> 
 <script src="/js/jquery.validate.js"></script>      
+
