@@ -12,15 +12,20 @@
 <body>
     @include('layouts.navbarLoginRegister')
 <div class="container">
-
+@if($errors->any())
+          <div class="alert alert-danger"><button type="button" 
+            class="close" 
+            data-dismiss="alert" 
+            aria-hidden="true">&times;</button>{{$errors->first()}}</div>
+          @endif
     <div class="login-container">
             <div id="output"></div>
             <div class="avatar"></div>
             <div class="form-box">
                 <form action="{{ route('login') }}" method="POST">
                     @csrf
-                    <input name="email" id="email" type="text" placeholder="Email">
-                    <input name="password" id="password" type="password" placeholder="Contraseña">
+                     <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" placeholder="Email" required autofocus>
+                    <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" placeholder="Contraseña" required>
                     
                     <button class="btn btn-info btn-block login" type="submit">Entrar</button>
                 </form>
@@ -29,6 +34,6 @@
         
 </div>
 </body>
-<script src="/js/jquery.validate.js"></script> 
-<script src="/js/loginRegisterValidator.js"></script>
+<script src="/js/loginRegisterValidator.js"></script>   
+<script src="/js/jquery.validate.js"></script>   
 </html>
