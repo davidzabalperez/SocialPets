@@ -17,9 +17,9 @@
           @endif
       
       <div class="container-fluid">
-      @guest
+        @guest
         <a class="navbar-brand js-scroll-trigger" href="#page-top"><img src="img/logo.png" alt="logo" width="120px;"></a>
-      @endguest
+        @endguest
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           Menu
           <i class="fas fa-bars"></i>
@@ -48,6 +48,7 @@
              @endguest
             </li>
             @else
+            <a class="navbar-brand js-scroll-trigger" href="/UserPanel"><img src="img/logo.png" alt="logo" width="120px;"></a>
             <li class="nav-item dropdown">
                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                     {{ Auth::user()->name }} <span class="caret"></span>
