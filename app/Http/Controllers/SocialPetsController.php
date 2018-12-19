@@ -56,7 +56,7 @@ class SocialPetsController extends Controller
     $user=User::find($equest->input('id'));
     $user->name= $request->input('name');
     $user->save();
-    return redirect('/');
+    return redirect('/home');
   }
 
     
