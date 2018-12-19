@@ -9,7 +9,6 @@ $(document).ready(function() {
 					email:true
 				},
 				password_register : {
-					required: true,
 					maxlength:20,
 					minlength:8
 					
@@ -33,7 +32,6 @@ $(document).ready(function() {
 				},
 
 				password_register: {
-					required:"Campo obligatorio",
 					maxlength:"Máximo 20 caracteres",
 					minlength:"Mínimo de 8 carácteres"
 					
