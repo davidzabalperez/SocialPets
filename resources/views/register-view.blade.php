@@ -23,7 +23,8 @@
                     <input type="email" id="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" placeholder="Email">
                     <input type="password" id="password_register" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" placeholder="Contraseña">
                     <input type="password" id="passwordConfirm" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password_confirmation" placeholder="Confirma la contraseña">
-                    <button class="btn btn-info btn-block login" type="submit">Registrar</button>
+                    <button class="btn btn-info btn-block login" type="submit">Registrar</button><br>
+                    ¿Ya estás registrado? <a href="/iniciar_sesion">Inicia sesión</a>
                 </form>
             </div>
         </div>
@@ -32,4 +33,5 @@
 </body>
 <script src="/js/loginRegisterValidator.js"></script>   
 <script src="/js/jquery.validate.js"></script>
+
 </html>
