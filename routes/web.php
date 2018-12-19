@@ -32,6 +32,10 @@ Route::get('/profile', 'SocialPetsController@getProfile')->name('profile');
 
 Route::get('/changeProfile', 'SocialPetsController@changeProfile');
 
+Route::get('/profile', function () {
+    // Only verified users may enter...
+})->middleware('verified');
 
-//email
-Route::get('/register/verify/{code}', 'SocialPetsController@verify');
+
+
+Route::get('mail', 'SocialPetsController@mail');

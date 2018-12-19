@@ -56,13 +56,7 @@ class RegisterController extends Controller
         ]);
     }
 
-    /**
-     * Create a new user instance after a valid registration.
-     *
-     * @param  array  $data
-     * @return \App\User
-     */
-    protected function create(array $data)
+       protected function create(array $data)
     {
         return User::create([
             'name' => $data['name'],
@@ -71,3 +65,12 @@ class RegisterController extends Controller
         ]);
     }
 }
+
+    /**
+     * Create a new user instance after a valid registration.
+     *
+     * @param  array  $data
+     * @return \App\User
+     */
+
+

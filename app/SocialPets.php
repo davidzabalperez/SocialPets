@@ -8,4 +8,6 @@ class SocialPets extends Model
 {
     
     public $table = 'contact';
+
+ 
 }

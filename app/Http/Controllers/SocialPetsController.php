@@ -2,13 +2,12 @@
 
 namespace App\Http\Controllers;
 
-
 use App\User;
 use App\SocialPets;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Redirect;
-use Illuminate\Support\Facades\Mail;
+
 
 class SocialPetsController extends Controller
 {
@@ -62,16 +61,20 @@ class SocialPetsController extends Controller
     return redirect('/home');
   }
 
-    public function verify($code){
-    $user = User::where('confirmation_code', $code)->first();
+   public function mail(){
 
-    if (! $user)
-        return redirect('/login-view');
+    $user = User::find(1)->toArray();
 
-        $user->confirmed = true;
-        $user->confirmation_code = null;
-        $user->save();
+    Mail::send('emails.mailEvent', $user, function($message) use ($user) {
 
-    return redirect('/')->with('notification', 'Has confirmado correctamente tu correo!');
+        $message->to($user->email);
+
+        $message->subject('Mailgun Testing');
+
+    });
+
+    dd('Mail Send Successfully');
+
   }
+
 }
