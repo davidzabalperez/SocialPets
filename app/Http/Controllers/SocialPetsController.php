@@ -7,6 +7,7 @@ use App\SocialPets;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Mail;
 
 class SocialPetsController extends Controller
 {
@@ -59,5 +60,16 @@ class SocialPetsController extends Controller
     return redirect('/home');
   }
 
-    
+    public function verify($code){
+    $user = User::where('confirmation_code', $code)->first();
+
+    if (! $user)
+        return redirect('/login-view');
+
+        $user->confirmed = true;
+        $user->confirmation_code = null;
+        $user->save();
+
+    return redirect('/')->with('notification', 'Has confirmado correctamente tu correo!');
+  }
 }

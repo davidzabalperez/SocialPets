@@ -36,3 +36,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/profile', 'SocialPetsController@getProfile')->name('profile');
 
 Route::get('/changeProfile', 'SocialPetsController@changeProfile');
+
+
+//email
+Route::get('/register/verify/{code}', 'SocialPetsController@verify');

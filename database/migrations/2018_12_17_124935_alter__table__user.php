@@ -17,6 +17,8 @@ class AlterTableUser extends Migration
             $table->integer('age')->nullable();
             $table->boolean('gender')->nullable();
             $table->string('race')->nullable();
+            $table->boolean('confirmed')->default(0);
+            $table->string('confirmation_code')->nullable();
         });
     }
 
