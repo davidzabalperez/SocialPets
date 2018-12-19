@@ -13,7 +13,7 @@
 
 Route::get('/', 'SocialPetsController@getIndex');
 Route::post('/contact', 'SocialPetsController@store');
-Route::get('/UserPanel', 'SocialPetsController@getUserPanel');
+Route::get('/UserPanel', 'SocialPetsController@getUserPanel')->middleware('auth');
 //Route::get('/AdminPanel', 'SocialPetsController@getAdminPanel');
 Route::get('/admin', 'SocialPetsController@getAdminPanel');
 Route::get('/user', 'SocialPetsController@getUserIndex');
