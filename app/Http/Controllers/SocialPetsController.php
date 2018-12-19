@@ -50,9 +50,13 @@ class SocialPetsController extends Controller
     return view('login-view');
   }
   public function getProfile(){
-
     return view('profile');
-
+  }
+  public function changeProfile(Request $request){
+    $user=User::find($equest->input('id'));
+    $user->name= $request->input('name');
+    $user->save();
+    return redirect('/');
   }
 
     

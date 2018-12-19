@@ -36,4 +36,4 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/profile', 'SocialPetsController@getProfile')->name('profile');
 
-Route::get('/profile', 'SocialPetsController@changeProfile')->name('profile');
+Route::get('/changeProfile', 'SocialPetsController@changeProfile');

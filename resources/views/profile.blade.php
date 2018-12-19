@@ -36,15 +36,12 @@
      
     <div class="col-lg-3 col-sm-6">
             <div class="card hovercard">
-            <form action="changeProfile" method="post">
+            <form action="/changeProfile" method="post">
                         @csrf
                     <input type="hidden" name="id" value="{{ Auth::user()->id }}">
                     <input type="text" name="name" id="name" value="{{ Auth::user()->name }}">
                     <button type="submit" class="btn btn-primary">cambiar nombre</button>
                     <br>
-                    <br>
-                    <input type="text" name="email" id="email" value="{{ Auth::user()->email }}">
-                    <button type="submit" class="btn btn-primary">cambiar email</button>
                     </form>
                 </div>
             </div>
