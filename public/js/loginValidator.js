@@ -36,7 +36,6 @@ $(document).ready(function () {
 		document.formulario.username.focus();
 		return false;
 	}
-
 	{{ URL::to('/login') }}
 }*/
 
@@ -59,7 +58,6 @@ numeroTlf.oninput = function(){
 	if(validarNumero(this.value)){
 		this.style.color = "green";
 		boton.disabled=false;
-
 	}else{
 		this.style.color = "red";
 		boton.disabled=true;

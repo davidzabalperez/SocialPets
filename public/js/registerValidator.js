@@ -2,43 +2,49 @@ $(document).ready(function() {
 		$("#registerForm").validate({
 			rules : {
 				name : {
-					required : true
+					required:true
 				},
 				email : {
-					required : true,
-					email: true
+					required:true,
+					email:true
 				},
-				password : {
-					maxlength : 20,
-					minlength : 8,
-					required : true
+				password_register : {
+					required: true,
+					maxlength:20,
+					minlength:8
+					
 				},
-				repassword : {
-					maxlength : 20,
-					required : true,
-					equalTo : "#password"
+				password_confirmation : {
+					required: '#password_register',
+					equalTo:'#password_register',
+					maxlength:20,
+					minlength:8
+					
 				}
 			}, //fin de las reglas, rules
 
 			messages : {
 				name : {
-					required : "Campo obligatorio"
+					required:"Campo obligatorio"
 				},
 				email : {
-					required : "Campo obligatorio",
-					email: "Introduce un email válido"
+					required:"Campo obligatorio",
+					email:"Introduce un email válido"
 				},
 
-				password : {
-					maxlength : "Máximo 20 caracteres",
-					minlength : "Mínimo de 8 carácteres",
-					required : "Campo obligatorio"
+				password_register: {
+					required:"Campo obligatorio",
+					maxlength:"Máximo 20 caracteres",
+					minlength:"Mínimo de 8 carácteres"
+					
 				},
 
-				repassword : {
+				password_confirmation : {
+					required:"Campo obligatorio",
+					equalTo : "Las contraseñas no coinciden",
 					maxlength : "Máximo 20 caracteres",
-					required : "Campo obligatorio",
-					equalTo : "Las contraseñas no coinciden"
+					minlength:"Mínimo de 8 carácteres"
+					
 				}
 			}, //fin de los mensajes
 
@@ -56,18 +62,15 @@ $(document).ready(function() {
 		document.formulario.username.focus();
 		return false;
 	}
-
 	{{ URL::to('/login') }}
 }*/
 
 /*var inputEmail = document.getElementById("email");
 var boton = document.getElementById("boton");
-
 inputEmail.oninput = function(){
 	if(validarEmail(this.value)){
 		this.style.color = "green";
 		
-
 	}else{
 		this.style.color = "red";
 		boton.disabled=true;
@@ -79,7 +82,6 @@ numeroTlf.oninput = function(){
 	if(validarNumero(this.value)){
 		this.style.color = "green";
 		boton.disabled=false;
-
 	}else{
 		this.style.color = "red";
 		boton.disabled=true;
@@ -94,21 +96,16 @@ function validarEmail(email){
 		email.includes(".") && 
 		email.length > 2 && 
 		email.indexOf(" ") == -1 &&
-
 		email.indexOf("@") == email.lastIndexOf("@") &&
 		email.indexOf("@") < email.lastIndexOf(".") && 
-
 		email.lastIndexOf(".")+2 < email.length && 
 		email.lastIndexOf(".")+7 > email.length &&
 		email.lastIndexOf(".") - email.lastIndexOf("@") > 1
 		){
-
 		 
 		return true;
-
 		}
 	return false;
-
 }*/
 /*function validarNumero(numero){
 	numero.trim();
@@ -118,4 +115,3 @@ function validarEmail(email){
 		return false;
 	}
 }*/
-	

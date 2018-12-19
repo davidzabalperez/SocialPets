@@ -36,7 +36,7 @@
                     </div>
                     <div class="form-group">
                         <i class="icons" id="password-icon"></i>
-                        <input type="password" id="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" placeholder="Contraseña">
+                        <input type="password" id="password_register" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" placeholder="Contraseña">
                         @if ($errors->has('password'))
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $errors->first('password') }}</strong>
@@ -45,7 +45,13 @@
                     </div> 
                     <div class="form-group">
                         <i class="icons" id="password-icon"></i>
-                        <input type="password" id="password-confirm" class="form-control" name="password_confirmation" placeholder="Confirma la contraseña"> 
+                        <input type="password" id="passwordConfirm" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password_confirmation" placeholder="Confirma la contraseña">
+                         @if ($errors->has('password'))
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('password') }}</strong>
+                                    </span>
+                                @endif 
+
                     </div>       
                     <div class="form-group">
                         <button type="submit" id="boton" class="btn btn-primary btn-lg btn-block login-btn" >Registrarse</button>
@@ -60,4 +66,4 @@
     </div>
 </div>
 <script src="/js/registerValidator.js"></script>   
-<script src="/js/jquery.validate.js"></script>   
+<script src="/js/jquery.validate.js"></script>  

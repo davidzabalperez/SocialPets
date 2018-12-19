@@ -59,4 +59,4 @@
     </div>
 </div>
 <script src="/js/loginValidator.js"></script>
-<script src="/js/jquery.validate.js"></script>      
+<script src="/js/jquery.validate.js"></script>
