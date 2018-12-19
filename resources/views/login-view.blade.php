@@ -13,10 +13,7 @@
     @include('layouts.navbarLoginRegister')
 <div class="container">
 @if($errors->any())
-          <div class="alert alert-danger"><button type="button" 
-            class="close" 
-            data-dismiss="alert" 
-            aria-hidden="true">&times;</button>{{$errors->first()}}</div>
+          <div class="alert alert-danger">{{$errors->first()}}</div>
           @endif
     <div class="login-container">
             <div id="output"></div>
@@ -35,5 +32,8 @@
 </div>
 </body>
 <script src="/js/loginRegisterValidator.js"></script>   
-<script src="/js/jquery.validate.js"></script>   
+<script src="/js/jquery.validate.js"></script>
+<script>
+$('div.alert').delay(5000).slideUp(300);
+</script>   
 </html>
