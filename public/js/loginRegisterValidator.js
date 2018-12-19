@@ -48,7 +48,29 @@ $(document).ready(function() {
 				}
 			}, //fin de los mensajes
 
-		}); //fin validate
+		});
+		  $('#loginForm').validate({ // initialize the plugin
+    rules: {
+      email: {
+        required: true,
+        email: true
+      },
+      password: {
+      	required: true
+      }
+	},
+    messages: {
+      email: {
+      	required:"Introduce un email",
+      	email:"Introduce un email valido"
+
+      },
+      password: {
+      	required:"Introduce la contraseña"
+      }
+    }
+  });
+ //fin validate
 	}); //fin ready
 
 /*function ValidateEmail(email){
