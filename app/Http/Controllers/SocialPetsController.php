@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+
 use App\User;
 use App\SocialPets;
 use Illuminate\Http\Request;
@@ -54,6 +55,7 @@ class SocialPetsController extends Controller
     return view('profile');
   }
   public function changeProfile(Request $request){
+    
     $user=User::find($equest->input('id'));
     $user->name= $request->input('name');
     $user->save();

@@ -33,8 +33,29 @@
 <section id="socialpets" class="about-section text-center">
 
   <div class="row">
+  <div class="col-lg-3 col-sm-6">
+            <div class="card hovercard">
+                <div class="cardheader">
+                </div>
+                <div class="avatar">
+                    <img alt="" src="/img/perro-cuadrado.jpg">
+                </div>
+                <div class="info">
+                    <div class="title">
+                        <div>{{ Auth::user()->name }}</div>
+                    </div>
+                    <div class="desc">{{ Auth::user()->age }}</div>
+                    <div class="desc">{{ Auth::user()->gender }}</div>
+                    <div class="desc">{{ Auth::user()->race }}</div>
+                </div>
+                <a class="btn btn-primary btn-sm" rel="publisher"
+                       href="">
+                        <i class="fa fa-thumbs-up"></i>
+                    </a>
+            </div>
+        </div>
      
-    <div class="col-lg-3 col-sm-6">
+    <!-- <div class="col-lg-3 col-sm-6">
             <div class="card hovercard">
             <form action="/changeProfile" method="post">
                         @csrf
@@ -45,7 +66,7 @@
                     </form>
                 </div>
             </div>
-        </div>
+        </div> -->
     
   </div>
 </div>
