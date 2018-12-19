@@ -29,4 +29,6 @@
         
 </div>
 </body>
+<script src="/js/jquery.validate.js"></script> 
+<script src="/js/loginRegisterValidator.js"></script>
 </html>

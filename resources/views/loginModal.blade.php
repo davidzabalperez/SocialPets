@@ -58,5 +58,5 @@
         </div>
     </div>
 </div>
-<script src="/js/loginValidator.js"></script>
+<script src="/js/loginRegisterValidator.js"></script> 
 <script src="/js/jquery.validate.js"></script>      
