@@ -20,10 +20,10 @@
             <div class="form-box">
                 <form action="{{ route('register') }}" method="POST">
                     @csrf
-                    <input name="name" id="name" type="text" placeholder="Nombre">
-                    <input name="email" id="email" type="text" placeholder="Email">
-                    <input name="password" id="password" type="password" placeholder="Contraseña">
-                    <input name="password_confirmation" id="passwordConfirm" type="password" placeholder="Repite la contraseña">
+                    <input type="text" id="name" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ old('name') }}" placeholder="Nombre">
+                    <input type="email" id="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" placeholder="Email">
+                    <input type="password" id="password_register" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" placeholder="Contraseña">
+                    <input type="password" id="passwordConfirm" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password_confirmation" placeholder="Confirma la contraseña">
                     <button class="btn btn-info btn-block login" type="submit">Registrar</button>
                 </form>
             </div>
@@ -31,6 +31,6 @@
         
 </div>
 </body>
-<script src="/js/jquery.validate.js"></script> 
-<script src="/js/loginRegisterValidator.js"></script>
+<script src="/js/loginRegisterValidator.js"></script>   
+<script src="/js/jquery.validate.js"></script>
 </html>
