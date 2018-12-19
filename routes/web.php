@@ -28,6 +28,6 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/profile', 'SocialPetsController@getProfile')->name('profile');
+Route::get('/profile', 'SocialPetsController@getProfile')->name('profile')->middleware('auth');
 
 Route::get('/changeProfile', 'SocialPetsController@changeProfile');
