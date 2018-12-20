@@ -30,7 +30,6 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/profile', 'SocialPetsController@getProfile')->name('profile')->middleware('verified');
 
-Route::get('/changeProfile', 'SocialPetsController@changeProfile');
 Route::get('/resetPassword', 'SocialPetsController@resetPassword');
 Route::post('/changeProfile', [
     'as'=>'changeProfile',
