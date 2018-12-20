@@ -54,7 +54,7 @@ class SocialPetsController extends Controller
     return view('profile');
   }
   public function resetPassword(){
-    return view('resetPassword');
+    return view('resetPasswordbtn btn-light');
   }
   public function changeProfile(Request $request){
     
