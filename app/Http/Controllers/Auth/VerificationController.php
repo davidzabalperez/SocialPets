@@ -17,7 +17,6 @@ class VerificationController extends Controller
     | be re-sent if the user didn't receive the original email message.
     |
     */
-    Auth::routes(['verify' => true]);
 
     use VerifiesEmails;
 
@@ -26,7 +25,7 @@ class VerificationController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/login-view';
+    protected $redirectTo = 'iniciar_sesion';
 
     /**
      * Create a new controller instance.

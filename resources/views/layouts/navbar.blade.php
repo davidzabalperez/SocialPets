@@ -1,5 +1,5 @@
     <!-- NavBar -->
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top " id="mainNav">
           @if(Session::has('success-message'))
     <div class="alert alert-success"> 
         <button type="button" 
@@ -25,7 +25,7 @@
           <i class="fas fa-bars"></i>
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive"> 
-        <ul class="navbar-nav mr-auto navbar">
+        <ul class="navbar-nav mr-auto navbar ">
           @guest
             <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="#socialpets">¿Qué es Social Pets?</a>
