@@ -36,5 +36,9 @@ Route::post('/changeProfile', [
     'as'=>'changeProfile',
     'uses'=>'SocialPetsController@changeProfile'
 ]);
+Route::post('/changePassword', [
+    'as'=>'changePassword',
+    'uses'=>'HomeController@changePassword'
+]);
 
 Auth::routes(['verify' => true]);

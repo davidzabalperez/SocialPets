@@ -56,11 +56,13 @@ class SocialPetsController extends Controller
   public function resetPassword(){
     return view('resetPasswordbtn btn-light');
   }
+
   public function changeProfile(Request $request){
     
     $user=User::find($request->input('id'));
     $user->name = $request->input('name');
     $user->email = $request->input('email');
+    $user->password = $request->input('password');
     $user->save();
     return redirect('/profile');
   }
