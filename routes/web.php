@@ -13,7 +13,7 @@
 
 Route::get('/', 'SocialPetsController@getIndex');
 Route::post('/contact', 'SocialPetsController@store');
-Route::get('/UserPanel', 'SocialPetsController@getUserPanel')->middleware('auth');
+Route::get('/UserPanel', 'SocialPetsController@getUserPanel');
 //Route::get('/AdminPanel', 'SocialPetsController@getAdminPanel');
 Route::get('/admin', 'SocialPetsController@getAdminPanel');
 Route::get('/user', 'SocialPetsController@getUserIndex');
@@ -28,17 +28,14 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/profile', 'SocialPetsController@getProfile')->name('profile')->middleware('auth');
+Route::get('/profile', 'SocialPetsController@getProfile')->name('profile');
 
 Route::get('/changeProfile', 'SocialPetsController@changeProfile');
 
-
-Route::get('profile', function () {
-    // Only verified users may enter...
-})->middleware('verified');
+Route::get('email/verify', 'Auth\VerificationController@show')->name('verification.notice');
+Route::get('email/verify/{id}', 'Auth\VerificationController@verify')->name('verification.verify');
+Route::get('email/resend', 'Auth\VerificationController@resend')->name('verification.resend');
 
 
 
 Route::get('mail', 'SocialPetsController@mail');
-
-Route::get('/resetPassword', 'SocialPetsController@resetPassword');

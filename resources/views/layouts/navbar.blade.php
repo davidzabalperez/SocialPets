@@ -60,7 +60,7 @@
                                       document.getElementById('logout-form').submit();">
                         {{ __('Logout') }}
                     </a>
-                    <a class="dropdown-item" href="{{ route('profile') }}"><span class="fa fa-address-card">
+                    <a class="dropdown-item" href=""><span class="fa fa-address-card">
                         {{ __('Profile') }}
                     </a>
 
