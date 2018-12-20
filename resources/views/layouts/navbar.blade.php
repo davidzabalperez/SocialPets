@@ -56,6 +56,10 @@
 
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
 
+                     <a class="dropdown-item" href="{{ route('UserPanel') }}"><span class="fa fa-paw">
+                            {{ __('Home') }}
+                        </a> 
+
                     <a class="dropdown-item" href="{{ route('profile') }}"><span class="fa fa-address-card">
                             {{ __('Profile') }}
                         </a>    

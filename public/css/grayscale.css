@@ -159,6 +159,7 @@
   font-family: 'Varela Round';
   font-size: 80%;
   text-transform: uppercase;
+  border: none;
 }
 
 .btn-primary {
