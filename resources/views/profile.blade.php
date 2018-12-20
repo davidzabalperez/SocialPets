@@ -48,30 +48,38 @@
                     <div class="desc">{{ Auth::user()->gender }}</div>
                     <div class="desc">{{ Auth::user()->race }}</div>
                 </div>
-                <a class="btn btn-primary btn-sm" rel="publisher"
-                       href="">
-                        <i class="fa fa-thumbs-up"></i>
-                    </a>
+                <a class="btn btn-light" rel="publisher" data-toggle="modal" data-target="#editProfileModal">
+                    <i class="fa fa-cogs"></i>
+                </a>
             </div>
-        </div>
-     
-    <!-- <div class="col-lg-3 col-sm-6">
-            <div class="card hovercard">
-            <form action="/changeProfile" method="post">
-                        @csrf
-                    <input type="hidden" name="id" value="{{ Auth::user()->id }}">
-                    <input type="text" name="name" id="name" value="{{ Auth::user()->name }}">
-                    <button type="submit" class="btn btn-primary">cambiar nombre</button>
-                    <br>
-                    </form>
-                </div>
-            </div>
-        </div> -->
-    
+        </div>    
   </div>
 </div>
 </section>
-
+<div id="editProfileModal" class="modal fade">
+    <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Editar perfil de usuario</h4>
+      </div>
+      <div class="modal-body">
+        
+        <form action="changeProfile" method="post">
+                @csrf
+            <input type="hidden" name="id" value="{{ Auth::user()->id }}">
+            <input type="text" name="name" id="name" value="{{ Auth::user()->name }}">
+            <button type="submit" class="btn btn-primary">cambiar nombre</button>
+            <br>
+            <br>
+            <input type="text" name="email" id="email" value="{{ Auth::user()->email }}">
+            <button type="submit" class="btn btn-primary">cambiar email</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
     <!-- Footer -->  
 
     <!-- Bootstrap core JavaScript -->

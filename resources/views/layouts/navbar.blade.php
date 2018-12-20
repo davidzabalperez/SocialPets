@@ -1,5 +1,5 @@
     <!-- NavBar -->
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top " id="mainNav">
           @if(Session::has('success-message'))
     <div class="alert alert-success"> 
         <button type="button" 
@@ -25,7 +25,7 @@
           <i class="fas fa-bars"></i>
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive"> 
-        <ul class="navbar-nav mr-auto navbar">
+        <ul class="navbar-nav mr-auto navbar ">
           @guest
             <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="#socialpets">¿Qué es Social Pets?</a>
@@ -55,6 +55,16 @@
                 </a>
 
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+
+                    <a class="dropdown-item" href="{{ route('logout') }}"
+                        onclick="event.preventDefault();
+                                      document.getElementById('logout-form').submit();">
+                        {{ __('Logout') }}
+                    </a>
+                    <a class="dropdown-item" href=""><span class="fa fa-address-card">
+                        {{ __('Profile') }}
+                    </a>
+
                   <a class="dropdown-item" href="{{ route('profile') }}"><span class="fa fa-address-card">
                           {{ __('Profile') }}
                       </a>    
@@ -64,6 +74,7 @@
                     <span class="fa fa-sign-out">
                           {{ __('Logout') }}
                       </a>
+
 
                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                         @csrf

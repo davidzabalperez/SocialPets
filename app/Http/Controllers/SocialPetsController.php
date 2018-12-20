@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers;
 
-
 use App\User;
 use App\SocialPets;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Redirect;
+
 
 class SocialPetsController extends Controller
 {
@@ -54,18 +54,14 @@ class SocialPetsController extends Controller
     return view('profile');
   }
   public function resetPassword(){
-    return view('resetPassword');
+    return view('resetPasswordbtn btn-light');
   }
   public function changeProfile(Request $request){
     
-    $user=User::find($equest->input('id'));
-    $user->name= $request->input('name');
+    $user=User::find($request->input('id'));
+    $user->name = $request->input('name');
+    $user->email = $request->input('email');
     $user->save();
-    return redirect('/home');
+    return redirect('/profile');
   }
-  public function sendmail(){
-   $user = Auth::user();
-   \Mail::to($user)->send(new Welcome);
-   return redirect()->home();
-}    
 }

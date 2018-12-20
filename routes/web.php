@@ -30,9 +30,11 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/profile', 'SocialPetsController@getProfile')->name('profile')->middleware('verified');
 
-Route::get('/changeProfile', 'SocialPetsController@changeProfile');
 Route::get('/resetPassword', 'SocialPetsController@resetPassword');
 
-Auth::routes(['verify' => true]);
+Route::post('/changeProfile', [
+    'as'=>'changeProfile',
+    'uses'=>'SocialPetsController@changeProfile'
+]);
 
-Route::get('sendMail', 'MailController@index');
+Auth::routes(['verify' => true]);
