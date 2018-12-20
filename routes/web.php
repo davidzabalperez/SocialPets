@@ -32,8 +32,6 @@ Route::get('/profile', 'SocialPetsController@getProfile')->name('profile')->midd
 
 Route::get('/resetPassword', 'SocialPetsController@resetPassword');
 
-
-
 Route::post('/changeProfile', [
     'as'=>'changeProfile',
     'uses'=>'SocialPetsController@changeProfile'

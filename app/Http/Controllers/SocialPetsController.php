@@ -64,6 +64,4 @@ class SocialPetsController extends Controller
     $user->save();
     return redirect('/profile');
   }
-
-
 }
