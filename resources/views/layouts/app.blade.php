@@ -15,15 +15,16 @@
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
+    <link href="../../css/grayscale.css" rel="stylesheet">
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
-    <div id="app">
+    <div id="app" class="masthead">
 
         @include('layouts.navbarLoginRegister')
-        <main class="py-4">
+        <main class="py-5">
             @yield('content')
         </main>
     </div>
