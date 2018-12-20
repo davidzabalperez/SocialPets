@@ -56,23 +56,30 @@
   </div>
 </div>
 </section>
-    <div id="editProfileModal" class="modal fade">
+<div id="editProfileModal" class="modal fade">
     <div class="modal-dialog">
-    
     <!-- Modal content-->
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">Modal Header</h4>
+        <h4 class="modal-title">Editar perfil de usuario</h4>
       </div>
       <div class="modal-body">
-        <p>Some text in the modal.</p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        
+        <form action="changeProfile" method="post">
+                @csrf
+            <input type="hidden" name="id" value="{{ Auth::user()->id }}">
+            <input type="text" name="name" id="name" value="{{ Auth::user()->name }}">
+            <button type="submit" class="btn btn-primary">cambiar nombre</button>
+            <br>
+            <br>
+            <input type="text" name="email" id="email" value="{{ Auth::user()->email }}">
+            <button type="submit" class="btn btn-primary">cambiar email</button>
+        </form>
       </div>
     </div>
-
+  </div>
+</div>
     <!-- Footer -->  
 
     <!-- Bootstrap core JavaScript -->
