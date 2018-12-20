@@ -13,7 +13,7 @@
 
 Route::get('/', 'SocialPetsController@getIndex');
 Route::post('/contact', 'SocialPetsController@store');
-Route::get('/UserPanel', 'SocialPetsController@getUserPanel')->middleware('auth');
+Route::get('/UserPanel', 'SocialPetsController@getUserPanel')->middleware('verified');
 //Route::get('/AdminPanel', 'SocialPetsController@getAdminPanel');
 Route::get('/admin', 'SocialPetsController@getAdminPanel');
 Route::get('/user', 'SocialPetsController@getUserIndex');
@@ -28,7 +28,9 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/profile', 'SocialPetsController@getProfile')->name('profile')->middleware('auth');
+Route::get('/profile', 'SocialPetsController@getProfile')->name('profile')->middleware('verified');
 
 Route::get('/changeProfile', 'SocialPetsController@changeProfile');
 Route::get('/resetPassword', 'SocialPetsController@resetPassword');
+
+Auth::routes(['verify' => true]);
