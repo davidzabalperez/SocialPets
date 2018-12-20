@@ -25,7 +25,7 @@ class VerificationController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = 'iniciar_sesion';
+    protected $redirectTo = '/profile';
 
     /**
      * Create a new controller instance.
