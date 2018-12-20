@@ -58,10 +58,11 @@ class SocialPetsController extends Controller
   }
   public function changeProfile(Request $request){
     
-    $user=User::find($equest->input('id'));
-    $user->name= $request->input('name');
+    $user=User::find($request->input('id'));
+    $user->name = $request->input('name');
+    $user->email = $request->input('email');
     $user->save();
-    return redirect('/home');
+    return redirect('/profile');
   }
 
     
