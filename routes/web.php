@@ -34,3 +34,5 @@ Route::get('/changeProfile', 'SocialPetsController@changeProfile');
 Route::get('/resetPassword', 'SocialPetsController@resetPassword');
 
 Auth::routes(['verify' => true]);
+
+Route::get('sendMail', 'MailController@index');

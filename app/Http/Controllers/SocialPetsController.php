@@ -63,6 +63,9 @@ class SocialPetsController extends Controller
     $user->save();
     return redirect('/home');
   }
-
-    
+  public function sendmail(){
+   $user = Auth::user();
+   \Mail::to($user)->send(new Welcome);
+   return redirect()->home();
+}    
 }
