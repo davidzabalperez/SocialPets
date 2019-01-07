@@ -29,7 +29,7 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/profile', 'SocialPetsController@getProfile')->name('profile')->middleware('verified');
-
+Route::post('profile', 'SocialPetsController@update_avatar');
 Route::get('/mensajes', 'SocialPetsController@getMensajess')->name('mensajes')->middleware('verified');
 
 Route::get('/resetPassword', 'SocialPetsController@resetPassword');
