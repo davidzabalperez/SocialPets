@@ -38,7 +38,7 @@
                 <div class="cardheader">
                 </div>
                 <div class="avatar">
-                    <img class="rounded-circle" src="/storage/avatars/{{ $user->avatar }}" />
+                    <img src="/storage/avatars/{{ $user->avatar }}" />
                 </div>
                 <div class="info">
                 <div class="profile-header-container">
@@ -129,22 +129,22 @@
                   </button>
               </div>
           </div>
-</form>
-<div class="row justify-content-center">
-            <form action="/profile" method="post" enctype="multipart/form-data">
-                @csrf
-                <div class="form-group">
-                    Cambiar imagen de perfil:
-                    <input type="file" class="form-control-file" name="avatar" id="avatarFile" aria-describedby="fileHelp">
-                    <small id="fileHelp" class="form-text text-muted"></small>
+    </form>
+        <div class="modal-body">
+                    <form action="/profile" method="post" enctype="multipart/form-data">
+                        @csrf
+                        <div class="form-group">
+                            Cambiar imagen de perfil:
+                            <input type="file" class="form-control-file" name="avatar" id="avatarFile" aria-describedby="fileHelp">
+                            <small id="fileHelp" class="form-text text-muted"></small>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
                 </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
-            </form>
+            </div>
+            </div>
         </div>
-      </div>
-    </div>
-  </div>
-</div>
+        </div>
     <!-- Footer -->  
 
     <!-- Bootstrap core JavaScript -->
