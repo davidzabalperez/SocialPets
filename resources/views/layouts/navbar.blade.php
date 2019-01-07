@@ -63,10 +63,13 @@
                     <a class="dropdown-item" href="{{ route('profile') }}"><span class="fa fa-address-card">
                             {{ __('Profile') }}
                         </a>    
+                    
+                    <a class="dropdown-item" href="{{ route('mensajes') }}"><span class="fa  fa-envelope">
+                            {{ _('mensaje') }}
+                    </a>
                     <a class="dropdown-item" href="{{ route('logout') }}"
                           onclick="event.preventDefault();
                                         document.getElementById('logout-form').submit();">
-                    <span class="fa fa-sign-out">
                           {{ __('Logout') }}
                       </a>
                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">

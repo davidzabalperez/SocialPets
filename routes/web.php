@@ -30,6 +30,10 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/profile', 'SocialPetsController@getProfile')->name('profile')->middleware('verified');
 
+
+Route::get('/mensajes', 'SocialPetsController@getMensajess')->name('mensajes')->middleware('verified');
+
+
 Route::get('/resetPassword', 'SocialPetsController@resetPassword');
 
 Route::post('/changeProfile', [
@@ -46,3 +50,4 @@ Auth::routes(['verify' => true]);
 Route::get('send-notification', function(){
 	auth()->user()->notify(new Notificacion_Like);
 });
+
