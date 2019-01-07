@@ -29,10 +29,7 @@ class User extends Authenticatable implements MustVerifyEmail
     protected $hidden = [
         'password', 'remember_token',
     ];
-}
-/* Class User extends Model
-{
     public function mensaje(){
-        return $this ->hasMany('App/Mensaje');
+        return $this->hasMany('App/Mensaje');
     }
-} */
+}
