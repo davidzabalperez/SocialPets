@@ -12,12 +12,15 @@
 <link rel="stylesheet" type="text/css" href="css/login.css" >
 <body>
     @include('layouts.navbarLoginRegister')
+
+    @include('error')
 <div class="container">
 
     <div class="login-container">
             <div id="output"></div>
             <div class="avatar"></div>
             <div class="form-box">
+
                 <form action="{{ route('register') }}" method="POST" id="registerForm">
                     @csrf
                     <input type="text" id="name" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ old('name') }}" placeholder="Nombre">
