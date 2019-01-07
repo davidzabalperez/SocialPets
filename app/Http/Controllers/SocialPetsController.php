@@ -7,6 +7,7 @@ use App\SocialPets;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Redirect;
+use App\Mensaje;
 
 
 class SocialPetsController extends Controller
@@ -66,4 +67,12 @@ class SocialPetsController extends Controller
     $user->save();
     return redirect('/profile');
   }
+  public function getMensajes(){
+    $mensajes = Mensaje::all();
+    return view('mensajes')->with([
+      'mensajes'=> $mensajes
+    ]);
+  }
+  
+
 }
