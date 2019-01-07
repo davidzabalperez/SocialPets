@@ -67,7 +67,7 @@ class SocialPetsController extends Controller
     $user->save();
     return redirect('/profile');
   }
-  public function getMensajes(){
+  public function getMensajess(){
     $mensajes = Mensaje::all();
     return view('mensajes')->with([
       'mensajes'=> $mensajes
