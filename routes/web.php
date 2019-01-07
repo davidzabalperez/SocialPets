@@ -30,8 +30,6 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/profile', 'SocialPetsController@getProfile')->name('profile')->middleware('verified');
 
-Route::get('/mensajes', 'SocialPetsController@getMensajes')->name('mensajes')->middleware('verified');
-
 Route::get('/resetPassword', 'SocialPetsController@resetPassword');
 
 Route::post('/changeProfile', [
@@ -45,4 +43,3 @@ Route::post('/changePassword', [
 
 Auth::routes(['verify' => true]);
 
-//
