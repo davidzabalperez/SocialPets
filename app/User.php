@@ -2,6 +2,8 @@
 
 namespace App;
 
+use App\Mensaje;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -27,5 +29,10 @@ class User extends Authenticatable implements MustVerifyEmail
     protected $hidden = [
         'password', 'remember_token',
     ];
-
 }
+/* Class User extends Model
+{
+    public function mensaje(){
+        return $this ->hasMany('App/Mensaje');
+    }
+} */
