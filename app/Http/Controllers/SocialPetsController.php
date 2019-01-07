@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Redirect;
 use App\Mensaje;
+use App\Http\Request\RegistrarUsuarioRequest;
 
 
 class SocialPetsController extends Controller
@@ -17,7 +18,7 @@ class SocialPetsController extends Controller
     }
 
 
-	public function store(Request $request) {
+	public function enviarContacto(Request $request) {
   		$contact = new SocialPets;
 
   		$contact->email = Input::get('email');
@@ -30,6 +31,10 @@ class SocialPetsController extends Controller
   		return redirect('/')->with('success-message', 'Mail enviado con exito!');
   		
 	}
+  public function store(RegistrarUsuarioRequest $request){
+
+      return view('login-view');
+  }
   
   public function getUserPanel(){
     $usuarios = User::all();

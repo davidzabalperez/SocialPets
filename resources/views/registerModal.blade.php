@@ -12,6 +12,7 @@
             </div>
             <div class="modal-body">
                 <div class="email">
+                @include('error')
                 <form method="POST" action="{{ route('register') }}" name="registerForm" id="registerForm">
                   @csrf
                   <div class="form-group">
