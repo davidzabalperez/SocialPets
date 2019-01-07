@@ -3,13 +3,15 @@
 namespace App\Http\Controllers;
 
 use App\User;
+use App\Mensaje;
 use App\SocialPets;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Redirect;
+
 use App\Mensaje;
 use App\Http\Request\RegistrarUsuarioRequest;
-
 
 class SocialPetsController extends Controller
 {
@@ -57,7 +59,8 @@ class SocialPetsController extends Controller
     return view('login-view');
   }
   public function getProfile(){
-    return view('profile');
+    $user = Auth::user();
+    return view('profile',compact('user',$user));
   }
   public function resetPassword(){
     return view('resetPasswordbtn btn-light');
@@ -78,6 +81,22 @@ class SocialPetsController extends Controller
       'mensajes'=> $mensajes
     ]);
   }
-  
+  public function update_avatar(Request $request){
+    $request->validate([
+      'avatar' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+    ]);
+
+    $user = Auth::user();
+
+    $avatarName = $user->id.'_avatar'.time().'.'.request()->avatar->getClientOriginalExtension();
+
+    $request->avatar->storeAs('avatars',$avatarName);
+
+    $user->avatar = $avatarName;
+    $user->save();
+
+    return back()
+        ->with('success','You have successfully upload image.');
+    }
 
 }
