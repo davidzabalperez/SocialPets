@@ -1,5 +1,5 @@
 <?php
-
+use App\Notifications\Notificacion_Like;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -42,3 +42,7 @@ Route::post('/changePassword', [
 ]);
 
 Auth::routes(['verify' => true]);
+
+Route::get('send-notification', function(){
+	auth()->user()->notify(new Notificacion_Like);
+});
