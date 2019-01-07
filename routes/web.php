@@ -42,3 +42,5 @@ Route::post('/changePassword', [
 ]);
 
 Auth::routes(['verify' => true]);
+
+//
