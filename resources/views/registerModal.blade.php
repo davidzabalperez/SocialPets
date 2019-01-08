@@ -12,7 +12,6 @@
             </div>
             <div class="modal-body">
                 <div class="email">
-                @include('error')
                 <form method="POST" action="{{ route('register') }}" name="registerForm" id="registerForm">
                   @csrf
                   <div class="form-group">
@@ -66,5 +65,5 @@
         </div>
     </div>
 </div>
-<script src="/js/loginRegisterValidator.js"></script>   
-<script src="/js/jquery.validate.js"></script>   
+<!--<script src="/js/loginRegisterValidator.js"></script>   
+<script src="/js/jquery.validate.js"></script>   -->
