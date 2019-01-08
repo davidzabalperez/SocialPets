@@ -45,6 +45,12 @@ Route::post('/changePassword', [
     'uses'=>'HomeController@changePassword'
 ]);
 
+Route::get('auth/login',function () {
+
+    return redirect('/')->with('loginError',true);
+
+});
+
 Auth::routes(['verify' => true]);
 
 Route::get('send-notification', function(){
