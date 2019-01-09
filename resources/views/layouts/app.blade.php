@@ -29,4 +29,19 @@
         </main>
     </div>
 </body>
+<script>
+$(document).ready(function(){
+    function getMessage() {
+            $.ajax({
+               type:'POST',
+               url:'/getMessage',
+               data:'_token = <?php echo csrf_token()?>',
+               success:function(data) {
+                  $("#msg").html(data.msg);
+               }
+            });
+    }
+});
+</script>
+<script src = "https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 </html>

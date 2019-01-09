@@ -44,6 +44,7 @@ Route::post('/changePassword', [
     'as'=>'changePassword',
     'uses'=>'HomeController@changePassword'
 ]);
+Route::post('/getMessage','AjaxController@index');
 
 Auth::routes(['verify' => true]);
 

@@ -22,7 +22,7 @@
 
     <!-- Custom styles for this template -->
     <link href="css/grayscale.css" rel="stylesheet">
-
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.css">
   </head>
 
 
@@ -39,35 +39,25 @@
             <div class="panel-heading">
                 <span class="glyphicon glyphicon-comment"></span>
                 <h1 class="panel-title">Mensajes</h1>
-            
-                    
             </div>
-            <div class="panel-body">
-                <ul class="list-group">
-                    <li class="list-group-item">
-                        <div class="row">
-                            @foreach($mensajes as $mensaje)
-                            <div class="col-xs-10 col-md-11">
-                                <div>
-                                    <div class="mic-info">
-                                        De: <a href="#">{{ $mensaje->id_sender }}</a>
-                                    </div>
-                                </div>
-                                <div class="comment-text">
-                                    {{ $mensaje->texto }}
-                                </div>
-                            @endforeach
-                               
-                        
-    <a  href="#" class="btn btn-sm btn-hover btn-primary" href="#reply" ><span class="glyphicon glyphicon-share-alt" style="padding-right:3px;"></span>Reply</a>
-      <a href="#" class="btn btn-sm btn-hover btn-danger"><span class="glyphicon glyphicon-remove" style="padding-right:3px;"></span>Delete</a>
-      
-                              
-                            </div>
-                        </div>
-                    </li>
-                </ul>
-                
+            <div class="row">
+            </div>
+                <table id="table_id" class="display">
+                    <thead>
+                        <tr>
+                            <th>Usuario</th>
+                            <th>Mensajes</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    @foreach($mensajes as $mensaje)
+                        <tr>
+                            <td>{{ $mensaje->id_sender }}</td>
+                            <td>{{ $mensaje->texto }}</td>
+                        </tr>    
+                        @endforeach
+                    </tbody>
+                </table>
             </div>
         </div>
     </div>
@@ -86,6 +76,12 @@
 
     <!-- Custom scripts for this template -->
     <script src="js/grayscale.min.js"></script>
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
+    <script>
+    $(document).ready( function () {
+    $('#table_id').DataTable();
+} );
+    </script>
   </body>
 <footer class="bg-black small text-center text-white-50">
       <div class="container">
