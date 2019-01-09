@@ -157,8 +157,9 @@
                                     Confirmacion borrar cuenta:
                                     <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
                                     
-                                    <form action="/user.destroy" method="post" enctype="multipart/form-data">
+                                    <form method="post" action="{{ route('user.destroy',$user->id)}}" >
                                         @csrf
+                                        @method('DELETE')
                                         <button type="submit" class="btn btn-danger">Borrar</button>
                                     </form>
                                 </div>
