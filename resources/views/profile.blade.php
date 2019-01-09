@@ -77,17 +77,17 @@
                 @csrf
             <input type="hidden" name="id" value="{{ Auth::user()->id }}">
             <input type="text" name="name" id="name" value="{{ Auth::user()->name }}">
-            <button type="submit" class="btn btn-primary">cambiar nombre</button>
+            <button type="submit" class="btn btn-primary">Cambiar nombre:</button>
             <br>
             <br>
             <input type="text" name="email" id="email" value="{{ Auth::user()->email }}">
-            <button type="submit" class="btn btn-primary">cambiar email</button>
+            <button type="submit" class="btn btn-primary">Cambiar email:</button>
         </form>
         <form class="form-horizontal" method="POST" action="{{ route('changePassword') }}">
           {{ csrf_field() }}
 
           <div class="form-group{{ $errors->has('current-password') ? ' has-error' : '' }}">
-              <label for="new-password" class="col-md-4 control-label">Current Password</label>
+              <label for="new-password" class="col-md-4 control-label">Contraseña actual:</label>
 
               <div class="col-md-6">
                   <input id="current-password" type="password" class="form-control" name="current-password" required>
@@ -101,7 +101,7 @@
           </div>
 
           <div class="form-group{{ $errors->has('new-password') ? ' has-error' : '' }}">
-              <label for="new-password" class="col-md-4 control-label">New Password</label>
+              <label for="new-password" class="col-md-4 control-label">Nueva contraseña:</label>
 
               <div class="col-md-6">
                   <input id="new-password" type="password" class="form-control" name="new-password" required>
@@ -115,7 +115,7 @@
           </div>
 
           <div class="form-group">
-              <label for="new-password-confirm" class="col-md-4 control-label">Confirm New Password</label>
+              <label for="new-password-confirm" class="col-md-4 control-label">Vuelve a insertar la nueva contraseña:</label>
 
               <div class="col-md-6">
                   <input id="new-password-confirm" type="password" class="form-control" name="new-password_confirmation" required>
@@ -125,24 +125,50 @@
           <div class="form-group">
               <div class="col-md-6 col-md-offset-4">
                   <button type="submit" class="btn btn-primary">
-                      Change Password
+                      Cambiar Contraseña:
                   </button>
               </div>
           </div>
     </form>
         <div class="modal-body">
-                    <form action="/profile" method="post" enctype="multipart/form-data">
-                        @csrf
-                        <div class="form-group">
-                            Cambiar imagen de perfil:
-                            <input type="file" class="form-control-file" name="avatar" id="avatarFile" aria-describedby="fileHelp">
-                            <small id="fileHelp" class="form-text text-muted"></small>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Submit</button>
-                    </form>
+            <form action="/profile" method="post" enctype="multipart/form-data">
+                @csrf
+                <div class="form-group">
+                    Cambiar imagen de perfil:
+                    <input type="file" class="form-control-file" name="avatar" id="avatarFile" aria-describedby="fileHelp">
+                    <small id="fileHelp" class="form-text text-muted"></small>
                 </div>
-            </div>
-            </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+        <div class="modal-body">
+                    Eliminar cuenta:
+                    <a class="btn btn-danger" rel="publisher" data-toggle="modal" data-target="#deleteModal" id="hideModal">Confirmar Eliminar</a>
+                        <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    ...
+                                </div>
+                                <div class="modal-body">
+                                    ...
+                                </div>
+                                <div class="modal-footer">
+                                    Confirmacion borrar cuenta:
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                                    
+                                    <form action="/user.destroy" method="post" enctype="multipart/form-data">
+                                        @csrf
+                                        <button type="submit" class="btn btn-danger">Borrar</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+        </div>
+            <button type="button" class="btn btn-default" data-dismiss="modal">Salir</button>
+        </div>
+        </div>
         </div>
         </div>
     <!-- Footer -->  

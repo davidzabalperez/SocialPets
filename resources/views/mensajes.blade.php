@@ -31,10 +31,9 @@
     <!-- NavBar -->
     @include("layouts.navbar")
 <section id="socialpets" class="about-section text-center">
-
+<br>
 <div class="container">
     <div class="row">
-        
         <div class="panel panel-default widget">
             <div class="panel-heading">
                 <span class="glyphicon glyphicon-comment"></span>
