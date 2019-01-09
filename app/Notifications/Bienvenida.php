@@ -7,7 +7,7 @@ use Illuminate\Notifications\Notification;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 
-class notificacion extends Notification
+class Bienvenida extends Notification
 {
     use Queueable;
 
@@ -41,7 +41,7 @@ class notificacion extends Notification
     public function toMail($notifiable)
     {
         return (new MailMessage)
-                    ->line('¡Tienes una nueva notificacion!')
+                    ->line('¡Bienvenido a la app bro!')
                     ->action('Notification Action', url('/'))
                     ->line('¡Gracias por usar nuestra aplicación!');
     }

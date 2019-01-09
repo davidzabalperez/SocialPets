@@ -1,5 +1,6 @@
 <?php
 use App\Notifications\Notificacion_Like;
+use App\Notifications\Bienvenida;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,7 +16,7 @@ Route::get('/', 'SocialPetsController@getIndex');
 Route::post('/contact', 'SocialPetsController@enviarContacto');
 Route::get('/UserPanel', 'SocialPetsController@getUserPanel')->name('UserPanel')->middleware('verified');
 //Route::get('/AdminPanel', 'SocialPetsController@getAdminPanel');
-Route::get('/admin', 'SocialPetsController@getAdminPanel');
+Route::get('/admin', 'SocialPetsController@getAdminPanel')->middleware('admin');
 Route::get('/user', 'SocialPetsController@getUserIndex');
 Route::get('/noticia', 'SocialPetsController@getNoticia');
 
@@ -56,4 +57,3 @@ Auth::routes(['verify' => true]);
 Route::get('send-notification', function(){
 	auth()->user()->notify(new Notificacion_Like);
 });
-
