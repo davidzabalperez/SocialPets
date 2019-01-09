@@ -12,8 +12,6 @@
 <link rel="stylesheet" type="text/css" href="css/login.css" >
 <body>
     @include('layouts.navbarLoginRegister')
-
-    @include('error')
 <div class="container">
 
     <div class="login-container">

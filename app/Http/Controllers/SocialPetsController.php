@@ -94,7 +94,7 @@ class SocialPetsController extends Controller
     $user->save();
 
     return back()
-        ->with('success','You have successfully upload image.');
+        ->with('success','La imagen se ha subido correctamente.');
     }
 
 }

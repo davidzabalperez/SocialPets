@@ -48,7 +48,11 @@
         </div>
     </div>
 </div>
-
+@if (session('loginError') || Session::has('errors'))
+        <script>
+            $('#loginModal').modal('show');
+        </script>
+@endif
 <script src="/js/loginRegisterValidator.js"></script> 
 <script src="/js/jquery.validate.js"></script>      
 
