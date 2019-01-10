@@ -30,15 +30,35 @@
                               <td>{{$usuario->name}}</td>
                               <td>{{$usuario->email}}</td>
                               <td>{{$usuario->role}}</td>
-                              <td><div class="icons" id="banear-icon"></td>
+                              <td>{{$usuario->id}}</td>
+                              <td><a class="btn btn-danger" rel="publisher" data-toggle="modal" data-target="#confirmacionBanearModal" id="hideModal">Banear</a></td>
+                              <div class="modal fade" id="confirmacionBanearModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+            
+            </div>
+            <div class="modal-body">
+            
+            </div>
+            <div class="modal-footer">
+                Confirmacion borrar cuenta:
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                                    
+                <form method="post" action="{{ route('user.destroy', $usuario->id) }}" >
+                @csrf
+                @method('DELETE')
+                <button type="submit" class="btn btn-danger">Borrar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
                             </tr>
                             @endforeach
                           </tbody>
                         </table>
                     </div>    
-                    <div class="form-group">
-                        <button type="submit" id="boton" class="btn btn-primary btn-lg btn-block login-btn" >Banear</button>
-                    </div>
                 </form>
                 </div>
             </div>

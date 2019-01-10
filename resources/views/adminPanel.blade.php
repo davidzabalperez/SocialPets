@@ -72,3 +72,4 @@
 @include('noticia')
 @include('eliminarUsuarios')
 @include('banearUsuarios')
+@include('registerModal')
