@@ -42,6 +42,7 @@
             <br>
             <a class="btn btn-primary js-scroll-trigger" data-toggle="modal" data-target="#noticiaModal">Publicar noticia</a>
             <a class="btn btn-primary js-scroll-trigger" data-toggle="modal" data-target="#banearUsuariosModal">Banear usuario</a>
+            <a class="btn btn-primary js-scroll-trigger" data-toggle="modal" data-target="#crearUsuariosModal">Crear usuario</a>
           </div>
 
         </div>
