@@ -13,7 +13,7 @@ $(document).ready(function() {
 					minlength:8
 					
 				},
-				password_confirmation : {
+				confirm_password : {
 					required: '#password_register',
 					equalTo:'#password_register',
 					maxlength:20,
@@ -37,7 +37,7 @@ $(document).ready(function() {
 					
 				},
 
-				password_confirmation : {
+				confirm_password : {
 					required:"Campo obligatorio",
 					equalTo : "Las contraseñas no coinciden",
 					maxlength : "Máximo 20 caracteres",
@@ -49,21 +49,21 @@ $(document).ready(function() {
 		});
 		  $('#loginForm').validate({ // initialize the plugin
     rules: {
-      email: {
+      email_login: {
         required: true,
         email: true
       },
-      password: {
+      password_login: {
       	required: true
       }
 	},
     messages: {
-      email: {
+      email_login: {
       	required:"Introduce un email",
       	email:"Introduce un email valido"
 
       },
-      password: {
+      password_login: {
       	required:"Introduce la contraseña"
       }
     }

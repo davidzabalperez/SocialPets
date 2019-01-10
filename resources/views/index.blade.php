@@ -241,8 +241,8 @@
 
     <!-- Custom scripts for this template -->
     <script src="js/grayscale.min.js"></script>
-    <script src="/js/loginRegisterValidator.js"></script>
-    <script src="/js/jquery.validate.js"></script> 
+   <!-- <script src="/js/loginRegisterValidator.js"></script>
+    <script src="/js/jquery.validate.js"></script> -->
     <script src="/js/efectos.js"></script> 
   <script>
 $('div.alert').delay(5000).slideUp(300);

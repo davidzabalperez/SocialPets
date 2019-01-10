@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Redirect;
 use App\Http\Request\RegistrarUsuarioRequest;
 
+
 class SocialPetsController extends Controller
 {
     public function getIndex(){
@@ -73,7 +74,7 @@ class SocialPetsController extends Controller
         return redirect('/profile');
   }
   public function getProfile(){
-    $user = Auth::user();
+   $user = Auth::user();
     return view('profile',compact('user',$user));
   }
 
@@ -113,6 +114,7 @@ class SocialPetsController extends Controller
 
     return back()
         ->with('success','La imagen se ha subido correctamente.');
+
     }
 
 }
