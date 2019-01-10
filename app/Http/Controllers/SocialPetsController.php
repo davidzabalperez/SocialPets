@@ -64,6 +64,7 @@ class SocialPetsController extends Controller
     $user = Auth::user();
     return view('profile',compact('user',$user));
   }
+  
   public function resetPassword(){
     return view('resetPasswordbtn btn-light');
   }
@@ -78,6 +79,7 @@ class SocialPetsController extends Controller
     return redirect('/profile');
   }
   public function getMensajess(){
+    /* where user id, coge desde el auth auth::id */
     $mensajes = Mensaje::all();
     return view('mensajes')->with([
       'mensajes'=> $mensajes
