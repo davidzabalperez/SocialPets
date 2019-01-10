@@ -39,6 +39,7 @@ class UserController extends Controller
      */
     public function register(Request $request)
     {
+
         
 
         request()->validate([
@@ -96,6 +97,7 @@ class UserController extends Controller
         } else {
         // Go back on error (or do what you want)
             return redirect()->back();
+
     }
 
     }

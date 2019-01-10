@@ -45,6 +45,9 @@ Route::group(['middleware' => ['web']], function() {
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+Route::get('/step2', 'SocialPetsController@getStep2');
+Route::post('/register2', 'SocialPetsController@registerStep2');
+
 Route::get('/profile', 'SocialPetsController@getProfile')->name('profile')->middleware('verified');
 
 Route::post('profile', 'SocialPetsController@update_avatar');
