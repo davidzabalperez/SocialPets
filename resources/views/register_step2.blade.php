@@ -19,18 +19,18 @@
             <div class="avatar"></div>
             <div class="form-box">
 
-                <form action="{{ url('register2', Auth::user()->id )}}" method="post">
+                <form action="/register2" method="post">
                     @csrf
-                    @method('PATCH') 
+                    <input type="hidden" name="id" id="id" value="{{ Auth::user()->id }}">
                     Edad del perro:
                     <input type="number" id="age" class="form-control" name="age" placeholder="Años de persona">
                     <br>
                     Genero del perrro:
                     <br>
                     Hembra
-                    <input type="radio" name="gender" id="true" class="form-control">
+                    <input type="radio" name="gender" value="1" class="form-control">
                     Macho 
-                    <input type="radio" name="gender" id="false" class="form-control">
+                    <input type="radio" name="gender" value="0" class="form-control">
                     <br>
                     raza:
                     <input type="text" name="race" id="race">
