@@ -77,20 +77,22 @@ class UserController extends Controller
 
     public function login(Request $request){
 
-        $this->validate($request, [
-        'email_login'           => 'required|max:255|email',
-        'password_login'           => 'required|confirmed',
+        request()->validate([
+        'email'           => 'required|max:255|email',
+        'password'           => 'required|confirmed',
         ],
         [
-            'email_login.required' => 'Email es un campo requerido',
-            'email_login.email' => 'Introduce un email valido',
-            'password_login.required' => 'Introduce una contraseña',
-            'password_login.confirmed' => 'Contraseña o Email incorrecto',
+            'email.required' => 'Email es un campo requerido',
+            'email.email' => 'Introduce un email valido',
+            'password.required' => 'Introduce una contraseña',
+            'password.confirmed' => 'Contraseña o Email incorrecto',
 
         ]);
-        if (Auth::attempt(['email_login' => $email, 'password_login' => $password])) {
+         $email = $request->input('email_login');
+        $password = $request->input('password_login');
+        if (Auth::attempt(['email' => $email, 'password' => $password])) {
         // Success
-            return redirect()->intended('/UserPanel');
+            return redirect()->intended(route('UserPanel');
         } else {
         // Go back on error (or do what you want)
             return redirect()->back();
