@@ -13,21 +13,28 @@
                 <h4 class="modal-title">{{ __('Login') }}</h4>   
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
             </div>
-                     @if($errors->any())
-          <div class="alert alert-danger">{{$errors->first()}}</div>
-          @endif
             <div class="modal-body">
                 <div class="email">
-                <form method="POST" action="{{ route('login') }}" name="formulario" id="loginForm">
+                <form method="POST" action="{{ url('login') }}" name="formulario" id="loginForm">
                   @csrf
                     <div class="form-group">
                         <i class="icons" id="email-icon"></i>
-                        <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" placeholder="Email" required autofocus>
+                        <input id="email_login" type="email" class="form-control{{ $errors->has('email_login') ? ' is-invalid' : '' }}" name="email_login" value="{{ old('email_login') }}" placeholder="Email" required autofocus>
+                           @if ($errors->has('email_login'))
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('email_login') }}</strong>
+                                    </span>
+                                @endif
                     </div>
                     <div class="form-group">
                         <i class="icons" id="password-icon">
                         </i>
-                        <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" placeholder="Contraseña" required>
+                        <input id="password_login" type="password" class="form-control{{ $errors->has('password_login') ? ' is-invalid' : '' }}" name="password_login" placeholder="Contraseña" required>
+                           @if ($errors->has('password_login'))
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('password_login') }}</strong>
+                                    </span>
+                                @endif
                         </div>
                         <div class="form-check">
                                     <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
@@ -54,11 +61,7 @@
         </div>
     </div>
 </div>
-@if (session('loginError') || Session::has('errors'))
-        <script>
-            $('#loginModal').modal('show');
-        </script>
-@endif
-<script src="/js/loginRegisterValidator.js"></script> 
-<script src="/js/jquery.validate.js"></script>      
+
+<!--<script src="/js/loginRegisterValidator.js"></script> 
+<script src="/js/jquery.validate.js"></script>      -->
 

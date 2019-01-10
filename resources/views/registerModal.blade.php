@@ -12,7 +12,7 @@
             </div>
             <div class="modal-body">
                 <div class="email">
-                <form method="POST" action="{{ route('register') }}" name="registerForm" id="registerForm">
+                <form method="POST" action="{{ url('register') }}" name="registerForm" id="registerForm">
                   @csrf
                   <div class="form-group">
                         <i class="icons" id="name-icon"></i>
@@ -45,10 +45,10 @@
                     </div> 
                     <div class="form-group">
                         <i class="icons" id="password-icon"></i>
-                        <input type="password" id="passwordConfirm" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password_confirmation" placeholder="Confirma la contraseña">
-                         @if ($errors->has('password'))
+                        <input type="password" id="confirm_password" class="form-control{{ $errors->has('confirm_password') ? ' is-invalid' : '' }}" name="confirm_password" placeholder="Confirma la contraseña">
+                         @if ($errors->has('confirm_password'))
                                     <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('password') }}</strong>
+                                        <strong>{{ $errors->first('confirm_password') }}</strong>
                                     </span>
                                 @endif 
 

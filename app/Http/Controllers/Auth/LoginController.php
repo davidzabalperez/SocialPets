@@ -39,8 +39,8 @@ class LoginController extends Controller
     public function store(Request $request) {
         $user = new SocialPets;
 
-        $user->email = Input::get('email');
-        $user->password = Input::get('password');
+        $user->email = Input::get('email_login');
+        $user->password = Input::get('password_login');
 
         $user->save();
     }
