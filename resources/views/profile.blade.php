@@ -73,20 +73,23 @@
       </div>
       <div class="modal-body">
         
-        <form action="changeProfile" method="post">
-                @csrf
-            <input type="hidden" name="id" value="{{ Auth::user()->id }}">
+        <form action="{{ route('user.update', Auth::user()->id )}}" method="post">
+            @method('PATCH')    
+            @csrf
             <input type="text" name="name" id="name" value="{{ Auth::user()->name }}">
             <button type="submit" class="btn btn-primary">Cambiar nombre:</button>
+        
             <br>
             <br>
+         
             <input type="text" name="email" id="email" value="{{ Auth::user()->email }}">
             <button type="submit" class="btn btn-primary">Cambiar email:</button>
         </form>
+
         <form class="form-horizontal" method="POST" action="{{ route('changePassword') }}">
           {{ csrf_field() }}
 
-          <div class="form-group{{ $errors->has('current-password') ? ' has-error' : '' }}">
+          <div class="form-group">
               <label for="new-password" class="col-md-4 control-label">Contraseña actual:</label>
 
               <div class="col-md-6">
