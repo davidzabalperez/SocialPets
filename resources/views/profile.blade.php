@@ -51,8 +51,12 @@
                     </div>
                 </div>
                 </div>
-                    <div class="desc">{{ Auth::user()->age }}</div>
-                    <div class="desc">{{ Auth::user()->gender }}</div>
+                    edad:
+                    <div class="desc"> {{ Auth::user()->age }} anos</div>
+                    Genero:
+                    <div class="desc">{{ Auth::user()->gender == 1 ? 'Femenino' : 'Masculino'}}</div> 
+                    <br>
+                    Raza:
                     <div class="desc">{{ Auth::user()->race }}</div>
                 </div>
                     <a class="btn btn-light" rel="publisher" data-toggle="modal" data-target="#editProfileModal">
