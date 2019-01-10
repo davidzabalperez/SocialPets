@@ -39,10 +39,10 @@
                                         <strong>{{ $errors->first('password') }}</strong>
                                     </span>
                                 @endif 
-                    <input type="password" id="passwordConfirm" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password_confirmation" placeholder="Confirma la contraseña">
-                    @if ($errors->has('password'))
+                    <input type="password" id="confirm_password" class="form-control{{ $errors->has('confirm_password') ? ' is-invalid' : '' }}" name="confirm_password" placeholder="Confirma la contraseña">
+                    @if ($errors->has('confirm_password'))
                                     <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('password') }}</strong>
+                                        <strong>{{ $errors->first('confirm_password') }}</strong>
                                     </span>
                                 @endif 
                     <button class="btn btn-info btn-block login" type="submit">Registrar</button>
