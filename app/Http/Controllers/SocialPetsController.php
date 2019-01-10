@@ -45,7 +45,11 @@ class SocialPetsController extends Controller
 
   }
   public function getAdminPanel(){
-    return view('adminPanel');
+    $usuarios = User::all();
+    
+    return view('adminPanel')->with([
+      'usuarios'=>$usuarios
+    ]);
   }
   public function getNoticia(){
     return view('noticia');

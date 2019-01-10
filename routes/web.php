@@ -16,7 +16,7 @@ Route::get('/', 'SocialPetsController@getIndex');
 Route::post('/contact', 'SocialPetsController@enviarContacto');
 Route::get('/UserPanel', 'SocialPetsController@getUserPanel')->name('UserPanel')->middleware('verified');
 //Route::get('/AdminPanel', 'SocialPetsController@getAdminPanel');
-Route::get('/admin', 'SocialPetsController@getAdminPanel')->middleware('admin');
+Route::get('/admin', 'SocialPetsController@getAdminPanel')->name('AdminPanel')->middleware('admin');
 Route::get('/user', 'SocialPetsController@getUserIndex');
 Route::get('/noticia', 'SocialPetsController@getNoticia');
 
