@@ -4,7 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
-use \Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Auth;
+
+
 
 class UserController extends Controller
 {
@@ -36,11 +39,13 @@ class UserController extends Controller
      */
     public function register(Request $request)
     {
+        
+
         request()->validate([
             'name' => 'required|min:2|max:50',
             'email' => 'required|email|unique:users',
-            'password' => 'required|min:8',
-            'confirm_password' => 'required|min:8|same:password',
+            'password' => 'required|confirmed|min:8',
+            'password_confirmation' => 'required|same:password',
 
         ],[
             'name.required' => 'Nombre es un campo requerido',
@@ -51,9 +56,9 @@ class UserController extends Controller
             'email.unique' => 'El email ya esta registrado',
             'password.required' => 'Contraseña es un campo requerido',
             'password.min' => 'La contraseña tiene que tener 8 o mas caracteres',
-            'confirm_password.required' => 'Contraseña es un campo requerido',
-            'confirm_password.same' => 'Las contraseñas no coinciden',
-            'confirm_password.min' => 'La contraseña tiene que tener 8 o mas caracteres',
+            'password_confirmation.required' => 'Contraseña es un campo requerido',
+            'password_confirmation.same' => 'Las contraseñas no coinciden',
+            
 
 
         ]);
@@ -67,6 +72,8 @@ class UserController extends Controller
 }
         return view('profile');
     }
+
+    
 
     public function login(Request $request){
 
@@ -91,12 +98,20 @@ class UserController extends Controller
 
     }
 
+    
+
     /**
      * Display the specified resource.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+
+    public function getProfile(){
+        $user = Auth::user();
+        return view('profile',compact('user',$user));
+    }
+
     public function show($id)
     {
         //

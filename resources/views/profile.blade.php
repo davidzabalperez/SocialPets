@@ -47,7 +47,7 @@
                     
                     <!-- badge -->
                     <div class="rank-label-container">
-                        <span class="label label-default rank-label">{{$user->name}}</span>
+                       <!-- <span class="label label-default rank-label">{{$user->name}}</span> -->
                     </div>
                 </div>
             </div>

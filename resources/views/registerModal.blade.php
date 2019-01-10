@@ -45,10 +45,10 @@
                     </div> 
                     <div class="form-group">
                         <i class="icons" id="password-icon"></i>
-                        <input type="password" id="confirm_password" class="form-control{{ $errors->has('confirm_password') ? ' is-invalid' : '' }}" name="confirm_password" placeholder="Confirma la contraseña">
-                         @if ($errors->has('confirm_password'))
+                        <input type="password" id="password_confirmation" class="form-control{{ $errors->has('password_confirmation') ? ' is-invalid' : '' }}" name="password_confirmation" placeholder="Confirma la contraseña">
+                         @if ($errors->has('password_confirmation'))
                                     <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('confirm_password') }}</strong>
+                                        <strong>{{ $errors->first('password_confirmation') }}</strong>
                                     </span>
                                 @endif 
 
