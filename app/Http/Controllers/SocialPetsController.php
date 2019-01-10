@@ -64,12 +64,12 @@ class SocialPetsController extends Controller
   public function getStep2(){
     return view('register_step2');
   }
-  public function registerStep2(Request $request, $id){
+  public function registerStep2(Request $request){
 
-        $user=User::find($id);
-        $user->name = $request->input('age');
-        $user->email = $request->input('gender');
-        $user->email = $request->input('race');
+        $user=User::find($request->input('id'));
+        $user->age = $request->input('age');
+        $user->gender = $request->input('gender');
+        $user->race = $request->input('race');
         $user->save();
         return redirect('/profile');
   }
