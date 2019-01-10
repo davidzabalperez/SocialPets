@@ -79,12 +79,22 @@
                         @csrf
                     </form>
                 </div>
-            </li>
+              </li>
+              <li class="nav-item dropdown">
+                <a id="navbarDropdown" class="nav-link dropdown-toggle" data-toggle="dropdown">
+                Notificaciones</a>
+                  <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+
+                  <a class="dropdown-item" href="">
+                    <span class="fa fa-envelope">
+                      {{ __('Mensajes') }}
+                      
+                  </a>
+                    <ul class="dropdown-menu"></ul> 
+                  </div>
+              </li>
             @endif
-            
-</ul>
-
-
+            </ul>
         </div>
       </div>
     </nav>
