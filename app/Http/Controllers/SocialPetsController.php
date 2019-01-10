@@ -60,11 +60,23 @@ class SocialPetsController extends Controller
   public function getLogin(){
     return view('login-view');
   }
+  public function getStep2(){
+    return view('register_step2');
+  }
+  public function registerStep2(Request $request, $id){
+
+        $user=User::find($id);
+        $user->name = $request->input('age');
+        $user->email = $request->input('gender');
+        $user->email = $request->input('race');
+        $user->save();
+        return redirect('/profile');
+  }
   public function getProfile(){
     $user = Auth::user();
     return view('profile',compact('user',$user));
   }
-  
+
   public function resetPassword(){
     return view('resetPasswordbtn btn-light');
   }

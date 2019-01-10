@@ -50,16 +50,16 @@
                         <span class="label label-default rank-label">{{$user->name}}</span>
                     </div>
                 </div>
-            </div>
+                </div>
                     <div class="desc">{{ Auth::user()->age }}</div>
                     <div class="desc">{{ Auth::user()->gender }}</div>
                     <div class="desc">{{ Auth::user()->race }}</div>
                 </div>
-                <a class="btn btn-light" rel="publisher" data-toggle="modal" data-target="#editProfileModal">
+                    <a class="btn btn-light" rel="publisher" data-toggle="modal" data-target="#editProfileModal">
                     <i class="fa fa-cogs"></i>
                 </a>
             </div>
-        </div>    
+    </div>    
   </div>
 </div>
 </section>
