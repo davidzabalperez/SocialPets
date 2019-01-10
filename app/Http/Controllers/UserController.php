@@ -28,7 +28,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        
+
     }
 
     /**
@@ -40,7 +40,7 @@ class UserController extends Controller
     public function register(Request $request)
     {
 
-        
+
 
         request()->validate([
             'name' => 'required|min:2|max:50',
@@ -59,7 +59,7 @@ class UserController extends Controller
             'password.min' => 'La contraseña tiene que tener 8 o mas caracteres',
             'password_confirmation.required' => 'Contraseña es un campo requerido',
             'password_confirmation.same' => 'Las contraseñas no coinciden',
-            
+
 
 
         ]);
@@ -74,7 +74,7 @@ class UserController extends Controller
         return view('profile');
     }
 
-    
+
 
     public function login(Request $request){
 
@@ -102,7 +102,7 @@ class UserController extends Controller
 
     }
 
-    
+
 
     /**
      * Display the specified resource.
@@ -129,7 +129,7 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        
+
     }
 
     /**
@@ -156,9 +156,10 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        $user = User::find($id);
+        $user = User::findOrFail($id);
         $user->delete();
 
-        return redirect('/')->with('succes','Usuario eliminado correctamente');
-    }
+        return back();
+}
+
 }
