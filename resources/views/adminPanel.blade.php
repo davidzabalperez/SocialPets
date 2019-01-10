@@ -24,8 +24,8 @@
 
   </head>
 
-<!-- NavBar -->
-    @include('layouts.navbarLoginRegister')
+    <!-- NavBar -->
+    @include("layouts.navbar")
 
   <body id="page-top">
 
@@ -40,8 +40,7 @@
             <br><h3 class="text-white mb-4">Estas en el panel del administrador</h3>
             <p class="text-white-50">Es una red social, para que tus mascotas conozcan a otras y puedan ser amigos. Nuestro objetivo es abarcar a una gran cantidad de mascotas, pero al ser un proyecto, trataremos con perros principalmente. </p>
             <br>
-            <a class="btn btn-primary js-scroll-trigger" data-toggle="modal" data-target="#noticiaModal" >Publicar noticia</a>
-            <a class="btn btn-primary js-scroll-trigger" data-toggle="modal" data-target="#eliminarUsuariosModal">Eliminar usuario</a>
+            <a class="btn btn-primary js-scroll-trigger" data-toggle="modal" data-target="#noticiaModal">Publicar noticia</a>
             <a class="btn btn-primary js-scroll-trigger" data-toggle="modal" data-target="#banearUsuariosModal">Banear usuario</a>
           </div>
 
@@ -64,7 +63,7 @@
         <footer class="bg-black small text-center text-white-50">
       <div class="container">
          
-        Copyright &copy; Social Pets 2018
+        Copyright &copy; Social Pets 2019
       </div>
       </footer>
   </body> 

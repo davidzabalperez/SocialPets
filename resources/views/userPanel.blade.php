@@ -79,7 +79,7 @@
 <footer class="bg-black small text-center text-white-50">
       <div class="container">
          
-        Copyright &copy; Social Pets 2018
+        Copyright &copy; Social Pets 2019
       </div>
 </footer>
 </html>

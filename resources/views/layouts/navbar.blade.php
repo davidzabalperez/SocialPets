@@ -67,6 +67,9 @@
                     <a class="dropdown-item" href="{{ route('mensajes') }}"><span class="fa  fa-envelope">
                             {{ _('mensaje') }}
                     </a>
+                    <a class="dropdown-item" href="{{ route('AdminPanel') }}"><span class="fa  fa-toolbox">
+                            {{ _('administrar') }}
+                    </a>
                     <a class="dropdown-item" href="{{ route('logout') }}"
                           onclick="event.preventDefault();
                                         document.getElementById('logout-form').submit();">
