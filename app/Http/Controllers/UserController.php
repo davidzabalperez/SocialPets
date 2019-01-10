@@ -93,7 +93,7 @@ class UserController extends Controller
         $password = $request->input('password_login');
         if (Auth::attempt(['email' => $email, 'password' => $password])) {
         // Success
-            return redirect()->intended(route('UserPanel');
+            return redirect()->intended(route('UserPanel'));
         } else {
         // Go back on error (or do what you want)
             return redirect()->back();
