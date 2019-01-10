@@ -1,15 +1,21 @@
 <link rel="stylesheet" type="text/css" href="/css/login.css">
 
 <div id="loginModal" class="modal fade">
+
     <div class="modal-dialog modal-login">
         <div class="modal-content">
+
             <div class="modal-header">
+
                 <div class="avatar">
                     <img src="/img/avatar.png" alt="Avatar">
                 </div>              
                 <h4 class="modal-title">{{ __('Login') }}</h4>   
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
             </div>
+                     @if($errors->any())
+          <div class="alert alert-danger">{{$errors->first()}}</div>
+          @endif
             <div class="modal-body">
                 <div class="email">
                 <form method="POST" action="{{ route('login') }}" name="formulario" id="loginForm">
