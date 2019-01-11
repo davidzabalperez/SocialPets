@@ -93,7 +93,7 @@ class SocialPetsController extends Controller
   }
   public function getMensajess(){
     /* where user id, coge desde el auth auth::id */
-    $mensajes = Mensaje::all();
+    $mensajes = Mensaje::where('id_receiver',Auth::user()->id)->get();
     return view('mensajes')->with([
       'mensajes'=> $mensajes
     ]);

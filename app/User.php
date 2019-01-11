@@ -31,7 +31,8 @@ class User extends Authenticatable implements MustVerifyEmail
         'password', 'remember_token',
     ];
     protected $dates = ['deleted_at'];
+
     public function mensaje(){
-        return $this->hasMany('App/Mensaje');
+        return $this->hasMany('App/Mensaje', 'foreign_key');
     }
 }
