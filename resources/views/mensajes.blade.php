@@ -37,7 +37,7 @@
         <div class="panel panel-default widget">
             <div class="panel-heading">
                 <span class="glyphicon glyphicon-comment"></span>
-                <h1 class="panel-title">Mensajes</h1>
+                <h1 class="panel-title">Mensajes Recibidos</h1>
             </div>
             <div class="row">
             </div>
@@ -61,6 +61,36 @@
             </div>
         </div>
     </div>
+    <div class="container">
+	<div class="row">
+		<div class="panel panel-default">
+        <div class="panel-heading clearfix">
+          <h3 class="panel-title">Enviar Mensaje</h3>
+        </div>
+        <div class="panel-body">
+            <form action="{{ route('user.store') }}" id="mensajeForm" class="mensajeForm" method="post">
+                @csrf
+                <div class="form-group">
+                  <label class="col-sm-2" for="receiver">Destinatario:</label>
+                  <div class="col">
+                  <select name="receiver" id="receiver">
+                      @foreach($users as $user)
+                            @if ( $user->id != Auth::user()->id)
+                            <option value="{{ $user->id }}">{{ $user->name }}</option>
+                            @endif
+                      @endforeach
+                      </select>
+                </div>
+                <div class="form-group">
+                  <label class="col-sm-12" for="text">Mensaje:</label>
+                  <textarea class="col" name="text" id="text" cols="30" rows="10"></textarea>            
+                </div>
+                <button type="submit" class="btn">Enviar</button>
+            </form>
+        </div>
+      </div>
+	</div>
+</div>
 </div>
 
 </section>

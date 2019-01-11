@@ -92,10 +92,11 @@ class SocialPetsController extends Controller
     return redirect('/profile');
   }
   public function getMensajess(){
-    /* where user id, coge desde el auth auth::id */
+    $users = User::all();
     $mensajes = Mensaje::where('id_receiver',Auth::user()->id)->get();
     return view('mensajes')->with([
-      'mensajes'=> $mensajes
+      'mensajes'=> $mensajes,
+      'users'=> $users
     ]);
   }
   public function update_avatar(Request $request){
