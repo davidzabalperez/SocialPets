@@ -25,7 +25,7 @@
                     Edad del perro:
                     <input type="number" id="age" class="form-control" name="age" placeholder="Años de persona">
                     <br>
-                    Genero del perrro:
+                    Generooooooooooooooooooooooooooooooo del perrro:
                     <br>
                     Hembra
                     <input type="radio" name="gender" value="1" class="form-control">
