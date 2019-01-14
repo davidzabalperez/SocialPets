@@ -1,6 +1,7 @@
 <?php
 use App\Notifications\Notificacion_Like;
 use App\Notifications\Bienvenida;
+use App\Ajax\AjaxController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -77,3 +78,7 @@ Route::get('send-notification', function(){
 	auth()->user()->notify(new Notificacion_Like);
 });
 Route::resource('user', 'UserController');
+/*
+Obtiene los usuarios por AJAX (ADAPTAR A LOS MENSAJES)
+*/
+Route::get('/mensajes/ajax', 'Ajax\AjaxController@cargarMensajes');

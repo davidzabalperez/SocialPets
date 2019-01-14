@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\User;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Auth;
+use App\Mensaje;
+
 
 
 
@@ -35,6 +37,26 @@ class UserController extends Controller
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
+    {
+        $request->validate([
+            'receiver'=>'required',
+            'text' => 'required'
+          ]);
+        $mensaje = new Mensaje();
+        $mensaje->id_sender = Auth::user()->id;
+        $mensaje->id_receiver = $request->input('receiver');
+        $mensaje->text = $request->input('text');
+        $mensaje->save();
+        return redirect('/mensajes'); 
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function register(Request $request)

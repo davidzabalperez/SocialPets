@@ -26,7 +26,7 @@
   </head>
 
 
-    
+
   <body id="page-top">
     <!-- NavBar -->
     @include("layouts.navbar")
@@ -37,7 +37,7 @@
         <div class="panel panel-default widget">
             <div class="panel-heading">
                 <span class="glyphicon glyphicon-comment"></span>
-                <h1 class="panel-title">Mensajes</h1>
+                <h1 class="panel-title">Mensajes Recibidos</h1>
             </div>
             <div class="row">
             </div>
@@ -48,44 +48,88 @@
                             <th>Mensajes</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        
-                    @foreach($mensajes as $mensaje)
-                        <tr>
-                            <td>{{ $mensaje->id_sender }}</td>
-                            <td>{{ $mensaje->text }}</td>
-                        </tr>    
-                        @endforeach
+                    <tbody id="mensajesInfo">
                     </tbody>
                 </table>
+                <button type="button" class="mx-auto btn-block btn btn-outline-info f btn-xs" id="cargarMensajes">Cargar Mensajes</button>
             </div>
         </div>
     </div>
+    <div class="container">
+	<div class="row">
+		<div class="panel panel-default">
+        <div class="panel-heading clearfix">
+          <h3 class="panel-title">Enviar Mensaje</h3>
+        </div>
+        <div class="panel-body">
+            <form action="{{ route('user.store') }}" id="mensajeForm" class="mensajeForm" method="post">
+                @csrf
+                <div class="form-group">
+                  <label class="col-sm-2" for="receiver">Destinatario:</label>
+                  <div class="col">
+                  <select name="receiver" id="receiver">
+                      @foreach($users as $user)
+                            @if ( $user->id != Auth::user()->id)
+                            <option value="{{ $user->id }}">{{ $user->name }}</option>
+                            @endif
+                      @endforeach
+                      </select>
+                </div>
+                <div class="form-group">
+                  <label class="col-sm-12" for="text">Mensaje:</label>
+                  <textarea class="col" name="text" id="text" cols="30" rows="10"></textarea>
+                </div>
+                <button type="submit" class="btn">Enviar</button>
+            </form>
+        </div>
+      </div>
+	</div>
+</div>
 </div>
 
 </section>
 
-    <!-- Footer -->  
+    <!-- Footer -->
 
     <!-- Bootstrap core JavaScript -->
-    <script src="jquery/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
 
     <!-- Plugin JavaScript -->
-    <script src="jquery-easing/jquery.easing.min.js"></script>
-
+    
     <!-- Custom scripts for this template -->
     <script src="js/grayscale.min.js"></script>
     <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
     <script>
     $(document).ready( function () {
     $('#table_id').DataTable();
-} );
+    });
+
+    $('#cargarMensajes').on('click', function(){
+      $.get("{{ URL::to('/mensajes/ajax') }}", function(data){
+        $('#mensajesInfo').empty().html(data);
+
+
+        /*$.each(data, function(i, value){
+            var tr =$("<tr/>");
+                tr.append($("<td/>",{
+                  text: value.id
+                })).append($("<td/>",{
+                  text: value.name
+                })).append($("<td/>",{
+                  html: "<a href='#'>Ver</a> <a href='#'>Editar</a>"
+                }))
+
+                $('#usersInfo').append(tr);
+        });*/
+      })
+    });
+
     </script>
   </body>
 <footer class="bg-black small text-center text-white-50">
       <div class="container">
-         
+
         Copyright &copy; Social Pets 2018
       </div>
 </footer>
