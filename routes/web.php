@@ -72,6 +72,7 @@ Route::get('auth/login',function () {
 
 });
 
+Auth::routes();
 Auth::routes(['verify' => true]);
 
 Route::get('send-notification', function(){
