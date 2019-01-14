@@ -15,7 +15,7 @@
             </div>
             <div class="modal-body">
                 <div class="email">
-                <form method="POST" action="10.18.124.48/{{ url('login') }}" name="formulario" id="loginForm">
+                <form method="POST" action="{{ url('login') }}" name="formulario" id="loginForm">
                   @csrf
                     <div class="form-group">
                         <i class="icons" id="email-icon"></i>
