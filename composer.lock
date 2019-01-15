@@ -4,8 +4,52 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "95e4a8fc86d23751f81b1cc426b3c1db",
+    "content-hash": "e5e8ad406576b489ead3b444d2856e41",
     "packages": [
+        {
+            "name": "consoletvs/charts",
+            "version": "6.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ConsoleTVs/Charts.git",
+                "reference": "1eb9b34b8e07e82d7a9d002849f50878ceacf82a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ConsoleTVs/Charts/zipball/1eb9b34b8e07e82d7a9d002849f50878ceacf82a",
+                "reference": "1eb9b34b8e07e82d7a9d002849f50878ceacf82a",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "5.*",
+                "php": ">=7.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Consoletvs\\Charts\\ChartsServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Consoletvs\\Charts\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Èrik Campobadal Forés",
+                    "email": "soc@erik.cat"
+                }
+            ],
+            "description": "The laravel charting package",
+            "time": "2018-02-17T13:56:30+00:00"
+        },
         {
             "name": "cybercog/laravel-ban",
             "version": "3.5.0",
