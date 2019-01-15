@@ -19,7 +19,7 @@
             <div class="avatar"></div>
             <div class="form-box">
 
-                <form action="{{ route('register') }}" method="POST" id="registerForm">
+                <form action="{{ route('register') }}" method="POST" id="darDeAltaForm">
                     @csrf
                     <input type="text" id="name" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ old('name') }}" placeholder="Nombre">
                     @if ($errors->has('name'))
@@ -45,8 +45,17 @@
                                         <strong>{{ $errors->first('confirm_password') }}</strong>
                                     </span>
                                 @endif 
-                    <button class="btn btn-info btn-block login" type="submit">Registrar</button>
-                    <p>¿Ya estás registrado? <a href="/iniciar_sesion">Inicia sesión</a></p>
+                    <input type="number" id="age" name="age" placeholder="Edad">
+                    Género <p>Macho</p><input type="radio" name="gender">
+                    <p>Hembra</p><input type="radio" name="gender">
+                    <p>Rol:</p>
+                    <select name="roles">
+                      <option value="admin">Admin</option>
+                      <option value="user">User</option>
+                    </select>
+
+                    <button class="btn btn-info btn-block login" type="submit">Dar de alta</button>
+                    <p><a href="/admin">Volver atrás</a></p>
                 </form>
             </div>
         </div>      
