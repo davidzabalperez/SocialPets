@@ -85,6 +85,7 @@
   }
   #mainNav.navbar-shrink .nav-link:hover {
     color: #689b94;
+    
   }
   #mainNav.navbar-shrink .nav-link:active {
     color: #689b94;
@@ -108,7 +109,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
-  
+
 }
 
 .masthead h1 {
@@ -138,7 +139,7 @@
   .masthead {
     height: 100vh;
     padding: 0;
-    
+
   }
   .masthead h1 {
     font-size: 6.5rem;
@@ -297,10 +298,6 @@ body {
   letter-spacing: 0.0625em;
 }
 
-a {
-  color: #64a19d;
-}
-
 a:focus, a:hover {
   text-decoration: none;
   color: #3c6360;
@@ -321,7 +318,7 @@ a:focus, a:hover {
 .zoom:hover {
     -ms-transform: scale(1.1);
     -webkit-transform: scale(1.1);
-    transform: scale(1.1); 
+    transform: scale(1.1);
     transition: transform .2s;
 }
 
@@ -344,4 +341,13 @@ footer {
 }
 .card{
   margin-left: 10%;
+}
+
+#tituloEditarUsuario{
+  text-align: center;
+line-height: 50px;
+}
+
+a .iconNotification {
+  color: white;
 }
