@@ -1,82 +1,57 @@
-<link rel="stylesheet" type="text/css" href="/css/login.css">
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registro</title>
+</head>
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<link rel="stylesheet" type="text/css" href="css/grayscale.css" >
 
-<div id="darAltaModal" class="modal fade">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-            <div class="modal-header">
-<!--                 <div class="avatar">
-                    <img src="/img/avatar.png" alt="Avatar">
-                </div>   -->
-                <h4 class="modal-title">Dar de alta</h4> <div class="icons" id="banear-icon"></div>
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-            </div>
-            <div class="modal-body">
-                              <form method="POST" action="{{ url('register') }}" name="registerForm" id="registerForm">
-                  @csrf
-                  <div class="form-group">
-                        <i class="icons" id="name-icon"></i>
-                         <input type="text" id="name" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ old('name') }}" placeholder="Nombre">
-                         @if ($errors->has('name'))
+<link rel="stylesheet" type="text/css" href="css/RegisterLogin-view.css" >
+<link rel="stylesheet" type="text/css" href="css/login.css" >
+<body>
+    @include('layouts.navbarLoginRegister')
+<div class="container">
+
+    <div class="login-container">
+            <div id="output"></div>
+            <div class="avatar"></div>
+            <div class="form-box">
+
+                <form action="{{ route('register') }}" method="POST" id="registerForm">
+                    @csrf
+                    <input type="text" id="name" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ old('name') }}" placeholder="Nombre">
+                    @if ($errors->has('name'))
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $errors->first('name') }}</strong>
                                     </span>
                                 @endif
-                         
-                    </div>
-                    <div class="form-group">
-                        <i class="icons" id="email-icon"></i>
-                         <input type="email" id="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" placeholder="Email">
-                         @if ($errors->has('email'))
+                    <input type="email" id="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" placeholder="Email">
+                    @if ($errors->has('email'))
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $errors->first('email') }}</strong>
                                     </span>
                                 @endif
-                         
-                    </div>
-                    <div class="form-group">
-                        <i class="icons" id="password-icon"></i>
-                        <input type="password" id="password_register" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" placeholder="Contraseña">
-                        @if ($errors->has('password'))
+                    <input type="password" id="password_register" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" placeholder="Contraseña">
+                     @if ($errors->has('password'))
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $errors->first('password') }}</strong>
                                     </span>
                                 @endif 
-                    </div> 
-                    <div class="form-group">
-                        <i class="icons" id="password-icon"></i>
-                        <input type="password" id="password_confirmation" class="form-control{{ $errors->has('password_confirmation') ? ' is-invalid' : '' }}" name="password_confirmation" placeholder="Confirma la contraseña">
-                         @if ($errors->has('password_confirmation'))
+                    <input type="password" id="confirm_password" class="form-control{{ $errors->has('confirm_password') ? ' is-invalid' : '' }}" name="confirm_password" placeholder="Confirma la contraseña">
+                    @if ($errors->has('confirm_password'))
                                     <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('password_confirmation') }}</strong>
+                                        <strong>{{ $errors->first('confirm_password') }}</strong>
                                     </span>
                                 @endif 
-
-                    </div>
-                    <div class="form-group">
-                        <i class="icons" id="email-icon"></i>
-                         <input type="number" id="age" class="form-control{{ $errors->has('age') ? ' is-invalid' : '' }}" name="email" value="{{ old('age') }}" placeholder="Edad">                    
-                    </div>
-                    <div class="form-group">
-                        <i class="icons" id="email-icon"></i>
-                        <br>
-                        Macho:
-                         <input type="radio" class="form-control" name="gender" value="1">
-                        Hembra:
-                          <input type="radio" class="form-control" name="gender" value="0">      
-                    </div>
-                    <div class="form-group">
-                        <i class="icons" id="password-icon"></i>
-                        <input type="text" id="race" class="form-control" name="race" placeholder="Raza">
-                    </div>
-                    <div class="form-group">
-                        <i class="icons" id="password-icon"></i>
-                        <input type="text" id="role" class="form-control" name="role" placeholder="Rol">
-                    </div>
-                    <div class="form-group">
-                        <button type="submit" id="boton" class="btn btn-primary btn-lg btn-block login-btn" >Dar de alta</button>
-                    </div>
+                    <button class="btn btn-info btn-block login" type="submit">Registrar</button>
+                    <p>¿Ya estás registrado? <a href="/iniciar_sesion">Inicia sesión</a></p>
                 </form>
             </div>
-        </div>
-    </div>
+        </div>      
 </div>
+</body>
+<script src="/js/loginRegisterValidator.js"></script>   
+<script src="/js/jquery.validate.js"></script>
+</html>
