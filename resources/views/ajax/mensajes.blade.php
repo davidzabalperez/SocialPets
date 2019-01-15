@@ -1,6 +1,4 @@
 @foreach($mensajes as $mensaje)
-    <tr>
-        <td>{{ $mensaje->id_sender }}</td>
-        <td>{{ $mensaje->text }}</td>
-    </tr>
+        <h5>{{ $mensaje->id_sender }}</h5>
+        <p>{{ $mensaje->text }}</p>
     @endforeach

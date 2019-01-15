@@ -49,11 +49,6 @@
     <p>Edad: {{$usuario->age}} año</p>
     @endif
     <p>Sexo: {{ $usuario->gender == 1 ? 'Femenino' : 'Masculino'}}</p>
-  </div>
-@endforeach
-</div>
-
-<!--<div class="bottom">
     <a class="btn btn-primary btn-sm" rel="publisher"
        href="">
         <i class="fa fa-thumbs-up"></i>
@@ -61,7 +56,12 @@
     <a class="btn btn-warning btn-sm" rel="publisher" href="">
         <i class="fa fa-thumbs-down"></i>
     </a>
-</div> -->
+  </div>
+
+@endforeach
+</div>
+
+
 </section>
 
     <!-- Footer -->
