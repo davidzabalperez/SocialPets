@@ -9,6 +9,7 @@
     <meta name="author" content="">
     <link rel="shortcut icon" href="/img/favicon (3).ico" />
     <link rel="stylesheet" type="text/css" href="/css/feed.css">
+    <link rel="stylesheet" type="text/css" href="/css/grayscale.css">
 
     <title>Social Pets Home</title>
 
@@ -21,50 +22,49 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="css/grayscale.css" rel="stylesheet">
+
 
   </head>
 
 
-    
+
   <body id="page-top">
     <!-- NavBar -->
     @include("layouts.navbar")
 <section id="socialpets" class="about-section text-center">
 
-  <div class="row">
-      @foreach($usuarios as $usuario)
-    <div class="col-lg-3 col-sm-6">
-            <div class="card hovercard">
-                <div class="cardheader">
-                </div>
-                <div class="avatar">
-                    <img alt="" src="/img/perro-cuadrado.jpg">
-                </div>
-                <div class="info">
-                    <div class="title">
-                        <a target="_blank" href="">{{$usuario->name}}</a>
-                    </div>
-                    <div class="desc">6 años</div>
-                    <div class="desc">En su casa</div>
-                </div>
-                <div class="bottom">
-                    <a class="btn btn-primary btn-sm" rel="publisher"
-                       href="">
-                        <i class="fa fa-thumbs-up"></i>
-                    </a>
-                    <a class="btn btn-warning btn-sm" rel="publisher" href="">
-                        <i class="fa fa-thumbs-down"></i>
-                    </a>
-                </div>
-            </div>
-        </div>
-    @endforeach
+<div class="container">
+  @foreach($usuarios as $usuario)
+  <div class="box">
+    <h3>{{$usuario->name}}</h3>
+    <div class="box-sub">
+      <div class="avatar">
+      <img src="/storage/avatars/{{ $usuario->avatar }}"/>
+    </div>
+    </div>
+    <p>Raza: {{$usuario->race}}</p>
+    @if($usuario->age > 1)
+    <p>Edad: {{$usuario->age}} años</p>
+    @else
+    <p>Edad: {{$usuario->age}} año</p>
+    @endif
+    <p>Sexo: {{ $usuario->gender == 1 ? 'Femenino' : 'Masculino'}}</p>
   </div>
+@endforeach
 </div>
+
+<!--<div class="bottom">
+    <a class="btn btn-primary btn-sm" rel="publisher"
+       href="">
+        <i class="fa fa-thumbs-up"></i>
+    </a>
+    <a class="btn btn-warning btn-sm" rel="publisher" href="">
+        <i class="fa fa-thumbs-down"></i>
+    </a>
+</div> -->
 </section>
 
-    <!-- Footer -->  
+    <!-- Footer -->
 
     <!-- Bootstrap core JavaScript -->
     <script src="jquery/jquery.min.js"></script>
@@ -78,7 +78,7 @@
   </body>
 <footer class="bg-black small text-center text-white-50">
       <div class="container">
-         
+
         Copyright &copy; Social Pets 2019
       </div>
 </footer>
