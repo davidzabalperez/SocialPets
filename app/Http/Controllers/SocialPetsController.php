@@ -64,6 +64,9 @@ class SocialPetsController extends Controller
   public function getStep2(){
     return view('register_step2');
   }
+  public function getCanvas(){
+    return view('canvas');
+  }
   public function registerStep2(Request $request){
 
         $user=User::find($request->input('id'));

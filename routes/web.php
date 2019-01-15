@@ -84,3 +84,4 @@ Route::resource('user', 'UserController');
 Obtiene los usuarios por AJAX (ADAPTAR A LOS MENSAJES)
 */
 Route::get('/mensajes/ajax', 'Ajax\AjaxController@cargarMensajes');
+Route::get('/canvas','SocialPetsController@getCanvas');

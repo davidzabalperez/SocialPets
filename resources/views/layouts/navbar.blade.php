@@ -83,16 +83,26 @@
                 </div>
               </li>
               <li class="nav-item dropdown">
-                <a id="navbarDropdown" class="nav-link dropdown-toggle" data-toggle="dropdown">
-                Notificaciones</a>
-                  <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+              <ul class="nav navbar-top-links navbar-right">
+        <!-- /.dropdown -->
 
-                  <a class="dropdown-item" href="">
-                    <span class="fa fa-envelope">
-                      {{ __('Mensajes') }}
-                      
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+            <i class="fa fa-bell fa-fw"></i> <i class="fa fa-caret-down"></i>
+          </a>
+          <ul class="dropdown-menu dropdown-alerts" id="notifications">
+              <!--  <li>
+                  <a href="#">
+                    <div>
+                      <i class="fa fa-comment fa-fw"></i>
+                      <span class="pull-right text-muted small"></span>
+                    </div>
                   </a>
-                    <ul class="dropdown-menu"></ul> 
+                </li> -->
+
+          </ul>
+          <!-- /.dropdown-alerts -->
+          </li>
                   </div>
               </li>
             @endif
