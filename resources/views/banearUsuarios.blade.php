@@ -26,7 +26,6 @@
                             </tr>
                           </thead>
                           <tbody>
-
                             <tr>
                               <td>{{$usuario->name}}</td>
                               <td>{{$usuario->email}}</td>

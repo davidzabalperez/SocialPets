@@ -17,6 +17,14 @@ class AjaxController extends Controller
 
         return view('ajax.mensajes', compact('mensajes'));
     }
+        public function darMensajes(){
+      $mensajes = Mensaje::selectRaw(
+        'mensajes.id_sender,
+        mensajes.text'
+        )->get();
+
+        return view('mensajes', compact('msjs'));
+    }
 }
 /*public function index() {
     $msg = "Leido";

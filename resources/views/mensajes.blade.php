@@ -48,8 +48,16 @@
                             <th>Mensajes</th>
                         </tr>
                     </thead>
+                    @foreach($mensajes as $mensaje)
                     <tbody id="mensajesInfo">
+
+    <tr>
+        <td>{{ $mensaje->id_sender }}</td>
+        <td>{{ $mensaje->text }}</td>
+    </tr>
+   
                     </tbody>
+                     @endforeach
                 </table>
                 <button type="button" class="mx-auto btn-block btn btn-outline-info f btn-xs" id="cargarMensajes">Cargar Mensajes</button>
             </div>

@@ -149,9 +149,12 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Request $request, $id)
     {
-
+        $user = User::find($id);
+        $user->role = $request->input('skere');
+        $user->save();
+        return back();
     }
 
     /**
@@ -181,7 +184,7 @@ class UserController extends Controller
         $user = User::findOrFail($id);
         $user->delete();
 
-        return back();
+        return back()->with('success', 'Usuario eliminado correctamente');
 }
 
 }
