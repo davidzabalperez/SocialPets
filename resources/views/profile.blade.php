@@ -14,6 +14,7 @@
 
     <!-- Bootstrap core CSS -->
     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 
     <!-- Custom fonts for this template -->
     <link href="fontawesome-free/css/all.min.css" rel="stylesheet">
@@ -30,41 +31,38 @@
   <body id="page-top">
     <!-- NavBar -->
     @include("layouts.navbar")
+
 <section id="socialpets" class="about-section text-center">
-
-  <div class="row">
-  <div class="col-lg-3 col-sm-6">
-            <div class="card hovercard">
-                <div class="cardheader">
-                </div>
-                <div class="avatar">
-                    <img src="/storage/avatars/{{ $user->avatar }}" />
-                </div>
-                <div class="info">
-                <div class="profile-header-container">
-
-                <div class="profile-header-img">
-                    
-                    <!-- badge -->
-                    <div class="rank-label-container">
-                       <!-- <span class="label label-default rank-label">{{$user->name}}</span> -->
-                    </div>
-                </div>
-                </div>
-                    edad:
-                    <div class="desc"> {{ Auth::user()->age }} anos</div>
-                    Genero:
-                    <div class="desc">{{ Auth::user()->gender == 1 ? 'Femenino' : 'Masculino'}}</div> 
-                    <br>
-                    Raza:
-                    <div class="desc">{{ Auth::user()->race }}</div>
-                </div>
-                    <a class="btn btn-light" rel="publisher" data-toggle="modal" data-target="#editProfileModal">
+                <div class="container">    
+                  <div class="row">
+                      <div class="panel panel-default">
+                      <div class="panel-heading">  <h4 >{{ Auth::user()->name }}</h4></div>
+                       <div class="panel-body">
+                      <div class="col-md-4 col-xs-12 col-sm-6 col-lg-4">
+                       <img src="/storage/avatars/{{ $user->avatar }}" width="120px" height="120px" />
+                      </div>
+                      <div class="col-md-8 col-xs-12 col-sm-6 col-lg-8" >
+                          <div class="container" style="text-align: left;">
+                            <p><b>Raza: </b>{{ Auth::user()->race }}</p>
+                            <p><b>Edad: </b>{{ Auth::user()->age }}</p>
+                            <p><b>Sexo: </b>{{ Auth::user()->gender == 1 ? 'Femenino' : 'Masculino'}}</p>
+                          
+                           
+                          </div>
+                           <hr>
+                          <ul class="container details" >
+                            <li><p><span class="glyphicon glyphicon-user one" style="width:50px;"></span>i.rudberg</p></li>
+                            <li><p><span class="glyphicon glyphicon-envelope one" style="width:50px;"></span>somerandom@email.com</p></li>
+                          </ul>
+                          <hr>
+                          <div class="col-sm-5 col-xs-6 tital " >Date Of Joining: 15 Jun 2016</div>
+                      </div>
+                       <a class="btn btn-light" rel="publisher" data-toggle="modal" data-target="#editProfileModal">
                     <i class="fa fa-cogs"></i>
                 </a>
+                </div>
             </div>
-    </div>    
-  </div>
+            </div>
 </div>
 </section>
 <div id="editProfileModal" class="modal fade">

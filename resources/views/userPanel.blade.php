@@ -23,6 +23,14 @@
     <!-- Custom styles for this template -->
     <link href="css/grayscale.css" rel="stylesheet">
 
+         <style>
+  /* Make the image fully responsive */
+  .carousel-inner img {
+      width: 100%;
+      height: 100%;
+  }
+    </style>
+
   </head>
 
 
@@ -45,8 +53,8 @@
                     <div class="title">
                         <a target="_blank" href="">{{$usuario->name}}</a>
                     </div>
-                    <div class="desc">6 años</div>
-                    <div class="desc">En su casa</div>
+                    <div class="desc">Edad: {{$usuario->age}}</div>
+                    <div class="desc">Raza: {{$usuario->race}}</div>
                 </div>
                 <div class="bottom">
                     <a class="btn btn-primary btn-sm" rel="publisher"
@@ -62,7 +70,7 @@
     @endforeach
   </div>
 </div>
-</section>
+
 
     <!-- Footer -->  
 
@@ -82,4 +90,5 @@
         Copyright &copy; Social Pets 2019
       </div>
 </footer>
+
 </html>
