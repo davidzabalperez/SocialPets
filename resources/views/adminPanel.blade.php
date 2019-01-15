@@ -42,7 +42,7 @@
             <br>
             <a class="btn btn-primary js-scroll-trigger" data-toggle="modal" data-target="#noticiaModal">Publicar noticia</a>
             <a class="btn btn-primary js-scroll-trigger" data-toggle="modal" data-target="#banearUsuariosModal">Banear usuario</a>
-            <a class="btn btn-primary js-scroll-trigger" data-toggle="modal" data-target="#registroModal">Crear usuario</a>
+            <a class="btn btn-primary js-scroll-trigger" data-toggle="modal" data-target="#cambioRolModal">Cambiar rol</a>
           </div>
 
         </div>
@@ -73,3 +73,4 @@
 @include('eliminarUsuarios')
 @include('banearUsuarios')
 @include('registerModal')
+@include('cambioRolModal')
