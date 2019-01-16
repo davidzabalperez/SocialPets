@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="shortcut icon" href="/img/favicon (3).ico" />
-    <link rel="stylesheet" type="text/css" href="css/feed.css">
+    <link rel="stylesheet" type="text/css" href="/css/feed.css">
 
     <title>Social Pets Home</title>
 
@@ -22,32 +23,14 @@
 
     <!-- Custom styles for this template -->
     <link href="css/grayscale.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.css">
   </head>
 
 
 
-  <body>
+  <body id="page-top">
+    <!-- NavBar -->
     @include("layouts.navbar")
-<div class="container text-white-50 text-center" id="mensajesDiv">
-  <div class="row">
-  <table id="table_id" class="display">
-                    <thead>
-                        <tr>
-                            <th>Usuario</th>
-                            <th>Mensajes</th>
-                        </tr>
-                    </thead>
-
-                    <tbody id="mensajesInfo">
-                    </tbody>
-
-                </table>
-<button type="button" class="mx-auto btn-block btn btn-outline-info f btn-xs" id="cargarMensajes">Cargar Mensajes</button>
-
-</div>
-</div>
-
-    <div class="container text-white-50 text-center">
 <section id="socialpets" class="about-section text-center">
 <div class="messaging">
       <div class="inbox_msg">
@@ -55,23 +38,24 @@
           <div class="headind_srch">
             <div class="recent_heading">
               <h4>Recent</h4>
-              <button type="button" class="mx-auto btn-block btn btn-outline-info f btn-xs" id="cargarMensajes">Cargar Mensajes</button>
+              
             </div>
             <div class="srch_bar">
               <div class="stylish-input-group">
-                <input type="text" class="search-bar"  placeholder="Search" >
+                <input type="text" id="Search" onkeyup="search()" placeholder="Buscar mensaje.." title="Type in a name">
                 <span class="input-group-addon">
                 <button type="button"> <i class="fa fa-search" aria-hidden="true"></i> </button>
                 </span> </div>
             </div>
+
           </div>
            
           <div class="inbox_chat">
             @foreach($mensajes as $mensaje)
-            <div class="chat_list">
-              <div class="chat_people">
+            <div class="chat_list target" >
+              <div class="chat_people" id="mensajesInfo">
                 <div class="chat_img"> <img src="https://ptetutorials.com/images/user-profile.png" alt="sunil"> </div>
-                <div class="chat_ib" id="mensajesInfo">
+                <div class="chat_ib" >
                   <h5>{{ $mensaje->id_sender }} <span class="chat_date">Dec 25</span></h5> 
                   <p>{{ $mensaje->text }}</p>
                 </div>
@@ -79,22 +63,22 @@
             </div>
           @endforeach
           </div>
-
+          <button type="button" class="mx-auto btn-block btn btn-outline-info f btn-xs" id="cargarMensajes">Cargar Mensajes</button>
         </div>
       </div>
     </div>
 
   <div class="container msj">
-	<div class="row">
-		<div class="panel panel-default">
+  <div class="row">
+    <div class="panel panel-default">
+      <h3 class="text-white-50" >Enviar Mensaje</h3>
         <div class="panel-heading clearfix">
-          <h3 class="panel-title">Enviar Mensaje</h3>
         </div>
         <div class="panel-body">
             <form action="{{ route('user.store') }}" id="mensajeForm" class="mensajeForm" method="post">
                 @csrf
                 <div class="form-group">
-                  <label class="col-sm-2" for="receiver">Destinatario:</label>
+                  <label class="col-sm-2 text-white-50" for="receiver">Destinatario:</label>
                   <div class="col">
                   <select name="receiver" id="receiver">
                       @foreach($users as $user)
@@ -104,29 +88,27 @@
                       @endforeach
                       </select>
                 </div>
+              </div>
                 <div class="form-group">
-                  <label class="col-sm-12" for="text">Mensaje:</label>
+                  <label class="col-sm-12 text-white-50" for="text">Mensaje:</label>
                   <textarea class="col" name="text" id="text" cols="30" rows="10"></textarea>
                 </div>
                 <button type="submit" class="btn">Enviar</button>
             </form>
         </div>
       </div>
-	</div>
+  </div>
 </div>
 </section>
-</div>
-</body>
-    <!-- Footer -->
-<footer class="bg-black small text-center text-white-50">
-      <div class="container">
 
+
+    <!-- Footer -->
+    <footer class="bg-black small text-center text-white-50">
+      <div class="container">
 
         Copyright &copy; Social Pets 2018
       </div>
 </footer>
-
-
 
     <!-- Bootstrap core JavaScript -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -136,8 +118,9 @@
     
     <!-- Custom scripts for this template -->
     <script src="js/grayscale.min.js"></script>
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
     <script>
-      var numRegistros = 3;
+      var numRegistros = 5;
     $(document).ready( function () {
     $('#table_id').DataTable();
     });
@@ -170,5 +153,24 @@
 
     });
 
+
     </script>
+
+    <script>
+      function search() {
+        var input = document.getElementById("Search");
+        var filter = input.value.toLowerCase();
+        var nodes = document.getElementsByClassName('target');
+
+  for (i = 0; i < nodes.length; i++) {
+    if (nodes[i].innerText.toLowerCase().includes(filter)) {
+      nodes[i].style.display = "block";
+    } else {
+      nodes[i].style.display = "none";
+    }
+  }
+}
+    </script>
+  </body>
+
 </html>

@@ -4,13 +4,12 @@
   <head>
 
     <meta charset="utf-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="shortcut icon" href="/img/favicon (3).ico" />
-
-
+    <link rel="stylesheet" type="text/css" href="/css/feed.css">
+    <link rel="stylesheet" type="text/css" href="/css/grayscale.css">
 
     <title>Social Pets Home</title>
 
@@ -23,11 +22,12 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link rel="stylesheet" type="text/css" href="css/feed.css">
-    <link rel="stylesheet" type="text/css" href="css/grayscale.css">
 
 
-</head>
+  </head>
+
+
+
   <body id="page-top">
     <!-- NavBar -->
     @include("layouts.navbar")
@@ -60,16 +60,26 @@
 
 @endforeach
 </div>
+
+
 </section>
+
+    <!-- Footer -->
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="jquery/jquery.min.js"></script>
+    <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for this template -->
+    <script src="js/grayscale.min.js"></script>
   </body>
-      <!-- Footer -->
 <footer class="bg-black small text-center text-white-50">
       <div class="container">
+
         Copyright &copy; Social Pets 2019
       </div>
 </footer>
-    <script src="jquery/jquery.min.js"></script>
-    <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="jquery-easing/jquery.easing.min.js"></script>
-    <script src="js/grayscale.min.js"></script>
 </html>

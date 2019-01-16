@@ -19,7 +19,7 @@ class AjaxController extends Controller
 
 
 
-        public function darMensajes(){
+      public function darMensajes(){
       $mensajes = Mensaje::selectRaw(
         'mensajes.id_sender,
         mensajes.text'

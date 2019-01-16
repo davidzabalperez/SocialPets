@@ -30,7 +30,6 @@
   <body id="page-top">
     <!-- NavBar -->
     @include("layouts.navbar")
-
 <section class="about-section">
 
 <div class="container">
@@ -173,7 +172,6 @@
         Copyright &copy; Social Pets 2018
       </div>
 </footer>
-</html>
 <!-- Bootstrap core JavaScript -->
 <script src="jquery/jquery.min.js"></script>
 <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -184,4 +182,3 @@
 <!-- Custom scripts for this template -->
 <script src="js/grayscale.min.js"></script>
 </html>
-
