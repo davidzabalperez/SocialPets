@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -37,23 +38,24 @@
           <div class="headind_srch">
             <div class="recent_heading">
               <h4>Recent</h4>
-              <button type="button" class="mx-auto btn-block btn btn-outline-info f btn-xs" id="cargarMensajes">Cargar Mensajes</button>
+              
             </div>
             <div class="srch_bar">
               <div class="stylish-input-group">
-                <input type="text" class="search-bar"  placeholder="Search" >
+                <input type="text" id="Search" onkeyup="search()" placeholder="Buscar mensaje.." title="Type in a name">
                 <span class="input-group-addon">
                 <button type="button"> <i class="fa fa-search" aria-hidden="true"></i> </button>
                 </span> </div>
             </div>
+
           </div>
            
           <div class="inbox_chat">
             @foreach($mensajes as $mensaje)
-            <div class="chat_list">
-              <div class="chat_people">
+            <div class="chat_list target" >
+              <div class="chat_people" id="mensajesInfo">
                 <div class="chat_img"> <img src="https://ptetutorials.com/images/user-profile.png" alt="sunil"> </div>
-                <div class="chat_ib" id="mensajesInfo">
+                <div class="chat_ib" >
                   <h5>{{ $mensaje->id_sender }} <span class="chat_date">Dec 25</span></h5> 
                   <p>{{ $mensaje->text }}</p>
                 </div>
@@ -61,22 +63,22 @@
             </div>
           @endforeach
           </div>
-
+          <button type="button" class="mx-auto btn-block btn btn-outline-info f btn-xs" id="cargarMensajes">Cargar Mensajes</button>
         </div>
       </div>
     </div>
 
   <div class="container msj">
-	<div class="row">
-		<div class="panel panel-default">
+  <div class="row">
+    <div class="panel panel-default">
+      <h3 class="text-white-50" >Enviar Mensaje</h3>
         <div class="panel-heading clearfix">
-          <h3 class="panel-title">Enviar Mensaje</h3>
         </div>
         <div class="panel-body">
             <form action="{{ route('user.store') }}" id="mensajeForm" class="mensajeForm" method="post">
                 @csrf
                 <div class="form-group">
-                  <label class="col-sm-2" for="receiver">Destinatario:</label>
+                  <label class="col-sm-2 text-white-50" for="receiver">Destinatario:</label>
                   <div class="col">
                   <select name="receiver" id="receiver">
                       @foreach($users as $user)
@@ -86,21 +88,19 @@
                       @endforeach
                       </select>
                 </div>
+              </div>
                 <div class="form-group">
-                  <label class="col-sm-12" for="text">Mensaje:</label>
+                  <label class="col-sm-12 text-white-50" for="text">Mensaje:</label>
                   <textarea class="col" name="text" id="text" cols="30" rows="10"></textarea>
                 </div>
                 <button type="submit" class="btn">Enviar</button>
             </form>
         </div>
       </div>
-	</div>
+  </div>
 </div>
-</div>
-
-
-
 </section>
+
 
     <!-- Footer -->
     <footer class="bg-black small text-center text-white-50">
@@ -120,30 +120,56 @@
     <script src="js/grayscale.min.js"></script>
     <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
     <script>
+      var numRegistros = 5;
     $(document).ready( function () {
     $('#table_id').DataTable();
     });
 
+    
     $('#cargarMensajes').on('click', function(){
+
+        $.get("{{ URL::to('/mensajes/ajax') }}",
+            {numRegistros:numRegistros},
+            function(data){
+              $('#mensajesInfo').empty().html(data);
+              numRegistros += 5;
+            }
+          );
+
+            /*$('#cargarMensajes').on('click', function(){
       $.get("{{ URL::to('/mensajes/ajax') }}", function(data){
         $('#mensajesInfo').empty().html(data);
 
-
-        /*$.each(data, function(i, value){
-            var tr =$("<tr/>");
-                tr.append($("<td/>",{
-                  text: value.id
-                })).append($("<td/>",{
-                  text: value.name
-                })).append($("<td/>",{
-                  html: "<a href='#'>Ver</a> <a href='#'>Editar</a>"
-                }))
-
-                $('#usersInfo').append(tr);
+       $.ajax({
+          type:"GET",
+          url:"/mensajes/ajax",
+          data: numRegistros,
+          dataType: 'text',
+          success: function(data){
+              $('#mensajesInfo').empty().html(data);
+              numRegistros += 5;
+            }
         });*/
-      })
+
     });
 
+
+    </script>
+
+    <script>
+      function search() {
+        var input = document.getElementById("Search");
+        var filter = input.value.toLowerCase();
+        var nodes = document.getElementsByClassName('target');
+
+  for (i = 0; i < nodes.length; i++) {
+    if (nodes[i].innerText.toLowerCase().includes(filter)) {
+      nodes[i].style.display = "block";
+    } else {
+      nodes[i].style.display = "none";
+    }
+  }
+}
     </script>
   </body>
 

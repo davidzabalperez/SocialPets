@@ -33,6 +33,7 @@ class User extends Authenticatable implements MustVerifyEmail
     protected $dates = ['deleted_at'];
 
     public function mensaje(){
-        return $this->hasMany('App/Mensaje', 'foreign_key');
+        return $this->hasMany('Mensaje');
     }
+
 }
