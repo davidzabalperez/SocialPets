@@ -13,7 +13,7 @@
             <div class="modal-body">
                 <div class="email">
                   @foreach($usuarios as $usuario)
-                <form  action="{{ route('user.edit', $usuario->id) }}" method="POST">
+                <form  action="{{ route('prueba', $usuario->id) }}" method="POST">
                   @method('PATCH')
                   @csrf
                     <div class="form-group">
@@ -32,7 +32,7 @@
                               <td>{{$usuario->email}}</td>
                               <td>{{$usuario->role}}</td>
                               <td>
-                              <input type="text" name="skere">
+                            <input type="text" name="rol" value="{{$usuario->role}}">
                               <button type="submit">Guardar</button></td>
                             </tr>
                             @endforeach

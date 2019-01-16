@@ -149,12 +149,9 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Request $request, $id)
+    public function edit()
     {
-        $user = User::find($id);
-        $user->role = $request->input('skere');
-        $user->save();
-        return back();
+
     }
 
     /**

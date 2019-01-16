@@ -159,5 +159,12 @@ class SocialPetsController extends Controller
 }
         return view('profile');
     }
+    public function changeRol(Request $request, $id)
+    {
+        $user = User::find($id);
+        $user->role = $request->input('rol');
+        $user->save();
+        return back();
+    }
 
 }
