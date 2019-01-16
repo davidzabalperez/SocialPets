@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ChartDataController extends Controller
 {
@@ -11,12 +13,16 @@ class ChartDataController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($year)
     {
-        //
        /*  $datos = DB::table('users')->whereMonth('created_at', '=', date('m'))->get();
         return view('estadisticas',['datos' => $datos]); */
-        return view('estadisticas');
+            $userPerMonth = DB::table('users')
+                ->select(DB::raw('count(id) as users'))
+                ->whereYear($year)
+                ->groupBy('created_at')->format('m')
+                ;
+            return    
     }
 
     /**

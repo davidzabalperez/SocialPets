@@ -23,26 +23,21 @@
     <link href="css/grayscale.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.css">
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-
-    <script type="text/javascript">
+     <script type="text/javascript">
       google.charts.load('current', {'packages':['corechart']});
       google.charts.setOnLoadCallback(drawChart);
-
       function drawChart() {
         var data = google.visualization.arrayToDataTable([
-          ['Year', 'Sales', 'Expenses'],
-          ['2013',  1000,      400],
-          ['2014',  1170,      460],
-          ['2015',  660,       1120],
-          ['2016',  1030,      540]
+            ['mes', 'usuarios'],
+            @foreach($filas as $grafico)
+                [{{$grafico['mes']}},{{$grafico['usuarios']}}],
+            @endforeach
         ]);
-
         var options = {
-          title: 'Company Performance',
-          hAxis: {title: 'Year',  titleTextStyle: {color: '#333'}},
-          vAxis: {minValue: 0}
+            title: 'Usuarios Mensuales',
+            hAxis: {title: 'Meses',  titleTextStyle: {color: '#333'}},
+            vAxis: {title: 'Usuarios', titleTextStyle: {color: '#333'}, minValue: 0, maxValue: 10}
         };
-
         var chart = new google.visualization.AreaChart(document.getElementById('chart_div'));
         chart.draw(data, options);
       }
@@ -56,6 +51,7 @@
         <div class="container">
             <div id="chart_div" style="width: 100%; height: 500px;"></div>
         </div>
+        
     </section>
 
 <footer class="bg-black small text-center text-white-50">
