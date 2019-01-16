@@ -48,6 +48,43 @@
 </div>
 
     <div class="container text-white-50 text-center">
+<section id="socialpets" class="about-section text-center">
+<div class="messaging">
+      <div class="inbox_msg">
+        <div class="inbox_people">
+          <div class="headind_srch">
+            <div class="recent_heading">
+              <h4>Recent</h4>
+              <button type="button" class="mx-auto btn-block btn btn-outline-info f btn-xs" id="cargarMensajes">Cargar Mensajes</button>
+            </div>
+            <div class="srch_bar">
+              <div class="stylish-input-group">
+                <input type="text" class="search-bar"  placeholder="Search" >
+                <span class="input-group-addon">
+                <button type="button"> <i class="fa fa-search" aria-hidden="true"></i> </button>
+                </span> </div>
+            </div>
+          </div>
+           
+          <div class="inbox_chat">
+            @foreach($mensajes as $mensaje)
+            <div class="chat_list">
+              <div class="chat_people">
+                <div class="chat_img"> <img src="https://ptetutorials.com/images/user-profile.png" alt="sunil"> </div>
+                <div class="chat_ib" id="mensajesInfo">
+                  <h5>{{ $mensaje->id_sender }} <span class="chat_date">Dec 25</span></h5> 
+                  <p>{{ $mensaje->text }}</p>
+                </div>
+              </div>
+            </div>
+          @endforeach
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  <div class="container msj">
 	<div class="row">
 		<div class="panel panel-default">
         <div class="panel-heading clearfix">
@@ -77,15 +114,19 @@
       </div>
 	</div>
 </div>
+</section>
 </div>
 </body>
+    <!-- Footer -->
 <footer class="bg-black small text-center text-white-50">
       <div class="container">
+
 
         Copyright &copy; Social Pets 2018
       </div>
 </footer>
-    <!-- Footer -->
+
+
 
     <!-- Bootstrap core JavaScript -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -130,5 +171,4 @@
     });
 
     </script>
-
 </html>

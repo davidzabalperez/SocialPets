@@ -9,7 +9,8 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="shortcut icon" href="/img/favicon (3).ico" />
-    
+
+
 
     <title>Social Pets Home</title>
 
@@ -22,39 +23,48 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="css/grayscale.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="/css/feed.css">
-  </head>
+    <link rel="stylesheet" type="text/css" href="css/feed.css">
+    <link rel="stylesheet" type="text/css" href="css/grayscale.css">
 
 
-
-    
+</head>
   <body id="page-top">
     <!-- NavBar -->
     @include("layouts.navbar")
-   @foreach($usuarios as $usuario)
-     <div class="container">
-            <div class="row mt-40">
-                <div class="col-lg-4">
-                    <div class="box1">
-                         <img alt="" src="/img/perro-cuadrado.jpg">
-                        <h3 class="title">{{$usuario->name}}</h3>
-                        <ul class="icon">
-                            <li><a href="#"><i class="fa fa-thumbs-up"></i></a></li>
-                            <li><a href="#"><i class="fa fa-thumbs-down"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            
-        </div>
-        @endforeach
-        
+<section id="socialpets" class="about-section text-center">
 
+<div class="container">
+  @foreach($usuarios as $usuario)
+  <div class="box">
+    <h3>{{$usuario->name}}</h3>
+    <div class="box-sub">
+      <div class="avatar">
+      <img src="/storage/avatars/{{ $usuario->avatar }}"/>
+    </div>
+    </div>
+    <p>Raza: {{$usuario->race}}</p>
+    @if($usuario->age > 1)
+    <p>Edad: {{$usuario->age}} años</p>
+    @else
+    <p>Edad: {{$usuario->age}} año</p>
+    @endif
+    <p>Sexo: {{ $usuario->gender == 1 ? 'Femenino' : 'Masculino'}}</p>
+    <a class="btn btn-primary btn-sm" rel="publisher"
+       href="">
+        <i class="fa fa-thumbs-up"></i>
+    </a>
+    <a class="btn btn-warning btn-sm" rel="publisher" href="">
+        <i class="fa fa-thumbs-down"></i>
+    </a>
+  </div>
+
+@endforeach
+</div>
+</section>
   </body>
+      <!-- Footer -->
 <footer class="bg-black small text-center text-white-50">
-      <div>
-         
+      <div class="container">
         Copyright &copy; Social Pets 2019
       </div>
 </footer>
