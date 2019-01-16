@@ -99,7 +99,7 @@ class SocialPetsController extends Controller
   }
   public function getMensajess(){
     $users = User::all();
-    $mensajes = Mensaje::where('id_receiver',Auth::user()->id)->limit(5)->offset(5)->get();
+    $mensajes = Mensaje::where('id_receiver',Auth::user()->id)->limit(2)->get();
     return view('mensajes')->with([
       'mensajes'=> $mensajes,
       'users'=> $users
@@ -162,7 +162,7 @@ class SocialPetsController extends Controller
     public function changeRol(Request $request, $id)
     {
         $user = User::find($id);
-        $user->role = $request->input('rol');
+        $user->role = $request->input('xd');
         $user->save();
         return back();
     }

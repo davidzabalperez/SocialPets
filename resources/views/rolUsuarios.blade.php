@@ -32,8 +32,8 @@
                               <td>{{$usuario->email}}</td>
                               <td>{{$usuario->role}}</td>
                               <td>
-                            <input type="text" name="rol" value="{{$usuario->role}}">
-                              <button type="submit">Guardar</button></td>
+                            <input type="text" name="xd" id="xd" value="{{$usuario->role}}">
+                              <input type="submit" value="Guardar"></td>
                             </tr>
                             @endforeach
                           </tbody>
