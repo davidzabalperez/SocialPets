@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="shortcut icon" href="/img/favicon (3).ico" />
-    <link rel="stylesheet" type="text/css" href="/css/feed.css">
+    <link rel="stylesheet" type="text/css" href="css/feed.css">
 
     <title>Social Pets Home</title>
 
@@ -22,40 +22,32 @@
 
     <!-- Custom styles for this template -->
     <link href="css/grayscale.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.css">
   </head>
 
 
 
-  <body id="page-top">
-    <!-- NavBar -->
+  <body>
     @include("layouts.navbar")
-<section id="socialpets" class="about-section text-center">
-<br>
-<div class="container">
-    <div class="row">
-        <div class="panel panel-default widget">
-            <div class="panel-heading">
-                <span class="glyphicon glyphicon-comment"></span>
-                <h1 class="panel-title">Mensajes Recibidos</h1>
-            </div>
-            <div class="row">
-            </div>
-                <table id="table_id" class="display">
+<div class="container text-white-50 text-center" id="mensajesDiv">
+  <div class="row">
+  <table id="table_id" class="display">
                     <thead>
                         <tr>
                             <th>Usuario</th>
                             <th>Mensajes</th>
                         </tr>
                     </thead>
+
                     <tbody id="mensajesInfo">
                     </tbody>
+
                 </table>
-                <button type="button" class="mx-auto btn-block btn btn-outline-info f btn-xs" id="cargarMensajes">Cargar Mensajes</button>
-            </div>
-        </div>
-    </div>
-    <div class="container">
+<button type="button" class="mx-auto btn-block btn btn-outline-info f btn-xs" id="cargarMensajes">Cargar Mensajes</button>
+
+</div>
+</div>
+
+    <div class="container text-white-50 text-center">
 	<div class="row">
 		<div class="panel panel-default">
         <div class="panel-heading clearfix">
@@ -86,9 +78,13 @@
 	</div>
 </div>
 </div>
+</body>
+<footer class="bg-black small text-center text-white-50">
+      <div class="container">
 
-</section>
-
+        Copyright &copy; Social Pets 2018
+      </div>
+</footer>
     <!-- Footer -->
 
     <!-- Bootstrap core JavaScript -->
@@ -99,38 +95,40 @@
     
     <!-- Custom scripts for this template -->
     <script src="js/grayscale.min.js"></script>
-    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
     <script>
+      var numRegistros = 3;
     $(document).ready( function () {
     $('#table_id').DataTable();
     });
 
+    
     $('#cargarMensajes').on('click', function(){
+
+        $.get("{{ URL::to('/mensajes/ajax') }}",
+            {numRegistros:numRegistros},
+            function(data){
+              $('#mensajesInfo').empty().html(data);
+              numRegistros += 5;
+            }
+          );
+
+            /*$('#cargarMensajes').on('click', function(){
       $.get("{{ URL::to('/mensajes/ajax') }}", function(data){
         $('#mensajesInfo').empty().html(data);
 
-
-        /*$.each(data, function(i, value){
-            var tr =$("<tr/>");
-                tr.append($("<td/>",{
-                  text: value.id
-                })).append($("<td/>",{
-                  text: value.name
-                })).append($("<td/>",{
-                  html: "<a href='#'>Ver</a> <a href='#'>Editar</a>"
-                }))
-
-                $('#usersInfo').append(tr);
+       $.ajax({
+          type:"GET",
+          url:"/mensajes/ajax",
+          data: numRegistros,
+          dataType: 'text',
+          success: function(data){
+              $('#mensajesInfo').empty().html(data);
+              numRegistros += 5;
+            }
         });*/
-      })
+
     });
 
     </script>
-  </body>
-<footer class="bg-black small text-center text-white-50">
-      <div class="container">
 
-        Copyright &copy; Social Pets 2018
-      </div>
-</footer>
 </html>
