@@ -12,7 +12,7 @@
     <title>Social Pets Home</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom fonts for this template -->
     <link href="fontawesome-free/css/all.min.css" rel="stylesheet">
