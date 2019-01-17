@@ -49,8 +49,9 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/step2', 'SocialPetsController@getStep2');
 Route::post('/register2', 'SocialPetsController@registerStep2');
 
-// rutas para cambiar de rol
-Route::post('/prueba', 'SocialPetsController@changeRol')->name('prueba');
+// rutas para editar usuario
+Route::get('/usuario/{id}/edit', 'SocialPetsController@editUser');
+Route::put('/usuario/{id}', 'SocialPetsController@updateUser');
 
 //rutas para dar de alta al usuario
 Route::get('/darAlta', 'SocialPetsController@getDarDeAlta')->name('darAlta');

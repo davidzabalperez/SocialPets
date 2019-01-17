@@ -159,9 +159,28 @@ class SocialPetsController extends Controller
     public function changeRol(Request $request, $id)
     {
         $user = User::find($id);
-        $user->role = $request->input('xd');
+        $user->role = $request->input('inputRol');
         $user->save();
         return view('profile');
+    }
+
+    public function editUser($id)
+    {
+        $user=User::find($id);
+        return view('editUser',compact('user'));
+    }
+
+    public function updateUser(Request $request, $id)
+    {
+        $user=User::find($id);
+        $user->name = $request->input('name');
+        $user->email = $request->input('email');
+        $user->age = $request->input('age');
+        $user->gender = $request->get('gender');
+        $user->race = $request->input('race');
+        $user->role = $request->input('role');
+        $user->update();
+        return redirect('/admin')->with('success', 'Usuario editado con exito');
     }
 
 }

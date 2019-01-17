@@ -149,7 +149,7 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit()
+    public function edit($id)
     {
 
     }
@@ -166,6 +166,10 @@ class UserController extends Controller
         $user=User::find($id);
         $user->name = $request->input('name');
         $user->email = $request->input('email');
+        $user->age = $request->input('age');
+        $user->gender = $request->get('gender');
+        $user->race = $request->input('race');
+        $user->role = $request->input('role');
         $user->save();
         return redirect('/profile')->with('success', 'Usuario editado con exito');
     }
