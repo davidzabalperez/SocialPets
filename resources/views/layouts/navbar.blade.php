@@ -51,7 +51,7 @@
             @else
             
             <div class="collapse navbar-collapse" id="navbarResponsive">
-            <a class="navbar-brand js-scroll-trigger" href="/inicio"><img src="img/logo.png" alt="logo" width="120px;"></a>
+            <a class="navbar-brand js-scroll-trigger" href="/inicio"><img src="/img/logo.png" alt="logo" width="120px;"></a>
             <ul class="navbar-nav mr-auto navbar ">
             <li class="nav-item navbar-nav mr-auto navbar">
                      <a class="nav-link js-scroll-trigger" href="{{ route('Inicio') }}"><span class="fa fa-paw">
