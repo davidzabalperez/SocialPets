@@ -363,10 +363,7 @@ a .iconNotification {
 }
 .admin-panel-section{
   padding-top: 5rem;
- background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
+
   height: 100%;
 }
 

@@ -5,7 +5,7 @@
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="modal-title">Lista de usuarios</h4> <div class="icons" id="banear-icon"></div>
+                <h4 class="modal-title">Lista de usuarios</h4> <!--<div class="icons" id="banear-icon"></div>-->
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
             </div>
                   
@@ -55,8 +55,8 @@
                           </div>
                           
                           </tbody>
-                          @endforeach
-                         
+
+                          @endforeach                         
                         </table>
                     </div>
             </div>
