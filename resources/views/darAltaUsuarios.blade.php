@@ -44,14 +44,14 @@
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $errors->first('confirm_password') }}</strong>
                                     </span>
-                                @endif 
-                    <input type="number" id="age" name="age" placeholder="Edad">
+                                @endif
+                    <input type="number" id="age" min="0" name="age" placeholder="Edad">
                     Género <p>Macho</p><input type="radio" name="gender" value="0">
                     <p>Hembra</p><input type="radio" name="gender" value="1">
                     <p>Raza</p>
                     <input type="text" id="race" name="race" placeholder="Raza">
                     <p>Rol:</p>
-                    <select name="roles">
+                    <select name="role">
                       <option value="admin">Admin</option>
                       <option value="user">User</option>
                     </select>
@@ -63,6 +63,4 @@
         </div>      
 </div>
 </body>
-<script src="/js/loginRegisterValidator.js"></script>   
-<script src="/js/jquery.validate.js"></script>
 </html>

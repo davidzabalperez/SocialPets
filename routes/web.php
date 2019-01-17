@@ -55,7 +55,7 @@ Route::put('/usuario/{id}', 'SocialPetsController@updateUser');
 
 //rutas para dar de alta al usuario
 Route::get('/darAlta', 'SocialPetsController@getDarDeAlta')->name('darAlta');
-Route::post('darAlta', ['as' => 'darAlta.post', 'uses' => 'UserController@register']);
+Route::post('darAlta', ['as' => 'darAlta.post', 'uses' => 'SocialPetsController@create']);
 
 Route::get('/profile', 'SocialPetsController@getProfile')->name('profile')->middleware('verified');
 
