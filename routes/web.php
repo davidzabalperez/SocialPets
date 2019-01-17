@@ -93,7 +93,7 @@ Route::resource('socialpets', 'SocialPetsController');
 
 
 Route::get('estadisticas/{year}', 'ChartController@verEstadistica');
-Route::get('estadisticas/2019}', 'ChartController@verEstadistica')->name('estadisticas')->middleware('admin');
+Route::get('estadisticas/2019', 'ChartController@verEstadistica')->name('estadisticas')->middleware('admin');
 
 
 // Route::resource('socialpets', 'SocialPetsController');
