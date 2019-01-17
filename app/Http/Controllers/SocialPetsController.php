@@ -201,6 +201,7 @@ class SocialPetsController extends Controller
       $save = User::insert($user);
       if ($save) {
         return redirect('admin');
+        session()->flash('notif', 'succes to create user');
       }
     }
 

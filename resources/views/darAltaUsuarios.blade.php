@@ -12,8 +12,8 @@
 <link rel="stylesheet" type="text/css" href="css/login.css" >
 <body>
     @include('layouts.navbarLoginRegister')
-<div class="container">
 
+<div class="container">
     <div class="login-container">
             <div id="output"></div>
             <div class="avatar"></div>
