@@ -71,13 +71,13 @@
                     <a class="dropdown-item" href="{{ route('AdminPanel') }}"><span class="fa  fa-toolbox">
                             {{ __('administrar') }}
                     </a>
-                    <a class="dropdown-item" href="{{ route('estadisticas') }}"><span class="fa  fa-toolbox">
+                    <a class="dropdown-item" href="{{ route('estadisticas') }}"><span class="fa  fa-chart-pie">
                             {{ __('estadisticas') }}
                     </a>
                     @endif
                     <a class="dropdown-item" href="{{ route('logout') }}"
                           onclick="event.preventDefault();
-                                        document.getElementById('logout-form').submit();">
+                                        document.getElementById('logout-form').submit();"><span class="fa  fa-sign-out-alt">
                           {{ __('Logout') }}
                       </a>
                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
@@ -89,23 +89,23 @@
               <ul class="nav navbar-top-links navbar-right">
         <!-- /.dropdown -->
 
-        <li class="dropdown">
+        <!-- <li class="dropdown">
           <a class="dropdown-toggle" data-toggle="dropdown" href="#">
             <i class="fa fa-bell fa-fw iconNotification"></i> <i class="fa fa-caret-down"></i>
           </a>
           <ul class="dropdown-menu dropdown-alerts" id="notifications">
-              <!--  <li>
+               <li>
                   <a href="#">
                     <div>
                       <i class="fa fa-comment fa-fw"></i>
                       <span class="pull-right text-muted small"></span>
                     </div>
                   </a>
-                </li> -->
+                </li>
 
           </ul>
-          <!-- /.dropdown-alerts -->
-          </li>
+           /.dropdown-alerts
+          </li> -->
                   </div>
               </li>
             @endif
