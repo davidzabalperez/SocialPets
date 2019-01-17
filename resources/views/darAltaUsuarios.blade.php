@@ -19,7 +19,7 @@
             <div class="avatar"></div>
             <div class="form-box">
 
-                <form action="{{ route('register') }}" method="POST" id="darDeAltaForm">
+                <form action="{{ route('darAlta') }}" method="POST" id="darDeAltaForm">
                     @csrf
                     <input type="text" id="name" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ old('name') }}" placeholder="Nombre">
                     @if ($errors->has('name'))
@@ -46,8 +46,10 @@
                                     </span>
                                 @endif 
                     <input type="number" id="age" name="age" placeholder="Edad">
-                    Género <p>Macho</p><input type="radio" name="gender">
-                    <p>Hembra</p><input type="radio" name="gender">
+                    Género <p>Macho</p><input type="radio" name="gender" value="0">
+                    <p>Hembra</p><input type="radio" name="gender" value="1">
+                    <p>Raza</p>
+                    <input type="text" id="race" name="race" placeholder="Raza">
                     <p>Rol:</p>
                     <select name="roles">
                       <option value="admin">Admin</option>
