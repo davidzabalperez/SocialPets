@@ -92,8 +92,6 @@ Route::resource('user', 'UserController');
 Route::resource('socialpets', 'SocialPetsController');
 
 
-Route::resource('estadisticas', 'ChartDataController');
-
 Route::get('estadisticas/{year}', 'ChartController@verEstadistica');
 
 
