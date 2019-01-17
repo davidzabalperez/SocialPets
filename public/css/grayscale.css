@@ -183,14 +183,14 @@
 }
 
 .about-section {
-  background-image: url('/img/background.jpg');
+  background-image: url('/img/backgorund-userFeed.jpg');
   padding-top: 3rem;
  background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
-  height: 100%;
 }
+
 
 .about-section p {
   margin-bottom: 2rem;
@@ -376,6 +376,15 @@ a .iconNotification {
   background-attachment: fixed;
   height: 100%;
 
+}
+.feed-section, .message-section {
+  background-image: url('/img/background.jpg');
+  padding-top: 4rem;
+ background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  height: 100%;
 }
 
 .footerCustom{

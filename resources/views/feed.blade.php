@@ -36,10 +36,10 @@
 
 
 
-  <body id="page-top">
+  <body class="feed-section text-center">
     <!-- NavBar -->
     @include("layouts.navbar")
-<section id="socialpets" class="about-section text-center">
+<section id="socialpets" >
 
 <div class="container">
   @foreach($usuarios as $usuario)

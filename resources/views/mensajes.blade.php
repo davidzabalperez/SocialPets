@@ -29,7 +29,7 @@
 
 
 
-  <body  class="about-section text-center">
+  <body  class="message-section text-center">
     <!-- NavBar -->
     @include("layouts.navbar")
 <div class="messaging">
