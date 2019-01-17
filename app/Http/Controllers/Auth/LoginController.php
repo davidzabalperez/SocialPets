@@ -25,6 +25,7 @@ class LoginController extends Controller
      *
      * @var string
      */
+
     protected $redirectTo = '/UserPanel';
 
     /**
@@ -43,6 +44,14 @@ class LoginController extends Controller
         $user->password = Input::get('password_login');
 
         $user->save();
+    }
+    public function redirectTo()
+    {
+        if (auth()->user()->role == 'admin') {
+            return '/admin';
+        }else {
+            return '/UserPanel';
+        }
     }
     /*public function showLoginForm()
     {
