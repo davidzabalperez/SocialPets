@@ -25,9 +25,17 @@
   </head>
 
     <!-- NavBar -->
+      <body id="page-top">
+       @if(session()->has('notif'))
+    <div class="row">
+        <div class="alert alert-success">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+            <strong>mensaje</strong> {{ session()->get('notif') }}
+        </div>
+    </div>
+    @endif
     @include("layouts.navbar")
 
-  <body id="page-top">
 
 <section id="socialpets" class="about-section text-center">
 <br>

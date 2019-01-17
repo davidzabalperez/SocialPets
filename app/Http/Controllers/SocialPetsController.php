@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Redirect;
 use App\Http\Request\RegistrarUsuarioRequest;
-
+use Hash;
 
 class SocialPetsController extends Controller
 {
@@ -186,6 +186,23 @@ class SocialPetsController extends Controller
         $user->role = $request->get('role');
         $user->update();
         return redirect('/admin')->with('success', 'Usuario editado con exito');
+    }
+    public function create(Request $request)
+    {
+      $user = [
+        'name' => $request->name,
+        'email' => $request->email,
+        'password' => Hash::make($request->password),
+        'age' => $request->age,
+        'gender' => $request->gender,
+        'race' => $request->race,
+        'role' => $request->role,
+      ];
+      $save = User::insert($user);
+      if ($save) {
+        return redirect('admin');
+        session()->flash('notif', 'succes to create user');
+      }
     }
 
 }
