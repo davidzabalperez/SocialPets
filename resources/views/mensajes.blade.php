@@ -57,7 +57,7 @@
               <div class="chat_people">
                 <div class="chat_img"> <img src="/storage/avatars/{{ $mensaje->user_sender->avatar }}" /> </div>
                 <div class="chat_ib">
-                  <h5>{{ $mensaje->user_sender->name }} <span class="chat_date">Dec 25</span></h5> 
+                  <h5>{{ $mensaje->user_sender->name}} <span class="chat_date">Dec 25</span></h5> 
                   <p>{{ $mensaje->text }}</p>
                 </div>
               </div>
@@ -123,11 +123,6 @@
     <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
     <script>
       var numRegistros = 5;
-    $(document).ready( function () {
-    $('#table_id').DataTable();
-    });
-
-    
     $('#cargarMensajes').on('click', function(){
 
         $.get("{{ URL::to('/mensajes/ajax') }}",

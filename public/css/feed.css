@@ -34,9 +34,11 @@ body{
   background-color: black;
 
 }
+
 .box .btn{
   height: 50px;
 }
+
 .modal-body .btn {
   height: 10px;
   width: 160px;
@@ -48,9 +50,9 @@ body{
 #hideModal{
   float: right;
 }
-h3{
+.box h3{
   margin-top: 10px;
-  font-size: 16px;
+  font-size: 20px;
 
 }
 

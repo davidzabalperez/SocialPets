@@ -81,7 +81,7 @@ Route::get('send-notification', function(){
 });
 Route::resource('user', 'UserController');
 
-Route::resource('estadisticas', 'ChartDataController');
+Route::get('estadisticas/{year}', 'ChartController@verEstadistica');
 
 // Route::resource('socialpets', 'SocialPetsController');
 /*
