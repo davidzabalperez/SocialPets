@@ -25,7 +25,8 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/profile';
+
+    protected $redirectTo = '/inicio';
 
     /**
      * Create a new controller instance.
@@ -43,6 +44,14 @@ class LoginController extends Controller
         $user->password = Input::get('password_login');
 
         $user->save();
+    }
+    public function redirectTo()
+    {
+        if (auth()->user()->role == 'admin') {
+            return '/admin';
+        }else {
+            return '/inicio';
+        }
     }
     /*public function showLoginForm()
     {

@@ -115,7 +115,7 @@ class UserController extends Controller
         $password = $request->input('password_login');
         if (Auth::attempt(['email' => $email, 'password' => $password])) {
         // Success
-            return redirect()->intended(route('UserPanel'));
+            return redirect()->intended(route('Inicio'));
         } else {
         // Go back on error (or do what you want)
             return redirect()->back();
@@ -166,10 +166,6 @@ class UserController extends Controller
         $user=User::find($id);
         $user->name = $request->input('name');
         $user->email = $request->input('email');
-        $user->age = $request->input('age');
-        $user->gender = $request->get('gender');
-        $user->race = $request->input('race');
-        $user->role = $request->input('role');
         $user->save();
         return redirect('/profile')->with('success', 'Usuario editado con exito');
     }
@@ -186,6 +182,5 @@ class UserController extends Controller
         $user->delete();
 
         return back()->with('success', 'Usuario eliminado correctamente');
-}
-
+    }
 }

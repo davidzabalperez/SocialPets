@@ -44,69 +44,47 @@
             </li>
            <li class="nav-item">
              @if (Route::has('register'))
+
               <a class="nav-link js-scroll-trigger" href="#" data-toggle="modal" data-target="#registroModal">Registro <i class="fas fa-user-circle"></i></a>
              @endguest
             </li>
             @else
-            <a class="navbar-brand js-scroll-trigger" href="/UserPanel"><img src="img/logo.png" alt="logo" width="120px;"></a>
-            <li class="nav-item dropdown">
-                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="/profile"" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                    {{ Auth::user()->name }} <span class="caret"></span>
-                </a>
-
-                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-
-                     <a class="dropdown-item" href="{{ route('UserPanel') }}"><span class="fa fa-paw">
-                            {{ __('Home') }}
+            
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+            <a class="navbar-brand js-scroll-trigger" href="/inicio"><img src="/img/logo.png" alt="logo" width="120px;"></a>
+            <ul class="navbar-nav mr-auto navbar ">
+            <li class="nav-item navbar-nav mr-auto navbar">
+                     <a class="nav-link js-scroll-trigger" href="{{ route('Inicio') }}"><span class="fa fa-paw">
+                            {{ __('Inicio') }}
                         </a>
 
-                    <a class="dropdown-item" href="{{ route('profile') }}"><span class="fa fa-address-card">
-                            {{ __('Profile') }}
+                    <a class="nav-link js-scroll-trigger" href="{{ route('profile') }}"><span class="fa fa-address-card">
+                            {{ __('Perfil') }}
                         </a>
 
-                    <a class="dropdown-item" href="{{ route('mensajes') }}"><span class="fa  fa-envelope">
-                            {{ __('mensaje') }}
+                    <a class="nav-link js-scroll-trigger" href="{{ route('mensajes') }}"><span class="fa  fa-envelope">
+                            {{ __('Mensajes') }}
                     </a>
                     @if (Auth::user() && Auth::user()->role == 'admin')
-                    <a class="dropdown-item" href="{{ route('AdminPanel') }}"><span class="fa  fa-toolbox">
-                            {{ __('administrar') }}
+                    <a class="nav-link js-scroll-trigger" href="{{ route('AdminPanel') }}"><span class="fa  fa-toolbox">
+                            {{ __('Administrar') }}
+                    </a>
+                    <a class="nav-link js-scroll-trigger" href="{{ route('estadisticas') }}"><span class="fa  fa-chart-pie">
+                            {{ __('Estadistícas') }}
                     </a>
                     @endif
-                    <a class="dropdown-item" href="{{ route('logout') }}"
+                    <a class="nav-link js-scroll-trigger" href="{{ route('logout') }}"
                           onclick="event.preventDefault();
-                                        document.getElementById('logout-form').submit();">
-                          {{ __('Logout') }}
+                                        document.getElementById('logout-form').submit();"><span class="fa  fa-sign-out-alt">
+                          {{ __('Cerrar sesión ') }}
                       </a>
                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                         @csrf
                     </form>
                 </div>
               </li>
-              <li class="nav-item dropdown">
-              <ul class="nav navbar-top-links navbar-right">
-        <!-- /.dropdown -->
-
-        <li class="dropdown">
-          <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-            <i class="fa fa-bell fa-fw iconNotification"></i> <i class="fa fa-caret-down"></i>
-          </a>
-          <ul class="dropdown-menu dropdown-alerts" id="notifications">
-              <!--  <li>
-                  <a href="#">
-                    <div>
-                      <i class="fa fa-comment fa-fw"></i>
-                      <span class="pull-right text-muted small"></span>
-                    </div>
-                  </a>
-                </li> -->
-
-          </ul>
-          <!-- /.dropdown-alerts -->
-          </li>
-                  </div>
-              </li>
+  </ul>
             @endif
-            </ul>
         </div>
       </div>
     </nav>

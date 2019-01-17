@@ -15,7 +15,7 @@ use App\Ajax\AjaxController;
 Route::get('/estadisticas', 'SocialPetsController@getEstadisticas');
 Route::get('/', 'SocialPetsController@getIndex');
 Route::post('/contact', 'SocialPetsController@enviarContacto');
-Route::get('/UserPanel', 'SocialPetsController@getUserPanel')->name('UserPanel')->middleware('verified');
+Route::get('/inicio', 'SocialPetsController@getInicio')->name('Inicio')->middleware('verified');
 //Route::get('/AdminPanel', 'SocialPetsController@getAdminPanel');
 Route::get('/admin', 'SocialPetsController@getAdminPanel')->name('AdminPanel')->middleware('admin');
 Route::get('/user', 'SocialPetsController@getUserIndex');
@@ -55,7 +55,7 @@ Route::put('/usuario/{id}', 'SocialPetsController@updateUser');
 
 //rutas para dar de alta al usuario
 Route::get('/darAlta', 'SocialPetsController@getDarDeAlta')->name('darAlta');
-Route::post('darAlta', ['as' => 'darAlta.post', 'uses' => 'UserController@register']);
+Route::post('darAlta', ['as' => 'darAlta.post', 'uses' => 'SocialPetsController@create']);
 
 Route::get('/profile', 'SocialPetsController@getProfile')->name('profile')->middleware('verified');
 
@@ -93,6 +93,7 @@ Route::resource('socialpets', 'SocialPetsController');
 
 
 Route::get('estadisticas/{year}', 'ChartController@verEstadistica');
+Route::get('estadisticas/2019', 'ChartController@verEstadistica')->name('estadisticas')->middleware('admin');
 
 
 // Route::resource('socialpets', 'SocialPetsController');
