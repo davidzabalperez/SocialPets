@@ -71,6 +71,9 @@
                     <a class="dropdown-item" href="{{ route('AdminPanel') }}"><span class="fa  fa-toolbox">
                             {{ __('administrar') }}
                     </a>
+                    <a class="dropdown-item" href="{{ route('estadisticas') }}"><span class="fa  fa-toolbox">
+                            {{ __('estadisticas') }}
+                    </a>
                     @endif
                     <a class="dropdown-item" href="{{ route('logout') }}"
                           onclick="event.preventDefault();
