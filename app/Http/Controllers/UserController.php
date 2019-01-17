@@ -166,10 +166,6 @@ class UserController extends Controller
         $user=User::find($id);
         $user->name = $request->input('name');
         $user->email = $request->input('email');
-        $user->age = $request->input('age');
-        $user->gender = $request->get('gender');
-        $user->race = $request->input('race');
-        $user->role = $request->get('role');
         $user->save();
         return redirect('/profile')->with('success', 'Usuario editado con exito');
     }
