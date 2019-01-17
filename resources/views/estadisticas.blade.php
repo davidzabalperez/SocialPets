@@ -1,8 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="es">
   <head>
-
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
@@ -24,13 +22,12 @@
   </head>
 
   <body id="page-top">
-    <!-- NavBar -->
     @include("layouts.navbar")
 <section id="socialpets" class="about-section text-center">
 
 <div class="container">
 
-    <canvas id="myChart" width="400" height="400"></canvas>
+    <canvas id="myChart" width="100%" height="20%"></canvas>
     <script>
     var ctx = document.getElementById("myChart");
     var myChart = new Chart(ctx, {
@@ -42,7 +39,7 @@
                 @endforeach
             ],
             datasets: [{
-                label: 'Usuarios logueados por mes',
+                label: 'Usuarios logueados este mes',
                 data: [
                     @foreach($usersPerMonth as $users)   
                         [{{$users['users']}}],
@@ -78,28 +75,16 @@
         }
     });
     </script>
-        </div>
     </div>
-        
-        </div>
-        
-        
-        </div>
-
 </section>
-<footer class="bg-black small text-center text-white-50">
-      <div class="container">
-
-        Copyright &copy; Social Pets 2019
-      </div>
-</footer>
-    <script src="jquery/jquery.min.js"></script>
-    <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="jquery-easing/jquery.easing.min.js"></script>
-    <script src="js/grayscale.min.js"></script>
     <script src="/jquery/jquery.min.js"></script>
     <script src="/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="/jquery-easing/jquery.easing.min.js"></script>
     <script src="/js/grayscale.min.js"></script>
   </body>
+<footer class="bg-black small text-center text-white-50">
+      <div class="container">
+        Copyright &copy; Social Pets 2019
+      </div>
+</footer>
 </html>
