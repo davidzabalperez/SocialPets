@@ -1,5 +1,4 @@
-
-            @foreach($mensajes as $mensaje)
+ @foreach($mensajes as $mensaje)
             <div class="chat_list target">
               <div class="chat_people">
                 <div class="chat_img"> <img src="/storage/avatars/{{ $mensaje->user_sender->avatar }}" /></div>
