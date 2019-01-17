@@ -18,6 +18,10 @@ class SocialPetsController extends Controller
     	return view('index');
     }
 
+    public function getEstadisticas(){
+      return view('estadisticas');
+    }
+
 
 	public function enviarContacto(Request $request) {
   		$contact = new SocialPets;

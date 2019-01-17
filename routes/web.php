@@ -12,7 +12,7 @@ use App\Ajax\AjaxController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+Route::get('/estadisticas', 'SocialPetsController@getEstadisticas');
 Route::get('/', 'SocialPetsController@getIndex');
 Route::post('/contact', 'SocialPetsController@enviarContacto');
 Route::get('/UserPanel', 'SocialPetsController@getUserPanel')->name('UserPanel')->middleware('verified');
