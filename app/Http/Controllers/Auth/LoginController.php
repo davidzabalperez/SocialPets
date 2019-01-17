@@ -26,7 +26,7 @@ class LoginController extends Controller
      * @var string
      */
 
-    protected $redirectTo = '/UserPanel';
+    protected $redirectTo = '/inicio';
 
     /**
      * Create a new controller instance.
@@ -50,7 +50,7 @@ class LoginController extends Controller
         if (auth()->user()->role == 'admin') {
             return '/admin';
         }else {
-            return '/UserPanel';
+            return '/inicio';
         }
     }
     /*public function showLoginForm()
