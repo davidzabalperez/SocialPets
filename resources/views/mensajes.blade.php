@@ -51,17 +51,19 @@
           </div>
            
           <div class="inbox_chat">
+            
             @foreach($mensajes as $mensaje)
-            <div class="chat_list target" >
-              <div class="chat_people" id="mensajesInfo">
-                <div class="chat_img"> <img src="https://ptetutorials.com/images/user-profile.png" alt="sunil"> </div>
-                <div class="chat_ib" >
-                  <h5>{{ $mensaje->id_sender }} <span class="chat_date">Dec 25</span></h5> 
+            <div class="chat_list target" id="mensajesInfo">
+              <div class="chat_people">
+                <div class="chat_img"> <img src="/storage/avatars/{{ $mensaje->user_sender->avatar }}" /> </div>
+                <div class="chat_ib">
+                  <h5>{{ $mensaje->user_sender->name }} <span class="chat_date">Dec 25</span></h5> 
                   <p>{{ $mensaje->text }}</p>
                 </div>
               </div>
             </div>
           @endforeach
+
           </div>
           <button type="button" class="mx-auto btn-block btn btn-outline-info f btn-xs" id="cargarMensajes">Cargar Mensajes</button>
         </div>
