@@ -31,6 +31,10 @@ body{
   flex-direction: row;
 
 }
+footer .container{
+  color: white;
+  font-size: 18.5px;
+}
 
 .box{
   color: white;
