@@ -14,7 +14,7 @@
                 <div class="email">
                   @foreach($usuarios as $usuario)
                 <form  action="{{ route('prueba', $usuario->id) }}" method="POST">
-                  @method('PATCH')
+                  
                   @csrf
                     <div class="form-group">
                          <table class="table">

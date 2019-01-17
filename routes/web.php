@@ -86,7 +86,14 @@ Route::get('send-notification', function(){
 	auth()->user()->notify(new Notificacion_Like);
 });
 Route::resource('user', 'UserController');
+
 Route::resource('socialpets', 'SocialPetsController');
+
+
+Route::resource('estadisticas', 'ChartDataController');
+
+// Route::resource('socialpets', 'SocialPetsController');
+
 /*
 Obtiene los usuarios por AJAX (ADAPTAR A LOS MENSAJES)
 */

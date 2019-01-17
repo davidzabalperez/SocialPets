@@ -14,6 +14,7 @@
                 <div class="email">
                   @foreach($usuarios as $usuario)
                 <form method="POST" action="{{ route('user.destroy', $usuario->id) }}" name="banearUsuarios" id="banearUsuarios">
+                  @endforeach
                   @csrf
                     <div class="form-group">
                          <table class="table">
@@ -26,6 +27,7 @@
                             </tr>
                           </thead>
                           <tbody>
+                            @foreach($usuarios as $usuario)
                             <tr>
                               <td>{{$usuario->name}}</td>
                               <td>{{$usuario->email}}</td>

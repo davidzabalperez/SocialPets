@@ -67,9 +67,6 @@ class SocialPetsController extends Controller
   public function getDarDeAlta(){
     return view('darAltaUsuarios');
   }
-  public function getCanvas(){
-    return view('canvas');
-  }
   public function registerStep2(Request $request){
 
         $user=User::find($request->input('id'));
@@ -164,7 +161,7 @@ class SocialPetsController extends Controller
         $user = User::find($id);
         $user->role = $request->input('xd');
         $user->save();
-        return back();
+        return view('profile');
     }
 
 }
