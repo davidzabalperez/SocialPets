@@ -152,7 +152,7 @@
                           <div class="modal-dialog">
                               <div class="modal-content">
                                   <div class="modal-footer">
-                                      Confirmacion borrar cuenta:
+                                      Confirmacion borrar cuenta
                                       <button type="button" class="btn btn-default btn-sm" data-dismiss="modal">Cancelar</button>
                                      
 
