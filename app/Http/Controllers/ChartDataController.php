@@ -22,7 +22,7 @@ class ChartDataController extends Controller
                 ->whereYear($year)
                 ->groupBy('created_at')->format('m')
                 ;
-            return    
+            return view('estadisticas');   
     }
 
     /**
