@@ -10,7 +10,7 @@ class ChartController extends Controller
     public function verEstadistica($year){
         $allUsersPerMonth = DB::table('users')
                     ->whereYear('created_at',$year)
-                    ->orderBy('created_at')
+                    ->orderBy('created_at', $year)
                     ->get();
                     $usersPerMonth = array();
                     for($i=1;$i<13;$i++){
