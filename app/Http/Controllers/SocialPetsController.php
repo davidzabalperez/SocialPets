@@ -100,12 +100,13 @@ class SocialPetsController extends Controller
   }
   public function getMensajess(){
     $users = User::all();
-    $mensajes = Mensaje::where('id_receiver',Auth::user()->id)->limit(5)->offset(5)->get();
+    $mensajes = Mensaje::where('id_receiver',Auth::user()->id)->limit(5)->get();
     return view('mensajes')->with([
       'mensajes'=> $mensajes,
       'users'=> $users
     ]);
   }
+
   public function update_avatar(Request $request){
     $request->validate([
       'avatar' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',

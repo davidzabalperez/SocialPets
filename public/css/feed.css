@@ -12,6 +12,14 @@ body{
   background-color:rgb(33, 37, 41);
 }
 
+#like{
+  height: 30px;
+}
+#dislike{
+  height: 30px;
+}
+
+
 .container{
   margin-top: 3%;
   width: 100%;
