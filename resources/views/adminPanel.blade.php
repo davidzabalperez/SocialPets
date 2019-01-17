@@ -12,20 +12,23 @@
     <title>Social Pets</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
+    <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    
     <!-- Custom fonts for this template -->
     <link href="/fontawesome-free/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
     <!-- Custom styles for this template -->
+   
+    <link href="/css/feed.css" rel="stylesheet">
     <link href="/css/grayscale.css" rel="stylesheet">
 
   </head>
 
     <!-- NavBar -->
-      <body id="page-top">
+      <body class="admin-panel-section text-center">
        @if(session()->has('notif'))
     <div class="row">
         <div class="alert alert-success">
@@ -37,7 +40,7 @@
     @include("layouts.navbar")
 
 
-<section id="socialpets" class="about-section text-center">
+
 <br>
       <div class="container">
         <br>
@@ -57,11 +60,20 @@
         </div>
       </div>
       <br>
-    </section>
+ 
 
     <!-- Footer -->
   
-    <!-- Bootstrap core JavaScript -->
+    <footer class="footerCustom">
+      <div class="container">
+         
+        Copyright &copy; Social Pets 2019
+      </div>
+      </footer>
+
+  </body> 
+     
+          <!-- Bootstrap core JavaScript -->
     <script src="jquery/jquery.min.js"></script>
     <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
 
@@ -70,13 +82,6 @@
 
     <!-- Custom scripts for this template -->
     <script src="js/grayscale.min.js"></script>
-        <footer class="bg-black small text-center text-white-50">
-      <div class="container">
-         
-        Copyright &copy; Social Pets 2019
-      </div>
-      </footer>
-  </body> 
 </html>
 @include('noticia')
 @include('registerModal')

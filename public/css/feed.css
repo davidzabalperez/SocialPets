@@ -9,9 +9,9 @@
 }
 
 body{
-  background-color: #212529;
   background-size: cover;
   width:100%;
+  background-image: url('/SocialPets/public/img/background.jpg');
 
 }
 
@@ -34,10 +34,7 @@ body{
   flex-direction: row;
 
 }
-footer .container{
-  color: white;
-  font-size: 18.5px;
-}
+
 
 .box{
   color: white;
@@ -471,4 +468,31 @@ img{
   .contacts_card{
     margin-bottom: 15px !important;
   }
+  }
+
+.estadisticas-section {
+  padding-top: 5rem;
+  background-position: center;
+   background-repeat: no-repeat;
+   background-size: cover;
+   background-attachment: fixed;
+   height: 100%;
+ 
+
+}
+html,
+  body{
+    display: table;
+    height: 100%;
+    width: 100%;
+    margin: 0px;
+  }
+
+  .footerCustom{
+    display: table-row;
+    width: 100%;
+    color: white;
+    background: linear-gradient(to bottom, #161616 0%, rgba(22, 22, 22, 0.9) 75%, rgba(22, 22, 22, 0.8) 100%);
+    text-align: center;
+    height: 1px;
   }

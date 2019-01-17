@@ -27,10 +27,10 @@
 
 
 
-  <body id="page-top">
+  <body class="profile-section text-center">
     <!-- NavBar -->
     @include("layouts.navbar")
-<section class="about-section">
+
 
 <div class="container">
 
@@ -52,7 +52,7 @@
   </div>
    
 </div>
-</section>
+
 
 <div id="editProfileModal" class="modal fade">
     <div class="modal-dialog">
@@ -171,14 +171,15 @@
   </div>
 </div>
 </div>
-  </body>
     <!-- Footer -->
-<footer class="bg-black small text-center text-white-50">
+    <div class="footerCustom">
       <div class="container">
 
         Copyright &copy; Social Pets 2018
       </div>
-</footer>
+</div>
+  </body>
+
 <!-- Bootstrap core JavaScript -->
 <script src="jquery/jquery.min.js"></script>
 <script src="bootstrap/js/bootstrap.bundle.min.js"></script>

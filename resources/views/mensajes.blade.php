@@ -29,10 +29,9 @@
 
 
 
-  <body id="page-top">
+  <body  class="about-section text-center">
     <!-- NavBar -->
     @include("layouts.navbar")
-<section id="socialpets" class="about-section text-center">
 <div class="messaging">
       <div class="inbox_msg">
         <div class="inbox_people">
@@ -69,6 +68,7 @@
       </div>
     </div>
 
+
   <div class="container msj">
   <div class="row">
     <div class="panel panel-default">
@@ -100,16 +100,18 @@
       </div>
   </div>
 </div>
-</section>
 
 
     <!-- Footer -->
-    <footer class="bg-black small text-center text-white-50">
+
+
+    <div class="footerCustom">
       <div class="container">
 
         Copyright &copy; Social Pets 2018
       </div>
-</footer>
+</div>
+  </body>
 
     <!-- Bootstrap core JavaScript -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -151,6 +153,5 @@
     </script>
 
 <script src="/js/buscar.js"></script>
-  </body>
 
 </html>
