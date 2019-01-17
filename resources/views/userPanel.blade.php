@@ -61,9 +61,15 @@
 @endforeach
 </div>
 
-
 </section>
 
+  </body>
+<footer class="bg-black small text-center text-white-50">
+      <div class="container">
+
+        Copyright &copy; Social Pets 2019
+      </div>
+</footer>
     <!-- Footer -->
 
     <!-- Bootstrap core JavaScript -->
@@ -75,11 +81,4 @@
 
     <!-- Custom scripts for this template -->
     <script src="js/grayscale.min.js"></script>
-  </body>
-<footer class="bg-black small text-center text-white-50">
-      <div class="container">
-
-        Copyright &copy; Social Pets 2019
-      </div>
-</footer>
 </html>
