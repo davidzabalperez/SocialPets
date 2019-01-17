@@ -176,6 +176,7 @@
   background-color: #4f837f;
   color: white;
 
+
 }
 
 .btn-primary:active {
@@ -190,6 +191,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
+  width: 100%;
 }
 
 .about-section p {
@@ -297,11 +299,14 @@
 body {
   font-family: 'Nunito';
   letter-spacing: 0.0625em;
+
+  width:100%;
 }
 
 a:focus, a:hover {
   text-decoration: none;
   color: #3c6360;
+  
 }
 
 .bg-black {
@@ -325,7 +330,12 @@ a:focus, a:hover {
 
 
 footer {
-  padding: 5rem 0;
+  padding: 2rem;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  color: white;
+  text-align: center;
 }
 .text-white-50{
   font-size: 18.5px;
@@ -350,5 +360,8 @@ line-height: 50px;
 }
 
 a .iconNotification {
+  color: white;
+}
+.botones-admin{
   color: white;
 }

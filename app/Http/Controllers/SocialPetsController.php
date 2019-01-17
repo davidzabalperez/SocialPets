@@ -41,10 +41,10 @@ class SocialPetsController extends Controller
       return view('login-view');
   }
   
-  public function getUserPanel(){
+  public function getInicio(){
     $usuarios = User::all();
 
-    return view('userPanel')->with([
+    return view('feed')->with([
       'usuarios'=>$usuarios
     ]);
 

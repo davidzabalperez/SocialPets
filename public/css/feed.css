@@ -9,7 +9,10 @@
 }
 
 body{
-  background-color:rgb(33, 37, 41);
+  background-color: #212529;
+  background-size: cover;
+  width:100%;
+
 }
 
 #like{

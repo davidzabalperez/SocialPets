@@ -12,15 +12,15 @@
     <title>Social Pets</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom fonts for this template -->
-    <link href="fontawesome-free/css/all.min.css" rel="stylesheet">
+    <link href="/fontawesome-free/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="css/grayscale.css" rel="stylesheet">
+    <link href="/css/grayscale.css" rel="stylesheet">
 
   </head>
 
@@ -39,11 +39,11 @@
             <br>
             <br><h3 class="text-white mb-4">Estas en el panel del administrador</h3>
             <p class="text-white-50">Es una red social, para que tus mascotas conozcan a otras y puedan ser amigos. Nuestro objetivo es abarcar a una gran cantidad de mascotas, pero al ser un proyecto, trataremos con perros principalmente. </p>
-            <br>
-            <a class="btn btn-primary js-scroll-trigger" data-toggle="modal" data-target="#noticiaModal">Publicar noticia</a>
-            <a class="btn btn-primary js-scroll-trigger" data-toggle="modal" data-target="#banearUsuariosModal">Banear usuario</a>
-            <a class="btn btn-primary js-scroll-trigger" data-toggle="modal" data-target="#cambioRolModal">Editar usuarios</a>
-            <a class="btn btn-primary js-scroll-trigger" href="{{ route('darAlta') }}">Dar de alta</a>
+            <p class="botones-admin">
+            <a class="btn btn-primary botones-admin js-scroll-trigger" data-toggle="modal" data-target="#noticiaModal">Publicar noticia</a>
+            <a class="btn btn-primary botones-admin js-scroll-trigger" data-toggle="modal" data-target="#listarUsuarios">Administrar usuarios</a>
+            <a class="btn btn-primary botones-admin js-scroll-trigger" href="{{ route('darAlta') }}">Dar de alta</a>
+            </p>
           </div>
 
         </div>
@@ -71,6 +71,5 @@
   </body> 
 </html>
 @include('noticia')
-@include('banearUsuarios')
 @include('registerModal')
-@include('rolUsuarios')
+@include('administrarUsuarios')

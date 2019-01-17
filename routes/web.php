@@ -15,7 +15,7 @@ use App\Ajax\AjaxController;
 Route::get('/estadisticas', 'SocialPetsController@getEstadisticas');
 Route::get('/', 'SocialPetsController@getIndex');
 Route::post('/contact', 'SocialPetsController@enviarContacto');
-Route::get('/UserPanel', 'SocialPetsController@getUserPanel')->name('UserPanel')->middleware('verified');
+Route::get('/inicio', 'SocialPetsController@getInicio')->name('Inicio')->middleware('verified');
 //Route::get('/AdminPanel', 'SocialPetsController@getAdminPanel');
 Route::get('/admin', 'SocialPetsController@getAdminPanel')->name('AdminPanel')->middleware('admin');
 Route::get('/user', 'SocialPetsController@getUserIndex');
