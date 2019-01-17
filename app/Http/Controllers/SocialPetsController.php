@@ -18,6 +18,10 @@ class SocialPetsController extends Controller
     	return view('index');
     }
 
+    public function getEstadisticas(){
+      return view('estadisticas');
+    }
+
 
 	public function enviarContacto(Request $request) {
   		$contact = new SocialPets;
@@ -96,12 +100,13 @@ class SocialPetsController extends Controller
   }
   public function getMensajess(){
     $users = User::all();
-    $mensajes = Mensaje::where('id_receiver',Auth::user()->id)->limit(5)->offset(5)->get();
+    $mensajes = Mensaje::where('id_receiver',Auth::user()->id)->limit(5)->get();
     return view('mensajes')->with([
       'mensajes'=> $mensajes,
       'users'=> $users
     ]);
   }
+
   public function update_avatar(Request $request){
     $request->validate([
       'avatar' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
@@ -155,6 +160,32 @@ class SocialPetsController extends Controller
 
 }
         return view('profile');
+    }
+    public function changeRol(Request $request, $id)
+    {
+        $user = User::find($id);
+        $user->role = $request->input('inputRol');
+        $user->save();
+        return view('profile');
+    }
+
+    public function editUser($id)
+    {
+        $user=User::find($id);
+        return view('editUser',compact('user'));
+    }
+
+    public function updateUser(Request $request, $id)
+    {
+        $user=User::find($id);
+        $user->name = $request->input('name');
+        $user->email = $request->input('email');
+        $user->age = $request->input('age');
+        $user->gender = $request->get('gender');
+        $user->race = $request->input('race');
+        $user->role = $request->input('role');
+        $user->update();
+        return redirect('/admin')->with('success', 'Usuario editado con exito');
     }
 
 }

@@ -11,7 +11,7 @@
     <link rel="stylesheet" type="text/css" href="/css/feed.css">
     <link rel="stylesheet" type="text/css" href="/css/grayscale.css">
 
-    <title>Social Pets Home</title>
+    <title>Social Pets Estadisticas</title>
 
     <!-- Bootstrap core CSS -->
     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -22,7 +22,6 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
     <script src="/js/Chart.min.js"></script>
   </head>
-
   <body id="page-top">
     <!-- NavBar -->
     @include("layouts.navbar")
@@ -78,17 +77,20 @@
         
         </div>
 
-
-
-</section>
-    <script src="/jquery/jquery.min.js"></script>
-    <script src="/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="/jquery-easing/jquery.easing.min.js"></script>
-    <script src="/js/grayscale.min.js"></script>
+        </section>
   </body>
 <footer class="bg-black small text-center text-white-50">
       <div class="container">
+
         Copyright &copy; Social Pets 2019
       </div>
 </footer>
+<script src="jquery/jquery.min.js"></script>
+    <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for this template -->
+    <script src="js/grayscale.min.js"></script>
 </html>

@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="shortcut icon" href="/img/favicon (3).ico" />
-    <link rel="stylesheet" type="text/css" href="/css/feed.css">
+    
 
     <title>Social Pets Home</title>
 
@@ -22,6 +21,8 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
     <!-- Custom styles for this template -->
+        <link rel="stylesheet" type="text/css" href="css/feed.css">
+
     <link href="css/grayscale.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.css">
   </head>
@@ -54,9 +55,9 @@
             @foreach($mensajes as $mensaje)
             <div class="chat_list target" >
               <div class="chat_people" id="mensajesInfo">
-                <div class="chat_img"> <img src="https://ptetutorials.com/images/user-profile.png" alt="sunil"> </div>
+                <div class="chat_img"><img src="/storage/avatars/{{ $mensaje->user_sender->avatar }}" /></div>
                 <div class="chat_ib" >
-                  <h5>{{ $mensaje->id_sender }} <span class="chat_date">Dec 25</span></h5> 
+                  <h5>{{ $mensaje->user_sender->name }} <span class="chat_date">Dec 25</span></h5> 
                   <p>{{ $mensaje->text }}</p>
                 </div>
               </div>
@@ -124,10 +125,8 @@
     $(document).ready( function () {
     $('#table_id').DataTable();
     });
-
     
     $('#cargarMensajes').on('click', function(){
-
         $.get("{{ URL::to('/mensajes/ajax') }}",
             {numRegistros:numRegistros},
             function(data){
@@ -135,11 +134,9 @@
               numRegistros += 5;
             }
           );
-
             /*$('#cargarMensajes').on('click', function(){
       $.get("{{ URL::to('/mensajes/ajax') }}", function(data){
         $('#mensajesInfo').empty().html(data);
-
        $.ajax({
           type:"GET",
           url:"/mensajes/ajax",
@@ -150,10 +147,7 @@
               numRegistros += 5;
             }
         });*/
-
     });
-
-
     </script>
 
     <script>
@@ -161,7 +155,6 @@
         var input = document.getElementById("Search");
         var filter = input.value.toLowerCase();
         var nodes = document.getElementsByClassName('target');
-
   for (i = 0; i < nodes.length; i++) {
     if (nodes[i].innerText.toLowerCase().includes(filter)) {
       nodes[i].style.display = "block";

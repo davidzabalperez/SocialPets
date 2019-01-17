@@ -12,7 +12,7 @@ use App\Ajax\AjaxController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+Route::get('/estadisticas', 'SocialPetsController@getEstadisticas');
 Route::get('/', 'SocialPetsController@getIndex');
 Route::post('/contact', 'SocialPetsController@enviarContacto');
 Route::get('/UserPanel', 'SocialPetsController@getUserPanel')->name('UserPanel')->middleware('verified');
@@ -48,7 +48,14 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/step2', 'SocialPetsController@getStep2');
 Route::post('/register2', 'SocialPetsController@registerStep2');
+
+// rutas para editar usuario
+Route::get('/usuario/{id}/edit', 'SocialPetsController@editUser');
+Route::put('/usuario/{id}', 'SocialPetsController@updateUser');
+
+//rutas para dar de alta al usuario
 Route::get('/darAlta', 'SocialPetsController@getDarDeAlta')->name('darAlta');
+Route::post('darAlta', ['as' => 'darAlta.post', 'uses' => 'UserController@register']);
 
 Route::get('/profile', 'SocialPetsController@getProfile')->name('profile')->middleware('verified');
 
@@ -81,9 +88,17 @@ Route::get('send-notification', function(){
 });
 Route::resource('user', 'UserController');
 
+
+Route::resource('socialpets', 'SocialPetsController');
+
+
+Route::resource('estadisticas', 'ChartDataController');
+
 Route::get('estadisticas/{year}', 'ChartController@verEstadistica');
 
+
 // Route::resource('socialpets', 'SocialPetsController');
+
 /*
 Obtiene los usuarios por AJAX (ADAPTAR A LOS MENSAJES)
 */

@@ -2,7 +2,6 @@
 
 namespace App;
 
-use App\Mensaje;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
@@ -32,8 +31,8 @@ class User extends Authenticatable implements MustVerifyEmail
     ];
     protected $dates = ['deleted_at'];
 
-    public function mensaje(){
-        return $this->hasMany('Mensaje');
+    public function mensajes(){
+        return $this->hasMany('App\Mensaje');
     }
 
 }

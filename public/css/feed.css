@@ -12,6 +12,14 @@ body{
   background-color:rgb(33, 37, 41);
 }
 
+#like{
+  height: 30px;
+}
+#dislike{
+  height: 30px;
+}
+
+
 .container{
   margin-top: 3%;
   width: 100%;
@@ -27,18 +35,35 @@ body{
 .box{
   color: white;
   width: 270px;
-  height: 450px;
+  height: 480px;
   box-shadow: 0px 0px 7px 3px gray;
   text-align: center;
   margin: 25px auto;
   background-color: black;
 
 }
-h3{
-  margin-top: 10px;
-  font-size: 16px;
+
+.box .btn{
+  height: 50px;
+}
+
+.modal-body .btn {
+  height: 10px;
+  width: 160px;
+    text-align: center;
+    font-size: 10px;
+    font-weight: 500;
 
 }
+#hideModal{
+  float: right;
+}
+.box h3{
+  margin-top: 10px;
+  font-size: 20px;
+
+}
+
 .box-sub{
   width: 270px;
   height: 90px;

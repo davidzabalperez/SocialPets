@@ -49,11 +49,11 @@
     <p>Edad: {{$usuario->age}} año</p>
     @endif
     <p>Sexo: {{ $usuario->gender == 1 ? 'Femenino' : 'Masculino'}}</p>
-    <a class="btn btn-primary btn-sm" rel="publisher"
+    <a class="btn btn-primary btn-sm" id="like" rel="publisher"
        href="">
         <i class="fa fa-thumbs-up"></i>
     </a>
-    <a class="btn btn-warning btn-sm" rel="publisher" href="">
+    <a class="btn btn-warning btn-sm" rel="publisher" id="dislike" href="">
         <i class="fa fa-thumbs-down"></i>
     </a>
   </div>
