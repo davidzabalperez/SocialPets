@@ -23,7 +23,7 @@
                     @csrf
                     <input type="hidden" name="id" id="id" value="{{ Auth::user()->id }}">
                     Edad del perro:
-                    <input type="number" id="age" class="form-control" name="age" placeholder="Años de persona">
+                    <input type="number" id="age" min="0" class="form-control" name="age" placeholder="Años de persona">
                     <br>
                     Genero del perro:
                     <br>
