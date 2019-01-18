@@ -21,7 +21,7 @@ class SocialPetsController extends Controller
     }
 
     public function getEstadisticas(){
-      return view('estadisticas');
+      return view('dashboard');
     }
 
 
@@ -54,7 +54,7 @@ class SocialPetsController extends Controller
   public function getAdminPanel(){
     $usuarios = User::all();
     
-    return view('adminPanel')->with([
+    return view('panel_administrador')->with([
       'usuarios'=>$usuarios
     ]);
   }
@@ -206,5 +206,7 @@ class SocialPetsController extends Controller
         session()->flash('notif', 'succes to create user');
       }
     }
+
+
 
 }
