@@ -66,6 +66,14 @@ class RegisterController extends Controller
         ]);
     }
 
+    public function redirectTo()
+    {
+        if (auth()->user()->role == 'admin') {
+            return '/admin';
+        }else {
+            return '/inicio';
+        }
+    }
 
 
 }
