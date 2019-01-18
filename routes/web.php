@@ -17,7 +17,7 @@ Route::get('/', 'SocialPetsController@getIndex');
 Route::post('/contact', 'SocialPetsController@enviarContacto');
 Route::get('/inicio', 'SocialPetsController@getInicio')->name('Inicio')->middleware('verified');
 //Route::get('/AdminPanel', 'SocialPetsController@getAdminPanel');
-Route::get('/admin', 'SocialPetsController@getAdminPanel')->name('AdminPanel')->middleware('admin');
+Route::get('/panel_administrador', 'SocialPetsController@getAdminPanel')->name('AdminPanel')->middleware('admin');
 Route::get('/user', 'SocialPetsController@getUserIndex');
 Route::get('/noticia', 'SocialPetsController@getNoticia');
 
@@ -98,8 +98,6 @@ Route::get('estadisticas/2019', 'ChartController@verEstadistica')->name('estadis
 
 // Route::resource('socialpets', 'SocialPetsController');
 
-/*
-Obtiene los usuarios por AJAX (ADAPTAR A LOS MENSAJES)
-*/
 Route::get('/mensajes/ajax', 'Ajax\AjaxController@cargarMensajes');
-Route::get('/canvas','SocialPetsController@getCanvas');
+
+Route::get('/dashboard/{year}', 'ChartController@verEstadistica')->name('dashboard')->middleware('admin');
