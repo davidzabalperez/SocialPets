@@ -147,7 +147,15 @@
               Tabla Usuarios</div>
             <div class="card-body">
               <div class="table-responsive">
+ 
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                                     <div class="srch_bar">
+              <div class="stylish-input-group">
+                <input type="text" id="Search" onkeyup="search()" placeholder="Buscar usuario.." title="Type in a name">
+                <span class="input-group-addon">
+                <button type="button"> <i class="fa fa-search" aria-hidden="true"></i> </button>
+                </span> </div>
+            </div>
                   <thead>
                     <tr>
                       <th>Nombre</th>
@@ -156,9 +164,9 @@
                       <th>Acción</th>
                     </tr>
                   </thead>
-                  <tbody>
+                  <tbody >
                     @foreach($usuarios as $usuario)
-                    <tr>
+                    <tr class="target">
                       <td>{{$usuario->name}}</td>
                       <td>{{$usuario->email}}</td>
                       <td>{{$usuario->role}}</td>
@@ -248,6 +256,7 @@
     <!-- Demo scripts for this page-->
     <script src="/js/demo/datatables-demo.js"></script>
     <script src="/js/demo/chart-area-demo.js"></script>
+    <script src="/js/buscar.js"></script>
 
   </body>
 
