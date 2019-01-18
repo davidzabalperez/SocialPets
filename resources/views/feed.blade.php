@@ -8,19 +8,27 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="shortcut icon" href="/img/favicon (3).ico" />
-    <link rel="stylesheet" type="text/css" href="/css/feed.css">
-    <link rel="stylesheet" type="text/css" href="/css/grayscale.css">
+ 
 
     <title>Social Pets Home</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+
+    <!-- Custom fonts for this template -->
+    <link rel="stylesheet" type="text/css" href="/css/grayscale.css">
+
+     <link rel="stylesheet" type="text/css" href="/css/feed.css">
+
+     <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+     
 
     <!-- Custom fonts for this template -->
     <link href="/fontawesome-free/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
+   
     <!-- Custom styles for this template -->
 
 
@@ -28,10 +36,10 @@
 
 
 
-  <body id="page-top">
+  <body class="feed-section text-center">
     <!-- NavBar -->
     @include("layouts.navbar")
-<section id="socialpets" class="about-section text-center">
+<section id="socialpets" >
 
 <div class="container">
   @foreach($usuarios as $usuario)
@@ -64,7 +72,7 @@
 </section>
 
   </body>
-<footer class="bg-black small text-center text-white-50">
+<footer class="footerCustom">
       <div class="container">
 
         Copyright &copy; Social Pets 2019

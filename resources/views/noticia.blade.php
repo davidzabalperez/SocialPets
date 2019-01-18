@@ -4,7 +4,7 @@
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">            
-                <h4 class="modal-title">Publicar noticia</h4><div class="icons" id="noticia-icon"></div>   
+                <h4 class="modal-title">Publicar noticia</h4><!--<div class="icons" id="noticia-icon"></div>-->   
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
             </div>
             <div class="modal-body">

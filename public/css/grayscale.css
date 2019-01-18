@@ -5,7 +5,6 @@
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-grayscale/blob/master/LICENSE)
  */
 
-
 #mainNav {
   min-height: 56px;
   background-color: #fff;
@@ -184,15 +183,14 @@
 }
 
 .about-section {
+  background-image: url('/img/backgorund-userFeed.jpg');
   padding-top: 3rem;
-  background: -webkit-gradient(linear, left top, left bottom, from(#161616), color-stop(75%, rgba(22, 22, 22, 0.9)), to(rgba(22, 22, 22, 0.8)));
-  background: linear-gradient(to bottom, #161616 0%, rgba(22, 22, 22, 0.9) 75%, rgba(22, 22, 22, 0.8) 100%);
  background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
-  width: 100%;
 }
+
 
 .about-section p {
   margin-bottom: 2rem;
@@ -299,8 +297,9 @@
 body {
   font-family: 'Nunito';
   letter-spacing: 0.0625em;
+  background: linear-gradient(to bottom, #161616 0%, rgba(22, 22, 22, 0.9) 75%, rgba(22, 22, 22, 0.8) 100%);
 
-  width:100%;
+
 }
 
 a:focus, a:hover {
@@ -330,13 +329,10 @@ a:focus, a:hover {
 
 
 footer {
-  padding: 2rem;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  color: white;
-  text-align: center;
+
+  padding: 2.5rem 0;
 }
+
 .text-white-50{
   font-size: 18.5px;
   text-align: center;
@@ -365,3 +361,44 @@ a .iconNotification {
 .botones-admin{
   color: white;
 }
+.admin-panel-section{
+  padding-top: 5rem;
+
+  height: 100%;
+}
+
+ .profile-section {
+  background-image: url('/img/background2.jpg');
+  padding-top: 4rem;
+ background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  height: 100%;
+
+}
+.feed-section, .message-section {
+  background-image: url('/img/background.jpg');
+  padding-top: 4rem;
+ background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  height: 100%;
+}
+
+.footerCustom{
+  display: table-row;
+  width: 100%;
+  color: white;
+  background: linear-gradient(to bottom, #161616 0%, rgba(22, 22, 22, 0.9) 75%, rgba(22, 22, 22, 0.8) 100%);
+  text-align: center;
+  height: 2px;
+}
+html,
+  body{
+    margin: 0px;
+    display: table;
+    height: 100%;
+    width: 100%;
+  }

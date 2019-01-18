@@ -6,8 +6,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="shortcut icon" href="/img/favicon (3).ico" />
-    <link rel="stylesheet" type="text/css" href="/css/feed.css">
-    <link rel="stylesheet" type="text/css" href="/css/grayscale.css">
+   
 
     <title>Social Pets Home</title>
 
@@ -18,16 +17,16 @@
     <link href="/fontawesome-free/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+     <link rel="stylesheet" type="text/css" href="/css/feed.css">
+    <link rel="stylesheet" type="text/css" href="/css/grayscale.css">
     <script src="/js/Chart.min.js"></script>
   </head>
 
-  <body id="page-top">
+  <body class="estadisticas-section">
     @include("layouts.navbar")
-<section id="socialpets" class="about-section text-center">
-
 <div class="container">
 
-    <canvas id="myChart" width="100%" height="20%"></canvas>
+    <canvas id="myChart" width="100%" height="60%"></canvas>
     <script>
     var ctx = document.getElementById("myChart");
     var myChart = new Chart(ctx, {
@@ -76,14 +75,15 @@
     });
     </script>
     </div>
-</section>
 
-  </body>
-<footer class="bg-black small text-center text-white-50">
+    <div class="footerCustom">
       <div class="container">
-        Copyright &copy; Social Pets 2019
+
+        Copyright &copy; Social Pets 2018
       </div>
-</footer>
+</div>
+  </body>
+
 <script src="/jquery/jquery.min.js"></script>
     <script src="/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="/jquery-easing/jquery.easing.min.js"></script>
