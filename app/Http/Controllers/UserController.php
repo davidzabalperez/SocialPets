@@ -140,7 +140,8 @@ class UserController extends Controller
 
     public function show($id)
     {
-        //
+        $perro = Dog::find($id);
+        return view('/dog/dog_profile', compact('perro'));
     }
 
     /**

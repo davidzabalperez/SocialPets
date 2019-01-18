@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTablePerfilPerros extends Migration
+class CreateTableDogs extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,17 @@ class CreateTablePerfilPerros extends Migration
      */
     public function up()
     {
-        Schema::create('perfil_perros', function (Blueprint $table) {
+        Schema::create('dogs', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('id_user')->unsigned();;
             $table->string('nombre');
             $table->string('sexo');
             $table->string('raza');
             $table->integer('edad');
             $table->string('descripcion');
-            $table->string('foto_perfil');
-            $table->string('foto');
+            $table->integer('codigo_postal');
+            $table->string('avatar');
+            $table->string('fotos');
             $table->timestamps();
         });
     }
@@ -33,6 +35,6 @@ class CreateTablePerfilPerros extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('perfil_perros');
+        Schema::dropIfExists('dogs');
     }
 }

@@ -2,15 +2,17 @@
 
 namespace App\Http\Controllers;
 
+use Hash;
 use App\User;
 use App\Mensaje;
 use App\SocialPets;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Redirect;
 use App\Http\Request\RegistrarUsuarioRequest;
-use Hash;
 
 class SocialPetsController extends Controller
 {
@@ -113,10 +115,10 @@ class SocialPetsController extends Controller
     ]);
 
     $user = Auth::user();
-
+    $foto = $request->file('avatar');
     $avatarName = $user->id.'_avatar'.time().'.'.request()->avatar->getClientOriginalExtension();
-
-    $request->avatar->storeAs('avatars',$avatarName);
+    Storage::disk('public')->put($avatarName, File::get($foto));
+    /* $request->avatar->storeAs('avatars',$avatarName); */
 
     $user->avatar = $avatarName;
     $user->save();

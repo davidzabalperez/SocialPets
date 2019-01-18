@@ -38,7 +38,7 @@
     <h3>{{ Auth::user()->name }}</h3>
     <div class="box-sub">
       <div class="avatar">
-      <img src="/storage/avatars/{{ $user->avatar }}" />
+      <img src="/uploads/{{ $user->avatar }}" />
     </div>
     </div>
     <p>Raza: {{ Auth::user()->race }}</p>
