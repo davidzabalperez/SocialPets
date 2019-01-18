@@ -32,6 +32,7 @@
   <body  class="message-section text-center">
     <!-- NavBar -->
     @include("layouts.navbar")
+    
 <div class="messaging">
       <div class="inbox_msg">
         <div class="inbox_people">
