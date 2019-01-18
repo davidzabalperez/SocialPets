@@ -2,11 +2,12 @@
 
 namespace App;
 
+use App\Dog;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-use Illuminate\Database\Eloquent\SoftDeletes;
 
 class User extends Authenticatable implements MustVerifyEmail
 {
@@ -33,5 +34,8 @@ class User extends Authenticatable implements MustVerifyEmail
 
     public function mensajes(){
         return $this->hasMany('App\Mensaje');
+    }
+    public function dogs(){
+        return $this->hasOne('App\Dog');
     }
 }

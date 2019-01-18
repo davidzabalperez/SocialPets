@@ -30,8 +30,6 @@
   <body class="profile-section text-center">
     <!-- NavBar -->
     @include("layouts.navbar")
-
-
     @include("layouts.profile")
    
 </div>
