@@ -68,7 +68,7 @@
                     </select>
                         </label>
                     </div>
-                    <a href="/admin">Volver atrás</a><br>
+                    <a href="/dashboard/2019">Volver atrás</a><br>
 
                     <input type="submit" value="Guardar">
                 </form>
