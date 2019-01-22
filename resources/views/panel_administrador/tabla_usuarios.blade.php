@@ -76,7 +76,7 @@
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                                      <div class="srch_bar">
               <div class="stylish-input-group">
-                <input type="text" id="Search" onkeyup="search()" placeholder="Buscar usuario.." title="Type in a name">
+                <input type="text" id="SearchUser" onkeyup="searchUser()" placeholder="Buscar usuario.." title="Type in a name">
                 <span class="input-group-addon">
                 <button type="button"> <i class="fa fa-search" aria-hidden="true"></i> </button>
                 </span> </div>
@@ -91,7 +91,7 @@
                   </thead>
                   <tbody >
                     @foreach($usuarios as $usuario)
-                    <tr class="target">
+                    <tr class="targetUser">
                       <td>{{$usuario->name}}</td>
                       <td>{{$usuario->email}}</td>
                       <td>{{$usuario->role}}</td>
@@ -102,7 +102,7 @@
                             <div class="modal-dialog">
                               <div class="modal-content">
                                   <div class="modal-footer">
-                                      Confirmacion borrar cuenta:
+                                      Confirmación borrar cuenta:
                                       <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
 
                                       <form method="post" action="{{ route('user.destroy', $usuario->id) }}" >
@@ -133,7 +133,7 @@
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                                      <div class="srch_bar">
               <div class="stylish-input-group">
-                <input type="text" id="Search" onkeyup="search()" placeholder="Buscar usuario.." title="Type in a name">
+                <input type="text" id="SearchUserBan" onkeyup="searchUserBan()" placeholder="Buscar usuario.." title="Type in a name">
                 <span class="input-group-addon">
                 <button type="button"> <i class="fa fa-search" aria-hidden="true"></i> </button>
                 </span> </div>
@@ -148,12 +148,36 @@
                   </thead>
                   <tbody >
                     @foreach($usuariosBaneados as $usuariosBaneado)
-                    <tr class="target">
+                    <tr class="targetUserBan">
                       <td>{{$usuariosBaneado->name}}</td>
                       <td>{{$usuariosBaneado->email}}</td>
                       <td>{{$usuariosBaneado->role}}</td>
+
                       <td><a class="btn btn-info" href="#">Desbanear</a>
                       <a class="btn btn-danger text-white" rel="publisher" data-toggle="modal" data-target="#confirmacionEliminarModal" id="hideModal">Eliminar</a></td>
+
+                      <td><a class="btn btn-info text-white" rel="publisher" data-toggle="modal" data-target="#confirmacionDesbanearModal" id="hideModal">Desbanear</a>
+
+                          <div class="modal fade" id="confirmacionDesbanearModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                              <div class="modal-content">
+                                  <div class="modal-footer">
+                                      <p>Confirmación desbanear cuenta: </p>
+                                      <p>
+                                      <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button></p>
+                                      <form method="post" action="{{route('desbanearUsuario', $usuariosBaneado->id)}}" >
+                                      @csrf
+                                      <p><button type="submit" class="btn btn-info">Desbanear</button></p>
+                                      </form>
+                                    
+                                  </div>
+                              </div>
+                          </div>
+                        </div>
+
+                        <a class="btn btn-danger text-white">Eliminar</a>
+                      </td>
+
                       </tr>
                       <div class="modal fade" id="confirmacionEliminarModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                             <div class="modal-dialog">
@@ -162,7 +186,7 @@
                                       Este usuario se eliminará permanentemente y no se podrá recuperar
                                       <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
 
-                                      <form method="post" action="{{ route('forcedelete', $usuario->id) }}" >
+                                      <form method="post" action="{{ route('eliminarUsuario', $usuario->id) }}" >
                                       @csrf
                                       @method('DELETE')
                                       <button type="submit" class="btn btn-danger">Eliminar</button>
@@ -197,6 +221,7 @@
     <script src="/jquery-easing/jquery.easing.min.js"></script>
     <script src="/vendor/datatables/jquery.dataTables.js"></script>
     <script src="/vendor/datatables/dataTables.bootstrap4.js"></script>
+    <script src="/js/buscar.js"></script>
 
     <!-- Custom scripts for all pages-->
     <script src="/js/sb-admin.min.js"></script>
@@ -204,5 +229,5 @@
     <!-- Demo scripts for this page-->
     <script src="/js/demo/datatables-demo.js"></script>
     <script src="/js/demo/chart-area-demo.js"></script>
-    <script src="/js/buscar.js"></script>
+    
 </html>
