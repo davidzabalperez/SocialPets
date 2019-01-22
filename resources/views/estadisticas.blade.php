@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -88,5 +89,5 @@
     <script src="/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="/jquery-easing/jquery.easing.min.js"></script>
     <script src="/js/grayscale.min.js"></script>
-    
+
 </html>

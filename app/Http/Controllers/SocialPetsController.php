@@ -51,12 +51,11 @@ class SocialPetsController extends Controller
     ]);
 
   }
+
   public function getAdminPanel(){
     $usuarios = User::all();
     
-    return view('panel_administrador')->with([
-      'usuarios'=>$usuarios
-    ]);
+    return view('panel_administrador');
   }
   public function getNoticia(){
     return view('noticia');
@@ -207,6 +206,12 @@ class SocialPetsController extends Controller
       }
     }
 
-
+    public function getTablaAdmin(){
+      $usuarios = User::all();
+      $usuariosBaneados = User::onlyTrashed()->get();
+       return view('panel_administrador.tabla_usuarios')->with([
+      'usuarios'=>$usuarios,'usuariosBaneados'=>$usuariosBaneados
+    ]);
+    }
 
 }

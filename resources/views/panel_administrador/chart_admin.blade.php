@@ -1,15 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-
   <head>
-
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Panel de Administrador</title>
+    <title>Panel de Administrador - Tabla Usuarios</title>
 
     <!-- Bootstrap core CSS-->
     <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -25,10 +23,8 @@
     <script src="/js/Chart.min.js"></script>
 
   </head>
-
-  <body id="page-top">
-
-    <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
+  <body>
+       <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
 
       <a class="navbar-brand mr-1" href="/panel_administrador">Panel de Administrador</a>
 
@@ -43,97 +39,104 @@
                         @csrf
                     </form>
       </ul>
+ 
 
     </nav>
-
     <div id="wrapper">
 
       <!-- Sidebar -->
       <ul class="sidebar navbar-nav">
-        <li class="nav-item active">
+        <li class="nav-item">
           <a class="nav-link" href="/panel_administrador">
             <i class="fas fa-fw fa-tachometer-alt"></i>
             <span>Dashboard</span>
           </a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item active">
           <a class="nav-link" href="/chart_admin/2019">
             <i class="fas fa-fw fa-chart-area"></i>
             <span>Charts</span></a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item ">
           <a class="nav-link" href="/tabla_usuarios">
             <i class="fas fa-fw fa-table"></i>
             <span>Usuarios</span></a>
         </li>
       </ul>
-
-      <div id="content-wrapper">
+       <div id="content-wrapper">
 
         <div class="container-fluid">
-
-          <!-- Breadcrumbs-->
-          <ol class="breadcrumb">
-            <li class="breadcrumb-item">
-              <h2>Bienvenido {{ Auth::user()->name }}, estas en el panel de administrador.</h2>
-            </li>
-            
-          </ol>
-
-          <!-- Icon Cards-->
-    
-          <!-- Area Chart Example-->
-           <div class="container-fluid">
          <div class="card mb-3">
             <div class="card-header">
-              </div>
+              <i class="fas fa-chart-area"></i>
+              Usuarios registrados</div>
             <div class="card-body">
-              <h3>Usuarios</h3>
-              <p>Podras editar, banear y eliminar usuarios.</p>
-              <h3>Charts</h3>
-              <p>Podras visualizar graficos y estadisticas de la aplicación.</p>
+                  <canvas id="myChart" width="100%" height="30%"></canvas>
+    <script>
+    var ctx = document.getElementById("myChart");
+    var myChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: [
+                @foreach($usersPerMonth as $month)
+                    {{$month['month'].','}}
+                @endforeach
+            ],
+            datasets: [{
+                label: 'Usuarios logueados este mes',
+                data: [
+                    @foreach($usersPerMonth as $users)   
+                        [{{$users['users']}}],
+                    @endforeach
+                ],
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(255, 206, 86, 0.2)',
+                    'rgba(75, 192, 192, 0.2)',
+                    'rgba(153, 102, 255, 0.2)',
+                    'rgba(255, 159, 64, 0.2)'
+                ],
+                borderColor: [
+                    '#2ef3b0',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)',
+                    'rgba(255, 159, 64, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero:true
+                    }
+                }]
+            }
+        }
+    });
+    </script>
             </div>
+        </div>
+    </div>
+            <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
           </div>
-        </div>
-
-          
-
-        </div>
-        <!-- /.container-fluid -->
-
-        <!-- Sticky Footer -->
-        <footer class="sticky-footer">
+              <footer class="sticky-footer">
           <div class="container my-auto">
             <div class="copyright text-center my-auto">
               <span>Copyright © SocialPets 2019</span>
             </div>
           </div>
         </footer>
-
-      </div>
-      <!-- /.content-wrapper -->
-
-    </div>
-    <!-- /#wrapper -->
-
-    <!-- Scroll to Top Button-->
-    <a class="scroll-to-top rounded" href="#page-top">
-      <i class="fas fa-angle-up"></i>
-    </a>
-
-    <!-- Logout Modal-->
-  
-
-    <!-- Bootstrap core JavaScript-->
-
+</body>
     <script src="/jquery/jquery.min.js"></script>
     <script src="/bootstrap/js/bootstrap.bundle.min.js"></script>
 
     <!-- Core plugin JavaScript-->
     <script src="/jquery-easing/jquery.easing.min.js"></script>
-
-    <!-- Page level plugin JavaScript-->
-    <script src="/js/Chart.min.js"></script>
     <script src="/vendor/datatables/jquery.dataTables.js"></script>
     <script src="/vendor/datatables/dataTables.bootstrap4.js"></script>
 
@@ -144,7 +147,4 @@
     <script src="/js/demo/datatables-demo.js"></script>
     <script src="/js/demo/chart-area-demo.js"></script>
     <script src="/js/buscar.js"></script>
-
-  </body>
-
 </html>
