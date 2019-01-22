@@ -1,9 +1,11 @@
 <div class="container">
-  @foreach($usuarios->sortByDesc('id') as $usuario) <!-- sortByDesc es para que muestre los usuarios registrados mas recientemente primero -->
+  @foreach($usuarios->sortByDesc('id') as $usuario) <!-- sortByDesc es para que muestre los usuarios registrados mas recientemente
+   primero -->
+   @if ( $usuario->id != Auth::user()->id)
   <div class="box">
     <h3>{{$usuario->name}}</h3>
     <div class="box-sub">
-      <div class="avatar">
+      <div class="{{ $usuario->gender == 1 ? 'avatarFemenino' : 'avatarMasculino'}}">
       <img src="/storage/avatars/{{ $usuario->avatar }}"/>
     </div>
     </div>
@@ -13,7 +15,6 @@
     @else
     <p>Edad: {{$usuario->age}} año</p>
     @endif
-    <p>Sexo: {{ $usuario->gender == 1 ? 'Femenino' : 'Masculino'}}</p>
     <a class="btn btn-primary btn-sm" id="like" rel="publisher"
        href="">
         <i class="fa fa-thumbs-up"></i>
@@ -24,6 +25,7 @@
 
         
   </div>
+  @endif
 @endforeach
 
 </div>
@@ -32,6 +34,7 @@
 
   <div class="carousel-inner">
 @foreach($usuarios->sortByDesc('id') as $usuario)
+
     <div class="carousel-item active">
       
       <div class="box">
