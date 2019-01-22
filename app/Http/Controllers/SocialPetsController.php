@@ -213,5 +213,11 @@ class SocialPetsController extends Controller
       'usuarios'=>$usuarios,'usuariosBaneados'=>$usuariosBaneados
     ]);
     }
-
+    
+    public function forcedelete($id)
+    {
+        $usuarios = User::onlyTrashed()->get($id);
+        $usuarios->forceDelete();    
+        return back();
+    }
 }

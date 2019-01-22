@@ -153,8 +153,24 @@
                       <td>{{$usuariosBaneado->email}}</td>
                       <td>{{$usuariosBaneado->role}}</td>
                       <td><a class="btn btn-info" href="#">Desbanear</a>
-                      <a class="btn btn-danger text-white" href="#">Eliminar</a></td>
+                      <a class="btn btn-danger text-white" rel="publisher" data-toggle="modal" data-target="#confirmacionEliminarModal" id="hideModal">Eliminar</a></td>
                       </tr>
+                      <div class="modal fade" id="confirmacionEliminarModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                              <div class="modal-content">
+                                  <div class="modal-footer">
+                                      Este usuario se eliminará permanentemente y no se podrá recuperar
+                                      <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+
+                                      <form method="post" action="{{ route('forcedelete', $usuario->id) }}" >
+                                      @csrf
+                                      @method('DELETE')
+                                      <button type="submit" class="btn btn-danger">Eliminar</button>
+                                      </form>
+                                  </div>
+                              </div>
+                          </div>
+                        </div>
                   @endforeach
                   </tbody>
                 </table>
