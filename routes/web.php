@@ -107,4 +107,7 @@ Route::resource('dog', 'DogController');
 
 Route::get('/tabla_usuarios', 'SocialPetsController@getTablaAdmin');
 
+Route::post('/desbanear/{id}',['as' => 'desbanearUsuario', 'uses' => 'SocialPetsController@desbanearUsuario' ]);
+
+
 

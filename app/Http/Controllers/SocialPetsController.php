@@ -214,4 +214,9 @@ class SocialPetsController extends Controller
     ]);
     }
 
+    public function desbanearUsuario($id){
+        $user = User::onlyTrashed()->find($id)->restore();
+        return redirect('tabla_usuarios');
+    }
+
 }
