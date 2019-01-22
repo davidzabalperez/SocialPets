@@ -23,7 +23,7 @@ class ChartController extends Controller
                         ->count();
                         array_push($usersPerMonth,['month'=>$i,'users'=> $userPerMonth]);
                     }
-                    return view('panel_administrador', [
+                    return view('panel_administrador.chart_admin', [
                         'usersPerMonth'=> $usersPerMonth, 'usuarios'=>$usuarios
                     ]);   
     }

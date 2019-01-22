@@ -21,6 +21,8 @@
     <a class="btn btn-warning btn-sm" rel="publisher" id="dislike" href="">
         <i class="fa fa-thumbs-down"></i>
     </a>
+
+        
   </div>
 @endforeach
 
@@ -69,3 +71,6 @@
     <span class="sr-only">Next</span>
   </a>
 </div>
+=======
+</div>
+@include('chatFeed')

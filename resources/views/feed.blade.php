@@ -55,6 +55,7 @@
     <!-- Footer -->
 
     <!-- Bootstrap core JavaScript -->
+      <script src="/js/chatFeed.js"></script>
     <script src="jquery/jquery.min.js"></script>
     <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
 
@@ -63,4 +64,5 @@
 
     <!-- Custom scripts for this template -->
     <script src="js/grayscale.min.js"></script>
+
 </html>
