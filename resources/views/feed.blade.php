@@ -1,68 +1,51 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('layouts.usuariosFeed')
+@section('title', 'Inicio')
+@section('content')
 
-  <head>
+<div id="carouselExampleControls" class="carousel slide" data-ride="carousel" data-interval="false">
 
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="shortcut icon" href="/img/favicon (3).ico" />
- 
+  <div class="carousel-inner">
+@foreach($usuarios->sortByDesc('id') as $usuario)
 
-    <title>Social Pets Home</title>
+    <div class="carousel-item active">
+      
+      <div class="box">
+      @endforeach
 
-    <!-- Bootstrap core CSS -->
+    <h3>{{$usuario->name}}</h3>
+    <div class="box-sub">
+      <div class="avatar">
+      <img src="/storage/avatars/{{ $usuario->avatar }}"/>
+    </div>
+    </div>
+    <p>Raza: {{$usuario->race}}</p>
+    @if($usuario->age > 1)
+    <p>Edad: {{$usuario->age}} años</p>
+    @else
+    <p>Edad: {{$usuario->age}} año</p>
+    @endif
+    <p>Sexo: {{ $usuario->gender == 1 ? 'Femenino' : 'Masculino'}}</p>
+    <a class="btn btn-primary btn-sm" id="like" rel="publisher"
+       href="">
+        <i class="fa fa-thumbs-up"></i>
+    </a>
+    <a class="btn btn-warning btn-sm" rel="publisher" id="dislike" href="">
+        <i class="fa fa-thumbs-down"></i>
+    </a>
+  </div> 
+  
+  </div>
+  
 
+  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+</div>
+@endsection
 
-    <!-- Custom fonts for this template -->
-    <link rel="stylesheet" type="text/css" href="/css/grayscale.css">
-
-     <link rel="stylesheet" type="text/css" href="/css/feed.css">
-
-     <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-     
-
-    <!-- Custom fonts for this template -->
-    <link href="/fontawesome-free/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
-
-   
-    <!-- Custom styles for this template -->
-
-
-  </head>
-
-
-
-  <body class="feed-section text-center">
-    <!-- NavBar -->
-    @include("layouts.navbar")
-<section id="socialpets" >
-
-@include("layouts.usuariosFeed")
-
-</section>
-
-  </body>
-<footer class="footerCustom">
-      <div class="container">
-
-        Copyright &copy; Social Pets 2019
-      </div>
-</footer>
-    <!-- Footer -->
-
-    <!-- Bootstrap core JavaScript -->
-      <script src="/js/chatFeed.js"></script>
-    <script src="jquery/jquery.min.js"></script>
-    <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
-
-    <!-- Plugin JavaScript -->
-    <script src="jquery-easing/jquery.easing.min.js"></script>
-
-    <!-- Custom scripts for this template -->
-    <script src="js/grayscale.min.js"></script>
-
-</html>

@@ -22,8 +22,10 @@
                 <form action="/register2" method="post">
                     @csrf
                     <input type="hidden" name="id" id="id" value="{{ Auth::user()->id }}">
+                    Nombre del perro:
+                    <input type="text" name="name" id="name" placeholder="nombre del perro">
                     Edad del perro:
-                    <input type="number" id="age" min="0" class="form-control" name="age" placeholder="Años de persona">
+                    <input type="number" name="age" id="age" min="0" class="form-control"  placeholder="Años de persona">
                     <br>
                     Genero del perro:
                     <br>

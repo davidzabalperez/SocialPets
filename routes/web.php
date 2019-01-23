@@ -47,7 +47,7 @@ Route::group(['middleware' => ['web']], function() {
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/step2', 'SocialPetsController@getStep2');
-Route::post('/register2', 'SocialPetsController@registerStep2');
+Route::post('/register2', 'SocialPetsController@register2');
 
 // rutas para editar usuario
 Route::get('/usuario/{id}/edit', 'SocialPetsController@editUser');
