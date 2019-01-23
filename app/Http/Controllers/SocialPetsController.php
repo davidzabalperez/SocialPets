@@ -225,4 +225,9 @@ class SocialPetsController extends Controller
         return redirect('tabla_usuarios');
     
     }
+
+    public function getPerfilUsuarios($id){
+      $user = User::find($id)->get();
+      return view('profile_dog/{$id}')->with(['user'=>$user]);
+    }
 }
