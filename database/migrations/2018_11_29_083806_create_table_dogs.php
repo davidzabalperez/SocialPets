@@ -16,14 +16,14 @@ class CreateTableDogs extends Migration
         Schema::create('dogs', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('id_user')->unsigned();;
-            $table->string('nombre');
-            $table->string('sexo');
-            $table->string('raza');
-            $table->integer('edad');
-            $table->string('descripcion');
-            $table->integer('codigo_postal');
-            $table->string('avatar');
-            $table->string('fotos');
+            $table->string('name');
+            $table->string('gender');
+            $table->string('race');
+            $table->integer('age');
+            $table->string('description')->nullable();
+            $table->integer('postal_code')->nullable();
+            $table->string('avatar')->nullable();
+            $table->string('photos')->nullable();
             $table->timestamps();
         });
     }

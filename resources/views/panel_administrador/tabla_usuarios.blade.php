@@ -184,9 +184,9 @@
                                       ¿Estás seguro de eliminar a {{ $usuariosBaneado->name }} ? Esta acción no se puede revertir
                                       <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
 
-                                      <form method="post" action="{{ route('forcedelete', $usuariosBaneado->id) }}" >
+                                      <form method="post" action="{{route('forcedelete', $usuariosBaneado->id)}}" >
                                       @csrf
-                                      @method('DELETE')
+                                      
                                       <button type="submit" class="btn btn-danger">Eliminar</button>
                                       </form>
                                   </div>
