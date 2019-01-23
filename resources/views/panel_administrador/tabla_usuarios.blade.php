@@ -96,13 +96,13 @@
                       <td>{{$usuario->email}}</td>
                       <td>{{$usuario->role}}</td>
                       <td><a class="btn btn-info" href="{{ url('/usuario/' .$usuario->id. '/edit') }}">Editar</a>
-                      <a class="btn btn-danger text-white" rel="publisher" data-toggle="modal" data-target="#confirmacionBanearModal" id="hideModal">Banear</a></td>
+                      <a class="btn btn-danger text-white" rel="publisher" data-toggle="modal" data-target="#confirmacionBanearModal{{$usuario->id}}" id="hideModal">Banear</a></td>
                       </tr>
-                              <div class="modal fade" id="confirmacionBanearModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                              <div class="modal fade" id="confirmacionBanearModal{{$usuario->id}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                             <div class="modal-dialog">
                               <div class="modal-content">
                                   <div class="modal-footer">
-                                      Confirmación borrar cuenta:
+                                      Vas a banear a {{ $usuario->name }}
                                       <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
 
                                       <form method="post" action="{{ route('user.destroy', $usuario->id) }}" >
@@ -153,16 +153,14 @@
                       <td>{{$usuariosBaneado->email}}</td>
                       <td>{{$usuariosBaneado->role}}</td>
 
-                      <td><a class="btn btn-info" href="#">Desbanear</a>
-                      <a class="btn btn-danger text-white" rel="publisher" data-toggle="modal" data-target="#confirmacionEliminarModal" id="hideModal">Eliminar</a></td>
+                      <td><a class="btn btn-info text-white" rel="publisher" data-toggle="modal" data-target="#confirmacionDesbanearModal{{$usuariosBaneado->id}}" id="desbanearModal">Desbanear</a><a class="btn btn-danger text-white" rel="publisher" data-toggle="modal" data-target="#confirmacionEliminarModal{{$usuariosBaneado->id}}" id="eliminarModal">Eliminar</a>
+                      </td>
 
-                      <td><a class="btn btn-info text-white" rel="publisher" data-toggle="modal" data-target="#confirmacionDesbanearModal" id="hideModal">Desbanear</a>
-
-                          <div class="modal fade" id="confirmacionDesbanearModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                          <div class="modal fade" id="confirmacionDesbanearModal{{$usuariosBaneado->id}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                             <div class="modal-dialog">
                               <div class="modal-content">
                                   <div class="modal-footer">
-                                      <p>Confirmación desbanear cuenta: </p>
+                                      <p>Vas a desbanear a {{ $usuariosBaneado->name }} </p>
                                       <p>
                                       <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button></p>
                                       <form method="post" action="{{route('desbanearUsuario', $usuariosBaneado->id)}}" >
@@ -175,20 +173,20 @@
                           </div>
                         </div>
 
-                        <a class="btn btn-danger text-white">Eliminar</a>
+
                       </td>
 
                       </tr>
-                      <div class="modal fade" id="confirmacionEliminarModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                      <div class="modal fade" id="confirmacionEliminarModal{{$usuariosBaneado->id}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                             <div class="modal-dialog">
                               <div class="modal-content">
                                   <div class="modal-footer">
-                                      Este usuario se eliminará permanentemente y no se podrá recuperar
+                                      ¿Estás seguro de eliminar a {{ $usuariosBaneado->name }} ? Esta acción no se puede revertir
                                       <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
 
-                                      <form method="post" action="{{ route('eliminarUsuario', $usuario->id) }}" >
+                                      <form method="post" action="{{route('forcedelete', $usuariosBaneado->id)}}" >
                                       @csrf
-                                      @method('DELETE')
+                                      
                                       <button type="submit" class="btn btn-danger">Eliminar</button>
                                       </form>
                                   </div>

@@ -239,17 +239,14 @@ class SocialPetsController extends Controller
     ]);
   }
 
-  public function desbanearUsuario($id)
-  {
-    $user = User::onlyTrashed()->find($id)->restore();
-    return redirect('tabla_usuarios');
-  }
+    public function desbanearUsuario($id){
+        $user = User::onlyTrashed()->find($id)->restore();
+        return back();
+    }
 
-  public function forceDelete($id)
-  {
-    $user = User::onlyTrashed()->find($id)->restore();
-    $user = User::find($id)->forceDelete();
-    return redirect('tabla_usuarios');
-
-  }
+    public function forceDelete($id){
+        $user = User::onlyTrashed()->find($id)->restore();
+        $user = User::find($id)->forceDelete();
+        return back();   
+    }
 }
