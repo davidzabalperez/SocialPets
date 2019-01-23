@@ -3,7 +3,7 @@
   <div class="box">
     <h3>{{ Auth::user()->name }}</h3>
     <div class="box-sub">
-      <div class="avatar">
+      <div class="{{ Auth::user()->gender  == 1 ? 'avatarFemenino' : 'avatarMasculino'}}">
       <img src="/storage/avatars/{{ $user->avatar }}" />
     </div>
     </div>
@@ -13,6 +13,5 @@
     @else
     <p>Edad: {{ Auth::user()->age }} año</p>
     @endif
-    <p>Sexo: {{ Auth::user()->gender == 1 ? 'Femenino' : 'Masculino'}}</p>
      <a class="btn btn-light btn-sm" rel="publisher" data-toggle="modal" data-target="#editProfileModal"><i class="fa fa-cogs iconEditProfile"></i></a>
   </div>

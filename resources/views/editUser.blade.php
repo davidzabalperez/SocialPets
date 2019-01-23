@@ -11,7 +11,7 @@
     <title>Social Pets Home</title>
 
     <!-- Bootstrap core CSS -->
-    
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom fonts for this template -->
     <link href="/fontawesome-free/css/all.min.css" rel="stylesheet">
@@ -19,20 +19,19 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="/css/grayscale.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="/css/feed.css">
   </head>
 
 
 
-  <body id="page-top">
+  <body id="page-top" class="edit-section">
     <!-- NavBar -->
     
 <section class="about-section">
 <div class="container">
             <div class="form-box">
-
+                <h1>Editar usuario</h1>
                 <form action="{{ url('/user/'.$user->id) }}" method="POST">
                     @method('PUT')
                     @csrf

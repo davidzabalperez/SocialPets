@@ -367,17 +367,7 @@ a .iconNotification {
   height: 100%;
 }
 
- .profile-section {
-  background-image: url('/img/background2.jpg');
-  padding-top: 4rem;
- background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
-  height: 100%;
-
-}
-.feed-section, .message-section {
+.feed-section, .message-section, .profile-section, .edit-section {
 padding-top: 4rem;
 background:
 linear-gradient(27deg, #151515 5px, transparent 5px) 0 5px,
@@ -388,6 +378,15 @@ linear-gradient(90deg, #1b1b1b 10px, transparent 10px),
 linear-gradient(#1d1d1d 25%, #1a1a1a 25%, #1a1a1a 50%, transparent 50%, transparent 75%, #242424 75%, #242424);
 background-color: #131313;
 background-size: 20px 20px;
+}
+.edit-section {
+  color: white;
+}
+.edit-section h1{
+  font-size: 48px;
+}
+.edit-section .form-box{
+  height: 605px;
 }
 
 .footerCustom{

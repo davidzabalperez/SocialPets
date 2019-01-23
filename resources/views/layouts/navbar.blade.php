@@ -66,11 +66,8 @@
                             {{ __('Mensajes') }}
                     </a>
                     @if (Auth::user() && Auth::user()->role == 'admin')
-                    <a class="nav-link js-scroll-trigger" href="{{ route('AdminPanel') }}"><span class="fa  fa-toolbox">
-                            {{ __('Administrar') }}
-                    </a>
                     <a class="nav-link js-scroll-trigger" href="{{ route('estadisticas') }}"><span class="fa  fa-chart-pie">
-                            {{ __('Estadistícas') }}
+                            {{ __('Administrar') }}
                     </a>
                     @endif
                     <a class="nav-link js-scroll-trigger" href="{{ route('logout') }}"

@@ -219,4 +219,10 @@ class SocialPetsController extends Controller
         return redirect('tabla_usuarios');
     }
 
+    public function forceDelete($id){
+        $user = User::onlyTrashed()->find($id)->restore();
+        $user = User::find($id)->forceDelete();
+        return redirect('tabla_usuarios');
+    
+    }
 }
