@@ -17,8 +17,9 @@ window.Vue = require('vue');
  * Eg. ./components/ExampleComponent.vue -> <example-component></example-component>
  */
 
-Vue.component('example-component', require('./components/ExampleComponent.vue'));
-
+Vue.component('chat', require('./components/Chat.vue'));
+Vue.component('chat-composer', require('./components/ChatComposer.vue'));
+Vue.component('onlineuser', require('./components/OnlineUser.vue'));
 // const files = require.context('./', true, /\.vue$/i)
 
 // files.keys().map(key => {
@@ -32,5 +33,35 @@ Vue.component('example-component', require('./components/ExampleComponent.vue'))
  */
 
 const app = new Vue({
-    el: '#app'
+    el: '#app',
+    data: {
+        chats: '',
+        onlineusers: ''
+    },
+    created(){
+        const userId = $('meta[name="userId"]').attr('content');
+        const friendId = $('meta[name="friendId"]').attr('content');
+
+        if(friendId != undefined){
+            axios.post('/chat/getChat/' + friendId).then((response)=>{
+                this.chats = response.data;
+            });
+
+            Echo.private('Chat.' + friendId + '.' + userId)
+                .listen('BroadcastChat', (e)=> {
+                    document.getElementById('chatAudio').play();
+                    this.chats.push(e.chat);
+                });
+        }
+
+        if(userId != 'null'){
+            Echo.join('Online').here((users)=>{
+                    this.onlineusers = users;
+                }).joining((user)=>{
+                    this.onlineusers.push(user);
+                }).leaving((user)=>{
+                    this.onlineusers = this.onlineusers.filter((u)=> {u != user});
+                })
+        }
+    }
 });
