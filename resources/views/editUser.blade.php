@@ -22,10 +22,10 @@
         <input type="number" class="inputFields" id="age" name="age" min="0" value="{{ $user->age }}" required/>
       </li>
       <li>
-        <label for="gender">
-            <select name="gender" id="gender">
-                        <option value="0">Masculino</option>
-                        <option value="1">Femenino</option>
+        <label for="gender" class="custom-select">
+            <select name="gender" id="gender" class="select_mate">
+                        <option value="0" class="option">Masculino</option>
+                        <option value="1" class="option">Femenino</option>
                     </select>
         </label>
       </li>
