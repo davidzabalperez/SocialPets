@@ -99,7 +99,7 @@ class SocialPetsController extends Controller
     $dog->gender = $request->input('gender');
     $dog->race = $request->input('race');
     $dog->save();
-    return redirect('/profile');
+    return redirect('/inicio');
   }
   public function getProfile()
   {
