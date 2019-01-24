@@ -31,7 +31,6 @@ class SocialPetsController extends Controller
   public function enviarContacto(Request $request)
   {
     $contact = new SocialPets;
-
     $contact->email = Input::get('email');
     $contact->name = Input::get('name');
     $contact->doubt = Input::get('doubt');
@@ -47,17 +46,6 @@ class SocialPetsController extends Controller
 
     return view('login-view');
   }
-
-  /* public function getInicio()
-  {
-    $usuarios = User::all();
-
-    return view('feed')->with([
-      'usuarios' => $usuarios
-    ]);
-
-  } */
-
   public function getAdminPanel()
   {
     $usuarios = User::all();
@@ -99,7 +87,7 @@ class SocialPetsController extends Controller
     $dog->gender = $request->input('gender');
     $dog->race = $request->input('race');
     $dog->save();
-    return redirect('/inicio');
+    return redirect('/dog');
   }
   public function getProfile()
   {
