@@ -16,9 +16,12 @@ class DogController extends Controller
     public function index()
     {
         $dogs = Dog::all();
-        return view('/dog/dog_feed',\compact('dogs'));
+        return view('/dog/dog_feed')->with([
+            'dogs'=>$dogs
+        ]);
+        /* dump($dogs);
+        php artisan dump -serve */
     }
-
     /**
      * Show the form for creating a new resource.
      *

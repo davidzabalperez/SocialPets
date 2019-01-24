@@ -93,7 +93,7 @@ class SocialPetsController extends Controller
       'race' => 'required',
     ]);
     $dog = new Dog();
-    $dog->id_user = $request->input('id');
+    $dog->user_id = $request->input('id');
     $dog->name = $request->input('name');
     $dog->age = $request->input('age');
     $dog->gender = $request->input('gender');
