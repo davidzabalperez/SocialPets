@@ -104,10 +104,8 @@ class SocialPetsController extends Controller
   public function getProfile()
   {
     $user = Auth::user();
-    $dog = Dog::where('id_user', Auth::user()->id)->get();
     return view('profile')->with([  
-      'user'=>$user,
-      'dog'=>$dog
+      'user'=>$user
     ]);
   }
 

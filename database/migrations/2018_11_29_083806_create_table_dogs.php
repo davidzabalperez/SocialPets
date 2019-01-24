@@ -15,7 +15,7 @@ class CreateTableDogs extends Migration
     {
         Schema::create('dogs', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('id_user')->unsigned();;
+            $table->integer('user_id')->unsigned();;
             $table->string('name');
             $table->string('gender');
             $table->string('race');
