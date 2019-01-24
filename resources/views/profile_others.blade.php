@@ -1,19 +1,16 @@
 @extends('layouts.profile_master')
-@section('title', 'Perfil de '.$usuario->name)
+@section('title', 'Perfil de '.$dog->name)
 @section('content')
 <div class="container">
   <div class="box">
-    <h3>{{ $usuario->name }}</h3>
+    <h3>{{ $dog->name }}</h3>
     <div class="box-sub">
-      <div class="{{ $usuario->gender  == 1 ? 'avatarFemenino' : 'avatarMasculino'}}">
-      <img src="/storage/avatars/{{ $usuario->avatar }}" />
+      <div class="{{ $dog->gender  == 1 ? 'avatarFemenino' : 'avatarMasculino'}}">
+      <img src="/public/uploads/{{ $dog->avatar }}" />
     </div>
     </div>
-    <p>Raza: {{ $usuario->race }}</p>
-    @if($usuario->age > 1)
-    <p>Edad: {{ $usuario->age }} años</p>
-    @else
-    <p>Edad: {{ $usuario->age }} año</p>
-    @endif
+    <p>Raza: {{ $dog->race }}</p>
+    <p>Edad: {{$dog->age}} {{ $dog->age > 1 ? 'años' : 'año'}}</p>
+    <p>Dueña/o: {{ $dog->user->name }}</p>
   </div>
   @endsection

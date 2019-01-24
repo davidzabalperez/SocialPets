@@ -48,7 +48,7 @@ class SocialPetsController extends Controller
     return view('login-view');
   }
 
-  public function getInicio()
+  /* public function getInicio()
   {
     $usuarios = User::all();
 
@@ -56,7 +56,7 @@ class SocialPetsController extends Controller
       'usuarios' => $usuarios
     ]);
 
-  }
+  } */
 
   public function getAdminPanel()
   {

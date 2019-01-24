@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Dog;
 use Illuminate\Http\Request;
-use App\User;
 
 class DogController extends Controller
 {
@@ -51,7 +50,8 @@ class DogController extends Controller
      */
     public function show($id)
     {
-        //
+          $dog = Dog::find($id);
+          return view('profile_others', compact('dog'));
     }
 
     /**
