@@ -104,7 +104,9 @@ class SocialPetsController extends Controller
   public function getProfile()
   {
     $user = Auth::user();
-    return view('profile', compact('user', $user));
+    return view('profile')->with([  
+      'user'=>$user
+    ]);
   }
 
 
@@ -154,9 +156,6 @@ class SocialPetsController extends Controller
   }
   public function register(Request $request)
   {
-
-
-
     request()->validate([
       'name' => 'required|min:2|max:50',
       'email' => 'required|email|unique:users',
@@ -174,9 +173,6 @@ class SocialPetsController extends Controller
       'password.min' => 'La contraseña tiene que tener 8 o mas caracteres',
       'password_confirmation.required' => 'Contraseña es un campo requerido',
       'password_confirmation.same' => 'Las contraseñas no coinciden',
-
-
-
     ]);
 
     $input = request()->except('password', 'confirm_password');

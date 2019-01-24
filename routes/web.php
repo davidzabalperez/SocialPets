@@ -59,7 +59,7 @@ Route::post('darAlta', ['as' => 'darAlta.post', 'uses' => 'SocialPetsController@
 
 Route::get('/profile', 'SocialPetsController@getProfile')->name('profile')->middleware('verified');
 
-Route::post('profile', 'SocialPetsController@update_avatar');
+Route::post('update_avatar', 'SocialPetsController@update_avatar');
 Route::get('/mensajes', 'SocialPetsController@getMensajess')->name('mensajes')->middleware('verified');
 
 

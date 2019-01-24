@@ -15,14 +15,14 @@ class CreateTableDogs extends Migration
     {
         Schema::create('dogs', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('id_user')->unsigned();;
+            $table->integer('user_id')->unsigned();;
             $table->string('name');
             $table->string('gender');
             $table->string('race');
             $table->integer('age');
             $table->string('description')->nullable();
             $table->integer('postal_code')->nullable();
-            $table->string('avatar')->nullable();
+            $table->string('avatar')->default('user.png');
             $table->string('photos')->nullable();
             $table->timestamps();
         });
