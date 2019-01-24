@@ -1,5 +1,5 @@
 @extends('layouts.profile_master')
-@section('title', 'Perfil')
+@section('title', Auth::user()->name)
 @section('content')
 <div class="container">
 
@@ -18,5 +18,11 @@
     <p>Edad: {{ $user->dog->age }} año</p>
     @endif
      <a class="btn btn-light btn-sm" rel="publisher" data-toggle="modal" data-target="#editProfileModal"><i class="fa fa-cogs iconEditProfile"></i></a>
-</div>
+
+  </div>
   @endsection
+      @include('editar_perfil.formulario_editar_perfil')
+
+</div>
+
+

@@ -7,7 +7,7 @@
    primero -->
    @if ( $usuario->id != Auth::user()->id)
   <div class="box">
-    <h3>{{$usuario->name}}</h3>
+    <h3><a href="{{route('profile_others', $usuario->id)}}"> {{$usuario->name}}</a></h3> 
     <div class="box-sub">
       <div class="{{ $usuario->gender == 1 ? 'avatarFemenino' : 'avatarMasculino'}}">
       <img src="/storage/avatars/{{ $usuario->avatar }}"/>

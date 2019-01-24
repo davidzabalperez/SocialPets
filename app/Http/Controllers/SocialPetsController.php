@@ -109,6 +109,8 @@ class SocialPetsController extends Controller
     ]);
   }
 
+
+
   public function resetPassword()
   {
     return view('resetPasswordbtn btn-light');
@@ -250,4 +252,10 @@ class SocialPetsController extends Controller
       $user = User::find($id)->get();
       return view('profile_dog/{$id}')->with(['user'=>$user]);
     }
+
+      public function getProfileOther($id)
+  {
+    $usuario = User::find($id);
+    return view('profile_others', compact('usuario'));
+  }
 }
