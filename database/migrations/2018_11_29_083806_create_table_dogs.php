@@ -22,7 +22,7 @@ class CreateTableDogs extends Migration
             $table->integer('age');
             $table->string('description')->nullable();
             $table->integer('postal_code')->nullable();
-            $table->string('avatar')->nullable();
+            $table->string('avatar')->default('user.png');
             $table->string('photos')->nullable();
             $table->timestamps();
         });
