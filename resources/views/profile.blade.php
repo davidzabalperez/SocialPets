@@ -10,6 +10,7 @@
       <img src="/public/uploads/{{ $user->dog->avatar }}" />
     </div>
     </div>
+    <p>Dueña/o:{{ $user->name }}</p>
     <p>Raza: {{ $user->dog->race }}</p>
     @if($user->dog->age > 1)
     <p>Edad: {{ $user->dog->age }} años</p>

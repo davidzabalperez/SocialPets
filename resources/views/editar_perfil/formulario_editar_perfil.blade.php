@@ -2,16 +2,27 @@
     <div class="modal-dialog">
 
     <div class="modal-content">
-      <h4 id="tituloEditarUsuario" class="modal-title">Editar perfil de usuario</h4>
+      <h4 id="tituloEditarUsuario" class="modal-title">Editar perfil de usuario/perro</h4>
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
       </div>
       <div class="modal-body">
-
+<form action="{{ route('dog.update', $user->dog->id )}}" method="post">
+    @method('PATCH')
+    @csrf
+    <!--NOMBRE -->
+  <div class="form-group row">
+    <label for="inputName3" class="col-sm-2 col-form-label">Nombre Perro</label>
+    <div class="col-6 col-md-6">
+      <input type="text" class="form-control" name="name" id="name" value="{{ $user->dog->name }}">
+      <input type="hidden" class="form-control" name="id" id="id" value="{{ $user->dog->id }}">
+    </div>
+    <button type="submit" class="btn btn-primary">Cambiar nombre</button>
+  </div>
+</form>
   <form action="{{ route('user.update', Auth::user()->id )}}" method="post">
     @method('PATCH')
     @csrf
-
     <!--NOMBRE -->
   <div class="form-group row">
     <label for="inputName3" class="col-sm-2 col-form-label">Nombre</label>

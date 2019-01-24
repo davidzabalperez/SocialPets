@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Dog;
 use Illuminate\Http\Request;
+use App\User;
 
 class DogController extends Controller
 {
@@ -70,7 +71,10 @@ class DogController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $dog=Dog::find($id);
+        $dog->name = $request->input('name');
+        $dog->save();
+        return redirect('/profile')->with('success', 'Perro editado con exito');
     }
 
     /**
