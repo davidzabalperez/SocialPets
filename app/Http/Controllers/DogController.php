@@ -15,9 +15,12 @@ class DogController extends Controller
     public function index()
     {
         $dogs = Dog::all();
-        return view('/dog/dog_feed',\compact('dogs'));
+        return view('/dog/dog_feed')->with([
+            'dogs'=>$dogs
+        ]);
+        /* dump($dogs);
+        php artisan dump -serve */
     }
-
     /**
      * Show the form for creating a new resource.
      *
@@ -47,7 +50,8 @@ class DogController extends Controller
      */
     public function show($id)
     {
-        //
+          $dog = Dog::find($id);
+          return view('profile_others', compact('dog'));
     }
 
     /**
@@ -70,7 +74,10 @@ class DogController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $dog=Dog::find($id);
+        $dog->name = $request->input('name');
+        $dog->save();
+        return redirect('/profile')->with('success', 'Perro editado con exito');
     }
 
     /**

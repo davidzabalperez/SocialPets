@@ -15,7 +15,7 @@ class AlterTableDogs extends Migration
     {
         Schema::table('dogs', function (Blueprint $table) {
             
-            $table->foreign('id_user')
+            $table->foreign('user_id')
             ->references('id')->on('users')
             ->onDelete('cascade');
 

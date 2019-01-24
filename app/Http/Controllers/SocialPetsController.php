@@ -31,7 +31,6 @@ class SocialPetsController extends Controller
   public function enviarContacto(Request $request)
   {
     $contact = new SocialPets;
-
     $contact->email = Input::get('email');
     $contact->name = Input::get('name');
     $contact->doubt = Input::get('doubt');
@@ -47,17 +46,6 @@ class SocialPetsController extends Controller
 
     return view('login-view');
   }
-
-  public function getInicio()
-  {
-    $usuarios = User::all();
-
-    return view('feed')->with([
-      'usuarios' => $usuarios
-    ]);
-
-  }
-
   public function getAdminPanel()
   {
     $usuarios = User::all();
@@ -93,19 +81,23 @@ class SocialPetsController extends Controller
       'race' => 'required',
     ]);
     $dog = new Dog();
-    $dog->id_user = $request->input('id');
+    $dog->user_id = $request->input('id');
     $dog->name = $request->input('name');
     $dog->age = $request->input('age');
     $dog->gender = $request->input('gender');
     $dog->race = $request->input('race');
     $dog->save();
-    return redirect('/inicio');
+    return redirect('/dog');
   }
   public function getProfile()
   {
     $user = Auth::user();
-    return view('profile', compact('user', $user));
+    return view('profile')->with([  
+      'user'=>$user
+    ]);
   }
+
+
 
   public function resetPassword()
   {
@@ -152,9 +144,6 @@ class SocialPetsController extends Controller
   }
   public function register(Request $request)
   {
-
-
-
     request()->validate([
       'name' => 'required|min:2|max:50',
       'email' => 'required|email|unique:users',
@@ -172,9 +161,6 @@ class SocialPetsController extends Controller
       'password.min' => 'La contraseña tiene que tener 8 o mas caracteres',
       'password_confirmation.required' => 'Contraseña es un campo requerido',
       'password_confirmation.same' => 'Las contraseñas no coinciden',
-
-
-
     ]);
 
     $input = request()->except('password', 'confirm_password');
@@ -254,4 +240,10 @@ class SocialPetsController extends Controller
       $user = User::find($id)->get();
       return view('profile_dog/{$id}')->with(['user'=>$user]);
     }
+
+      public function getProfileOther($id)
+  {
+    $usuario = User::find($id);
+    return view('profile_others', compact('usuario'));
+  }
 }
