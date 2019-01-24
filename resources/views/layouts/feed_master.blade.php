@@ -60,5 +60,3 @@
     <script src="js/grayscale.min.js"></script>
 
 </html>
-
-

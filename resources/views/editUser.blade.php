@@ -23,7 +23,7 @@
       </li>
       <li>
         <label for="gender" class="custom-select">
-            <select name="gender" id="gender" class="select_mate">
+            <select name="gender" id="gender">
                         <option value="0" class="option">Masculino</option>
                         <option value="1" class="option">Femenino</option>
                     </select>

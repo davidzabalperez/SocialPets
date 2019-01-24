@@ -46,9 +46,11 @@
       <div class="box">
       @endforeach
 
+=======
+>>>>>>> df475ea58c26c922128f346d235b687e119a181a
     <h3>{{$usuario->name}}</h3>
     <div class="box-sub">
-      <div class="avatar">
+      <div class="{{ $usuario->gender == 1 ? 'avatarFemenino' : 'avatarMasculino'}}">
       <img src="/storage/avatars/{{ $usuario->avatar }}"/>
     </div>
     </div>
@@ -58,7 +60,6 @@
     @else
     <p>Edad: {{$usuario->age}} año</p>
     @endif
-    <p>Sexo: {{ $usuario->gender == 1 ? 'Femenino' : 'Masculino'}}</p>
     <a class="btn btn-primary btn-sm" id="like" rel="publisher"
        href="">
         <i class="fa fa-thumbs-up"></i>
@@ -66,11 +67,13 @@
     <a class="btn btn-warning btn-sm" rel="publisher" id="dislike" href="">
         <i class="fa fa-thumbs-down"></i>
     </a>
-  </div> 
-  
-  </div>
-  
 
+        
+  </div>
+  @endif
+@endforeach
+
+<<<<<<< HEAD
   <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
     <span class="sr-only">Previous</span>
@@ -81,3 +84,8 @@
   </a>
 </div>
 </div> -->
+=======
+</div>
+
+
+@endsection
