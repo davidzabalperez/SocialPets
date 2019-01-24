@@ -76,13 +76,13 @@
 
 
 
-    <form action="/profile" method="post" enctype="multipart/form-data">
+    <form action="update_avatar" method="post" enctype="multipart/form-data">
               @csrf
               <div class="form-group">
                   Cambiar imagen de perfil
                   <input type="file" class="form-control-file" name="avatar" id="avatarFile" aria-describedby="fileHelp">
                   <small id="fileHelp" class="form-text text-muted"></small>
-                                <button type="submit" class="btn btn-primary btn-sm">Subir imagen</button>
+                  <button type="submit" class="btn btn-primary btn-sm">Subir imagen</button>
 
               </div>
 

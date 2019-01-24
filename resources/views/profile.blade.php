@@ -1,10 +1,10 @@
 @extends('layouts.profile_master')
-@section('title', 'Perfil de  {{Auth::user()->name}}')
+@section('title', 'Perfil')
 @section('content')
 <div class="container">
 
   <div class="box">
-    <h3>{{ Auth::user()->name }}</h3>
+    <h3>{{ Auth::user()->$dog->name }}</h3>
     <div class="box-sub">
       <div class="{{ Auth::user()->gender  == 1 ? 'avatarFemenino' : 'avatarMasculino'}}">
       <img src="/storage/avatars/{{ $user->avatar }}" />
