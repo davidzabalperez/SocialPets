@@ -4,8 +4,10 @@
   <head>
 
     <meta charset="utf-8">
+    
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
+    
     <meta name="author" content="">
     <link rel="shortcut icon" href="/img/favicon (3).ico" />
  
@@ -49,14 +51,14 @@
 </footer>
     <!-- Footer -->
 
-  <script src="/js/chatFeed.js"></script>
-  <script src="jquery/jquery.min.js"></script>
-  <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="/jquery/jquery.min.js"></script>
+  <script src="/bootstrap/js/bootstrap.bundle.min.js"></script>
 
     <!-- Plugin JavaScript -->
-  <script src="jquery-easing/jquery.easing.min.js"></script>
+  <script src="/jquery-easing/jquery.easing.min.js"></script>
 
     <!-- Custom scripts for this template -->
-    <script src="js/grayscale.min.js"></script>
+    <script src="/js/grayscale.min.js"></script>
+   
 
 </html>
