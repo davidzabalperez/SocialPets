@@ -19,7 +19,7 @@
         <div class="column is-8 is-offset-2">
             <div class="panel">
                 <div class="panel-heading">
-                    {{$friend->name }}
+                    {{$friend->dog->name }} ({{$friend->name}})
                     <div class="contain is-pulled-right">
                         <a href="{{ url('/chat') }}" class="is-link"><i class="fa fa-arrow-left"></i>Volver atras.</a>
                     </div>

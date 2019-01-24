@@ -11,7 +11,7 @@
                 </div>
                 @forelse($friends as $friend)
                     <a href="{{ route('chat.show', $friend->id) }}" class="panel-block text-white" style="justify-content: space-between">
-                       <div>{{ $friend->name }}</div>
+                       <div>{{ $friend->dog->name }}</div>
                        <onlineuser v-bind:friend="{{ $friend }}" v-bind:onlineusers="onlineusers"></onlineuser>
                     </a>
 

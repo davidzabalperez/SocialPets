@@ -117,3 +117,6 @@ Route::post('/chat/getChat/{id}', 'ChatController@getChat')->middleware('auth');
 Route::post('/chat/sendChat', 'ChatController@sendChat')->middleware('auth');
 
 /* Route::get('/profile_others/{id}', 'SocialPetsController@getProfileOther')->name('profile_others')->middleware('auth'); */
+
+Route::get('/post', 'PostController@index')->middleware('auth');
+Route::post('/post', 'PostController@store')->middleware('auth');
