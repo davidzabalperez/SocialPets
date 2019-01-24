@@ -62,7 +62,7 @@
                             {{ __('Perfil') }}
                         </a>
 
-                    <a class="nav-link js-scroll-trigger" href="{{ route('mensajes') }}"><span class="fa  fa-envelope">
+                    <a class="nav-link js-scroll-trigger" href="{{ route('chat.index') }}"><span class="fa  fa-envelope">
                             {{ __('Mensajes') }}
                     </a>
                     @if (Auth::user() && Auth::user()->role == 'admin')

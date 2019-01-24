@@ -1,8 +1,8 @@
 @extends('layouts.usuariosFeed')
 
 @section('content')
-<meta name="csrf-token" content="{{ csrf_token() }}">
 
+<meta name="csrf-token" content="{{ csrf_token() }}">
     <div class="container" id="app">
         <div class="column is-8 is-offset-2">
             <div class="panel">
@@ -24,6 +24,5 @@
         </div>
     </div>
     <script src="{{ mix('/js/app.js') }}"></script>
-
-
 @endsection
+

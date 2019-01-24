@@ -1,6 +1,8 @@
 @extends('layouts.profile_master')
 @section('title', Auth::user()->name)
 @section('content')
+@include('editar_perfil.formulario_editar_perfil')
+
 <div class="container">
 
   <div class="box">
@@ -20,9 +22,9 @@
      <a class="btn btn-light btn-sm" rel="publisher" data-toggle="modal" data-target="#editProfileModal"><i class="fa fa-cogs iconEditProfile"></i></a>
 
   </div>
-  @endsection
-      @include('editar_perfil.formulario_editar_perfil')
+
 
 </div>
+@endsection
 
 

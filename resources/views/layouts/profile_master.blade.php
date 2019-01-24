@@ -28,16 +28,18 @@
     <!-- NavBar 
     @include("layouts.navbar")-->
     @yield('content')
+ 
 
-
-    <!-- Footer -->
-    <div class="footerCustom">
+  </body>
+  <footer class="footerCustom">
       <div class="container">
 
-        Copyright &copy; Social Pets 2018
+        Copyright &copy; Social Pets 2019
       </div>
-</div>
-  </body>
+</footer>
+ 
+     <!-- Footer -->
+
 
 <!-- Bootstrap core JavaScript -->
 <script src="/jquery/jquery.min.js"></script>
