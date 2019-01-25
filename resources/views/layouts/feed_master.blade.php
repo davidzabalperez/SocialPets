@@ -40,7 +40,9 @@
     <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"
    integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg=="
    crossorigin=""></script>
-   <script src="https://unpkg.com/leaflet-control-geocoder@latest/dist/Control.Geocoder.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css" />
+  <script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
+   
 
   </head>
 
@@ -51,7 +53,8 @@
 @yield('content')
 
 </section>
-<div id="mapid"></div>
+<div id="mapid">
+</div>
   </body>
 <footer class="footerCustom">
       <div class="container">
@@ -78,11 +81,7 @@
     id: 'mapbox.streets',
     accessToken: 'your.mapbox.access.token'
 }).addTo(mapa);
-    var searchControl = L.esri.Geocoding.geosearch({                                     
-    providers: [ L.esri.Geocoding.arcgisOnlineProvider() ]
-  }).addTo(mapa);
-
-
+L.Control.geocoder().addTo(mapa);
  </script>
 
 </html>
