@@ -2,15 +2,14 @@
 
 namespace App;
 
-use App\User;
 use Illuminate\Database\Eloquent\Model;
 
-class Dog extends Model
+class Post extends Model
 {
     public function user(){
         return $this->belongsTo('App\User');
     }
-    public function posts(){
-        return $this->hasMany('App\Post');
+    public function dog(){
+        return $this->belongsTo('App\Dog');
     }
 }

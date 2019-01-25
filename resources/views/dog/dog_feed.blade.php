@@ -1,4 +1,4 @@
-@extends('layouts.usuariosFeed')
+@extends('layouts.feed_master')
 @section('title', 'Inicio')
 @section('content')
 

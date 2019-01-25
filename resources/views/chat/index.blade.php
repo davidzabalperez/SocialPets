@@ -1,8 +1,8 @@
 @extends('layouts.feed_master')
 
 @section('content')
-<meta name="csrf-token" content="{{ csrf_token() }}">
 
+<meta name="csrf-token" content="{{ csrf_token() }}">
     <div class="container" id="app">
         <div class="column is-8 is-offset-2">
             <div class="panel">
@@ -11,7 +11,7 @@
                 </div>
                 @forelse($friends as $friend)
                     <a href="{{ route('chat.show', $friend->id) }}" class="panel-block text-white" style="justify-content: space-between">
-                       <div>{{ $friend->name }}</div>
+                       <div>{{ $friend->dog->name }}</div>
                        <onlineuser v-bind:friend="{{ $friend }}" v-bind:onlineusers="onlineusers"></onlineuser>
                     </a>
 
@@ -24,6 +24,5 @@
         </div>
     </div>
     <script src="{{ mix('/js/app.js') }}"></script>
-
-
 @endsection
+

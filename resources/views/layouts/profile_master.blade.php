@@ -27,17 +27,20 @@
   <body class="profile-section text-center">
     <!-- NavBar 
     @include("layouts.navbar")-->
+    
     @yield('content')
+ 
+  
 
+  </body>
 
-    <!-- Footer -->
-    <div class="footerCustom">
+ <footer class="footerCustom">
       <div class="container">
 
-        Copyright &copy; Social Pets 2018
+        Copyright &copy; Social Pets 2019
       </div>
-</div>
-  </body>
+</footer>
+     <!-- Footer -->
 
 <!-- Bootstrap core JavaScript -->
 <script src="/jquery/jquery.min.js"></script>
