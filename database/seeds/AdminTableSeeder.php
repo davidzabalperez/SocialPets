@@ -14,7 +14,7 @@ class AdminTableSeeder extends Seeder
         DB::table('users')->insert([
             'name' => 'admin',
             'email' => 'admin@admin.admin',
-            'password' => '12345678',
+            'password' => '$2y$10$TKh8H1.PfQx37YgCzwiKb.KjNyWgaHb9cbcoQgdIVFlYg7B77UdFm', // secret
           	'role' => 'admin'
         ]);
     }
