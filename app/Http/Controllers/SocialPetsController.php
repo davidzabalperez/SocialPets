@@ -86,6 +86,8 @@ class SocialPetsController extends Controller
     $dog->age = $request->input('age');
     $dog->gender = $request->input('gender');
     $dog->race = $request->input('race');
+    $dog->lat = $request->input('lat');
+    $dog->lng = $request->input('lng');
     $dog->save();
     return redirect('/profile');
   }
