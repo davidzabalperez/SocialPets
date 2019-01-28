@@ -49,9 +49,11 @@
                     raza:
                     <input type="text" name="race" id="race">
                     <h3>Localización:</h3>
+                    <h4>Haz click en el mapa para guardar tu localización</h4>
                     <div id="mapid">
                     </div>
-                
+                    <input type="hidden" name="lat" id="lat" value="">
+                    <input type="hidden" name="lng" id="lng" value="">
                     <button class="btn btn-info btn-block login" type="submit">Terminar registro</button>
                 </form>
             </div>
@@ -63,4 +65,12 @@
 <!-- Mapa -->
 <script src="/js/geocoder.js"></script>
 
+<script>
+    mapa.on('click', function(e) {
+    var latitud = e.latlng.lat;
+    var longitud = e.latlng.lng;
+    document.getElementById("lat").value = latitud;
+    document.getElementById("lng").value = longitud;
+});
+</script>
 </html>
