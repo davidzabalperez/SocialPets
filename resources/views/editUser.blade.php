@@ -10,31 +10,31 @@
     <h2>{{ $user->name }}</h2>
     <ul class="noBullet">
       <li>
-        <label for="username"></label>
+        Nombre: <label for="username"></label>
         <input type="text" class="inputFields" id="name" name="name" value="{{ $user->name }}" required/>
       </li>
       <li>
         <label for="email"></label>
-        <input type="email" class="inputFields" id="email" name="email" value="{{ $user->email }}" required/>
+        <input type="hidden" class="inputFields" id="email" name="email" value="{{ $user->email }}" required/>
+      </li>
+      <!-- <li>
+        Edad: <label for="age"></label>
+        <input type="number" class="inputFields" id="age" name="age" min="0" value="{{ $user->age }}"/>
       </li>
       <li>
-        <label for="age"></label>
-        <input type="number" class="inputFields" id="age" name="age" min="0" value="{{ $user->age }}" required/>
-      </li>
-      <li>
-        <label for="gender" class="custom-select">
-            <select name="gender" id="gender">
+        Genero: <label for="gender" class="custom-select">
+            <select name="gender" id="gender"> 
                         <option value="0" class="option">Masculino</option>
                         <option value="1" class="option">Femenino</option>
                     </select>
         </label>
       </li>
       <li>
-        <label for="race"></label>
-        <input type="text" class="inputFields" id="race" name="race" value="{{ $user->race }}" required/>
-      </li>
+        Raza: <label for="race"></label>
+        <input type="text" class="inputFields" id="race" name="race" value="{{ $user->race }}"/>
+      </li> -->
       <li>
-          <label for="role">
+          Rol: <label for="role">
             <select name="role" id="role">
                         <option value="admin">admin</option>
                         <option value="user">user</option>

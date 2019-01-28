@@ -27,7 +27,7 @@
                     </tr>
                   </thead>
                   <tbody >
-                    @foreach($usuarios as $usuario)
+                    @foreach($usuarios->sortByDesc('id') as $usuario)
                     <tr class="targetUser">
                       <td>{{$usuario->name}}</td>
                       <td>{{$usuario->email}}</td>
