@@ -31,7 +31,7 @@
             <div class="avatar"></div>
             <div class="form-box">
 
-                <form action="/register2" method="post" onkeypress="return event.keyCode != 13;">
+                <form action="/register2" method="post" onkeypress="return event.keyCode != 13;"> <!-- Al presionar enter no hace submit, porque tendría conflictos con el buscador -->
                     @csrf
                     <input type="hidden" name="id" id="id" value="{{ Auth::user()->id }}">
                     Nombre del perro:
@@ -52,8 +52,8 @@
                     <h4>Haz click en el mapa para guardar tu localización</h4>
                     <div id="mapid">
                     </div>
-                    <input type="hidden" name="lat" id="lat" value="">
-                    <input type="hidden" name="lng" id="lng" value="">
+                    <input type="hidden" name="lat" id="lat" value="" readonly>
+                    <input type="hidden" name="lng" id="lng" value="" readonly>
                     <button class="btn btn-info btn-block login" type="submit">Terminar registro</button>
                 </form>
             </div>
@@ -64,13 +64,5 @@
 <script src="/js/jquery.validate.js"></script>
 <!-- Mapa -->
 <script src="/js/geocoder.js"></script>
-
-<script>
-    mapa.on('click', function(e) {
-    var latitud = e.latlng.lat;
-    var longitud = e.latlng.lng;
-    document.getElementById("lat").value = latitud;
-    document.getElementById("lng").value = longitud;
-});
-</script>
+<script src="/js/marcadores_mapa.js"></script>
 </html>

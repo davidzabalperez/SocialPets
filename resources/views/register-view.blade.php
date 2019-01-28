@@ -32,7 +32,7 @@
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $errors->first('confirm_password') }}</strong>
                                     </span>
-                                @endif 
+                                @endif
                     <button class="btn btn-info btn-block login" type="submit">Registrar</button>
                     <p>¿Ya estás registrado? <a href="/iniciar_sesion">Inicia sesión</a></p>
                 </form>
