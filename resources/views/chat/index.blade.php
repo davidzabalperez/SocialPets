@@ -1,5 +1,5 @@
 @extends('layouts.feed_master')
-
+@section('title', 'Mensajes')
 @section('content')
 
 <meta name="csrf-token" content="{{ csrf_token() }}">

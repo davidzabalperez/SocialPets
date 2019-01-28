@@ -20,14 +20,16 @@
        href="">
         <i class="fa fa-thumbs-up"></i>
     </a>
-    <a class="btn btn-warning btn-sm" rel="publisher" id="dislike" href="">
-        <i class="fa fa-thumbs-down"></i>
-    </a>
+
 
         
   </div>
+
   @endif
 @endforeach
+      <a class="btn btn-warning btn-sm" rel="publisher" id="dislike" href="">
+        <i class="fa fa-thumbs-down"></i>
+    </a>
 </div>
 
 

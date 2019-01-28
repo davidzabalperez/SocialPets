@@ -56,7 +56,7 @@ Route::put('/usuario/{id}', 'SocialPetsController@updateUser');
 Route::get('/darAlta', 'SocialPetsController@getDarDeAlta')->name('darAlta');
 Route::post('darAlta', ['as' => 'darAlta.post', 'uses' => 'SocialPetsController@create']);
 
-Route::get('/profile', 'SocialPetsController@getProfile')->name('profile')->middleware('verified');
+Route::get('/profile', 'UserController@getProfile')->name('profile')->middleware('verified');
 
 Route::post('update_avatar', 'SocialPetsController@update_avatar');
 Route::get('/mensajes', 'SocialPetsController@getMensajess')->name('mensajes')->middleware('verified');

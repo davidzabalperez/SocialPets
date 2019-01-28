@@ -1,11 +1,12 @@
 @extends('layouts.profile_master')
 @section('title', Auth::user()->name)
 @section('content')
-@include('editar_perfil.formulario_editar_perfil')
 
 <div class="container">
+  @if(!empty($user->dog))
+    <div class="box">
+    @include('editar_perfil.formulario_editar_perfil')
 
-  <div class="box">
     <h3>{{ $user->dog->name }}</h3>
     <div class="box-sub">
       <div class="{{ $user->dog->gender  == 1 ? 'avatarFemenino' : 'avatarMasculino'}}">
@@ -20,11 +21,17 @@
     <p>Edad: {{ $user->dog->age }} año</p>
     @endif
      <a class="btn btn-light btn-sm" rel="publisher" data-toggle="modal" data-target="#editProfileModal"><i class="fa fa-cogs iconEditProfile"></i></a>
-
+     
   </div>
+  </div>
+  @else
+   
+
+  <h3 style="color:white;">No tienes ningun perro!!</h3>
+  <a href="/step2" class="btn btn-primary btn-block">Añade tu perro</a>
+@endif
 
 
-</div>
 @endsection
 
 

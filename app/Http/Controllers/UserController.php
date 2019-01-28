@@ -133,14 +133,11 @@ class UserController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    public function getProfile(){
-        $user = Auth::user();
-        return view('profile',compact('user',$user));
-    }
 
     public function show($id)
     {
         $perro = Dog::find($id);
+
         return view('/dog/dog_profile', compact('perro'));
     }
 
@@ -179,10 +176,16 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        $user = User::find($id);
+        $user = User::findOrFail($id);
         $user->delete();
 
         return back()->with('success', 'Usuario eliminado correctamente');
+    }
+
+    public function getProfile()
+    {
+    $user = Auth::user();
+    return view('profile', compact('user'));
     }
 
 

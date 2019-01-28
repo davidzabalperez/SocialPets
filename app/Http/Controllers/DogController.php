@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Dog;
+use Auth;
 use Illuminate\Http\Request;
 
 class DogController extends Controller
@@ -15,6 +16,8 @@ class DogController extends Controller
     public function index()
     {
         $dogs = Dog::all();
+
+
         return view('/dog/dog_feed')->with([
             'dogs'=>$dogs
         ]);
@@ -74,7 +77,7 @@ class DogController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $dog=Dog::find($id);
+        $dog=Dog::findOrFail($id);
         $dog->name = $request->input('name');
         $dog->save();
         return redirect('/profile')->with('success', 'Perro editado con exito');
@@ -88,6 +91,10 @@ class DogController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $dog = Dog::find($id);
+        $dog->delete();
+
+        return back()->with('success', 'Perro eliminado correctamente');
     }
+
 }

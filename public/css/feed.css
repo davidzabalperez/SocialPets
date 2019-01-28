@@ -47,6 +47,10 @@ body{
 
 }
 
+#editProfileModal{
+  color: black;
+}
+
 .box .btn{
   height: 50px;
 }

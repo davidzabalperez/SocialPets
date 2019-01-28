@@ -1,3 +1,4 @@
+
 <div id="editProfileModal" class="modal fade">
     <div class="modal-dialog">
 
@@ -101,9 +102,9 @@
 
           <div class="modal-body">
                               <br>
-              <button class="btn btn-danger btn-sm" rel="publisher" data-toggle="modal" data-target="#deleteModal" id="hideModal">Eliminar</button>
+              <button class="btn btn-danger btn-sm" rel="publisher" data-toggle="modal" data-target="#deleteModalUser" id="hideModal">Eliminar usuario</button>
                      
-                          <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                          <div class="modal fade" id="deleteModalUser" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                           <div class="modal-dialog">
                               <div class="modal-content">
                                   <div class="modal-footer">
@@ -114,9 +115,33 @@
                                       <form method="post" action="{{ route('user.destroy',$user->id)}}" >
                                           @csrf
                                           @method('DELETE')
-
+                                          <button type="submit" class="btn btn-danger">Borrar usuario</button>
                                       </form>
-                                      <button type="submit" class="btn btn-danger">Borrar</button>
+                                      
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+          </div>
+
+                    <div class="modal-body">
+                              <br>
+              <button class="btn btn-danger btn-sm" rel="publisher" data-toggle="modal" data-target="#deleteModalDog" id="hideModal">Eliminar perro</button>
+                     
+                          <div class="modal fade" id="deleteModalDog" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                          <div class="modal-dialog">
+                              <div class="modal-content">
+                                  <div class="modal-footer">
+                                      Confirmacion borrar perro
+                                      <button type="button" class="btn btn-default btn-sm" data-dismiss="modal">Cancelar</button>
+                                     
+
+                                      <form method="post" action="{{ route('dog.destroy',$user->dog->id)}}" >
+                                          @csrf
+                                          @method('DELETE')
+                                          <button type="submit" class="btn btn-danger">Borrar perro</button>
+                                      </form>
+                                      
                                   </div>
                               </div>
                           </div>

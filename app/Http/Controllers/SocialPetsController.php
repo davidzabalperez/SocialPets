@@ -89,13 +89,7 @@ class SocialPetsController extends Controller
     $dog->save();
     return redirect('/profile');
   }
-  public function getProfile()
-  {
-    $user = Auth::user();
-    return view('profile')->with([  
-      'user'=>$user
-    ]);
-  }
+
 
 
 
@@ -106,7 +100,7 @@ class SocialPetsController extends Controller
 
   public function changeProfile(Request $request)
   {
-    $user = User::find($request->input('id'));
+    $user = User::findOrFail($request->input('id'));
     $user->name = $request->input('name');
     $user->email = $request->input('email');
     $user->password = $request->input('password');
@@ -174,7 +168,7 @@ class SocialPetsController extends Controller
   }
   public function changeRol(Request $request, $id)
   {
-    $user = User::find($id);
+    $user = User::findOrFail($id);
     $user->role = $request->input('inputRol');
     $user->save();
     return view('profile');
@@ -182,13 +176,13 @@ class SocialPetsController extends Controller
 
   public function editUser($id)
   {
-    $user = User::find($id);
+    $user = User::findOrFail($id);
     return view('editUser', compact('user'));
   }
 
   public function updateUser(Request $request, $id)
   {
-    $user = User::find($id);
+    $user = User::findOrFail($id);
     $user->name = $request->input('name');
     $user->email = $request->input('email');
     $user->age = $request->input('age');
