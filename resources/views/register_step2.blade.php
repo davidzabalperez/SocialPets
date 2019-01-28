@@ -52,8 +52,8 @@
                     <h4>Haz click en el mapa para guardar tu localización</h4>
                     <div id="mapid">
                     </div>
-                    <input type="hidden" name="lat" id="lat" value="">
-                    <input type="hidden" name="lng" id="lng" value="">
+                    <input type="text" name="lat" id="lat" value="" readonly>
+                    <input type="text" name="lng" id="lng" value="" readonly>
                     <button class="btn btn-info btn-block login" type="submit">Terminar registro</button>
                 </form>
             </div>
@@ -66,11 +66,17 @@
 <script src="/js/geocoder.js"></script>
 
 <script>
+    var theMarker = {};
     mapa.on('click', function(e) {
     var latitud = e.latlng.lat;
     var longitud = e.latlng.lng;
+    if (theMarker != undefined) {
+              mapa.removeLayer(theMarker);
+        };
+    theMarker = L.marker([latitud, longitud]).addTo(mapa);
     document.getElementById("lat").value = latitud;
     document.getElementById("lng").value = longitud;
+    //alert('Localicación guardada');
 });
 </script>
 </html>
