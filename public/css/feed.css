@@ -511,10 +511,3 @@ html,
     text-align: center;
     height: 1px;
   }
-  #mapid { 
-    height: 380px;
-    width: 800px;
-    position: relative;
-    outline: none; 
-    margin-left: 30%;
-  }
