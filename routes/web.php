@@ -61,6 +61,7 @@ Route::get('/profile', 'UserController@getProfile')->name('profile')->middleware
 Route::post('update_avatar', 'SocialPetsController@update_avatar');
 Route::get('/mensajes', 'SocialPetsController@getMensajess')->name('mensajes')->middleware('verified');
 
+Route::post('/edituser', 'SocialPetsController@updateUserAdmin' )->name('editarUserAdmin');
 
 Route::get('/resetPassword', 'SocialPetsController@resetPassword');
 
@@ -107,6 +108,7 @@ Route::resource('dog', 'DogController');
 
 Route::get('/tabla_usuarios', 'SocialPetsController@getTablaAdmin');
 Route::post('/forcedelete/{id}',['as' => 'forcedelete', 'uses' => 'SocialPetsController@forceDelete' ]);
+Route::post('/forcedeleteself/{id}',['as' => 'forcedeleteself', 'uses' => 'SocialPetsController@forceDeleteSelf' ]);
 
 Route::post('/desbanear/{id}',['as' => 'desbanearUsuario', 'uses' => 'SocialPetsController@desbanearUsuario' ]);
 
@@ -120,3 +122,6 @@ Route::post('/chat/sendChat', 'ChatController@sendChat')->middleware('auth');
 
 Route::get('/post', 'PostController@index')->middleware('auth');
 Route::post('/post', 'PostController@store')->middleware('auth');
+
+// editar usuario panel admin
+Route::post('/editUser/{id}',['as' => 'edituser', 'uses' => 'SocialPetsController@updateUser' ]);
