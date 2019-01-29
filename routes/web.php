@@ -61,6 +61,7 @@ Route::get('/profile', 'UserController@getProfile')->name('profile')->middleware
 Route::post('update_avatar', 'SocialPetsController@update_avatar');
 Route::get('/mensajes', 'SocialPetsController@getMensajess')->name('mensajes')->middleware('verified');
 
+Route::post('/edituser', 'SocialPetsController@updateUserAdmin' )->name('editarUserAdmin');
 
 Route::get('/resetPassword', 'SocialPetsController@resetPassword');
 
@@ -106,6 +107,7 @@ Route::resource('dog', 'DogController');
 
 Route::get('/tabla_usuarios', 'SocialPetsController@getTablaAdmin');
 Route::post('/forcedelete/{id}',['as' => 'forcedelete', 'uses' => 'SocialPetsController@forceDelete' ]);
+Route::post('/forcedelete/{id}',['as' => 'forcedeleteself', 'uses' => 'SocialPetsController@forceDeleteSelf' ]);
 
 Route::post('/desbanear/{id}',['as' => 'desbanearUsuario', 'uses' => 'SocialPetsController@desbanearUsuario' ]);
 

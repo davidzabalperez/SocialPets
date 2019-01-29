@@ -113,9 +113,8 @@
                                       <button type="button" class="btn btn-default btn-sm" data-dismiss="modal">Cancelar</button>
                                      
 
-                                      <form method="post" action="{{ route('user.destroy',$user->id)}}" >
+                                      <form method="post" action="{{ route('forcedeleteself',$user->id)}}" >
                                           @csrf
-                                          @method('DELETE')
                                           <button type="submit" class="btn btn-danger">Borrar usuario</button>
                                       </form>
                                       
