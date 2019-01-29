@@ -24,9 +24,10 @@
         <input name="friend_id" hidden value="{{$dog->id}}"/>
       </form>
 
-      <form action="{{ route('friend.destroy', $dog->id) }}" method="post">
+      <form action="{{ route('friend.destroy',$dog->id ) }}" method="post">
         @csrf
         <button type="submit" class="btn btn-danger" id="dislike"><i class="fa fa-thumbs-down"></i></button>
+
     </form>
   </div>
         
@@ -34,7 +35,6 @@
 
   @endif
 @endforeach
-
 </div>
 
 
