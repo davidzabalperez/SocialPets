@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Friend;
 use Auth;
+use Session;
 use Illuminate\Http\Request;
 
 class FriendController extends Controller
@@ -37,13 +38,12 @@ class FriendController extends Controller
     public function store(Request $request)
     {
         //validate
-
+        
         //añadir a database
         $friend = new Friend;
         $friend->user_id = Auth::user()->id;
         $friend->friend_id = $request->friend_id;
         $friend->save();
-        
         Session::flash('success', 'Amigo añadido.');
         return redirect()->back();
     }
@@ -88,8 +88,11 @@ class FriendController extends Controller
      * @param  \App\Friend  $friend
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Friend $friend)
-    {
-        //
+    public function destroy($id)
+    {   
+        $friend = Friend::find($id);
+        $friend->delete();
+
+        return back()->with('success', 'Ya no son amigos.');
     }
 }

@@ -14,22 +14,27 @@
       <img src="/public/uploads/{{ $dog->avatar }}"/>
     </div>
     </div>
+    
     <p>Raza: {{$dog->race}}</p>
     <p>Edad: {{$dog->age}} {{ $dog->age > 1 ? 'años' : 'año'}}</p>
-    <a class="btn btn-primary btn-sm" id="like" rel="publisher"
-       href="">
-        <i class="fa fa-thumbs-up"></i>
-    </a>
+    <div class="container">
+    <form action="{{ route('friend.store') }}" method="post">
+      @csrf
+        <button type="submit" class="btn btn-primary" id="like"><i class="fa fa-thumbs-up"></i></button>
+        <input name="friend_id" hidden value="{{$dog->id}}"/>
+      </form>
 
-
+      <form action="{{ route('friend.destroy', $dog->id) }}" method="post">
+        @csrf
+        <button type="submit" class="btn btn-danger" id="dislike"><i class="fa fa-thumbs-down"></i></button>
+    </form>
+  </div>
         
   </div>
 
   @endif
 @endforeach
-      <a class="btn btn-warning btn-sm" rel="publisher" id="dislike" href="">
-        <i class="fa fa-thumbs-down"></i>
-    </a>
+
 </div>
 
 
