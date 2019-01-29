@@ -4,8 +4,7 @@
     <h2>Editando usuario</h2>
     <i class="icon ion-ios-ionic-outline" aria-hidden="true"></i>
   </div>
-  <form action="{{ url('/user/'.$user->id) }}" method="POST" class="signupForm" name="signupform">
-    @method('PUT')
+  <form action="{{ route('edituser',$user->id) }}" method="POST" class="signupForm" name="signupform">
     @csrf
     <h2>{{ $user->name }}</h2>
     <ul class="noBullet">

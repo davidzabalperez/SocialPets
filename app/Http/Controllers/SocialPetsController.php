@@ -179,13 +179,9 @@ class SocialPetsController extends Controller
   {
     $user = User::findOrFail($id);
     $user->name = $request->input('name');
-    $user->email = $request->input('email');
-    $user->age = $request->input('age');
-    $user->gender = $request->get('gender');
-    $user->race = $request->input('race');
     $user->role = $request->get('role');
     $user->update();
-    return redirect('/admin')->with('success', 'Usuario editado con exito');
+    return redirect('/tabla_usuarios')->with('success', 'Usuario editado con exito');
   }
   public function create(Request $request)
   {
