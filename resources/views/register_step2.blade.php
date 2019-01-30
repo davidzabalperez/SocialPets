@@ -37,7 +37,7 @@
                     Nombre del perro:
                     <input type="text" name="name" id="name" placeholder="nombre del perro">
                     Edad del perro:
-                    <input type="number" name="age" id="age" min="0" class="form-control"  placeholder="Años de persona">
+                    <input type="number" name="age" id="age" min="0" class="form-control"  placeholder="Años">
                     <br>
                     Genero del perro:
                     <br>

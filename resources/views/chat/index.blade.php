@@ -50,6 +50,7 @@
   padding: 10px !important;
   height: 72px;
   margin: 0 !important;
+  cursor: pointer;
 }
 
 </style>
@@ -66,7 +67,8 @@
 
             <div class="col-sm-4 col-xs-4 sideBar-avatar">
               <div class="avatar-icon">
-                <img src="/public/uploads/{{ $friend->dog->avatars }}">
+                <img src="/public/uploads/{{ $friend->dog->a
+                    vatar }}">
               </div>
             </div>
 
@@ -98,4 +100,5 @@
         </div>
     </div>
     <script src="{{ mix('/js/app.js') }}"></script>
+
 @endsection
