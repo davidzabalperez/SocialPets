@@ -46,6 +46,7 @@
      
         </div>
 
+
         <div v-else class="no-message">
             No tienes ningun mensaje.
         </div>
