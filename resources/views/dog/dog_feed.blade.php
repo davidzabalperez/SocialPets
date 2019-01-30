@@ -2,11 +2,13 @@
 @section('title', 'Inicio')
 @section('content')
 
-<div class="container">
+<meta name="csrf-token" content="{{ csrf_token() }}">
+<div class="container" id="app">
   @foreach($dogs->sortByDesc('id') as $dog) 
   <!-- sortByDesc es para que muestre los usuarios registrados mas recientemente primero -->
    @if ( $dog->user_id != Auth::user()->id)
   <div class="box">
+  <onlineuser v-bind:friend="{{ $dog }}" v-bind:onlineusers="onlineusers"></onlineuser>
   <h3><a href="{{route('dog.show', $dog->id)}}">{{$dog->name}}</a></h3> 
     <h3></h3>
     <div class="box-sub">
@@ -14,7 +16,6 @@
       <img src="/public/uploads/{{ $dog->avatar }}"/>
     </div>
     </div>
-    
     <p>Raza: {{$dog->race}}</p>
     <p>Edad: {{$dog->age}} {{ $dog->age > 1 ? 'años' : 'año'}}</p>
     <div class="container">
@@ -36,8 +37,5 @@
   @endif
 @endforeach
 </div>
-
-
-
-
+<script src="{{ mix('/js/app.js') }}"></script>
 @endsection
