@@ -83,9 +83,6 @@ Route::get('auth/login',function () {
 Auth::routes();
 Auth::routes(['verify' => true]);
 
-Route::get('send-notification', function(){
-	auth()->user()->notify(new Notificacion_Like);
-});
 Route::resource('user', 'UserController');
 
 
