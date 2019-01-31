@@ -13,4 +13,5 @@
     <p>Edad: {{$dog->age}} {{ $dog->age > 1 ? 'años' : 'año'}}</p>
     <p>Dueña/o: {{ $dog->user->name }}</p>
   </div>
+</div>
   @endsection
