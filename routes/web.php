@@ -123,3 +123,8 @@ Route::post('/post', 'PostController@store')->middleware('auth');
 Route::resource('imgur', 'ImgurController');
 // editar usuario panel admin
 Route::post('/editUser/{id}',['as' => 'edituser', 'uses' => 'SocialPetsController@updateUser' ]);
+
+//prueba
+
+Route::get('/dogsMale', 'SocialPetsController@filterMale')->name('dogsMale');
+Route::get('/dogsFemale', 'SocialPetsController@filterFemale')->name('dogsFemale');

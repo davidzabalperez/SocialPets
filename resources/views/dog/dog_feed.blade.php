@@ -2,7 +2,17 @@
 @section('title', 'Inicio')
 @section('content')
 
-<meta name="csrf-token" content="{{ csrf_token() }}">
+<meta name="csrf-token" content="{{ csrf_token() }}"><br><br><br>
+
+<a class="nav-link js-scroll-trigger" href="{{ route('dogsMale') }}">
+                            {{ __('Machos') }}
+                        </a>
+<a class="nav-link js-scroll-trigger" href="{{ route('dogsFemale') }}">
+                            {{ __('Hembras') }}
+                        </a>
+<a class="nav-link js-scroll-trigger" href="{{ route('dogsFemale') }}">
+                            {{ __('Todos') }}
+                        </a>
 <div class="container" id="app">
   @foreach($dogs->sortByDesc('id') as $dog) 
   <!-- sortByDesc es para que muestre los usuarios registrados mas recientemente primero -->

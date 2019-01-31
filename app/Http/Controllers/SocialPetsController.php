@@ -246,4 +246,17 @@ class SocialPetsController extends Controller
         $user->save();
         return redirect('/profile')->with('success', 'Usuario editado con exito');
     }
+    public function filterMale(){
+      $dogsMale = Dog::where('gender', false)
+      ->orderBy('name', 'asc')
+      ->get();
+      return view('/dog/dogsMale')->with(['dogsMale' => $dogsMale]);
+    }
+
+    public function filterFemale(){
+      $dogsFemale = Dog::where('gender', true)
+      ->orderBy('name', 'asc')
+      ->get();
+      return view('/dog/dogsFemale')->with(['dogsFemale' => $dogsFemale]);
+    }
 }
