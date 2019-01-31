@@ -70,7 +70,7 @@ class ImgurController extends Controller
           
           $dog->save();
           /* dd($dog); */
-          return view('profile',['img'=>$json->data->link]);
+          return back();
         }
     }
 

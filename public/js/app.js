@@ -58771,7 +58771,7 @@ exports = module.exports = __webpack_require__(3)(false);
 
 
 // module
-exports.push([module.i, "\n.red{\n    color:red;\n}\n.green{\n    color: green;\n}\n.red, .green{\n\n   margin-top: -20px;\n   display: -webkit-box;\n   display: -ms-flexbox;\n   display: flex;\n   -webkit-box-orient: horizontal;\n   -webkit-box-direction: reverse;\n       -ms-flex-direction: row-reverse;\n           flex-direction: row-reverse;\n   margin-right: 30%;\n}\n\n", ""]);
+exports.push([module.i, "\n.red{\n    border-color: #ff0000 transparent transparent transparent;\n}\n.green{\n    border-color:green transparent transparent transparent;\n}\n.green, .red{\n    float: left;\n    width: 0;\n    height: 0;\n    border-style: solid;\n    border-width: 50px 50px 0 0;\n    display: inline-block;\n}\n\n\n", ""]);
 
 // exports
 
@@ -58782,6 +58782,9 @@ exports.push([module.i, "\n.red{\n    color:red;\n}\n.green{\n    color: green;\
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
 //
 //
 //
@@ -58830,11 +58833,9 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
-    _vm.checkUser()
-      ? _c("i", { staticClass: "fa fa-circle green" })
-      : _c("i", { staticClass: "fa fa-circle red" })
-  ])
+  return _vm.checkUser()
+    ? _c("i", { staticClass: "green" })
+    : _c("i", { staticClass: " red" })
 }
 var staticRenderFns = []
 render._withStripped = true
