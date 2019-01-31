@@ -12,8 +12,8 @@
 <div class="container" id="app">
 @forelse($friends as $friend)
   <div class="box">
-  <h3><a href="{{route('dog.show', $friend->dog->id)}}">{{$friend->dog->name}}</a></h3> 
-  <onlineuser v-bind:friend="{{ $friend }}" v-bind:onlineusers="onlineusers"></onlineuser>
+  <h3><a href="{{route('dog.show', $friend->dog->id)}}">{{$friend->dog->name}}</a>  <onlineuser v-bind:friend="{{ $friend }}" v-bind:onlineusers="onlineusers"></onlineuser>
+</h3> 
     <div class="box-sub">
       <div class="{{ $friend->dog->gender == 1 ? 'avatarFemenino' : 'avatarMasculino'}}">
       <img src="/public/uploads/{{ $friend->dog->avatar }}"/>

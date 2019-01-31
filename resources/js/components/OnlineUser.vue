@@ -5,11 +5,21 @@
     .green{
         color: green;
     }
+    .red, .green{
+
+       margin-top: -20px;
+       display: flex;
+       flex-direction: row-reverse;
+       margin-right: 30%;
+        
+    }
+
 </style>
 
 
 <template lang="html">
-    <div class="is-pulled-right">
+    <div>
+        
         <i class="fa fa-circle green" v-if="checkUser()"></i>
         <i class="fa fa-circle red" v-else></i>
      </div>

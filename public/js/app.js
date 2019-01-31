@@ -58771,7 +58771,7 @@ exports = module.exports = __webpack_require__(3)(false);
 
 
 // module
-exports.push([module.i, "\n.red{\n    color:red;\n}\n.green{\n    color: green;\n}\n", ""]);
+exports.push([module.i, "\n.red{\n    color:red;\n}\n.green{\n    color: green;\n}\n.red, .green{\n\n   margin-top: -20px;\n   display: -webkit-box;\n   display: -ms-flexbox;\n   display: flex;\n   -webkit-box-orient: horizontal;\n   -webkit-box-direction: reverse;\n       -ms-flex-direction: row-reverse;\n           flex-direction: row-reverse;\n   margin-right: 30%;\n}\n\n", ""]);
 
 // exports
 
@@ -58782,6 +58782,16 @@ exports.push([module.i, "\n.red{\n    color:red;\n}\n.green{\n    color: green;\
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -58820,7 +58830,7 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "is-pulled-right" }, [
+  return _c("div", [
     _vm.checkUser()
       ? _c("i", { staticClass: "fa fa-circle green" })
       : _c("i", { staticClass: "fa fa-circle red" })
