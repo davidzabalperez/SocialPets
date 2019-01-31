@@ -120,5 +120,6 @@ Route::post('/chat/sendChat', 'ChatController@sendChat')->middleware('auth');
 Route::get('/post', 'PostController@index')->middleware('auth');
 Route::post('/post', 'PostController@store')->middleware('auth');
 
+Route::resource('imgur', 'ImgurController');
 // editar usuario panel admin
 Route::post('/editUser/{id}',['as' => 'edituser', 'uses' => 'SocialPetsController@updateUser' ]);
