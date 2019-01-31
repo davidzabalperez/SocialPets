@@ -128,3 +128,6 @@ Route::post('/editUser/{id}',['as' => 'edituser', 'uses' => 'SocialPetsControlle
 
 Route::get('/dogsMale', 'SocialPetsController@filterMale')->name('dogsMale');
 Route::get('/dogsFemale', 'SocialPetsController@filterFemale')->name('dogsFemale');
+
+Route::get('404', ['as' => '404', 'uses' => 'ErrorController@notfound']);
+Route::get('500', ['as' => '500', 'uses' => 'ErrorController@fatal']);
