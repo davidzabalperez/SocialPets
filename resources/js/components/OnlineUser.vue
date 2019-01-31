@@ -1,28 +1,31 @@
 <style>
     .red{
-        color:red;
+        border-color: #ff0000 transparent transparent transparent;
+        
+
     }
     .green{
-        color: green;
-    }
-    .red, .green{
-
-       margin-top: -20px;
-       display: flex;
-       flex-direction: row-reverse;
-       margin-right: 30%;
+        border-color:green transparent transparent transparent;
         
     }
+    .green, .red{
+        float: left;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 50px 50px 0 0;
+        display: inline-block;
+    }
+    
 
 </style>
 
 
 <template lang="html">
-    <div>
         
-        <i class="fa fa-circle green" v-if="checkUser()"></i>
-        <i class="fa fa-circle red" v-else></i>
-     </div>
+        <i class="green" v-if="checkUser()"></i>
+        <i class=" red" v-else></i>
+
     
 </template>
 

@@ -18,12 +18,13 @@
   <!-- sortByDesc es para que muestre los usuarios registrados mas recientemente primero -->
    @if ( $dog->user_id != Auth::user()->id)
   <div class="box">
-  <h3><a href="{{route('dog.show', $dog->id)}}">{{$dog->name}}</a><onlineuser v-bind:friend="{{ $dog }}" v-bind:onlineusers="onlineusers"></onlineuser>
+  <onlineuser v-bind:friend="{{ $dog }}" v-bind:onlineusers="onlineusers"></onlineuser>
+  <h3><a href="{{route('dog.show', $dog->id)}}">{{$dog->name}}</a>
 </h3> 
     <h3></h3>
     <div class="box-sub">
       <div class="{{ $dog->gender == 1 ? 'avatarFemenino' : 'avatarMasculino'}}">
-      <img src="/public/uploads/{{ $dog->avatar }}"/>
+      <img src="{{ $dog->avatar }}"/>
     </div>
     </div>
     <p>Raza: {{$dog->race}}</p>
