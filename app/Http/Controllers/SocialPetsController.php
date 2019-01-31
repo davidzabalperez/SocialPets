@@ -168,13 +168,6 @@ class SocialPetsController extends Controller
     }
     return view('profile');
   }
-  public function changeRol(Request $request, $id)
-  {
-    $user = User::findOrFail($id);
-    $user->role = $request->input('inputRol');
-    $user->save();
-    return view('profile');
-  }
 
   public function editUser($id)
   {
@@ -186,13 +179,9 @@ class SocialPetsController extends Controller
   {
     $user = User::findOrFail($id);
     $user->name = $request->input('name');
-    $user->email = $request->input('email');
-    $user->age = $request->input('age');
-    $user->gender = $request->get('gender');
-    $user->race = $request->input('race');
     $user->role = $request->get('role');
     $user->update();
-    return redirect('/admin')->with('success', 'Usuario editado con exito');
+    return redirect('/tabla_usuarios')->with('success', 'Usuario editado con exito');
   }
   public function create(Request $request)
   {
@@ -231,6 +220,13 @@ class SocialPetsController extends Controller
         $user = User::find($id)->forceDelete();
         return back();   
     }
+    public function forceDeleteSelf($id)
+    {
+        $user = User::findOrFail($id);
+        $user = User::find($id)->forceDelete();
+        return redirect('/');
+    }
+
 
     public function getPerfilUsuarios($id){
       $user = User::find($id)->get();
@@ -242,4 +238,12 @@ class SocialPetsController extends Controller
     $usuario = User::find($id);
     return view('profile_others', compact('usuario'));
   }
+      public function updateUserAdmin(Request $request, $id)
+    {
+        $user=User::find($id);
+        $user->name = $request->input('name');
+        $user->role = $request->get('role');
+        $user->save();
+        return redirect('/profile')->with('success', 'Usuario editado con exito');
+    }
 }

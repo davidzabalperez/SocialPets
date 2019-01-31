@@ -61,6 +61,7 @@ Route::get('/profile', 'UserController@getProfile')->name('profile')->middleware
 Route::post('update_avatar', 'SocialPetsController@update_avatar');
 Route::get('/mensajes', 'SocialPetsController@getMensajess')->name('mensajes')->middleware('verified');
 
+Route::post('/edituser', 'SocialPetsController@updateUserAdmin' )->name('editarUserAdmin');
 
 Route::get('/resetPassword', 'SocialPetsController@resetPassword');
 
@@ -82,13 +83,11 @@ Route::get('auth/login',function () {
 Auth::routes();
 Auth::routes(['verify' => true]);
 
-Route::get('send-notification', function(){
-	auth()->user()->notify(new Notificacion_Like);
-});
 Route::resource('user', 'UserController');
 
 
 Route::resource('socialpets', 'SocialPetsController');
+Route::resource('friend', 'FriendController');
 
 
 Route::get('estadisticas/{year}', 'ChartController@verEstadistica');
@@ -106,6 +105,7 @@ Route::resource('dog', 'DogController');
 
 Route::get('/tabla_usuarios', 'SocialPetsController@getTablaAdmin');
 Route::post('/forcedelete/{id}',['as' => 'forcedelete', 'uses' => 'SocialPetsController@forceDelete' ]);
+Route::post('/forcedeleteself/{id}',['as' => 'forcedeleteself', 'uses' => 'SocialPetsController@forceDeleteSelf' ]);
 
 Route::post('/desbanear/{id}',['as' => 'desbanearUsuario', 'uses' => 'SocialPetsController@desbanearUsuario' ]);
 
@@ -121,3 +121,5 @@ Route::get('/post', 'PostController@index')->middleware('auth');
 Route::post('/post', 'PostController@store')->middleware('auth');
 
 Route::resource('imgur', 'ImgurController');
+// editar usuario panel admin
+Route::post('/editUser/{id}',['as' => 'edituser', 'uses' => 'SocialPetsController@updateUser' ]);

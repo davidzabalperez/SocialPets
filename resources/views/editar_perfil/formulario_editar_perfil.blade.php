@@ -36,8 +36,7 @@
   <div class="form-group row">
     <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
     <div class="col-6 col-md-6">
-      <input type="text" class="form-control" name="email" id="email" value="{{ Auth::user()->email }}">
-      <input type="hidden" name="role" id="role" value="user" readonly> 
+      <input type="text" class="form-control" name="email" id="email" value="{{ Auth::user()->email }}"> 
     </div>
     <button type="submit" class="btn btn-primary btn-sm">Cambiar email</button>
   </div>
@@ -112,9 +111,8 @@
                                       <button type="button" class="btn btn-default btn-sm" data-dismiss="modal">Cancelar</button>
                                      
 
-                                      <form method="post" action="{{ route('user.destroy',$user->id)}}" >
+                                      <form method="post" action="{{ route('forcedeleteself',$user->id)}}" >
                                           @csrf
-                                          @method('DELETE')
                                           <button type="submit" class="btn btn-danger">Borrar usuario</button>
                                       </form>
                                       

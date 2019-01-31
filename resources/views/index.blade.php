@@ -175,7 +175,7 @@
                 <i class="fas fa-map-marked-alt text-primary mb-2"></i>
                 <h4 class="text-uppercase m-0">Dirección</h4>
                 <hr class="my-4">
-                <div class="small text-black-50" style="font-size: 12px;" id="direccion">Calle de Alejandría, 2, 20013 San Sebastián</div>
+                <div class="small text-black-50" style="font-size: 12px;" id="direccion">Zubiri Manteo</div>
               </div>
             </div>
           </div>

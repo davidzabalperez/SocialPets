@@ -13,12 +13,13 @@
       <img src="/public/uploads/{{ $user->dog->avatar }}" />
     </div>
     </div>
-    <p>Dueña/o:{{ $user->name }}</p>
-    <p>Raza: {{ $user->dog->race }}</p>
+    <p class="datos">Dueña/o: 
+      {{ $user->name }}</p>
+    <p class="datos">Raza: {{ $user->dog->race }}</p>
     @if($user->dog->age > 1)
-    <p>Edad: {{ $user->dog->age }} años</p>
+    <p class="datos">Edad: {{ $user->dog->age }} años</p>
     @else
-    <p>Edad: {{ $user->dog->age }} año</p>
+    <p class="datos">Edad: {{ $user->dog->age }} año</p>
     @endif
      <a class="btn btn-light btn-sm" rel="publisher" data-toggle="modal" data-target="#editProfileModal"><i class="fa fa-cogs iconEditProfile"></i></a>
      
