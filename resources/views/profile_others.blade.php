@@ -6,7 +6,7 @@
     <h3>{{ $dog->name }}</h3>
     <div class="box-sub">
       <div class="{{ $dog->gender  == 1 ? 'avatarFemenino' : 'avatarMasculino'}}">
-      <img src="/public/uploads/{{ $dog->avatar }}" />
+      <img src="{{ $dog->avatar }}" />
     </div>
     </div>
     <p>Raza: {{ $dog->race }}</p>

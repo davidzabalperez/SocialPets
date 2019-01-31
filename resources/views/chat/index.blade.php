@@ -17,7 +17,7 @@
 </h3> 
     <div class="box-sub">
       <div class="{{ $friend->dog->gender == 1 ? 'avatarFemenino' : 'avatarMasculino'}}">
-      <img src="/public/uploads/{{ $friend->dog->avatar }}"/>
+      <img src="{{ $friend->dog->avatar }}"/>
     </div>
     </div>
     
