@@ -10,7 +10,11 @@
     <h3><a href="{{route('profile_others', $usuario->id)}}"> {{$usuario->name}}</a></h3> 
     <div class="box-sub">
       <div class="{{ $usuario->gender == 1 ? 'avatarFemenino' : 'avatarMasculino'}}">
-      <img src="/storage/avatars/{{ $usuario->avatar }}"/>
+        @if ($user->dog->avatar != 'user.png')
+        <img src="{{ $user->dog->avatar }}" />
+        @else
+        <img src="/img/user.png"/>   
+        @endif
     </div>
     </div>
     <p>Raza: {{$usuario->race}}</p>

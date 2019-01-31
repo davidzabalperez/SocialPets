@@ -10,7 +10,11 @@
     <h3>{{ $user->dog->name }}</h3>
     <div class="box-sub">
       <div class="{{ $user->dog->gender  == 1 ? 'avatarFemenino' : 'avatarMasculino'}}">
+      @if ($user->dog->avatar != 'user.png')
       <img src="{{ $user->dog->avatar }}" />
+      @else
+      <img src="/img/user.png"/>   
+      @endif
     </div>
     </div>
     <p class="datos">Dueña/o: 
