@@ -88,16 +88,14 @@
 
 
 
-    <form action="update_avatar" method="post" enctype="multipart/form-data">
-              @csrf
-              <div class="form-group">
-                  Cambiar imagen de perfil
-                  <input type="file" class="form-control-file" name="avatar" id="avatarFile" aria-describedby="fileHelp">
-                  <small id="fileHelp" class="form-text text-muted"></small>
-                  <button type="submit" class="btn btn-primary btn-sm">Subir imagen</button>
-              </div>
-
-          </form>
+        <form action="{{route('imgur.store')}}" method="post" enctype="multipart/form-data">
+            @csrf
+            <p><label for="foto"> Foto:</label><input type="file" name="avatar" class="form-control-file"></p>
+            <input type="submit" value="Cambiar imagen" name="submit" class="btn btn-primary btn-sm">
+            @if (isset($img))
+                <img src="{{$img}}" alt="avatar">
+            @endif
+        </form>
 
           <div class="modal-body">
                               <br>

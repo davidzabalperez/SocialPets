@@ -10,7 +10,7 @@
     <h3>{{ $user->dog->name }}</h3>
     <div class="box-sub">
       <div class="{{ $user->dog->gender  == 1 ? 'avatarFemenino' : 'avatarMasculino'}}">
-      <img src="/public/uploads/{{ $user->dog->avatar }}" />
+      <img src="{{ $user->dog->avatar }}" />
     </div>
     </div>
     <p class="datos">Dueña/o: 

@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Dog;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ImgurController extends Controller
 {
@@ -34,7 +36,9 @@ class ImgurController extends Controller
      */
     public function store(Request $request)
     {
-        $foto = $request->file('foto');
+        $dog = Dog::where('user_id', Auth::user()->id)->first(); 
+        $foto = $request->file('avatar');
+        
         $image64 = base64_encode(file_get_contents($foto)); //pasar la foto a base64
         //llamar a la api y subir la imagen
         $curl = curl_init();
@@ -61,8 +65,12 @@ class ImgurController extends Controller
         if ($err) {
           echo "cURL Error #:" . $err;
         } else {
-          $json = json_decode($response, true);
-          return view('imgur.index',['img'=>$json['data']['link']]);
+          $json = json_decode($response);
+          $dog->avatar = $json->data->link; //pilla link de la api
+          
+          $dog->save();
+          /* dd($dog); */
+          return view('profile',['img'=>$json->data->link]);
         }
     }
 
