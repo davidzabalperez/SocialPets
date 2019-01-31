@@ -119,3 +119,5 @@ Route::post('/chat/sendChat', 'ChatController@sendChat')->middleware('auth');
 
 Route::get('/post', 'PostController@index')->middleware('auth');
 Route::post('/post', 'PostController@store')->middleware('auth');
+
+Route::resource('imgur', 'ImgurController');

@@ -96,7 +96,6 @@
                   <input type="file" class="form-control-file" name="avatar" id="avatarFile" aria-describedby="fileHelp">
                   <small id="fileHelp" class="form-text text-muted"></small>
                   <button type="submit" class="btn btn-primary btn-sm">Subir imagen</button>
-
               </div>
 
           </form>
