@@ -10,6 +10,7 @@
   @foreach($dogsMale as $dogMale) 
   <!-- sortByDesc es para que muestre los usuarios registrados mas recientemente primero -->
    @if ( $dogMale->user_id != Auth::user()->id)
+
   <div class="box">
   <onlineuser v-bind:friend="{{ $dogMale }}" v-bind:onlineusers="onlineusers"></onlineuser>
   <h3><a href="{{route('dog.show', $dogMale->id)}}">{{$dogMale->name}}</a>
