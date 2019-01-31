@@ -2,11 +2,10 @@
 @section('title', 'Inicio')
 @section('content')
 
-<meta name="csrf-token" content="{{ csrf_token() }}">
-<p>Filtrar:</p>
-<input type="button" value="Machos">
-<input type="button" value="Hembras">
-<input type="button" value="Todos">
+<meta name="csrf-token" content="{{ csrf_token() }}"><br><br><br>
+<a class="nav-link js-scroll-trigger" href="/dogsMale">{{ __('Machos') }}</a>
+<a class="nav-link js-scroll-trigger" href="/dogsFemale">{{ __('Hembras') }}</a>
+<a class="nav-link js-scroll-trigger" href="/dog">{{ __('Todos') }}</a>
 <div class="container" id="app">
   @foreach($dogsFemale as $dogFemale) 
   <!-- sortByDesc es para que muestre los usuarios registrados mas recientemente primero -->
@@ -16,6 +15,9 @@
 </h3> 
     <h3></h3>
     <div class="box-sub">
+       <div class="{{ $dogFemale->gender == 1 ? 'avatarFemenino' : 'avatarMasculino'}}">
+      <img src="{{ $dogFemale->avatar }}"/>
+      </div>
     </div>
     <p>Raza: {{$dogFemale->race}}</p>
     <p>Edad: {{$dogFemale->age}} {{ $dogFemale->age > 1 ? 'años' : 'año'}}</p>
