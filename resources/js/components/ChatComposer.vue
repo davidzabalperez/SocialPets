@@ -7,6 +7,12 @@
     }
     input{
         border-radius: 0;
+        border:0;padding:10px;background:whitesmoke;
+        margin-bottom: 10px;
+        border-radius: 7px;
+        width: 400px;
+        margin-left: 30%;
+        color: black;
 
     }
     .auto-width{
@@ -17,10 +23,10 @@
 <template lang="html">
     <div class="panel-block field">
         <div class="control">
-            <input type="text" class="input" v-on:keyup.enter="sendChat" v-model="chat">
+            <input type="text" class="input" placeholder="Escribe aquí" v-on:keyup.enter="sendChat" v-model="chat">
         </div>
         <div class="control auto-width">
-            <input type="button" class="button" value="Enviar" v-on:click="sendChat">
+            <input type="button" class="btn btn-success" value="Enviar" v-on:click="sendChat">
         </div>
 
     </div>
