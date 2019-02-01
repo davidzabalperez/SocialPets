@@ -8,10 +8,13 @@
         padding: 20px;
         box-shadow: inset 0 0 20px 0 grey;
         margin-bottom: 20px;
-        border: 1px solid grey;
+        border: 1px solid rgb(20, 143, 214);
+        color: black;
         max-height: 600px;
         overflow-x: auto;
+        opacity: 0.8;
     }
+
     .chat .chat-right, .chat .chat-left{
         max-width: 70%;
         box-shadow: 0 0 8px 0px grey;
@@ -20,9 +23,15 @@
     }
     .chat-right{
          float: right;
+         background-color: white;
+        font-weight: 1000;
+
     }
     .chat-left{
         float: left;
+        background-color: white;
+        font-weight: 1000;
+
     }
     .no-message{
         height: 200px;
