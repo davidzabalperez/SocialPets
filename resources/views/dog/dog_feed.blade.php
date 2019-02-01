@@ -4,16 +4,14 @@
 
 <meta name="csrf-token" content="{{ csrf_token() }}"><br><br><br>
 
-<select>
-  <option>Todos</option>
-  <option>Macho</option>
-  <option>Hembra</option>
-</select>
+<input type="button" value="Todos" id="filtroTodos" class="btn btn-primary">
+<input type="button" value="Machos" id="filtroMachos" class="btn btn-primary">
+<input type="button" value="Hembras" id="filtroHembras" class="btn btn-primary">
 <div class="container" id="app">
   @foreach($dogs->sortByDesc('id') as $dog) 
   <!-- sortByDesc es para que muestre los usuarios registrados mas recientemente primero -->
    @if ( $dog->user_id != Auth::user()->id)
-  <div class="box">
+  <div class="box {{ $dog->gender == 1 ? 'hembra' : 'macho'}}">
   <onlineuser v-bind:friend="{{ $dog }}" v-bind:onlineusers="onlineusers"></onlineuser>
   <h3><a href="{{route('dog.show', $dog->id)}}">{{$dog->name}}</a>
 </h3> 
