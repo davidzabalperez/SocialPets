@@ -19,15 +19,15 @@
 <div class="container" id="app">
         <div class="column is-8 is-offset-2">
             <div class="panel">
-                <div class="panel-heading">
-                    {{$friend->dog->name }} ({{$friend->name}})
-                    <div class="contain is-pulled-right">
-                        <a href="{{ url('/chat') }}" class="is-link"><i class="fa fa-arrow-left"></i>Volver atras.</a>
-                    </div>
+                <div class="panel-heading" style="border: 10px solid black;">
+                    <div class="friend-name">{{$friend->dog->name }} ({{$friend->name}})</div>
                     <chat v-bind:chats="chats" v-bind:userid="{{ Auth::user()->id }}" v-bind:friendid="{{ $friend->id }}"></chat>
                 </div>
             </div>
         </div>
+        <div class="contain is-pulled-right"><br>
+                        <a href="{{ url('/chat') }}" class="btn btn-success"><i class="fa fa-arrow-left"></i>Volver atras</a>
+                    </div>
     </div>
 </body>
 
