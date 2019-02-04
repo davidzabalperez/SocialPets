@@ -32,9 +32,8 @@
          
   </div>
   @else
-
-
   @foreach($requests as $friend)
+  @if(Auth::user()->hasFriendRequestReceived($friend))
     <div class="box">
   <onlineuser v-bind:friend="{{ $friend }}" v-bind:onlineusers="onlineusers"></onlineuser>
   <h3><a href="{{route('dog.show', $friend->dog->id)}}">{{$friend->dog->name}}</a>  
@@ -55,6 +54,7 @@
     <a href="{{ route('friend.acceptFriend', ['id'=>$friend->id]) }}" class="btn btn-primary">Aceptar Match!</a>
 
   </div>
+  @endif
 @endforeach
 
 @endif
