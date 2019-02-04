@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Friend;
+use App\User;
 use Auth;
 use Session;
 use Illuminate\Http\Request;
@@ -90,9 +91,49 @@ class FriendController extends Controller
      */
     public function destroy($id)
     {   
-        $friend = Friend::find($id);
-        $friend->delete();
-
+        Friend::where('friend_id', $id)->delete();
         return back()->with('success', 'Ya no son amigos.');
+    }
+
+    public function addFriend($id){
+        $user = User::where('id', $id)->first();
+
+        if(!$user){
+            return redirect()
+            ->route('dog.index')
+            ->with('info', 'El usuario no existe.');
+        }
+
+        if(Auth::user()->hasFriendRequestPending($user) || $user->hasFriendRequestPending(Auth::user())){
+
+            return redirect()->back()->with('info', 'Esperando a que acepten tu Match!');
+
+        }
+
+        if(Auth::user()->isFriendsWith($user)){
+            return redirect()->back()->with('info', 'Ya son amigos!');
+        }
+
+        Auth::user()->addFriend($user);
+
+        return redirect()->back()->with('info', 'Match! enviado.');
+    }
+
+    public function acceptFriend($id){
+        $user = User::where('id', $id)->first();
+
+        if(!$user){
+            return redirect()
+            ->route('dog.index')
+            ->with('info', 'El usuario no existe.');
+        }
+
+        if(!Auth::user()->hasFriendRequestReceived($user)) {
+            return redirect()->back();
+        }
+
+        Auth::user()->acceptFriendRequest($user);
+
+        return redirect()->back()->with('info', 'Match! aceptado.');
     }
 }
