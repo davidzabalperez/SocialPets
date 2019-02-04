@@ -37,6 +37,11 @@
         height: 200px;
         display: flex;
         align-items: center;
+        font-size: 20px;
+        margin-left: 37%;
+    }
+    .container{
+        background-color: black;
     }
 
 </style>
