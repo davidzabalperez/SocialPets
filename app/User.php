@@ -13,6 +13,7 @@ class User extends Authenticatable implements MustVerifyEmail
 {
     use Notifiable, SoftDeletes;
 
+
     /**
      * The attributes that are mass assignable.
      *
@@ -45,10 +46,42 @@ class User extends Authenticatable implements MustVerifyEmail
     public function friendsOfMine(){
         return $this->belongsToMany('App\User', 'friends', 'user_id', 'friend_id');
     }
-    public function friendsOf(){
+    public function friendOf(){
         return $this->belongsToMany('App\User', 'friends', 'friend_id', 'user_id');
     }
     public function friends(){
-        return $this->friendsOfMine->merge($this->friendsOf);
+        return $this->friendsOfMine()->wherePivot('approved', true)->get()->merge($this->friendOf()->wherePivot('approved', true)->get());
     }
+    public function friendRequests(){
+        return $this->friendsOfMine()->wherePivot('approved', false)->get();
+    }
+    public function friendRequestsPending(){
+        return $this->friendOf()->wherePivot('approved', false)->get();
+    }
+    public function hasFriendRequestPending(User $user){
+        return (bool) $this->friendRequestsPending()
+        ->where('id', $user->id)->count();
+
+    }
+
+    public function hasFriendRequestReceived(User $user){
+        return (bool) $this->friendRequests()
+        ->where('id', $user->id)->count();
+    }
+
+    public function addFriend(User $user){
+        $this->friendOf()->attach($user->id);
+    }
+    public function acceptFriendRequest(User $user){
+        $this->friendRequests()
+        ->where('id', $user->id)->first()->pivot->update([
+                'approved' => true,
+            ]);
+    } 
+
+    public function isFriendsWith(User $user){
+        return (bool) $this->friends()->where('id', $user->id)->count();
+    }
+
+
 }

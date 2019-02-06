@@ -1,0 +1,17 @@
+body{
+    background-image: linear-gradient(120deg, #4a8dfa 0%, #8adaff 100%);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    margin-top: 2%;
+}
+
+.friend-name{
+    font-size: 30px; 
+    margin-left: 2%;
+}
+
+.avatar{
+    width: 100px;
+    border-radius: 50%;
+}

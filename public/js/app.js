@@ -58305,7 +58305,7 @@ exports = module.exports = __webpack_require__(3)(false);
 
 
 // module
-exports.push([module.i, "\n.panel-block[data-v-0d66c37a]{\n    -webkit-box-orient: vertical;\n    -webkit-box-direction: normal;\n        -ms-flex-direction: column;\n            flex-direction: column;\n    border: none;\n}\n.chat[data-v-0d66c37a]{\n    width: 100%;\n    padding: 20px;\n    -webkit-box-shadow: inset 0 0 20px 0 grey;\n            box-shadow: inset 0 0 20px 0 grey;\n    margin-bottom: 20px;\n    border: 1px solid grey;\n    max-height: 600px;\n    overflow-x: auto;\n}\n.chat .chat-right[data-v-0d66c37a], .chat .chat-left[data-v-0d66c37a]{\n    max-width: 70%;\n    -webkit-box-shadow: 0 0 8px 0px grey;\n            box-shadow: 0 0 8px 0px grey;\n    padding: 8px;\n    margin: 4px;\n}\n.chat-right[data-v-0d66c37a]{\n     float: right;\n}\n.chat-left[data-v-0d66c37a]{\n    float: left;\n}\n.no-message[data-v-0d66c37a]{\n    height: 200px;\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center;\n}\n\n", ""]);
+exports.push([module.i, "\n/* width */\n[data-v-0d66c37a]::-webkit-scrollbar {\nwidth: 10px;\n}\n\n/* Track */\n[data-v-0d66c37a]::-webkit-scrollbar-track {\nbackground: #f1f1f1;\n}\n\n/* Handle */\n[data-v-0d66c37a]::-webkit-scrollbar-thumb {\nbackground: #888;\n}\n\n/* Handle on hover */\n[data-v-0d66c37a]::-webkit-scrollbar-thumb:hover {\nbackground: #555;\n}\n.panel-block[data-v-0d66c37a]{\n    -webkit-box-orient: vertical;\n    -webkit-box-direction: normal;\n        -ms-flex-direction: column;\n            flex-direction: column;\n    border: none;\n}\n.chat[data-v-0d66c37a]{\n    width: 100%;\n    padding: 20px;\n    -webkit-box-shadow: inset 0 0 20px 0 grey;\n            box-shadow: inset 0 0 20px 0 grey;\n    margin-bottom: 20px;\n    border: 1px solid rgb(20, 143, 214);\n    color: black;\n    max-height: 600px;\n    overflow-x: auto;\n    opacity: 0.8;\n    margin-top: 2%;\n}\n.chat .chat-right[data-v-0d66c37a], .chat .chat-left[data-v-0d66c37a]{\n    max-width: 70%;\n    -webkit-box-shadow: 0 0 8px 0px grey;\n            box-shadow: 0 0 8px 0px grey;\n    padding: 8px;\n    margin: 4px;\n    word-break: break-all;\n    border-radius: 7px;\n}\n.chat-right[data-v-0d66c37a]{\n     float: right;\n     background-color: white;\n    font-weight: 1000;\n}\n.chat-left[data-v-0d66c37a]{\n    float: left;\n    background-color: white;\n    font-weight: 1000;\n}\n.no-message[data-v-0d66c37a]{\n    height: 200px;\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center;\n    font-size: 20px;\n    margin-left: 37%;\n    font-weight: bold;\n}\n.container[data-v-0d66c37a]{\n    background-color: black;\n}\n\n", ""]);
 
 // exports
 
@@ -58405,6 +58405,41 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     props: ['chats', 'userid', 'friendid']
@@ -58428,23 +58463,27 @@ var render = function() {
             "div",
             { staticClass: "chat" },
             _vm._l(_vm.chats, function(chat) {
-              return _c("div", { staticStyle: { overflow: "auto" } }, [
-                chat.user_id == _vm.userid
-                  ? _c("div", { staticClass: "chat-right" }, [
-                      _vm._v(
-                        "\n                " +
-                          _vm._s(chat.chat) +
-                          "\n            "
-                      )
-                    ])
-                  : _c("div", { staticClass: "chat-left" }, [
-                      _vm._v(
-                        "\n                " +
-                          _vm._s(chat.chat) +
-                          "\n            "
-                      )
-                    ])
-              ])
+              return _c(
+                "div",
+                { staticClass: "chatbox", staticStyle: { overflow: "auto" } },
+                [
+                  chat.user_id == _vm.userid
+                    ? _c("div", { staticClass: "chat-right" }, [
+                        _vm._v(
+                          "\n                " +
+                            _vm._s(chat.chat) +
+                            "\n            "
+                        )
+                      ])
+                    : _c("div", { staticClass: "chat-left" }, [
+                        _vm._v(
+                          "\n                " +
+                            _vm._s(chat.chat) +
+                            "\n            "
+                        )
+                      ])
+                ]
+              )
             }),
             0
           )
@@ -58555,7 +58594,7 @@ exports = module.exports = __webpack_require__(3)(false);
 
 
 // module
-exports.push([module.i, "\n.panel-block[data-v-77176efa] {\n    -webkit-box-orient: horizontal;\n    -webkit-box-direction: normal;\n        -ms-flex-direction: row;\n            flex-direction: row;\n    width: 100%;\n    border: none;\n    padding: 0;\n}\ninput[data-v-77176efa]{\n    border-radius: 0;\n}\n.auto-width[data-v-77176efa]{\n    width: auto;\n}\n\n", ""]);
+exports.push([module.i, "\n.panel-block[data-v-77176efa] {\n    -webkit-box-orient: horizontal;\n    -webkit-box-direction: normal;\n        -ms-flex-direction: row;\n            flex-direction: row;\n    width: 100%;\n    border: none;\n    padding: 0;\n}\ninput[data-v-77176efa]{\n    border-radius: 0;\n    border:0;padding:10px;background:whitesmoke;\n    margin-bottom: 10px;\n    border-radius: 7px;\n    width: 40%;\n    margin-left: 30%;\n    color: black;\n}\n.auto-width[data-v-77176efa]{\n    width: auto;\n}\n\n", ""]);
 
 // exports
 
@@ -58566,6 +58605,12 @@ exports.push([module.i, "\n.panel-block[data-v-77176efa] {\n    -webkit-box-orie
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -58644,7 +58689,7 @@ var render = function() {
           }
         ],
         staticClass: "input",
-        attrs: { type: "text" },
+        attrs: { type: "text", placeholder: "Escribe aquí" },
         domProps: { value: _vm.chat },
         on: {
           keyup: function($event) {
@@ -58668,7 +58713,7 @@ var render = function() {
     _vm._v(" "),
     _c("div", { staticClass: "control auto-width" }, [
       _c("input", {
-        staticClass: "button",
+        staticClass: "btn btn-success",
         attrs: { type: "button", value: "Enviar" },
         on: { click: _vm.sendChat }
       })
