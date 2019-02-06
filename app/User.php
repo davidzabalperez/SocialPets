@@ -33,15 +33,11 @@ class User extends Authenticatable implements MustVerifyEmail
     ];
     protected $dates = ['deleted_at'];
 
-    public function mensajes(){
-        return $this->hasMany('App\Mensaje');
-    }
-    public function posts(){
-        return $this->hasMany('App\Post');
-    }
     public function dog(){
         return $this->hasOne('App\Dog','user_id');
     }
+
+
 
     public function friendsOfMine(){
         return $this->belongsToMany('App\User', 'friends', 'user_id', 'friend_id');
@@ -77,7 +73,7 @@ class User extends Authenticatable implements MustVerifyEmail
         ->where('id', $user->id)->first()->pivot->update([
                 'approved' => true,
             ]);
-    } 
+    }
 
     public function isFriendsWith(User $user){
         return (bool) $this->friends()->where('id', $user->id)->count();

@@ -39,6 +39,9 @@ const app = new Vue({
         onlineusers: ''
     },
     created(){
+
+
+
         const userId = $('meta[name="userId"]').attr('content');
         const friendId = $('meta[name="friendId"]').attr('content');
 
@@ -63,5 +66,6 @@ const app = new Vue({
                     this.onlineusers = this.onlineusers.filter((u)=> {u != user});
                 })
         }
+
     }
 });

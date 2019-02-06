@@ -75,7 +75,7 @@ body{
 .box, .box_profile{
   color: white;
   width: 270px;
-  height: 375px;
+  height: auto;
   box-shadow: 0px 0px 7px 3px gray;
   text-align: center;
   margin: 25px auto;
@@ -101,8 +101,8 @@ body{
     text-align: center;
     font-size: 10px;
     font-weight: 500;
-
 }
+
 #hideModal{
   float: right;
 }
@@ -119,7 +119,7 @@ body{
   width: 270px;
   height: 90px;
   background-color:rgba(0,0,0,0.5);
-  line-height: 90px;
+  line-height: 100px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -166,7 +166,7 @@ a .iconEditProfile{
 
 
 
-img{ 
+img{
   max-width:100%;
 }
 .inbox_people {
@@ -195,7 +195,7 @@ img{
 .srch_bar {
   display: inline-block;
   text-align: right;
-  width: 60%; 
+  width: 60%;
 }
 .headind_srch{ padding:10px 29px 10px 20px; overflow:hidden; border-bottom:1px solid #c4c4c4;}
 
@@ -410,13 +410,13 @@ img{
       height: 70px;
       width: 70px;
       border:1.5px solid #f5f6fa;
-    
+
     }
     .user_img_msg{
       height: 40px;
       width: 40px;
       border:1.5px solid #f5f6fa;
-    
+
     }
   .img_cont{
       position: relative;
@@ -520,7 +520,7 @@ img{
   }
   .action_menu ul li i{
     padding-right: 10px;
-  
+
   }
   .action_menu ul li:hover{
     cursor: pointer;
@@ -539,7 +539,7 @@ img{
    background-size: cover;
    background-attachment: fixed;
    height: 100%;
- 
+
 
 }
 html,

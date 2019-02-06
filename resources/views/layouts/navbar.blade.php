@@ -1,5 +1,5 @@
     <!-- NavBar -->
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top " id="mainNav">
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
           @if(Session::has('success-message'))
     <div class="alert alert-success">
         <button type="button"
@@ -27,7 +27,7 @@
             aria-hidden="true">&times;</button>{{$errors->first()}}</div>
           @endif
 
-      <div class="container-fluid">
+      <div class="container-fluid" >
         @guest
         <a class="navbar-brand js-scroll-trigger" href="#page-top"><img src="img/logo.png" alt="logo" width="120px;"></a>
         @endguest
@@ -60,7 +60,7 @@
              @endguest
             </li>
             @else
-            
+
             <div class="collapse navbar-collapse" id="navbarResponsive">
             <a class="navbar-brand js-scroll-trigger" href="/dog"><img src="/img/logo.png" alt="logo" width="120px;"></a>
             <ul class="navbar-nav mr-auto navbar ">
@@ -76,10 +76,10 @@
                     <a class="nav-link js-scroll-trigger" href="{{ route('chat.index') }}"><span class="fa  fa-bone">
                             {{ __('Favoritos') }}
                     </a>
-
-                    <a class="nav-link js-scroll-trigger" href="{{ route('chat.index') }}"><span class="fa fa-bell">
-                            {{ __('Notificaciones') }}
+                    <a class="nav-link js-scroll-trigger" href="{{ route('chat.match') }}"><span class="fas fa-heart">
+                            {{ __('Match!') }}
                     </a>
+
                     @if (Auth::user() && Auth::user()->role == 'admin')
                     <a class="nav-link js-scroll-trigger" href="{{ route('estadisticas') }}"><span class="fa  fa-chart-pie">
                             {{ __('Administrar') }}

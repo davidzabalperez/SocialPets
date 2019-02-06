@@ -6,6 +6,7 @@ use App\Friend;
 use App\User;
 use Auth;
 use Session;
+use App\Notifications\NotifyMatchOwner;
 use Illuminate\Http\Request;
 
 class FriendController extends Controller
@@ -17,7 +18,7 @@ class FriendController extends Controller
      */
     public function index()
     {
-       
+
     }
 
     /**
@@ -39,7 +40,7 @@ class FriendController extends Controller
     public function store(Request $request)
     {
         //validate
-        
+
         //añadir a database
         $friend = new Friend;
         $friend->user_id = Auth::user()->id;
@@ -90,12 +91,12 @@ class FriendController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
-    {   
+    {
         Friend::where('friend_id', $id)->delete();
         return back()->with('success', 'Ya no son amigos.');
     }
 
-    public function addFriend($id){
+    public function addFriend(Request $request, $id){
         $user = User::where('id', $id)->first();
 
         if(!$user){
@@ -115,7 +116,6 @@ class FriendController extends Controller
         }
 
         Auth::user()->addFriend($user);
-
         return redirect()->back()->with('info', 'Match! enviado.');
     }
 

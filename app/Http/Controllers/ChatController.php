@@ -21,6 +21,13 @@ class ChatController extends Controller
         return view('chat.index')->with('friends', $friends)->with('requests', $requests);
     }
 
+    public function match()
+    {
+        $friends = Auth::user()->friends();
+        $requests = Auth::user()->friendRequests();
+        return view('chat.match')->with('friends', $friends)->with('requests', $requests);
+    }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -97,7 +104,7 @@ class ChatController extends Controller
 
         return $chats;
     }
-    
+
     public function sendChat(Request $request){
         Chat::create([
             'user_id' => $request->user_id,
