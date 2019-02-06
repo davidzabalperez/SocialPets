@@ -71,7 +71,7 @@
 <template>
     <div class="panel-block">
         <div class="chat" v-if="chats.length != 0">
-            <div v-for="chat in chats" style="overflow:auto;">
+            <div v-for="chat in chats" style="overflow:auto;" class="chatbox">
                 <div class="chat-right" v-if="chat.user_id == userid">
                     {{ chat.chat }}
                 </div>
@@ -89,7 +89,6 @@
             <chat-composer v-bind:userid="userid" v-bind:chats="chats" v-bind:friendid="friendid"></chat-composer>
     </div>
 </template>
-
 <script>
     export default {
         props: ['chats', 'userid', 'friendid']
