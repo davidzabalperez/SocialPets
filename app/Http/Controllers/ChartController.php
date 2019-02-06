@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Dog;
+use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use App\User;
 
 class ChartController extends Controller
 {
@@ -26,6 +27,23 @@ class ChartController extends Controller
                     return view('panel_administrador.chart_admin', [
                         'usersPerMonth'=> $usersPerMonth, 'usuarios'=>$usuarios
                     ]);   
+    }
+
+    public function verRazaEdad(){
+        $dogs=Dog::all();
+        /* $ageRace = DB::table('dogs')
+        ->groupBy('race')
+        ->get();
+        dump($ageRace); */
+
+        /* SELECT age, race, COUNT (id) as perrosraza
+        FROM dogs
+        GROUP BY age, race; */
+        
+        return view('chart_raza_edad',[
+        'dogs'=>$dogs,
+        /* 'ageRace'=>$ageRace */ 
+        ]);
     }
 
 }
