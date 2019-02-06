@@ -65,27 +65,27 @@
             <a class="navbar-brand js-scroll-trigger" href="/dog"><img src="/img/logo.png" alt="logo" width="120px;"></a>
             <ul class="navbar-nav mr-auto navbar ">
             <li class="nav-item navbar-nav mr-auto navbar">
-                     <a class="nav-link js-scroll-trigger" href="{{ route('dog.index') }}"><span class="fa fa-paw">
+                     <a class="{{ Route::currentRouteNamed('dog.index') ? 'active' : 'nav-link js-scroll-trigger' }}" href="{{ route('dog.index') }}"><span class="fa fa-paw">
                             {{ __('Inicio') }}
                         </a>
-
-                    <a class="nav-link js-scroll-trigger" href="{{ route('profile') }}"><span class="fa fa-address-card">
+                    
+                    <a class="{{ Route::currentRouteNamed('profile') ? 'active' : 'nav-link js-scroll-trigger' }}" href="{{ route('profile') }}"><span class="fa fa-address-card">
                             {{ __('Perfil') }}
                         </a>
 
-                    <a class="nav-link js-scroll-trigger" href="{{ route('chat.index') }}"><span class="fa  fa-bone">
+                    <a class="{{ Route::currentRouteNamed('chat.index') ? 'active' : 'nav-link js-scroll-trigger' }}" href="{{ route('chat.index') }}"><span class="fa  fa-bone">
                             {{ __('Favoritos') }}
                     </a>
 
-                    <a class="nav-link js-scroll-trigger" href="{{ route('chat.index') }}"><span class="fa fa-bell">
+                    <a class="{{ Route::currentRouteNamed('chat.index') ? 'active' : 'nav-link js-scroll-trigger' }}" href="{{ route('chat.index') }}"><span class="fa fa-bell">
                             {{ __('Notificaciones') }}
                     </a>
                     @if (Auth::user() && Auth::user()->role == 'admin')
-                    <a class="nav-link js-scroll-trigger" href="{{ route('estadisticas') }}"><span class="fa  fa-chart-pie">
+                    <a class="{{ Route::currentRouteNamed('estadisticas') ? 'active' : 'nav-link js-scroll-trigger' }}" href="{{ route('estadisticas') }}"><span class="fa  fa-chart-pie">
                             {{ __('Administrar') }}
                     </a>
                     @endif
-                    <a class="nav-link js-scroll-trigger" href="{{ route('logout') }}"
+                    <a class="{{ Route::currentRouteNamed('logout') ? 'active' : 'nav-link js-scroll-trigger' }}" href="{{ route('logout') }}"
                           onclick="event.preventDefault();
                                         document.getElementById('logout-form').submit();"><span class="fa  fa-sign-out-alt">
                           {{ __('Cerrar sesión ') }}
