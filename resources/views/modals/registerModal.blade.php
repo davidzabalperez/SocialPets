@@ -5,7 +5,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <div class="avatar">
-                    <img src="/img/avatar.png" alt="Avatar">
+                    <img src="/img/default.png" alt="Avatar">
                 </div>              
                 <h4 class="modal-title">{{ __('Registro') }}</h4>   
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
