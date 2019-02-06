@@ -1,4 +1,23 @@
 <style scoped>
+    /* width */
+    ::-webkit-scrollbar {
+    width: 10px;
+    }
+
+    /* Track */
+    ::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+    }
+    
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+    background: #888; 
+    }
+
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+    }
     .panel-block{
         flex-direction: column;
         border: none;
@@ -13,6 +32,7 @@
         max-height: 600px;
         overflow-x: auto;
         opacity: 0.8;
+        margin-top: 2%;
     }
 
     .chat .chat-right, .chat .chat-left{
@@ -20,12 +40,13 @@
         box-shadow: 0 0 8px 0px grey;
         padding: 8px;
         margin: 4px;
+        word-break: break-all;
+        border-radius: 7px;
     }
     .chat-right{
          float: right;
          background-color: white;
         font-weight: 1000;
-
     }
     .chat-left{
         float: left;
@@ -39,6 +60,7 @@
         align-items: center;
         font-size: 20px;
         margin-left: 37%;
+        font-weight: bold;
     }
     .container{
         background-color: black;

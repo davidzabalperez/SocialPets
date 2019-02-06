@@ -10,7 +10,7 @@
         border:0;padding:10px;background:whitesmoke;
         margin-bottom: 10px;
         border-radius: 7px;
-        width: 400px;
+        width: 40%;
         margin-left: 30%;
         color: black;
 

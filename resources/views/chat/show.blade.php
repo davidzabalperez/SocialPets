@@ -19,8 +19,8 @@
 <div class="container" id="app">
         <div class="column is-8 is-offset-2">
             <div class="panel">
-                <div class="panel-heading" style="border: 10px solid black;">
-                    <div class="friend-name">{{$friend->dog->name }} ({{$friend->name}})</div>
+                <div class="panel-heading">
+                    <div class="friend-name"><img class="avatar" src="{{ $friend->dog->avatar }}"> {{$friend->dog->name }} ({{$friend->name}})</div>
                     <chat v-bind:chats="chats" v-bind:userid="{{ Auth::user()->id }}" v-bind:friendid="{{ $friend->id }}"></chat>
                 </div>
             </div>
