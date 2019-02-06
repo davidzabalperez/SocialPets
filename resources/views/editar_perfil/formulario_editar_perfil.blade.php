@@ -1,4 +1,3 @@
-
 <div id="editProfileModal" class="modal fade">
     <div class="modal-dialog">
 
