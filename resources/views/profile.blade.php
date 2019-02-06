@@ -4,7 +4,7 @@
 
 <div class="container">
   @if(!empty($user->dog))
-    <div class="box">
+    <div class="box_profile">
     @include('editar_perfil.formulario_editar_perfil')
 
     <h3>{{ $user->dog->name }}</h3>
@@ -25,7 +25,7 @@
     @else
     <p class="datos">Edad: {{ $user->dog->age }} año</p>
     @endif
-     <a class="btn btn-light btn-sm" rel="publisher" data-toggle="modal" data-target="#editProfileModal"><i class="fa fa-cogs iconEditProfile"></i></a>
+     <a class="btn-config" rel="publisher" data-toggle="modal" data-target="#editProfileModal"><i class="fa fa-cogs iconEditProfile"></i></a>
      
   </div>
   </div>
