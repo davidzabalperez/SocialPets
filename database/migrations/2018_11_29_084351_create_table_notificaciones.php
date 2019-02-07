@@ -15,8 +15,12 @@ class CreateTableNotificaciones extends Migration
     {
         Schema::create('notificaciones', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('id_privado_like');
-            $table->string('tipo');
+            $table->string('title')->nullable();
+            $table->string('message')->nullable();
+            $table->integer('marker')->nullable();
+            $table->boolean('notificable');
+            $table->integer('user_id')->nullable();
+            $table->softDeletes();
             $table->timestamps();
         });
     }

@@ -76,13 +76,27 @@
                     <a class="{{ Route::currentRouteNamed('chat.index') ? 'active' : 'nav-link js-scroll-trigger' }}" href="{{ route('chat.index') }}"><span class="fa  fa-bone">
                             {{ __('Favoritos') }}
                     </a>
+                    <li class="dropdown">
+                      <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button">
+                        <i class="fa fa-bell">Notificaciones</i>
+                        <span class="label-count" id="count"></span>
+                      </a>
+                      <ul class="dropdown-menu">
+                        <li class="header">NOTIFICATIONS</li>
+                        <li class="body">
+                          <ul class="menu" id="notifications">
+
+                          </ul>
+                      </ul>
+                      </li>
+                  </li>
 
                     <a class="{{ Route::currentRouteNamed('chat.match') ? 'active' : 'nav-link js-scroll-trigger' }}" href="{{ route('chat.match') }}"><span class="fas fa-heart">
                             {{ __('Match!') }}
 
-
-
                     </a>
+
+          
 
                     @if (Auth::user() && Auth::user()->role == 'admin')
                     <a class="{{ Route::currentRouteNamed('estadisticas') ? 'active' : 'nav-link js-scroll-trigger' }}" href="{{ route('estadisticas') }}"><span class="fa  fa-chart-pie">
@@ -104,3 +118,5 @@
         </div>
       </div>
     </nav>
+
+ 

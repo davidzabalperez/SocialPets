@@ -137,3 +137,4 @@ Route::get('raza','ChartController@verRazaEdad');
 Route::get('/friend/add/{id}', ['as' => 'friend.addFriend', 'uses' => 'FriendController@addFriend']);
 Route::get('/friend/accept/{id}', ['as' => 'friend.acceptFriend', 'uses' => 'FriendController@acceptFriend']);
 Route::get('/match', 'ChatController@match')->middleware('auth')->name('chat.match');
+Route::get('/notifications', 'NotificationController@getNotifications')->name('notifications');
