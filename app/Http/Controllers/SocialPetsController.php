@@ -141,7 +141,7 @@ class SocialPetsController extends Controller
   public function register(Request $request)
   {
     request()->validate([
-      'name' => 'required|min:2|max:50',
+      'name' => 'required|min:2|max:15',
       'email' => 'required|email|unique:users',
       'password' => 'required|confirmed|min:8',
       'password_confirmation' => 'required|same:password',
@@ -149,7 +149,7 @@ class SocialPetsController extends Controller
     ], [
       'name.required' => 'Nombre es un campo requerido',
       'name.min' => 'Nombre tiene que tener dos o mas caracteres',
-      'name.max' => 'Nombre no puede tener mas de 50 caracteres',
+      'name.max' => 'Nombre no puede tener mas de 15 caracteres',
       'email.required' => 'Email es un campo requerido',
       'email.email' => 'Introduce un email valido',
       'email.unique' => 'El email ya esta registrado',
