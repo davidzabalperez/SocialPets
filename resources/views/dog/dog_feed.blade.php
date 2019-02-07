@@ -40,11 +40,10 @@
     <b><p>Nombre: {{$dog->name}}</p></b>
     <p>Raza: {{$dog->race}}</p>
     <p>Edad: {{$dog->age}} {{ $dog->age > 1 ? 'años' : 'año'}}</p>
-    <div class="container">
+    <div class="container likedislikebuttons">
       <a class="btn btn-primary" href="{{ route('friend.addFriend', ['id'=>$dog->id]) }}" id="like"> <i class="fa fa-thumbs-up"></i></a>
       <a class="btn btn-danger" href="#" id="dislike"> <i class="fa fa-thumbs-down"></i></a>
   </div>
-
   </div>
 
   @endif

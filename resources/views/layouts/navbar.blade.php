@@ -65,19 +65,19 @@
             <a class="navbar-brand js-scroll-trigger" href="/dog"><img src="/img/logo.png" alt="logo" width="120px;"></a>
             <ul class="navbar-nav mr-auto navbar ">
             <li class="nav-item navbar-nav mr-auto navbar">
-                     <a class="{{ Route::currentRouteNamed('dog.index') ? 'active' : 'nav-link js-scroll-trigger' }}" href="{{ route('dog.index') }}"><span class="fa fa-paw">
+                     <a class="{{ Route::currentRouteNamed('dog.index') ? 'active fixed' : 'nav-link js-scroll-trigger' }}" href="{{ route('dog.index') }}"><span class="fa fa-paw">
                             {{ __('Inicio') }}
                         </a>
 
-                    <a class="{{ Route::currentRouteNamed('profile') ? 'active' : 'nav-link js-scroll-trigger' }}" href="{{ route('profile') }}"><span class="fa fa-address-card">
+                    <a class="{{ Route::currentRouteNamed('profile') ? 'active fixed' : 'nav-link js-scroll-trigger' }}" href="{{ route('profile') }}"><span class="fa fa-address-card">
                             {{ __('Perfil') }}
                         </a>
 
-                    <a class="{{ Route::currentRouteNamed('chat.index') ? 'active' : 'nav-link js-scroll-trigger' }}" href="{{ route('chat.index') }}"><span class="fa  fa-bone">
+                    <a class="{{ Route::currentRouteNamed('chat.index') ? 'active fixed' : 'nav-link js-scroll-trigger' }}" href="{{ route('chat.index') }}"><span class="fa  fa-bone">
                             {{ __('Favoritos') }}
                     </a>
 
-                    <a class="{{ Route::currentRouteNamed('chat.match') ? 'active' : 'nav-link js-scroll-trigger' }}" href="{{ route('chat.match') }}"><span class="fas fa-heart">
+                    <a class="{{ Route::currentRouteNamed('chat.match') ? 'active fixed' : 'nav-link js-scroll-trigger' }}" href="{{ route('chat.match') }}"><span class="fas fa-heart">
                             {{ __('Match!') }}
 
 

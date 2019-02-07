@@ -84,9 +84,6 @@
 </div>
 </div>
 </form>
-
-
-
         <form action="{{route('imgur.store')}}" method="post" enctype="multipart/form-data">
             @csrf
             <p><label for="foto"> Foto:</label><input type="file" name="avatar" class="form-control-file"></p>
