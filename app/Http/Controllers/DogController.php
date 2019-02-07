@@ -16,8 +16,6 @@ class DogController extends Controller
     public function index()
     {
         $dogs = Dog::all();
-
-
         return view('/dog/dog_feed')->with([
             'dogs'=>$dogs
         ]);
@@ -77,6 +75,14 @@ class DogController extends Controller
      */
     public function update(Request $request, $id)
     {
+        request()->validate([
+            'name'=>'string|max:15|min:3',
+        ],[
+            'name.string' => 'introduce un texto',
+            'name.min' => 'minimo 3 caracteres',
+            'name.max' => 'maximo 15 caracteres',
+
+        ]);
         $dog=Dog::findOrFail($id);
         $dog->name = $request->input('name');
         $dog->save();

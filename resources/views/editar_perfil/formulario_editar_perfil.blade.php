@@ -86,7 +86,7 @@
         <form action="{{route('imgur.store')}}" method="post" enctype="multipart/form-data">
             @csrf
             <p><label for="foto"> Foto:</label><input type="file" name="avatar" class="form-control-file"></p>
-            <input type="submit" value="Subir imagen" name="submit" class="btn btn-primary btn-sm">
+            <input type="submit" value="Subir imagen" name="submit" class="btn btn-primary btn-sm" required>
             @if (isset($img))
                 <img src="{{$img}}" alt="avatar">
             @endif
