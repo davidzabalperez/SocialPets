@@ -20,7 +20,13 @@
         <div class="column is-8 is-offset-2">
             <div class="panel">
                 <div class="panel-heading">
-                    <div class="friend-name"><img class="avatar" src="{{ $friend->dog->avatar }}"> {{$friend->dog->name }} ({{$friend->name}})</div>
+                    <div class="friend-name">
+                    @if ($friend->dog->avatar != 'user.png')
+                    <img class="avatar" src="{{ $friend->dog->avatar }}">
+                    @else
+                    <img class="avatar" src="/img/user.png"/>   
+                    @endif
+                      {{$friend->dog->name }} ({{$friend->name}})</div>
                     <chat v-bind:chats="chats" v-bind:userid="{{ Auth::user()->id }}" v-bind:friendid="{{ $friend->id }}"></chat>
                 </div>
             </div>

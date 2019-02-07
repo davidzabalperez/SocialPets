@@ -65,13 +65,19 @@
     .container{
         background-color: black;
     }
+    .scroll{
+        widows: 300px;
+        height: 150px;
+        overflow: scroll;
+        margin-bottom: 20px;
+    }
 
 </style>
 
 <template>
     <div class="panel-block">
         <div class="chat" v-if="chats.length != 0">
-            <div v-for="chat in chats" style="overflow:auto;" class="chatbox">
+            <div v-for="chat in chats" style="overflow:auto;">
                 <div class="chat-right" v-if="chat.user_id == userid">
                     {{ chat.chat }}
                 </div>

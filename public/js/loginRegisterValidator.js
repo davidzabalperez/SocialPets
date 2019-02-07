@@ -2,7 +2,8 @@ $(document).ready(function() {
 		$("#registerForm").validate({
 			rules : {
 				name : {
-					required:true
+					required:true,
+					maxlength:12
 				},
 				email : {
 					required:true,
@@ -24,7 +25,8 @@ $(document).ready(function() {
 
 			messages : {
 				name : {
-					required:"Campo obligatorio"
+					required:"Campo obligatorio",
+					maxlength:"El campo nombre permite máximo 12 carácteres"
 				},
 				email : {
 					required:"Campo obligatorio",
