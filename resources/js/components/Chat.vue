@@ -1,3 +1,11 @@
+// ES6
+import Vue from 'vue'
+import VueChatScroll from 'vue-chat-scroll'
+Vue.use(VueChatScroll)
+ 
+// ES5
+var Vue = require('vue')
+Vue.use(require('vue-chat-scroll'))
 <style scoped>
     /* width */
     ::-webkit-scrollbar {
