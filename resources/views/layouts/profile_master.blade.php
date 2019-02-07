@@ -34,11 +34,8 @@
 
   </body>
 
- <footer class="footerCustom">
-      <div class="container">
+ <footer>
 
-        Copyright &copy; Social Pets 2019
-      </div>
 </footer>
      <!-- Footer -->
 
