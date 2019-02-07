@@ -36,6 +36,11 @@ class ImgurController extends Controller
      */
     public function store(Request $request)
     {
+        request()->validate([
+            'avatar' => 'required',
+        ],[
+            'avatar.required' => 'Selecciona una foto',
+        ]);
         $dog = Dog::where('user_id', Auth::user()->id)->first(); 
         $foto = $request->file('avatar');
         
