@@ -1,14 +1,16 @@
 <?php
 
-namespace Illuminate\Auth\Notifications;
+namespace App\Notifications;
 
-use Illuminate\Support\Facades\Lang;
+use Illuminate\Bus\Queueable;
 use Illuminate\Notifications\Notification;
+use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
+use App\Notifications\Lang;
 
-class ResetPassword extends Notification
+class ResetPasswordNotification extends Notification
 {
-    /**
+   /**
      * The password reset token.
      *
      * @var string
@@ -57,10 +59,12 @@ class ResetPassword extends Notification
         }
 
         return (new MailMessage)
-            ->subject(Lang::getFromJson('Cambia a la nueva contraseña'))
-            ->line(Lang::getFromJson('Estas recibiendo este email por que quieres cambiar las contraseña o se te ha olvidado'))
-            ->action(Lang::getFromJson('Resetear contraseña'), url(config('app.url').route('password.reset', $this->token, false)))
-            ->line(Lang::getFromJson('Si no has solicitado reestablecer contraseña obvia este mensaje.'));
+        ->subject('Solicitud de reestablecimiento de contraseña')
+        ->greeting('Hola'.$notifiable->name)
+        ->line('Estas recibiendo este email por que quieres cambiar las contraseña o se te ha olvidado.')
+        ->action('Restablecer contraseña', url(config('app.url').route('password.reset', $this->token, false)))
+        ->line('Si no has solicitado reestablecer contraseña obvia este mensaje.')
+        ->salutation('Saludos');
     }
 
     /**
