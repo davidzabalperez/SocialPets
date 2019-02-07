@@ -37,13 +37,6 @@
 
 </section>
   </body>
-<footer class="footerCustom">
-      <div class="container">
-
-        Copyright &copy; Social Pets 2019
-      </div>
-</footer>
-    <!-- Footer -->
 
 <!-- Bootstrap core JavaScript -->
 <script src="/jquery/jquery.min.js"></script>
