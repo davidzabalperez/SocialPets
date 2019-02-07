@@ -161,6 +161,16 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
+        request()->validate([
+            'name'=>'string|max:15|min:4',
+            'email'=>'email',
+        ],[
+            'name.string' => 'introduce un texto',
+            'name.min' => 'minimo 4 caracteres',
+            'name.max' => 'maximo 15 caracteres',
+            'email.email' => 'introduce un email valido',
+
+        ]);
         $user=User::find($id);
         $user->name = $request->input('name');
         $user->email = $request->input('email');

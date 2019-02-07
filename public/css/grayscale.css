@@ -409,3 +409,11 @@ html,
     width: 320px;
     margin-top: 15%;
   }
+  .likedislikebuttons{
+    margin-bottom: 10%;
+  }
+  .borrarusuarioperro{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }

@@ -54,7 +54,7 @@
             <div class="modal-footer">
                 @if (Route::has('password.request'))
                     <a href="{{ route('password.request') }}">
-                        {{ __('Forgot Your Password?') }}
+                        {{ __('¿Has olvidado la contraseña?') }}
                     </a>
                 @endif
             </div>
