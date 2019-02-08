@@ -76,7 +76,7 @@
 
 <template>
     <div class="panel-block">
-        <div class="chat" v-if="chats.length != 0">
+        <div class="chat" v-if="chats.length != 0" v-chat-scroll>
             <div v-for="chat in chats" style="overflow:auto;">
                 <div class="chat-right" v-if="chat.user_id == userid">
                     {{ chat.chat }}
