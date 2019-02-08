@@ -213,7 +213,6 @@ class SocialPetsController extends Controller
   public function getTablaContacto()
   {
     $contactos = Contact::all();
-    dump($contactos);
     return view('panel_administrador.tabla_contacto')->with([
       'contactos' => $contactos
     ]);
