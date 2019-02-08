@@ -103,6 +103,7 @@ Route::get('/chart_admin/{year}', 'ChartController@verEstadistica')->name('chart
 Route::get('/canvas','SocialPetsController@getCanvas');
 Route::resource('dog', 'DogController');
 
+
 Route::get('/tabla_usuarios', 'SocialPetsController@getTablaAdmin');
 Route::post('/forcedelete/{id}',['as' => 'forcedelete', 'uses' => 'SocialPetsController@forceDelete' ]);
 Route::post('/forcedeleteself/{id}',['as' => 'forcedeleteself', 'uses' => 'SocialPetsController@forceDeleteSelf' ]);
@@ -116,7 +117,7 @@ Route::get('/chat/{id}', 'ChatController@show')->middleware('auth')->name('chat.
 Route::post('/chat/getChat/{id}', 'ChatController@getChat')->middleware('auth');
 Route::post('/chat/sendChat', 'ChatController@sendChat')->middleware('auth');
 
-/* Route::get('/profile_others/{id}', 'SocialPetsController@getProfileOther')->name('profile_others')->middleware('auth'); */
+//Route::get('/profile_others/{id}', 'SocialPetsController@getProfileOther')->middleware('auth'); 
 
 Route::get('/post', 'PostController@index')->middleware('auth');
 Route::post('/post', 'PostController@store')->middleware('auth');

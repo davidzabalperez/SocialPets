@@ -100,6 +100,16 @@ class FriendController extends Controller
     public function addFriend(Request $request, $id){
         $user = User::where('id', $id)->first();
 
+        $notification = new Notification;
+        $notification->title = "Tienes un match!";
+        $notification->message = "Tienes un match! ";
+        $notification->marker = 1;
+        $notification->notificable = 1;
+        $notification->user_id = $user->dog->id;
+        $notification->user_name = $user->dog->name;
+        $notification->save();
+        
+
         if(!$user){
             return redirect()
             ->route('dog.index')
@@ -117,14 +127,7 @@ class FriendController extends Controller
         }
 
         Auth::user()->addFriend($user);
-        $notification = new Notification;
-        $notification->title = "Tienes un match!";
-        $notification->message = "Tienes un match! ";
-        $notification->marker = 1;
-        $notification->notificable = 1;
-        $notification->user_id = $user->dog->id;
-        $notification->user_name = $user->dog->name;
-        $notification->save();
+     
 
         return redirect()->back()->with('info', 'Match! enviado.');
     }

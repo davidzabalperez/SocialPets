@@ -137,7 +137,7 @@ class UserController extends Controller
     public function show($id)
     {
         $perro = Dog::find($id);
-
+    
         return view('/dog/dog_profile', compact('perro'));
     }
 
@@ -195,7 +195,12 @@ class UserController extends Controller
     public function getProfile()
     {
     $user = Auth::user();
-    return view('profile', compact('user'));
+    $friends = Auth::user()->friends();
+    return view('profile')->with([
+        'user' => $user,
+        'friends' => $friends,
+        'requests' => $requests
+    ]);
     }
 
 
