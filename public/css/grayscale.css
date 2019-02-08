@@ -417,3 +417,6 @@ html,
     flex-direction: row;
     justify-content: space-around;
   }
+  .active{
+    text-decoration: none;
+  }

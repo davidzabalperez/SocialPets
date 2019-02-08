@@ -34,14 +34,14 @@
 
       <!-- Navbar -->
       <ul class="navbar-nav ml-auto ml-md-0">
-                <a class="nav-link js-scroll-trigger" href="{{ route('logout') }}"
-                          onclick="event.preventDefault();
-                                        document.getElementById('logout-form').submit();"><span class="fa  fa-sign-out-alt">
-                          {{ __('Cerrar sesión ') }}
-                      </a>
-                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                        @csrf
-                    </form>
+        <a class="nav-link js-scroll-trigger" href="{{ route('logout') }}"
+                  onclick="event.preventDefault();
+                                document.getElementById('logout-form').submit();"><span class="fa  fa-sign-out-alt">
+                  {{ __('Cerrar sesión ') }}
+        </a>
+        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+            @csrf
+        </form>
       </ul>
 
     </nav>
@@ -50,7 +50,7 @@
 
       <!-- Sidebar -->
       <ul class="sidebar navbar-nav">
-        <li class="nav-item active">
+        <li class="nav-item">
           <a class="nav-link" href="/panel_administrador">
             <i class="fas fa-fw fa-tachometer-alt"></i>
             <span>Dashboard</span>
@@ -65,6 +65,11 @@
           <a class="nav-link" href="/tabla_usuarios">
             <i class="fas fa-fw fa-table"></i>
             <span>Usuarios</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/tabla_contacto">
+            <i class="far fa-envelope"></i>
+            <span>Contacto</span></a>
         </li>
       </ul>
 

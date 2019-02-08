@@ -104,6 +104,7 @@ Route::get('/canvas','SocialPetsController@getCanvas');
 Route::resource('dog', 'DogController');
 
 Route::get('/tabla_usuarios', 'SocialPetsController@getTablaAdmin');
+Route::get('/tabla_contacto', 'SocialPetsController@getTablaContacto');
 Route::post('/forcedelete/{id}',['as' => 'forcedelete', 'uses' => 'SocialPetsController@forceDelete' ]);
 Route::post('/forcedeleteself/{id}',['as' => 'forcedeleteself', 'uses' => 'SocialPetsController@forceDeleteSelf' ]);
 

@@ -3,15 +3,16 @@
 namespace App\Http\Controllers;
 
 use Hash;
-use App\User;
 use App\Dog;
+use App\User;
+use App\Contact;
 use App\Mensaje;
 use App\SocialPets;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Storage;
-use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Redirect;
 use App\Http\Request\RegistrarUsuarioRequest;
 
@@ -207,6 +208,14 @@ class SocialPetsController extends Controller
     $usuariosBaneados = User::onlyTrashed()->get();
     return view('panel_administrador.tabla_usuarios')->with([
       'usuarios' => $usuarios, 'usuariosBaneados' => $usuariosBaneados
+    ]);
+  }
+  public function getTablaContacto()
+  {
+    $contactos = Contact::all();
+    dump($contactos);
+    return view('panel_administrador.tabla_contacto')->with([
+      'contactos' => $contactos
     ]);
   }
 
