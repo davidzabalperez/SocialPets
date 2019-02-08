@@ -64,7 +64,7 @@
             $('#notifications').append('<li><a href="{{route('dog.show', $dog->id)}}"><div class="icon-circle bg-red"><i class="material-icons">delete_forever</i></div><div class="menu-info"><h4>'+result[i].title+'</h4><p>'+result[i].user_id+'</p></div></a></li>');
             break;
             case 1:
-            $('#notifications').append('<li><a href="/dog/{{$dog->id}}"><div class="icon-circle bg-red">{{$dog->name}}<a href="{{ route('friend.acceptFriend', ['id'=>$friend->id]) }}" class="btn btn-primary">Aceptar Match!</a></div><div class="menu-info"><h4>'+result[i].title+'</h4></div></a></li>');
+            $('#notifications').append('<li><a href="/dog/{{$dog->id}}"><div class="icon-circle bg-red">{{$dog->name}}<a href="{{ route('friend.acceptFriend', ['id'=>$friend->id]) }}" class="btn btn-primary">Aceptar Match!</div><div class="menu-info"><h4>'+result[i].title+'</h4></div></a></li>');
             break;
             case 2:
             $('#notifications').append('<li><a href="javascript:void(0);"><div class="icon-circle bg-blue-grey"><i class="material-icons">comment</i></div><div class="menu-info"><h4>'+result[i].title+'</h4></div></a></li>');
