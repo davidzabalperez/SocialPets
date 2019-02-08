@@ -34,9 +34,9 @@
                   <td>{{$contacto->doubt}}</td>
                   @endforeach
                   @endif
-                <td><a class="btn btn-info text-white" rel="publisher" data-toggle="modal" data-target="" id="">Contestar</a>
+                {{-- <td><a class="btn btn-info text-white" rel="publisher" data-toggle="modal" data-target="" id="">Contestar</a>
                     <a class="btn btn-danger text-white" rel="publisher" data-toggle="modal" data-target="" id="">Eliminar</a>
-                </td>
+                </td> --}}
             </tbody>
           </table>
           </div>
