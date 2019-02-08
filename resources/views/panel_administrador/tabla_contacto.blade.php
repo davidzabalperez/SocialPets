@@ -32,8 +32,8 @@
                   <td>{{$contacto->name}}</td>
                   <td>{{$contacto->email}}</td>
                   <td>{{$contacto->doubt}}</td>
-                  @endif
                   @endforeach
+                  @endif
                 <td><a class="btn btn-info text-white" rel="publisher" data-toggle="modal" data-target="" id="">Contestar</a>
                     <a class="btn btn-danger text-white" rel="publisher" data-toggle="modal" data-target="" id="">Eliminar</a>
                 </td>
