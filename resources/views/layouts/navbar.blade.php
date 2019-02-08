@@ -82,12 +82,13 @@
                         <span class="label-count" id="count"></span>
                       </a>
                       <ul class="dropdown-menu">
-                        <li class="header">NOTIFICATIONS</li>
+                        <li class="header">Notificaciones</li>
                         <li class="body">
                           <ul class="menu" id="notifications">
 
                           </ul>
                       </ul>
+                      
                       </li>
                   </li>
 
