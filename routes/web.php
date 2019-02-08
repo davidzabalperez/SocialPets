@@ -103,6 +103,7 @@ Route::get('/chart_admin/{year}', 'ChartController@verEstadistica')->name('chart
 Route::get('/canvas','SocialPetsController@getCanvas');
 Route::resource('dog', 'DogController');
 
+
 Route::get('/tabla_usuarios', 'SocialPetsController@getTablaAdmin');
 Route::get('/tabla_contacto', 'SocialPetsController@getTablaContacto');
 Route::post('/forcedelete/{id}',['as' => 'forcedelete', 'uses' => 'SocialPetsController@forceDelete' ]);
@@ -117,7 +118,7 @@ Route::get('/chat/{id}', 'ChatController@show')->middleware('auth')->name('chat.
 Route::post('/chat/getChat/{id}', 'ChatController@getChat')->middleware('auth');
 Route::post('/chat/sendChat', 'ChatController@sendChat')->middleware('auth');
 
-/* Route::get('/profile_others/{id}', 'SocialPetsController@getProfileOther')->name('profile_others')->middleware('auth'); */
+//Route::get('/profile_others/{id}', 'SocialPetsController@getProfileOther')->middleware('auth'); 
 
 Route::get('/post', 'PostController@index')->middleware('auth');
 Route::post('/post', 'PostController@store')->middleware('auth');
@@ -138,3 +139,4 @@ Route::get('raza','ChartController@verRazaEdad');
 Route::get('/friend/add/{id}', ['as' => 'friend.addFriend', 'uses' => 'FriendController@addFriend']);
 Route::get('/friend/accept/{id}', ['as' => 'friend.acceptFriend', 'uses' => 'FriendController@acceptFriend']);
 Route::get('/match', 'ChatController@match')->middleware('auth')->name('chat.match');
+Route::get('/notifications', 'NotificationController@getNotifications')->name('notifications');

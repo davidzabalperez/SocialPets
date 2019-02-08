@@ -28,6 +28,8 @@ class ChatController extends Controller
         return view('chat.match')->with('friends', $friends)->with('requests', $requests);
     }
 
+
+
     /**
      * Show the form for creating a new resource.
      *

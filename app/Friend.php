@@ -9,4 +9,8 @@ class Friend extends Model
     protected $fillable = [
         'user_id', 'friend_id'
     ];
+
+    public function notifications(){
+        return $this->hasMany('App\Notification');
+    }
 }

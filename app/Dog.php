@@ -22,4 +22,7 @@ class Dog extends Model
     public function friends(){
         return $this->friendsOfMine->merge($this->friendsOf);
     }
+    public function notifications(){
+        return $this->hasMany('App\Notification');
+    }
 }

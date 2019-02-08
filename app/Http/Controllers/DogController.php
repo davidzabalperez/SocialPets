@@ -16,8 +16,12 @@ class DogController extends Controller
     public function index()
     {
         $dogs = Dog::all();
+        $friends = Auth::user()->friends();
+        $requests = Auth::user()->friendRequests();
         return view('/dog/dog_feed')->with([
-            'dogs'=>$dogs
+            'dogs'=>$dogs,
+            'friends'=>$friends,
+            'requests'=>$requests
         ]);
         /* dump($dogs);
         php artisan dump -serve */

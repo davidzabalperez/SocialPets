@@ -38,6 +38,10 @@ class User extends Authenticatable implements MustVerifyEmail
         return $this->hasOne('App\Dog','user_id');
     }
 
+    public function notifications(){
+        return $this->hasMany('App\Notification');
+    }
+
 
 
     public function friendsOfMine(){

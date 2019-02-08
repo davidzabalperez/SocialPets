@@ -6,7 +6,7 @@ use App\Friend;
 use App\User;
 use Auth;
 use Session;
-use App\Notifications\NotifyMatchOwner;
+use App\Notification;
 use Illuminate\Http\Request;
 
 class FriendController extends Controller
@@ -45,6 +45,7 @@ class FriendController extends Controller
         $friend = new Friend;
         $friend->user_id = Auth::user()->id;
         $friend->friend_id = $request->friend_id;
+
         $friend->save();
         Session::flash('success', 'Amigo añadido.');
         return redirect()->back();
@@ -99,6 +100,16 @@ class FriendController extends Controller
     public function addFriend(Request $request, $id){
         $user = User::where('id', $id)->first();
 
+        $notification = new Notification;
+        $notification->title = "Tienes un match!";
+        $notification->message = "Tienes un match! ";
+        $notification->marker = 1;
+        $notification->notificable = 1;
+        $notification->user_id = $user->dog->id;
+        $notification->user_name = $user->dog->name;
+        $notification->save();
+        
+
         if(!$user){
             return redirect()
             ->route('dog.index')
@@ -116,6 +127,8 @@ class FriendController extends Controller
         }
 
         Auth::user()->addFriend($user);
+     
+
         return redirect()->back()->with('info', 'Match! enviado.');
     }
 

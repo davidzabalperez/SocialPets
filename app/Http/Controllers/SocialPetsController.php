@@ -244,8 +244,8 @@ class SocialPetsController extends Controller
 
       public function getProfileOther($id)
   {
-    $usuario = User::find($id);
-    return view('profile_others', compact('usuario'));
+    $dog = Dog::find($id);
+    return view('profile_others', compact('dog'));
   }
       public function updateUserAdmin(Request $request, $id)
     {
