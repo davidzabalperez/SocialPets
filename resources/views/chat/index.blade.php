@@ -24,10 +24,11 @@
 @endif
 
 
-@foreach($friends as $friend)
-@if(Auth::user()->isFriendsWith($friend))
+
 <div class="panel-block text-white">
  <h4 class="text-white">Perros Favoritos!</h4>
+ @foreach($friends as $friend)
+@if(Auth::user()->isFriendsWith($friend))
 @endif
   <div class="box">
   <onlineuser v-bind:friend="{{ $friend }}" v-bind:onlineusers="onlineusers"></onlineuser>
