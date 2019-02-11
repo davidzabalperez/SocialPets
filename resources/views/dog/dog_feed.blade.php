@@ -23,7 +23,7 @@
 <div class="container" id="app">
   @foreach($dogs->sortByDesc('id') as $dog)
   <!-- sortByDesc es para que muestre los usuarios registrados mas recientemente primero -->
-   @if ( $dog->user_id != Auth::user()->id)
+   @if ( $dog->user_id != Auth::user()->id && !Auth::user()->isFriendsWith($dog->user))
   <div class="box {{ $dog->gender == 1 ? 'hembra' : 'macho'}}">
   <onlineuser v-bind:friend="{{ $dog->user }}" v-bind:onlineusers="onlineusers"></onlineuser>
 </h3>
@@ -53,7 +53,7 @@
 <script src="js/filtro.js"></script>
 <script>
 @foreach($requests as $friend)
-          $(window).click(function(){
+  $(document).ready(function() {
       $.ajax({url: "/notifications", success: function(result){
         var count = result.length;
         $('#notifications').html('');
@@ -64,7 +64,7 @@
             $('#notifications').append('<li><a href="{{route('dog.show', $dog->id)}}"><div class="icon-circle bg-red"><i class="material-icons">delete_forever</i></div><div class="menu-info"><h4>'+result[i].title+'</h4><p>'+result[i].user_id+'</p></div></a></li>');
             break;
             case 1:
-            $('#notifications').append('<li><a href="/dog/{{$dog->id}}"><div class="icon-circle bg-red">{{$dog->name}}<a href="{{ route('friend.acceptFriend', ['id'=>$friend->id]) }}" class="btn btn-primary">Aceptar Match!</div><div class="menu-info"><h4>'+result[i].title+'</h4></div></a></li>');
+            $('#notifications').append('<li>'+result[i].title+'<br> <center><a href="/dog/{{$dog->id}}">{{$dog->name}}</a></center></li><li><a class="btn btn-success btn-sm" href="{{ route('friend.acceptFriend', ['id'=>$friend->id]) }}">Aceptar</a><a class="btn btn-danger btn-sm" href="{{ route('friend.acceptFriend', ['id'=>$friend->id]) }}">Rechazar</a></li>');
             break;
             case 2:
             $('#notifications').append('<li><a href="javascript:void(0);"><div class="icon-circle bg-blue-grey"><i class="material-icons">comment</i></div><div class="menu-info"><h4>'+result[i].title+'</h4></div></a></li>');

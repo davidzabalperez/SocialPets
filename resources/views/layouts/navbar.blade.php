@@ -76,10 +76,12 @@
                     <a class="{{ Route::currentRouteNamed('chat.index') ? 'active fixed' : 'nav-link js-scroll-trigger' }}" href="{{ route('chat.index') }}"><span class="fa  fa-bone">
                             {{ __('Favoritos') }}
                     </a>
+
                     <li class="dropdown">
-                      <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button">
-                        <i class="fa fa-bell">Notificaciones</i>
-                        <span class="label-count" id="count"></span>
+                      <a href="javascript:void(0);" class="dropdown-toggle nav-link js-scroll-trigger" data-toggle="dropdown" role="button">
+                        
+                        <span id="count"></span>
+                        <i class="fa fa-globe">Notificaciones</i>
                       </a>
                       <ul class="dropdown-menu">
                         <li class="header">NOTIFICATIONS</li>

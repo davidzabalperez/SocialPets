@@ -164,6 +164,15 @@ a .iconEditProfile{
     border-color: #ff66cc;
 }
 
+#notifications .btn-success, #notifications .btn-danger{
+  font-size: 13px !important;
+  width: 45%;
+  margin: 5px;
+
+}
+#notifications{
+  width: 270px;
+}
 
 
 img{
