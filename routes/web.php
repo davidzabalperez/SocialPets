@@ -28,7 +28,6 @@ Route::get('/iniciar_sesion', 'SocialPetsController@getLogin')->name('login-view
 Route::group(['middleware' => ['web']], function() {
 
 // Login Routes...
-    //Route::get('login', ['as' => 'login', 'uses' => 'Auth\LoginController@showLoginForm']);
     Route::post('login', ['as' => 'login.post', 'uses' => 'UserController@login']);
     Route::post('logout', ['as' => 'logout', 'uses' => 'Auth\LoginController@logout']);
 
