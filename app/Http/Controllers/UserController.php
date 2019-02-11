@@ -195,7 +195,13 @@ class UserController extends Controller
     public function getProfile()
     {
     $user = Auth::user();
-    return view('profile', compact('user'));
+    $friends = Auth::user()->friends();
+    $requests = Auth::user()->friendRequests();
+    return view('profile')->with([
+        'user'=>$user,
+        'friends'=>$friends,
+        'requests'=>$requests
+    ]);
     }
 
 

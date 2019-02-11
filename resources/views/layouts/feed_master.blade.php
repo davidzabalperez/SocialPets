@@ -45,5 +45,4 @@
 <script src="/jquery-easing/jquery.easing.min.js"></script>
 <!-- Custom scripts for this template -->
 <script src="/js/grayscale.min.js"></script>
-
 </html>

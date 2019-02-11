@@ -177,6 +177,23 @@
 
 
 }
+#count {
+  background-color: #fa3e3e;
+  border-radius: 2px;
+  color: white;
+  padding: 1px 3px;
+  font-size: 10px;
+  position: absolute; /* Position the badge within the relatively positioned button */
+}
+#notifications .btn-success, #notifications .btn-danger{
+  font-size: 13px !important;
+  width: 45%;
+  margin: 5px;
+
+}
+#notifications{
+  width: 270px;
+}
 
 .btn-primary:active {
   background-color: #467370 !important;
