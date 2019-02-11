@@ -1,14 +1,18 @@
 body{
-    background-image: linear-gradient(120deg, #4a8dfa 0%, #8adaff 100%);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
-    margin-top: 2%;
+    background:
+    radial-gradient(black 15%, transparent 16%) 0 0,
+    radial-gradient(black 15%, transparent 16%) 8px 8px,
+    radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 0 1px,
+    radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 8px 9px;
+    background-color:#282828;
+    background-size:16px 16px;
+    margin-top: 1%;
 }
 
 .friend-name{
     font-size: 30px; 
     margin-left: 2%;
+    color: white;
 }
 
 .avatar{

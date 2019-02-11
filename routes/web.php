@@ -101,7 +101,7 @@ Route::get('/mensajes/ajax', 'Ajax\AjaxController@cargarMensajes');
 Route::get('/chart_admin/{year}', 'ChartController@verEstadistica')->name('chart_admin')->middleware('admin');
 
 Route::get('/canvas','SocialPetsController@getCanvas');
-Route::resource('dog', 'DogController');
+Route::resource('dog', 'DogController')->middleware('verified');
 
 
 Route::get('/tabla_usuarios', 'SocialPetsController@getTablaAdmin');
@@ -112,11 +112,11 @@ Route::post('/forcedeleteself/{id}',['as' => 'forcedeleteself', 'uses' => 'Socia
 Route::post('/desbanear/{id}',['as' => 'desbanearUsuario', 'uses' => 'SocialPetsController@desbanearUsuario' ]);
 
 // Prueba chat entre usuarios
-Route::get('/chat', 'ChatController@index')->middleware('auth')->name('chat.index');
+Route::get('/chat', 'ChatController@index')->middleware('auth')->name('chat.index')->middleware('verified');
 
-Route::get('/chat/{id}', 'ChatController@show')->middleware('auth')->name('chat.show');
-Route::post('/chat/getChat/{id}', 'ChatController@getChat')->middleware('auth');
-Route::post('/chat/sendChat', 'ChatController@sendChat')->middleware('auth');
+Route::get('/chat/{id}', 'ChatController@show')->middleware('auth')->name('chat.show')->middleware('verified');
+Route::post('/chat/getChat/{id}', 'ChatController@getChat')->middleware('auth')->middleware('verified');
+Route::post('/chat/sendChat', 'ChatController@sendChat')->middleware('auth')->middleware('verified');
 
 //Route::get('/profile_others/{id}', 'SocialPetsController@getProfileOther')->middleware('auth'); 
 
@@ -138,5 +138,5 @@ Route::get('raza','ChartController@verRazaEdad');
 
 Route::get('/friend/add/{id}', ['as' => 'friend.addFriend', 'uses' => 'FriendController@addFriend']);
 Route::get('/friend/accept/{id}', ['as' => 'friend.acceptFriend', 'uses' => 'FriendController@acceptFriend']);
-Route::get('/match', 'ChatController@match')->middleware('auth')->name('chat.match');
+Route::get('/match', 'ChatController@match')->middleware('auth')->name('chat.match')->middleware('verified');
 Route::get('/notifications', 'NotificationController@getNotifications')->name('notifications');
