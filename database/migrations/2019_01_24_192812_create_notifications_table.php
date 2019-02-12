@@ -20,7 +20,9 @@ class CreateNotificationsTable extends Migration
             $table->integer('marker')->nullable();
             $table->boolean('notificable');
             $table->integer('user_id')->nullable();
+            $table->integer('friend_id')->nullable();
             $table->string('user_name')->nullable();
+            $table->string('friend_name')->nullable();
             $table->softDeletes();
             $table->timestamps();
         });

@@ -64,7 +64,7 @@
             $('#notifications').append('<li><a href="{{route('dog.show', $dog->id)}}"><div class="icon-circle bg-red"><i class="material-icons">delete_forever</i></div><div class="menu-info"><h4>'+result[i].title+'</h4><p>'+result[i].user_id+'</p></div></a></li>');
             break;
             case 1:
-            $('#notifications').append('<li>'+result[i].title+'<br> <center><a href="/dog/{{$dog->id}}">{{$dog->name}}</a></center></li><li><a class="btn btn-success btn-sm" href="{{ route('friend.acceptFriend', ['id'=>$friend->id]) }}">Aceptar</a><a class="btn btn-danger btn-sm" href="{{ route('friend.acceptFriend', ['id'=>$friend->id]) }}">Rechazar</a></li>');
+            $('#notifications').append('<li>'+result[i].title+'<br> <center><a href="/dog/'+result[i].friend_id+'">'+result[i].friend_name+'</a></center></li><li><a class="btn btn-success btn-sm" href="{{ route('friend.acceptFriend', ['id'=>$friend->id]) }}">Aceptar</a><a class="btn btn-danger btn-sm" href="{{ route('friend.acceptFriend', ['id'=>$friend->id]) }}">Rechazar</a></li>');
             break;
             case 2:
             $('#notifications').append('<li><a href="javascript:void(0);"><div class="icon-circle bg-blue-grey"><i class="material-icons">comment</i></div><div class="menu-info"><h4>'+result[i].title+'</h4></div></a></li>');
