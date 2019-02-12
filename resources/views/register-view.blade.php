@@ -1,5 +1,4 @@
 @extends('layouts.register_master')
-@section('title' 'Registro')
 @section('content')
 <div class="container">
     <div class="login-container">

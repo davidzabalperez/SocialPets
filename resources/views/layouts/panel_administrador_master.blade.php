@@ -80,7 +80,9 @@
           <!-- Breadcrumbs-->
           <ol class="breadcrumb">
             <li class="breadcrumb-item">
+              @if (isset(Auth::user()->name))
               <h2>Bienvenido {{ Auth::user()->name }}, estas en el panel de administrador.</h2>
+              @endif
             </li>
             
           </ol>

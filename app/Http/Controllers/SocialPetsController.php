@@ -31,6 +31,11 @@ class SocialPetsController extends Controller
 
   public function enviarContacto(Request $request)
   {
+    $request->validate([
+      'email'=>'required|email',
+      'name'=>'required|string',
+      'doubt' => 'required',
+    ]);
     $contact = new SocialPets;
     $contact->email = Input::get('email');
     $contact->name = Input::get('name');
@@ -59,6 +64,7 @@ class SocialPetsController extends Controller
   }
   public function getRegister()
   {
+    
     return view('register-view');
   }
   public function getLogin()
@@ -96,10 +102,10 @@ class SocialPetsController extends Controller
 
 
 
-  public function resetPassword()
+ /*  public function resetPassword()
   {
     return view('resetPasswordbtn btn-light');
-  }
+  } */
 
   public function changeProfile(Request $request)
   {

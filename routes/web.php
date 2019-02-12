@@ -12,18 +12,16 @@ use App\Ajax\AjaxController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/estadisticas', 'SocialPetsController@getEstadisticas');
+Route::get('/estadisticas', 'SocialPetsController@getEstadisticas')->middleware('admin');
 Route::get('/', 'SocialPetsController@getIndex');
 Route::post('/contact', 'SocialPetsController@enviarContacto');
 //Route::get('/AdminPanel', 'SocialPetsController@getAdminPanel');
-Route::get('/panel_administrador', 'SocialPetsController@getAdminPanel')->name('AdminPanel')->middleware('admin');
+Route::get('/panel_administrador', 'SocialPetsController@getAdminPanel')->name('AdminPanel')->middleware('admin')->middleware('auth');
+/* Route::get('/noticia', 'SocialPetsController@getNoticia'); */
 Route::get('/user', 'SocialPetsController@getUserIndex');
-Route::get('/noticia', 'SocialPetsController@getNoticia');
 
-
-Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/registro', 'SocialPetsController@getRegister')->name('register-view');
-Route::get('/iniciar_sesion', 'SocialPetsController@getLogin')->name('login-view');
+Route::get('/registro', 'SocialPetsController@getRegister')->name('register-view')->middleware('guest');
+Route::get('/iniciar_sesion', 'SocialPetsController@getLogin')->name('login-view')->middleware('guest');
 
 Route::group(['middleware' => ['web']], function() {
 
@@ -44,16 +42,16 @@ Route::group(['middleware' => ['web']], function() {
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/step2', 'SocialPetsController@getStep2');
+Route::get('/step2', 'SocialPetsController@getStep2')->middleware('guest');
 Route::post('/register2', 'SocialPetsController@register2');
 
 // rutas para editar usuario
-Route::get('/usuario/{id}/edit', 'SocialPetsController@editUser');
-Route::put('/usuario/{id}', 'SocialPetsController@updateUser');
+Route::get('/usuario/{id}/edit', 'SocialPetsController@editUser')->middleware('auth')->middleware('admin');
+Route::put('/usuario/{id}', 'SocialPetsController@updateUser')->middleware('auth')->middleware('admin');
 
 //rutas para dar de alta al usuario
-Route::get('/darAlta', 'SocialPetsController@getDarDeAlta')->name('darAlta');
-Route::post('darAlta', ['as' => 'darAlta.post', 'uses' => 'SocialPetsController@create']);
+Route::get('/darAlta', 'SocialPetsController@getDarDeAlta')->name('darAlta')->middleware('auth')->middleware('admin');
+Route::post('darAlta', ['as' => 'darAlta.post', 'uses' => 'SocialPetsController@create'])->middleware('auth')->middleware('admin');
 
 Route::get('/profile', 'UserController@getProfile')->name('profile')->middleware('verified');
 
@@ -62,7 +60,7 @@ Route::get('/mensajes', 'SocialPetsController@getMensajess')->name('mensajes')->
 
 Route::post('/edituser', 'SocialPetsController@updateUserAdmin' )->name('editarUserAdmin');
 
-Route::get('/resetPassword', 'SocialPetsController@resetPassword');
+/* Route::get('/resetPassword', 'SocialPetsController@resetPassword'); */
 
 Route::post('/changeProfile', [
     'as'=>'changeProfile',
@@ -82,33 +80,33 @@ Route::get('auth/login',function () {
 Auth::routes();
 Auth::routes(['verify' => true]);
 
-Route::resource('user', 'UserController');
+Route::resource('user', 'UserController')->middleware('auth');
 
 
-Route::resource('socialpets', 'SocialPetsController');
-Route::resource('friend', 'FriendController');
+/* Route::resource('socialpets', 'SocialPetsController'); */
+Route::resource('friend', 'FriendController')->middleware('auth');
 
 
-Route::get('estadisticas/{year}', 'ChartController@verEstadistica');
+Route::get('estadisticas/{year}', 'ChartController@verEstadistica')->middleware('admin')->middleware('auth');
 Route::get('estadisticas/2019', 'ChartController@verEstadistica')->name('estadisticas')->middleware('admin');
 
 
 // Route::resource('socialpets', 'SocialPetsController');
 
-Route::get('/mensajes/ajax', 'Ajax\AjaxController@cargarMensajes');
+/* Route::get('/mensajes/ajax', 'Ajax\AjaxController@cargarMensajes'); */
 
-Route::get('/chart_admin/{year}', 'ChartController@verEstadistica')->name('chart_admin')->middleware('admin');
+Route::get('/chart_admin/{year}', 'ChartController@verEstadistica')->name('chart_admin')->middleware('admin')->middleware('auth');
 
-Route::get('/canvas','SocialPetsController@getCanvas');
+/* Route::get('/canvas','SocialPetsController@getCanvas'); */
 Route::resource('dog', 'DogController')->middleware('verified');
 
 
-Route::get('/tabla_usuarios', 'SocialPetsController@getTablaAdmin');
-Route::get('/tabla_contacto', 'SocialPetsController@getTablaContacto');
-Route::post('/forcedelete/{id}',['as' => 'forcedelete', 'uses' => 'SocialPetsController@forceDelete' ]);
-Route::post('/forcedeleteself/{id}',['as' => 'forcedeleteself', 'uses' => 'SocialPetsController@forceDeleteSelf' ]);
+Route::get('/tabla_usuarios', 'SocialPetsController@getTablaAdmin')->middleware('admin')->middleware('auth');
+Route::get('/tabla_contacto', 'SocialPetsController@getTablaContacto')->middleware('admin')->middleware('auth');
+Route::post('/forcedelete/{id}',['as' => 'forcedelete', 'uses' => 'SocialPetsController@forceDelete' ])->middleware('admin')->middleware('auth');
+Route::post('/forcedeleteself/{id}',['as' => 'forcedeleteself', 'uses' => 'SocialPetsController@forceDeleteSelf' ])->middleware('admin')->middleware('auth');
 
-Route::post('/desbanear/{id}',['as' => 'desbanearUsuario', 'uses' => 'SocialPetsController@desbanearUsuario' ]);
+Route::post('/desbanear/{id}',['as' => 'desbanearUsuario', 'uses' => 'SocialPetsController@desbanearUsuario' ])->middleware('admin')->middleware('auth');
 
 // Prueba chat entre usuarios
 Route::get('/chat', 'ChatController@index')->middleware('auth')->name('chat.index')->middleware('verified');
@@ -122,20 +120,20 @@ Route::post('/chat/sendChat', 'ChatController@sendChat')->middleware('auth')->mi
 Route::get('/post', 'PostController@index')->middleware('auth');
 Route::post('/post', 'PostController@store')->middleware('auth');
 
-Route::resource('imgur', 'ImgurController');
+Route::resource('imgur', 'ImgurController')->middleware('auth');
 // editar usuario panel admin
-Route::post('/editUser/{id}',['as' => 'edituser', 'uses' => 'SocialPetsController@updateUser' ]);
+Route::post('/editUser/{id}',['as' => 'edituser', 'uses' => 'SocialPetsController@updateUser' ])->middleware('auth');
 
 //prueba
 
-Route::get('/dogsMale', 'SocialPetsController@filterMale')->name('dogsMale');
-Route::get('/dogsFemale', 'SocialPetsController@filterFemale')->name('dogsFemale');
+Route::get('/dogsMale', 'SocialPetsController@filterMale')->name('dogsMale')->middleware('auth');
+Route::get('/dogsFemale', 'SocialPetsController@filterFemale')->name('dogsFemale')->middleware('auth');
 
 Route::get('404', ['as' => '404', 'uses' => 'ErrorController@notfound']);
 Route::get('500', ['as' => '500', 'uses' => 'ErrorController@fatal']);
-Route::get('raza','ChartController@verRazaEdad');
+/* Route::get('raza','ChartController@verRazaEdad'); */
 
-Route::get('/friend/add/{id}', ['as' => 'friend.addFriend', 'uses' => 'FriendController@addFriend']);
-Route::get('/friend/accept/{id}', ['as' => 'friend.acceptFriend', 'uses' => 'FriendController@acceptFriend']);
+Route::get('/friend/add/{id}', ['as' => 'friend.addFriend', 'uses' => 'FriendController@addFriend'])->middleware('auth');
+Route::get('/friend/accept/{id}', ['as' => 'friend.acceptFriend', 'uses' => 'FriendController@acceptFriend'])->middleware('auth');
 Route::get('/match', 'ChatController@match')->middleware('auth')->name('chat.match')->middleware('verified');
-Route::get('/notifications', 'NotificationController@getNotifications')->name('notifications');
+Route::get('/notifications', 'NotificationController@getNotifications')->name('notifications')->middleware('auth');
