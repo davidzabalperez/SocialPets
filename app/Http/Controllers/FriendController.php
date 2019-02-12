@@ -105,8 +105,10 @@ class FriendController extends Controller
         $notification->message = "Tienes un match! ";
         $notification->marker = 1;
         $notification->notificable = 1;
-        $notification->user_id = $user->dog->id;
+        $notification->user_id = $user->dog->id; 
+        $notification->friend_id = Auth::user()->dog->id;
         $notification->user_name = $user->dog->name;
+        $notification->friend_name = Auth::user()->dog->name;
         $notification->save();
         
 
