@@ -35,19 +35,39 @@
                     @csrf
                     <input type="hidden" name="id" id="id" value="{{ Auth::user()->id }}">
                     Nombre del perro:
-                    <input type="text" name="name" id="name" placeholder="nombre del perro">
+                    <input type="text" name="name" id="name" placeholder="nombre del perro" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}">
+                    @if ($errors->has('name'))
+                                    <span class="invalid-feedback" role="alert" style="color:red;">
+                                        <strong>{{ $errors->first('name') }}</strong>
+                                    </span>
+                                @endif
                     Edad del perro:
-                    <input type="number" name="age" id="age" min="0" class="form-control"  placeholder="Años">
+                    <input type="number" name="age" id="age" min="0" class="form-control{{ $errors->has('age') ? ' is-invalid' : '' }}"  placeholder="Años">
+                    @if ($errors->has('age'))
+                                    <span class="invalid-feedback" role="alert" style="color:red;">
+                                        <strong>{{ $errors->first('age') }}</strong>
+                                    </span>
+                                @endif
                     <br>
                     Genero del perro:
                     <br>
                     Hembra
-                    <input type="radio" name="gender" value="1" class="form-control">
+                    <input type="radio" name="gender" value="1" class="form-control{{ $errors->has('gender') ? ' is-invalid' : '' }}">
                     Macho 
-                    <input type="radio" name="gender" value="0" class="form-control">
+                    <input type="radio" name="gender" value="0" cclass="form-control{{ $errors->has('gender') ? ' is-invalid' : '' }}">
+                    @if ($errors->has('gender'))
+                                    <span class="invalid-feedback" role="alert" style="color:red;">
+                                        <strong>{{ $errors->first('gender') }}</strong>
+                                    </span>
+                                @endif
                     <br>
                     raza:
-                    <input type="text" name="race" id="race">
+                    <input type="text" name="race" id="race" class="form-control{{ $errors->has('race') ? ' is-invalid' : '' }}">
+                    @if ($errors->has('race'))
+                                    <span class="invalid-feedback" role="alert" style="color:red;">
+                                        <strong>{{ $errors->first('race') }}</strong>
+                                    </span>
+                                @endif
                     <h3>Localización:</h3>
                     <h4>Haz click en el mapa para guardar tu localización</h4>
                     <div id="mapid">

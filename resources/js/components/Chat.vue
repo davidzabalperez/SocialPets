@@ -94,6 +94,7 @@
         </div>
             <chat-composer v-bind:userid="userid" v-bind:chats="chats" v-bind:friendid="friendid"></chat-composer>
     </div>
+    
 </template>
 <script>
     export default {
