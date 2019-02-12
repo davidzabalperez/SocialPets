@@ -37,9 +37,9 @@
                     Nombre del perro:
                     <input type="text" name="name" id="name" placeholder="nombre del perro" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}">
                     @if ($errors->has('name'))
-                                    <span class="invalid-feedback" role="alert" style="color:red;">
+                                    <p><span class="invalid-feedback" role="alert" style="color:red;">
                                         <strong>{{ $errors->first('name') }}</strong>
-                                    </span>
+                                    </span></p>
                                 @endif
                     Edad del perro:
                     <input type="number" name="age" id="age" min="0" class="form-control{{ $errors->has('age') ? ' is-invalid' : '' }}"  placeholder="Años">
