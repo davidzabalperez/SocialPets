@@ -1,9 +1,14 @@
-@extends('layouts.feed_master')
-@section('tittle','error 404')
+@extends('layouts.login_master')
+@section('tittle','error 500')
     
 @section('content')
-    <p></p>
-    <h1 class="text-white">Error 500. Algo salio mal.</h1>
-    <p></p>
-    <img src="/img/error404.jpg" height="400px" alt="">
+<div class="container">
+    <div class="row">
+        <div class="col-xs-1-12">
+                <h1 class="h1white">Error 500. Algo salio mal</h1>
+                <br>
+            <img src="/img/error404.jpg" height="400px" alt="">                
+        </div>
+    </div>
+</div>
 @endsection

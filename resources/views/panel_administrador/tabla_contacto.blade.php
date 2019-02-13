@@ -22,7 +22,6 @@
                 <th>Nombre</th>
                 <th>Email</th>
                 <th>Texto</th>
-                <th>Acción</th>
               </tr>
             </thead>
             <tbody >

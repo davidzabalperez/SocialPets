@@ -437,3 +437,6 @@ html,
   .active{
     text-decoration: none;
   }
+  .h1white{
+    color: white;
+  }
