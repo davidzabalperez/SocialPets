@@ -82,11 +82,21 @@ class SocialPetsController extends Controller
   public function register2(Request $request)
   {
     $request->validate([
-      'name'=>'required',
-      'age'=>'required',
+      'name' => 'required|min:2|max:12',
+      'age' => 'required',
       'gender' => 'required',
-      'race' => 'required',
+      'race' => 'required|min:2|max:12',
+    ], [
+      'name.required' => 'Nombre es un campo requerido',
+      'name.min' => 'Nombre tiene que tener dos o mas caracteres',
+      'name.max' => 'Nombre no puede tener mas de 12 caracteres',
+      'race.required' => 'Raza es un campo requerido',
+      'gender.required' => 'El género del perro es requerido',
+      'age.required' => 'La edad del perro es un campo requerido',
+      'race.min' => 'Raza tiene que tener dos o mas caracteres',
+      'race.max' => 'Raza no puede tener mas de 12 caracteres',
     ]);
+
     $dog = new Dog();
     $dog->user_id = $request->input('id');
     $dog->name = $request->input('name');

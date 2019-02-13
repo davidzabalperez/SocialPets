@@ -17,9 +17,11 @@
     "laravel-mix": "^2.0",
     "lodash": "^4.17.5",
     "popper.js": "^1.12",
+    "postcss-loader": "^3.0.0",
     "vue": "^2.5.17"
   },
   "dependencies": {
+    "emoji-mart-vue": "^2.6.6",
     "laravel-echo": "^1.5.2",
     "leaflet-geosearch": "^2.7.0",
     "pusher-js": "^4.3.1",

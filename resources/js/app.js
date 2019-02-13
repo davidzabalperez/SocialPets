@@ -12,6 +12,8 @@ window.Vue = require('vue');
 import Vue from 'vue'
 import VueChatScroll from 'vue-chat-scroll'
 Vue.use(VueChatScroll)
+import {Picker, Emoji} from 'emoji-mart-vue'
+
 
 /**
  * The following block of code may be used to automatically register your
@@ -24,6 +26,8 @@ Vue.use(VueChatScroll)
 Vue.component('chat', require('./components/Chat.vue'));
 Vue.component('chat-composer', require('./components/ChatComposer.vue'));
 Vue.component('onlineuser', require('./components/OnlineUser.vue'));
+Vue.component('picker', Picker);
+Vue.component('emoji', Emoji);
 // const files = require.context('./', true, /\.vue$/i)
 
 // files.keys().map(key => {

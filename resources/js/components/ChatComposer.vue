@@ -28,8 +28,8 @@
         <div class="control auto-width">
             <input type="button" class="btn btn-success" value="Enviar" v-on:click="sendChat">
         </div>
-
     </div>
+    
     
 </template>
 <script>
