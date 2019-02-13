@@ -29,7 +29,7 @@
  <h4 class="text-white">Perros Favoritos!</h4>
  @foreach($friends as $friend)
 @if(Auth::user()->isFriendsWith($friend))
-@endif
+
   <div class="box">
   <onlineuser v-bind:friend="{{ $friend }}" v-bind:onlineusers="onlineusers"></onlineuser>
   <h3><a href="{{route('dog.show', $friend->dog->id)}}">{{$friend->dog->name}}</a>
@@ -50,6 +50,7 @@
     <a href="{{ route('chat.show', $friend->id) }}" class="panel-block text-white fa fa-comments"  style="justify-content: space-between"></a>
 
   </div>
+  @endif
  @endforeach
 </div>
 </div>

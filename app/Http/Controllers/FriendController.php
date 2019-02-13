@@ -97,6 +97,12 @@ class FriendController extends Controller
         return back()->with('success', 'Ya no son amigos.');
     }
 
+    public function rejectMatch($id){
+        Notification::where('friend_id', $id)->delete();
+        Friend::where('friend_id', $id)->delete();
+        return back()->with('success', 'Rechazado!!.');
+    }
+
     public function addFriend(Request $request, $id){
         $user = User::where('id', $id)->first();
 

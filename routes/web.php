@@ -135,5 +135,6 @@ Route::get('500', ['as' => '500', 'uses' => 'ErrorController@fatal']);
 
 Route::get('/friend/add/{id}', ['as' => 'friend.addFriend', 'uses' => 'FriendController@addFriend'])->middleware('auth');
 Route::get('/friend/accept/{id}', ['as' => 'friend.acceptFriend', 'uses' => 'FriendController@acceptFriend'])->middleware('auth');
+Route::get('/friend/rejectMatch/{id}', ['as' => 'friend.rejectMatch', 'uses' => 'FriendController@rejectMatch'])->middleware('auth');
 Route::get('/match', 'ChatController@match')->middleware('auth')->name('chat.match')->middleware('verified');
 Route::get('/notifications', 'NotificationController@getNotifications')->name('notifications')->middleware('auth');
