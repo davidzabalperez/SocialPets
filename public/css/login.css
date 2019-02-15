@@ -142,20 +142,38 @@
         background-position: -4px -41px;
       }
       
-      .i-hembra-desactivado{
+    .i-hembra-desactivado{
         width: 23px;
         height: 34px;
         background-position: -45px -39px;
       }
       
-      .i-macho-activado{
+    .i-macho-activado{
         width: 30px;
         height: 30px;
         background-position: -4px -4px;
       }
       
-      .i-hembra-activado{
+    .i-hembra-activado{
         width: 23px;
         height: 34px;
         background-position: -45px -2px;
       }
+    
+    /* HIDE RADIO */
+    [type=radio] { 
+        position: absolute;
+        opacity: 0;
+        width: 0;
+        height: 0;
+    }
+  
+    /* IMAGE STYLES */
+    [type=radio] + img {
+        cursor: pointer;
+    }
+  
+    /* CHECKED STYLES */
+    [type=radio]:checked + img {
+        outline: 2px solid #f00;
+    }
