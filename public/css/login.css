@@ -130,3 +130,32 @@
         margin-top: 15px;
         margin-bottom: 15px;
     }
+
+    .sprites{
+        background: url('/img/generos.png') no-repeat;
+        display: block;
+    }
+    
+    .i-macho-desactivado{
+        width: 30px;
+        height: 30px;
+        background-position: -4px -41px;
+      }
+      
+      .i-hembra-desactivado{
+        width: 23px;
+        height: 34px;
+        background-position: -45px -39px;
+      }
+      
+      .i-macho-activado{
+        width: 30px;
+        height: 30px;
+        background-position: -4px -4px;
+      }
+      
+      .i-hembra-activado{
+        width: 23px;
+        height: 34px;
+        background-position: -45px -2px;
+      }

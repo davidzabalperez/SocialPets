@@ -55,9 +55,9 @@
                         <div class="gender">
                         Genero del perro:
                         <br>
-                        ♂
-                        <input type="radio" name="gender" value="1" class="form-control{{ $errors->has('gender') ? ' is-invalid' : '' }}">
-                        ♀
+                        <i class="sprites i-macho-activado" id="imagen_macho"></i>
+                        <input type="radio" name="gender" value="1" checked class="form-control{{ $errors->has('gender') ? ' is-invalid' : '' }}">
+                        <i class="sprites i-hembra-desactivado" id="imagen_macho"></i>
                         <input type="radio" name="gender" value="0" class="form-control{{ $errors->has('gender') ? ' is-invalid' : '' }}">
                         @if ($errors->has('gender'))
                                         <span class="invalid-feedback" role="alert" style="color:red;">
