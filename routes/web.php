@@ -98,7 +98,7 @@ Route::get('estadisticas/2019', 'ChartController@verEstadistica')->name('estadis
 Route::get('/chart_admin/{year}', 'ChartController@verEstadistica')->name('chart_admin')->middleware('admin')->middleware('auth');
 
 /* Route::get('/canvas','SocialPetsController@getCanvas'); */
-Route::resource('dog', 'DogController')->middleware('verified');
+Route::resource('dog', 'DogController')->middleware('verified')->middleware('auth');
 
 
 Route::get('/tabla_usuarios', 'SocialPetsController@getTablaAdmin')->middleware('admin')->middleware('auth');

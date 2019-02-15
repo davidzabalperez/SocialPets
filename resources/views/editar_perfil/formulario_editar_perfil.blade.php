@@ -121,7 +121,7 @@
                                     Confirmacion borrar perro
                                     <button type="button" class="btn btn-default btn-sm" data-dismiss="modal">Cancelar</button>
                                     
-                                    <form method="post" action="{{ route('dog.destroy',$user->dog->id)}}" >
+                                    <form method="post" action="{{ route('dog.destroy',$user->dog->id) }}" >
                                         @csrf
                                         @method('DELETE')
                                         <button type="submit" class="btn btn-danger">Borrar perro</button>

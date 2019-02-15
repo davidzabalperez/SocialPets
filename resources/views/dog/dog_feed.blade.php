@@ -41,8 +41,11 @@
     <p>Raza: {{$dog->race}}</p>
     <p>Edad: {{$dog->age}} {{ $dog->age > 1 ? 'años' : 'año'}}</p>
     <div class="container likedislikebuttons">
+      @if(!Auth::user()->hasFriendRequestPending($dog->user))
       <a class="btn btn-primary" href="{{ route('friend.addFriend', ['id'=>$dog->id]) }}" id="like"> <i class="fa fa-thumbs-up"></i></a>
-      <a class="btn btn-danger" href="#" id="dislike"> <i class="fa fa-thumbs-down"></i></a>
+      @else
+      <a class="btn btn-danger" href="/friend/rejectMatch/{{$dog->id}}" id="dislike"> <i class="fa fa-thumbs-down"></i></a>
+      @endif
   </div>
   </div>
 
