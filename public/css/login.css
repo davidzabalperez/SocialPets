@@ -122,3 +122,11 @@
         color: #99979c;
         padding-top: 10px;
     }
+
+    input[type="radio"]{
+        display: inline-block;
+        width: 50px;
+        height: 10px;
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }

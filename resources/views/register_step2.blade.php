@@ -29,53 +29,61 @@
     <div class="login-container">
             <div id="output"></div>
             <div class="avatar"></div>
-            <div class="form-box">
+                <div class="form-box">
 
-                <form action="/register2" method="post" onkeypress="return event.keyCode != 13;"> <!-- Al presionar enter no hace submit, porque tendría conflictos con el buscador -->
-                    @csrf
-                    <input type="hidden" name="id" id="id" value="{{ Auth::user()->id }}">
-                    Nombre del perro:
-                    <input type="text" name="name" id="name" placeholder="nombre del perro" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}">
-                    @if ($errors->has('name'))
-                                    <p><span class="invalid-feedback" role="alert" style="color:red;">
-                                        <strong>{{ $errors->first('name') }}</strong>
-                                    </span></p>
-                                @endif
-                    Edad del perro:
-                    <input type="number" name="age" id="age" min="0" class="form-control{{ $errors->has('age') ? ' is-invalid' : '' }}"  placeholder="Años">
-                    @if ($errors->has('age'))
-                                    <span class="invalid-feedback" role="alert" style="color:red;">
-                                        <strong>{{ $errors->first('age') }}</strong>
-                                    </span>
-                                @endif
-                    <br>
-                    Genero del perro:
-                    <br>
-                    Hembra
-                    <input type="radio" name="gender" value="1" class="form-control{{ $errors->has('gender') ? ' is-invalid' : '' }}">
-                    Macho 
-                    <input type="radio" name="gender" value="0" cclass="form-control{{ $errors->has('gender') ? ' is-invalid' : '' }}">
-                    @if ($errors->has('gender'))
-                                    <span class="invalid-feedback" role="alert" style="color:red;">
-                                        <strong>{{ $errors->first('gender') }}</strong>
-                                    </span>
-                                @endif
-                    <br>
-                    raza:
-                    <input type="text" name="race" id="race" class="form-control{{ $errors->has('race') ? ' is-invalid' : '' }}">
-                    @if ($errors->has('race'))
-                                    <span class="invalid-feedback" role="alert" style="color:red;">
-                                        <strong>{{ $errors->first('race') }}</strong>
-                                    </span>
-                                @endif
-                    <h3>Localización:</h3>
-                    <h4>Haz click en el mapa para guardar tu localización</h4>
-                    <div id="mapid">
-                    </div>
-                    <input type="hidden" name="lat" id="lat" value="" readonly>
-                    <input type="hidden" name="lng" id="lng" value="" readonly>
-                    <button class="btn btn-info btn-block login" type="submit">Terminar registro</button>
-                </form>
+                    <form action="/register2" method="post" onkeypress="return event.keyCode != 13;"> <!-- Al presionar enter no hace submit, porque tendría conflictos con el buscador -->
+                        @csrf
+                        <div>
+                        <input type="hidden" name="id" id="id" value="{{ Auth::user()->id }}">
+                        Nombre del perro:
+                        <input type="text" name="name" id="name" placeholder="nombre del perro" value="{{ old('name' )}}" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}">
+                        @if ($errors->has('name'))
+                                        <p><span class="invalid-feedback" role="alert" style="color:red;">
+                                            <strong>{{ $errors->first('name') }}</strong>
+                                        </span></p>
+                                    @endif
+                        </div>
+                        <div>
+                        Edad del perro:
+                        <input type="number" name="age" id="age" min="0" value="{{ old('age' )}}" class="form-control{{ $errors->has('age') ? ' is-invalid' : '' }}"  placeholder="Años">
+                        @if ($errors->has('age'))
+                                        <span class="invalid-feedback" role="alert" style="color:red;">
+                                            <strong>{{ $errors->first('age') }}</strong>
+                                        </span>
+                                    @endif
+                        </div>
+                        <div class="gender">
+                        Genero del perro:
+                        <br>
+                        ♂
+                        <input type="radio" name="gender" value="1" class="form-control{{ $errors->has('gender') ? ' is-invalid' : '' }}">
+                        ♀
+                        <input type="radio" name="gender" value="0" class="form-control{{ $errors->has('gender') ? ' is-invalid' : '' }}">
+                        @if ($errors->has('gender'))
+                                        <span class="invalid-feedback" role="alert" style="color:red;">
+                                            <strong>{{ $errors->first('gender') }}</strong>
+                                        </span>
+                                    @endif
+                        </div>
+                        <div>
+                        Raza:
+                        <input type="text" name="race" id="race" value="{{ old('race' )}}" class="form-control{{ $errors->has('race') ? ' is-invalid' : '' }}">
+                        @if ($errors->has('race'))
+                                        <span class="invalid-feedback" role="alert" style="color:red;">
+                                            <strong>{{ $errors->first('race') }}</strong>
+                                        </span>
+                                    @endif
+                        </div>
+                        <div>
+                            <h3>Localización:</h3>
+                            <h4>Haz click en el mapa para guardar tu localización</h4>
+                            <div id="mapid">
+                            </div>
+                        </div>
+                        <input type="hidden" name="lat" id="lat" value="" readonly>
+                        <input type="hidden" name="lng" id="lng" value="" readonly>
+                        <button class="btn btn-info btn-block login" type="submit">Terminar registro</button>
+                    </form>
             </div>
         </div>      
 </div>
