@@ -94,8 +94,8 @@
         </form>
         <br>
             <div class="borrarusuarioperro">
-                    <button class="btn btn-danger btn-sm" rel="publisher" data-toggle="modal" data-target="#deleteModalUser" id="hideModal">Eliminar usuario</button>
-                    <button class="btn btn-danger btn-sm" rel="publisher" data-toggle="modal" data-target="#deleteModalDog" id="hideModal">Eliminar perro</button>       
+                    <button class="btn btn-danger btn-sm" rel="publisher" data-toggle="modal" data-target="#deleteModalUser" data-dismiss="" id="hideModal">Eliminar usuario</button>
+                    <button class="btn btn-danger btn-sm" rel="publisher" data-toggle="modal" data-target="#deleteModalDog" data-dismiss="" id="hideModal">Eliminar perro</button>       
             </div>
             
                           <div class="modal fade" id="deleteModalUser" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
