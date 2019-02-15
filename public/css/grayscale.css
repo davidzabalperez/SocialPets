@@ -193,6 +193,19 @@
 }
 #notifications{
   width: 270px;
+  margin: auto;
+}
+.navbar-nav, mr-auto{
+  margin-left: 5px;
+  
+}
+.dropdown-toggle{
+  margin-left:-15px;
+}
+
+ul .dropdown-menu{
+  margin-top: -25px;
+  margin-left: 25px;
 }
 
 .btn-primary:active {
@@ -436,4 +449,7 @@ html,
   }
   .active{
     text-decoration: none;
+  }
+  .h1white{
+    color: white;
   }
