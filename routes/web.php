@@ -104,7 +104,7 @@ Route::resource('dog', 'DogController')->middleware('verified')->middleware('aut
 Route::get('/tabla_usuarios', 'SocialPetsController@getTablaAdmin')->middleware('admin')->middleware('auth');
 Route::get('/tabla_contacto', 'SocialPetsController@getTablaContacto')->middleware('admin')->middleware('auth');
 Route::post('/forcedelete/{id}',['as' => 'forcedelete', 'uses' => 'SocialPetsController@forceDelete' ])->middleware('admin')->middleware('auth');
-Route::post('/forcedeleteself/{id}',['as' => 'forcedeleteself', 'uses' => 'SocialPetsController@forceDeleteSelf' ])->middleware('admin')->middleware('auth');
+Route::post('/forcedeleteself/{id}',['as' => 'forcedeleteself', 'uses' => 'SocialPetsController@forceDeleteSelf' ])->middleware('auth');
 
 Route::post('/desbanear/{id}',['as' => 'desbanearUsuario', 'uses' => 'SocialPetsController@desbanearUsuario' ])->middleware('admin')->middleware('auth');
 
