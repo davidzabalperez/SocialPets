@@ -57,10 +57,10 @@
                         Genero del perro:
                         <br>
                         <label>
-                        <i class="sprites i-hembra-desactivado" id="imagen_hembra">
-                        <input type="radio" name="gender" value="1" class="form-control{{ $errors->has('gender') ? ' is-invalid' : '' }}"></i>
-                        <i class="sprites i-macho-desactivado" id="imagen_macho">
-                        <input type="radio" name="gender" value="0" class="form-control{{ $errors->has('gender') ? ' is-invalid' : '' }}"></i>
+                            <i class="sprites i-hembra-desactivado" id="imagen_hembra">
+                            <input type="radio" name="gender" value="1" class="wotofok form-control{{ $errors->has('gender') ? ' is-invalid' : '' }}"></i>
+                            <i class="sprites i-macho-desactivado" id="imagen_macho">
+                            <input type="radio" name="gender" value="0" class="wotofok form-control{{ $errors->has('gender') ? ' is-invalid' : '' }}"></i>
                         </label>
                         @if ($errors->has('gender'))
                                         <span class="invalid-feedback" role="alert" style="color:red;">
