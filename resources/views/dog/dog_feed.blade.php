@@ -104,12 +104,7 @@ $(document).ready(function () {
                      $(element).siblings('p').show();
 
                       
-                },
-                error: function(response){
-                    alert('Error'+response);
                 }
-
-
 
             });
     
