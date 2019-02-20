@@ -5,6 +5,7 @@
 <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="js/generos.js"></script>
 <link rel="stylesheet" type="text/css" href="css/grayscale.css" >
 
 <link rel="stylesheet" type="text/css" href="css/RegisterLogin-view.css" >
@@ -55,10 +56,12 @@
                         <div class="gender">
                         Genero del perro:
                         <br>
-                        <i class="sprites i-macho-activado" id="imagen_macho"></i>
-                        <input type="radio" name="gender" value="1" checked class="form-control{{ $errors->has('gender') ? ' is-invalid' : '' }}">
-                        <i class="sprites i-hembra-desactivado" id="imagen_macho"></i>
-                        <input type="radio" name="gender" value="0" class="form-control{{ $errors->has('gender') ? ' is-invalid' : '' }}">
+                        <label>
+                        <i class="sprites i-hembra-desactivado" id="imagen_hembra">
+                        <input type="radio" name="gender" value="1" class="form-control{{ $errors->has('gender') ? ' is-invalid' : '' }}"></i>
+                        <i class="sprites i-macho-desactivado" id="imagen_macho">
+                        <input type="radio" name="gender" value="0" class="form-control{{ $errors->has('gender') ? ' is-invalid' : '' }}"></i>
+                        </label>
                         @if ($errors->has('gender'))
                                         <span class="invalid-feedback" role="alert" style="color:red;">
                                             <strong>{{ $errors->first('gender') }}</strong>
