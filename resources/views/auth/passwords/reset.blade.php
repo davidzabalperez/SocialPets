@@ -1,4 +1,5 @@
-@extends('layouts.register_master')
+@include('layouts.navbarLoginRegister')
+
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
