@@ -2,8 +2,6 @@
 @section('title', 'Inicio')
 @section('content')
 
-
-
 <meta name="csrf-token" content="{{ csrf_token() }}"><br><br><br>
 
 <input type="button" value="Todos" id="filtroTodos" class="btn btn-primary">
@@ -42,9 +40,10 @@
     <p>Edad: {{$dog->age}} {{ $dog->age > 1 ? 'años' : 'año'}}</p>
     <div class="container likedislikebuttons">
       @if(!Auth::user()->hasFriendRequestPending($dog->user) && !$dog->user->hasFriendRequestPending($dog->user))
-      <a class="btn btn-primary" href="{{ route('friend.addFriend', ['id'=>$dog->id]) }}" id="like"> <i class="fa fa-thumbs-up"></i></a>
+      <a class="btn btn-primary like" data-id="{{$dog->id}}"> <i class="fa fa-thumbs-up"></i></a>
+      <p class="text-white" style="display:none;">Esperando que {{$dog->name}} acepte el Match!</p>
       @elseif(Auth::user()->hasFriendRequestPending($dog->user))
-            <p class="text-white">Esperando que {{$dog->name}} acepte el Match!</p>
+            <p class="text-white" >Esperando que {{$dog->name}} acepte el Match!</p>
       @endif
   </div>
   </div>
@@ -88,5 +87,34 @@
       }});
     });
 @endforeach
-    </script>
+</script>
+<script>
+$(document).ready(function () {
+
+  $(document).on('click', '.like', function(e){
+    e.preventDefault();
+    var id = $(this).attr('data-id');
+    var element = $(this);
+    $.ajax({
+                'url': '/friend/add/'+id,
+                'type': 'GET',
+        
+                success: function(response){
+                     $(element).hide();
+                     $(element).siblings('p').show();
+
+                      
+                },
+                error: function(response){
+                    alert('Error'+response);
+                }
+
+
+
+            });
+    
+  });
+
+});
+</script>
 @endsection
