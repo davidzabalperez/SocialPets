@@ -57,7 +57,7 @@
 <script src="{{ mix('/js/app.js') }}"></script>
 <script>
 @foreach($requests as $friend)
-  $(document).ready(function() {
+  $(window).click(function() {
       $.ajax({url: "/notifications", success: function(result){
         var count = result.length;
         $('#notifications').html('');

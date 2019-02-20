@@ -12,37 +12,40 @@
     </div></center>
 @endif
 
+
+
 <div class="container" id="app">
-<div class="panel-block text-white">
-  <h4 class="text-white">Solicitudes de Match!</h4>
 @foreach($requests as $friend)
-@if(Auth::user()->hasFriendRequestReceived($friend))
-  <div class="box">
-<onlineuser v-bind:friend="{{ $friend }}" v-bind:onlineusers="onlineusers"></onlineuser>
-<h3><a href="{{route('dog.show', $friend->dog->id)}}">{{$friend->dog->name}}</a>
-</h3>
-  <div class="box-sub">
-    <div class="{{ $friend->dog->gender == 1 ? 'avatarFemenino' : 'avatarMasculino'}}">
-    @if ($friend->dog->avatar != 'user.png')
-    <img src="{{ $friend->dog->avatar }}"/>
-    @else
-    <img src="/img/user.png"/>
-    @endif
+  @if(Auth::user()->hasFriendRequestReceived($friend))
+  <div class="box {{ $friend->dog->gender == 1 ? 'hembra' : 'macho'}}">
+  <onlineuser v-bind:friend="{{ $friend->dog->user }}" v-bind:onlineusers="onlineusers"></onlineuser>
+
+    <div class="box-sub">
+      <div class="{{ $friend->dog->gender == 1 ? 'avatarFemenino' : 'avatarMasculino'}}">
+      @if ($friend->dog->avatar != 'user.png')
+        <a href="{{route('dog.show', $friend->dog->id)}}"><img src="{{ $friend->dog->avatar }}" /></a>
+        @else
+        <a href="{{route('dog.show', $friend->dog->id)}}"><img src="/img/user.png"/></a>
+        @endif
+    </div>
+    </div>
+    <b><p>Nombre: {{$friend->dog->name}}</p></b>
+    <p>Raza: {{$friend->dog->race}}</p>
+    <p>Edad: {{$friend->dog->age}} {{ $friend->dog->age > 1 ? 'años' : 'año'}}</p>
+    <a href="{{ route('friend.acceptFriend', ['id'=>$friend->id]) }}" class="btn btn-primary">Aceptar Match!</a>
+
   </div>
-  </div>
-  <p>Dueño/a: {{$friend->dog->user->name}}</p>
-  <p>Raza: {{$friend->dog->race}}</p>
-  <p>Edad: {{$friend->dog->age}} {{ $friend->dog->age > 1 ? 'años' : 'año'}}</p>
-  <a href="{{ route('friend.acceptFriend', ['id'=>$friend->id]) }}" class="btn btn-primary">Aceptar Match!</a>
+
+  @endif
+  @endforeach
 </div>
-</div>
-</div>
-@endif
-@endforeach
+
+
+
 <script src="{{ mix('/js/app.js') }}"></script>
 <script>
 @foreach($requests as $friend)
-  $(document).ready(function() {
+  $(window).click(function() {
       $.ajax({url: "/notifications", success: function(result){
         var count = result.length;
         $('#notifications').html('');

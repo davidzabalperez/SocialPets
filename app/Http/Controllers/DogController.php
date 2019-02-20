@@ -56,7 +56,13 @@ class DogController extends Controller
     public function show($id)
     {
           $dog = Dog::find($id);
-          return view('profile_others', compact('dog'));
+          $friends = Auth::user()->friends();
+          $requests = Auth::user()->friendRequests();
+          return view('profile_others')->with([
+            'dog'=>$dog,
+            'friends'=>$friends,
+            'requests'=>$requests
+        ]);
     }
 
     /**
