@@ -85,7 +85,7 @@ class SocialPetsController extends Controller
       'name' => 'required|min:2|max:12',
       'age' => 'required',
       'gender' => 'required',
-      'race' => 'required|min:2|max:20',
+      'race' => 'required|min:2|max:30',
     ], [
       'name.required' => 'Nombre es un campo requerido',
       'name.min' => 'Nombre tiene que tener dos o mas caracteres',
@@ -94,7 +94,7 @@ class SocialPetsController extends Controller
       'gender.required' => 'El género del perro es requerido',
       'age.required' => 'La edad del perro es un campo requerido',
       'race.min' => 'Raza tiene que tener dos o mas caracteres',
-      'race.max' => 'Raza no puede tener mas de 20 caracteres',
+      'race.max' => 'Raza no puede tener mas de 30 caracteres',
     ]);
 
     $dog = new Dog();
