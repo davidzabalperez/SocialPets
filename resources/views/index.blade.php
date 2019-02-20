@@ -80,10 +80,6 @@
               <p class="text-black-50 mb-0">Envia mensajes privados.</p>
             </div>
             <br>
-            <div class="featured-text text-center text-lg-left">
-              <h4>Noticas nuevas!</h4>
-              <p class="text-black-50 mb-0">Feed de noticias.</p>
-            </div>
           </div>
         </div>
         <!-- Project One Row -->
