@@ -95,6 +95,8 @@ class DogController extends Controller
         ]);
         $dog=Dog::findOrFail($id);
         $dog->name = $request->input('name');
+        $dog->age = $request->input('age');
+        $dog->gender = $request->input('gender');
         $dog->save();
         return redirect('/profile')->with('success', 'Perro editado con exito');
     }

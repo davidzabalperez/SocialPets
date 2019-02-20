@@ -48,6 +48,7 @@
 
 <!-- Custom scripts for this template -->
 <script src="/js/grayscale.min.js"></script>
+<script src="/js/generos.js"></script>
 
 
 </html>

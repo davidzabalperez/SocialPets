@@ -6,6 +6,7 @@
   @if(!empty($user->dog))
     <div class="box_profile">
     @include('editar_perfil.formulario_editar_perfil')
+    @include('editar_perfil.formulario_editar_perfil_perro')
 
     <h3>{{ $user->dog->name }}</h3>
     <div class="box-sub">
@@ -26,6 +27,7 @@
     <p class="datos">Edad: {{ $user->dog->age }} año</p>
     @endif
      <a class="btn-config" rel="publisher" data-toggle="modal" data-target="#editProfileModal" data-backdrop="static" data-keyboard="false"><i class="fas fa-edit iconEditProfile"></i></a>
+     <a class="btn-config" rel="publisher" data-toggle="modal" data-target="#editProfileDogModal" data-backdrop="static" data-keyboard="false"><i class="fas fa-edit iconEditProfile"></i></a>
      
   </div>
   </div>

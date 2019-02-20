@@ -2,43 +2,30 @@
     <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-            <h4 id="tituloEditarUsuario" class="modal-title">Editar perfil de usuario/perro</h4>
+      <h4 id="tituloEditarUsuario" class="modal-title">Edita tu perfil {{ Auth::user()->name }}</h4>
         <button type="button" class="close" data-dismiss="modal">&times;</button>
       </div>
       <div class="modal-body">
-<form action="{{ route('dog.update', $user->dog->id )}}" method="post">
-    @method('PATCH')
-    @csrf
-    <!--NOMBRE -->
-  <div class="form-group row">
-    <label for="inputName3" class="col-sm-2 col-form-label">Nombre Perro</label>
-    <div class="col-6 col-md-6">
-      <input type="text" class="form-control" name="name" id="name" value="{{ $user->dog->name }}">
-      <input type="hidden" class="form-control" name="id" id="id" value="{{ $user->dog->id }}">
-    </div>
-    <button type="submit" class="btn btn-primary">Cambiar</button>
-  </div>
-</form>
-  <form action="{{ route('user.update', Auth::user()->id )}}" method="post">
-    @method('PATCH')
-    @csrf
-    <!--NOMBRE -->
-    <div class="form-group row">
-    
-        <div class="col-6 col-md-6">
-                <label for="nombre" class="col-sm-2 col-form-label">Usuario</label>
-        <input type="text" class="form-control" name="name" id="name" value="{{ Auth::user()->name }}">
-        </div>
-    
-        <div class="col-6 col-md-6">
-                <label for="name" class="col-sm-2 col-form-label">Email</label>
-        <input type="email" class="form-control" name="email" id="email" value="{{ Auth::user()->email }}">
-        <p></p>
-        <button type="submit" class="btn btn-primary">Cambiar</button> 
-        </div>
-    
-    </div>
-</form>
+        <form action="{{ route('user.update', Auth::user()->id )}}" method="post">
+            @method('PATCH')
+            @csrf
+            <!--NOMBRE -->
+            <div class="form-group row">
+            
+                <div class="col-6 col-md-6">
+                        <label for="nombre" class="col-sm-2 col-form-label">Usuario</label>
+                <input type="text" class="form-control" name="name" id="name" value="{{ Auth::user()->name }}">
+                </div>
+            
+                <div class="col-6 col-md-6">
+                        <label for="name" class="col-sm-2 col-form-label">Email</label>
+                <input type="email" class="form-control" name="email" id="email" value="{{ Auth::user()->email }}">
+                <p></p>
+                <button type="submit" class="btn btn-primary">Cambiar</button> 
+                </div>
+            
+            </div>
+        </form>
 <!--PASSWORD -->
 <form method="POST" action="{{ route('changePassword') }}">
   @csrf
@@ -131,7 +118,6 @@
                             </div>
                         </div>
                     </div>
-          
       </div>
   </div>
 </div>
