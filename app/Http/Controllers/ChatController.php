@@ -58,9 +58,16 @@ class ChatController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show($id)
-    {
-        $friend = User::find($id);
-        return view('chat.show')->withFriend($friend);
+    {   
+        $user = User::where('id', $id)->first();
+        
+        if(Auth::user()->isFriendsWith($user)){
+            $friend = User::find($id);
+            return view('chat.show')->withFriend($friend);
+        }else{
+            return back();
+        }
+       
     }
 
     /**

@@ -37,7 +37,8 @@
 @endif
 
 <script>
-  $(document).ready(function() {
+@foreach($requests as $friend)
+  $(window).click(function() {
       $.ajax({url: "/notifications", success: function(result){
         var count = result.length;
         $('#notifications').html('');
@@ -68,6 +69,7 @@
         }
       }});
     });
+@endforeach
     </script>
 @endsection
 

@@ -98,8 +98,9 @@ class FriendController extends Controller
     }
 
     public function rejectMatch($id){
-        $user = Friend::where('user_id',$id)->forceDelete();
-        $notification = Notification::where('id', $id)->forceDelete();
+
+        $notification = Notification::where('friend_id', $id)->forceDelete();
+        $user = Friend::where('friend_id', $id)->forceDelete();
         return back()->with('success', 'Rechazado!!.');
     }
 
@@ -108,7 +109,7 @@ class FriendController extends Controller
 
         $notification = new Notification;
         $notification->title = "Tienes un match!";
-        $notification->message = "Tienes un match! ";
+        $notification->message = "Tienes un match de: ".Auth::user()->dog->name."";
         $notification->marker = 1;
         $notification->notificable = 1;
         $notification->user_id = $user->dog->id; 
@@ -154,7 +155,7 @@ class FriendController extends Controller
         }
 
         Auth::user()->acceptFriendRequest($user);
-
+        $notification = Notification::where('friend_id', $id)->forceDelete();
         return redirect()->back()->with('info', 'Match! aceptado.');
     }
 }

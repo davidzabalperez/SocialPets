@@ -21,7 +21,7 @@
 @endif
 
 <div class="container" id="app">
-  @foreach($dogs->sortByDesc('id') as $dog)
+  @foreach($dogs->sortByDesc('onlineusers') as $dog)
   <!-- sortByDesc es para que muestre los usuarios registrados mas recientemente primero -->
    @if ( $dog->user_id != Auth::user()->id && !Auth::user()->isFriendsWith($dog->user))
   <div class="box {{ $dog->gender == 1 ? 'hembra' : 'macho'}}">
@@ -41,10 +41,10 @@
     <p>Raza: {{$dog->race}}</p>
     <p>Edad: {{$dog->age}} {{ $dog->age > 1 ? 'años' : 'año'}}</p>
     <div class="container likedislikebuttons">
-      @if(!Auth::user()->hasFriendRequestPending($dog->user))
+      @if(!Auth::user()->hasFriendRequestPending($dog->user) && !$dog->user->hasFriendRequestPending($dog->user))
       <a class="btn btn-primary" href="{{ route('friend.addFriend', ['id'=>$dog->id]) }}" id="like"> <i class="fa fa-thumbs-up"></i></a>
-      @else
-      <a class="btn btn-danger" href="/friend/rejectMatch/{{$dog->id}}" id="dislike"> <i class="fa fa-thumbs-down"></i></a>
+      @elseif(Auth::user()->hasFriendRequestPending($dog->user))
+            <p class="text-white">Esperando que {{$dog->name}} acepte el Match!</p>
       @endif
   </div>
   </div>
@@ -56,7 +56,7 @@
 <script src="js/filtro.js"></script>
 <script>
 @foreach($requests as $friend)
-  $(document).ready(function() {
+  $(window).click(function() {
       $.ajax({url: "/notifications", success: function(result){
         var count = result.length;
         $('#notifications').html('');
