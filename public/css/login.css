@@ -162,7 +162,7 @@
     
     /* HIDE RADIO */
     [type=radio] { 
-        position: absolute;
+        position: inherit;
         opacity: 0;
         width: 0;
         height: 0;
