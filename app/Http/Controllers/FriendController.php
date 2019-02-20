@@ -98,8 +98,8 @@ class FriendController extends Controller
     }
 
     public function rejectMatch($id){
-        Notification::where('friend_id', $id)->delete();
-        Friend::where('friend_id', $id)->delete();
+        $user = Friend::where('user_id',$id)->forceDelete();
+        $notification = Notification::where('id', $id)->forceDelete();
         return back()->with('success', 'Rechazado!!.');
     }
 
