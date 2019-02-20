@@ -20,14 +20,14 @@
     </div>
     <p class="datos">Dueña/o: 
       {{ $user->name }}</p>
+      <a class="btn-config" rel="publisher" data-toggle="modal" data-target="#editProfileModal" data-backdrop="static" data-keyboard="false"><i class="fas fa-edit iconEditProfile"></i></a>
     <p class="datos">Raza: {{ $user->dog->race }}</p>
     @if($user->dog->age > 1)
     <p class="datos">Edad: {{ $user->dog->age }} años</p>
     @else
     <p class="datos">Edad: {{ $user->dog->age }} año</p>
     @endif
-     <a class="btn-config" rel="publisher" data-toggle="modal" data-target="#editProfileModal" data-backdrop="static" data-keyboard="false"><i class="fas fa-edit iconEditProfile"></i></a>
-     <a class="btn-config" rel="publisher" data-toggle="modal" data-target="#editProfileDogModal" data-backdrop="static" data-keyboard="false"><i class="fas fa-edit iconEditProfile"></i></a>
+     <a class="btn-config" rel="publisher" data-toggle="modal" data-target="#editProfileDogModal" data-backdrop="static" data-keyboard="false"><i class="fa fa-paw iconEditProfile"></i></a>
      
   </div>
   </div>

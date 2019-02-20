@@ -4,7 +4,7 @@
         <div class="modal-content">
           
             <div class="modal-header">
-          <h4 id="tituloEditarUsuario" class="modal-title">Editar perfil de {{Auth::user()->dog->name}}</h4>
+          <h4 id="tituloEditarPerro" class="modal-title">Editar perfil de {{Auth::user()->dog->name}}</h4>
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
           </div>
           
@@ -14,7 +14,7 @@
                 @csrf
                 <!--NOMBRE PERRO-->
                 <div class="form-group row">
-                    <div class="col-6 col-md-6">
+                    <div class="col col-md">
                             <input type="hidden" class="form-control" name="id" id="id" value="{{ $user->dog->id }}">
                         <label for="name" class="col col-form-label">Nombre</label>
                             <input type="text" class="form-control" name="name" id="name" value="{{ $user->dog->name }}">
@@ -29,6 +29,7 @@
                             </label>
                 </div>
                 </div>
+
                 <button type="submit" class="btn btn-primary">Cambiar</button>
             </form>
         </div>
