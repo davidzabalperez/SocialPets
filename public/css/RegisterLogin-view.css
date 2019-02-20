@@ -88,7 +88,6 @@ body{  background: linear-gradient(to bottom, rgba(22, 22, 22, 0.1) 0%, rgba(22,
 
 .form-box input[type="text"]{
     border-radius: 5px 5px 0 0;
-    text-transform: lowercase;
 }
 
 .form-box input[type="password"]{

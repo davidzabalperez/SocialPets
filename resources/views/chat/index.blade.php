@@ -3,13 +3,16 @@
 @section('content')
 
 <style>
-.container p{
-    margin-top:-5%;
-}
+  .box{
+    margin-top: -10px;
+  }
+  h4{
+    margin-top:60px;
+  }
 </style>
 
 <meta name="csrf-token" content="{{ csrf_token() }}">
-
+<h4 class="text-white">Perros favoritos!</h4>
 <div class="container" id="app">
 
  @if(Session::has('info'))
@@ -25,25 +28,24 @@
 
 
 
-<div class="panel-block text-white">
- <h4 class="text-white">Perros Favoritos!</h4>
+
  @foreach($friends as $friend)
 @if(Auth::user()->isFriendsWith($friend))
+<div class="box {{ $friend->dog->gender == 1 ? 'hembra' : 'macho'}}">
 
-  <div class="box">
-  <onlineuser v-bind:friend="{{ $friend }}" v-bind:onlineusers="onlineusers"></onlineuser>
-  <h3><a href="{{route('dog.show', $friend->dog->id)}}">{{$friend->dog->name}}</a>
+  <onlineuser v-bind:friend="{{ $friend->dog->user }}" v-bind:onlineusers="onlineusers"></onlineuser>
 </h3>
+
     <div class="box-sub">
       <div class="{{ $friend->dog->gender == 1 ? 'avatarFemenino' : 'avatarMasculino'}}">
       @if ($friend->dog->avatar != 'user.png')
-      <img src="{{ $friend->dog->avatar }}"/>
-      @else
-      <img src="/img/user.png"/>
-      @endif
+        <a href="{{route('dog.show', $friend->dog->id)}}"><img src="{{ $friend->dog->avatar }}" /></a>
+        @else
+        <a href="{{route('dog.show', $friend->dog->id)}}"><img src="/img/user.png"/></a>
+        @endif
     </div>
     </div>
-    <p>Dueño/a: {{$friend->dog->user->name}}</p>
+    <b><p>Nombre: {{$friend->dog->name}}</p></b>
     <p>Raza: {{$friend->dog->race}}</p>
     <p>Edad: {{$friend->dog->age}} {{ $friend->dog->age > 1 ? 'años' : 'año'}}</p>
 
@@ -53,7 +55,7 @@
   @endif
  @endforeach
 </div>
-</div>
+
 <script src="{{ mix('/js/app.js') }}"></script>
 <script>
 @foreach($requests as $friend)
