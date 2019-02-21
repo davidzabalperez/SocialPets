@@ -88,7 +88,7 @@
     });
 @endforeach
 </script>
-<script>
+<!--<script>
 $(document).ready(function () {
 
   $(document).on('click', '.like', function(e){
@@ -116,5 +116,5 @@ $(document).ready(function () {
   });
 
 });
-</script>
+</script>-->
 @endsection
