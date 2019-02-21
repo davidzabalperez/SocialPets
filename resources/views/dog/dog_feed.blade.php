@@ -43,7 +43,7 @@
       <a class="btn btn-primary like" data-id="{{$dog->id}}"> <i class="fa fa-thumbs-up"></i></a>
       <p class="text-white" style="display:none;">Esperando que {{$dog->name}} acepte el Match!</p>
       @elseif(Auth::user()->hasFriendRequestPending($dog->user))
-            <p class="text-white" >Esperando que {{$dog->name}} acepte el Match!</p>
+            <p class="text-white" id="wait">Esperando que {{$dog->name}} acepte el Match!</p>
       @endif
   </div>
   </div>
@@ -63,7 +63,7 @@
         for (var i = 0; i < result.length; i++) {
           switch (result[i].marker) {
             case 0:
-            $('#notifications').append('<li><a href="{{route('dog.show', $dog->id)}}"><div class="icon-circle bg-red"><i class="material-icons">delete_forever</i></div><div class="menu-info"><h4>'+result[i].title+'</h4><p>'+result[i].user_id+'</p></div></a></li>');
+            $('#notifications').append('<li><a href="#"><div class="icon-circle bg-red"><i class="material-icons">delete_forever</i></div><div class="menu-info"><h4>'+result[i].title+'</h4><p></p></div></a></li>');
             break;
             case 1:
             $('#notifications').append('<li>'+result[i].title+'<br> <center><a href="/dog/'+result[i].friend_id+'">'+result[i].friend_name+'</a></center></li><li><a class="btn btn-success btn-sm" href="/friend/accept/'+result[i].friend_id+'">Aceptar</a><a class="btn btn-danger btn-sm" href="/friend/rejectMatch/'+result[i].friend_id+'">Rechazar</a></li>');
@@ -87,8 +87,8 @@
       }});
     });
 @endforeach
-</script>
-<!--<script>
+    </script>
+<script>
 $(document).ready(function () {
 
   $(document).on('click', '.like', function(e){
@@ -96,7 +96,7 @@ $(document).ready(function () {
     var id = $(this).attr('data-id');
     var element = $(this);
     $.ajax({
-                'url': '/friend/add/'+id,
+                'url': '/friend/add/'+id+'',
                 'type': 'GET',
         
                 success: function(response){
@@ -116,5 +116,5 @@ $(document).ready(function () {
   });
 
 });
-</script>-->
+</script>
 @endsection

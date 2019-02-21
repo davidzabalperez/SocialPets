@@ -84,7 +84,9 @@
                         <i class="fa fa-globe">Notificaciones</i>
                       </a>
                       <ul class="dropdown-menu">
-                        <li class="header"></li>
+                        <li class="header">
+                          Notificaciones
+                        </li>
                         <li class="body">
                           <ul class="menu" id="notifications">
 

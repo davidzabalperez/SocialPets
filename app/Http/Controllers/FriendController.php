@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Friend;
 use App\User;
+use App\Dog;
 use Auth;
 use Session;
 use App\Notification;
