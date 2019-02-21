@@ -21,6 +21,12 @@ class CreateNotificationsTable extends Migration
             $table->boolean('notificable');
             $table->integer('user_id')->nullable();
             $table->integer('friend_id')->nullable();
+            $table->foreign('user_id')
+            ->references('id')->on('users')
+            ->onDelete('cascade');
+            $table->foreign('friend_id')
+            ->references('id')->on('users')
+            ->onDelete('cascade');
             $table->string('user_name')->nullable();
             $table->string('friend_name')->nullable();
             $table->softDeletes();
