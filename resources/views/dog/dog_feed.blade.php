@@ -89,7 +89,7 @@
 @endforeach
 </script>
 <script>
-$(document).ready(function () {
+
 
   $(document).on('click', '.like', function(e){
     e.preventDefault();
@@ -115,6 +115,6 @@ $(document).ready(function () {
     
   });
 
-});
+
 </script>
 @endsection
