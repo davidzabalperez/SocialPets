@@ -25,8 +25,8 @@
     <link rel="stylesheet" type="text/css" href="/css/feed.css">
   </head>
   <body class="profile-section text-center">
-    <!-- NavBar 
-    @include("layouts.navbar")-->
+    <!-- NavBar -->
+    @include("layouts.navbar")
     
     @yield('content')
  

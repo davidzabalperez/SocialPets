@@ -87,6 +87,7 @@ class DogController extends Controller
     {
         request()->validate([
             'name'=>'string|max:15|min:3',
+            'gender'=>'required',
         ],[
             'name.string' => 'introduce un texto',
             'name.min' => 'minimo 3 caracteres',

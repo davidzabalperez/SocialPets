@@ -11,7 +11,7 @@
 body{
   background-size: cover;
   width:100%;
-  background-image: url('/SocialPets/public/img/background.jpg');
+  background: url('/img/skere.jpg');
 
 }
 
@@ -80,7 +80,7 @@ body{
   box-shadow: 0px 0px 7px 3px gray;
   text-align: center;
   margin: 25px auto;
-  background-color: black;
+  background-color: #aa8661;
   vertical-align: middle;
 
 }
@@ -116,7 +116,6 @@ body{
 .box-sub{
   width: 270px;
   height: 90px;
-  background-color:rgba(0,0,0,0.5);
   line-height: 100px;
   display: flex;
   justify-content: center;
@@ -412,7 +411,7 @@ img{
       margin-bottom: 15px !important;
     }
   .active{
-      background-color: rgba(0,0,0,0.3);
+      
   }
     .user_img{
       height: 70px;

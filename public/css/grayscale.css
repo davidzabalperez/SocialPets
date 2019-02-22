@@ -444,6 +444,8 @@ html,
   }
   .active{
     text-decoration: none;
+    color: #2ef3b0;
+    font-size: 3vh;
   }
   .h1white{
     color: white;
